@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Rumah Kreatif Khansa
+                    Rumah Kreatif Khansa Test
                 </div>
 
                 <div class="links">
