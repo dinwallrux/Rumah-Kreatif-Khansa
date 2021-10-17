@@ -13,4 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('front');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/datepicker', 'HomeController@datepicker')->name('datepicker');

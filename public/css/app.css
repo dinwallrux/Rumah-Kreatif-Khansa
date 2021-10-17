@@ -1,0 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);.divider:after,
+.divider:before {
+  opacity: 0.1;
+}
+
