@@ -288,11 +288,11 @@
                                         <span class="block text-sm font-medium text-gray-700">Apakah Ayah/Bunda berkenan jika kami memposting hasil karya belajar Ananda di sosial media resmi kami?</span>
                                     </label> 
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="publish" checked="checked" class="radio radio-primary mr-3" value="true">
+                                        <input type="radio" name="publish" checked class="radio radio-primary mr-3" value="true">
                                         <span class="label-text">Ya</span> 
                                     </label>
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="publish" checked="checked" class="radio radio-primary mr-3" value="false">
+                                        <input type="radio" name="publish" class="radio radio-primary mr-3" value="false">
                                         <span class="label-text">Tidak</span> 
                                     </label>
                                 </div>
