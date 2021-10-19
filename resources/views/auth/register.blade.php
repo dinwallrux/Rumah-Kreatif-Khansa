@@ -27,7 +27,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nama Orang tua/Wali</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input type="text" name="name" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div> 
 							<div class="col-span-6 sm:col-span-3">
@@ -35,7 +38,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Email</span>
                                     </label> 
-                                    <input type="email" class="input input-primary input-bordered">
+                                    <input type="email" name="email" autocomplete="email" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 
@@ -44,7 +50,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">No Telefon</span>
                                     </label> 
-                                    <input type="email" autocomplete="email" class="input input-primary input-bordered">
+                                    <input type="text" name="phone" autocomplete="phone" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 
@@ -54,6 +63,9 @@
                                         <span class="block text-sm font-medium text-gray-700">Kata sandi</span>
                                     </label> 
                                     <input type="password" autocomplete="new-password" name="password" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div> 
 							<div class="col-span-6 sm:col-span-3">
@@ -62,6 +74,9 @@
                                         <span class="block text-sm font-medium text-gray-700">Konfirmasi kata sandi</span>
                                     </label> 
                                     <input type="password" autocomplete="confirm-password" name="confirm_password" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 						</div>
