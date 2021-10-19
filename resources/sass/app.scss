@@ -10,3 +10,18 @@
 .divider:after, .divider:before {
     opacity: 0.1;
 }
+
+[type='radio']:checked {
+    background-image: none;
+}
+
+#register {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    .card {
+        display: none;
+        &.show {
+            display: block;
+        }
+    }
+}

@@ -3107,9 +3107,30 @@ class YearsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @themesberg/tailwind-datepicker/js/Datepicker */ "./node_modules/@themesberg/tailwind-datepicker/js/Datepicker.js");
+ // Register datepicker
 
 var datepickerEl = document.getElementById('tanggal_lahir');
 new _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl, {});
+var register = $('#register');
+var card = register.find('.card');
+var steps = $('.steps');
+var step = steps.find('.step');
+var current = 0;
+
+var nextStep = function nextStep() {
+  $(card[current]).find('.next').on('click', function (e) {
+    e.preventDefault();
+    current += 1;
+    $(card[current]).addClass('show');
+    $(card[current - 1]).removeClass('show'); // Activate steps
+
+    $(step[current]).addClass('step-primary'); // Run the function again after change the card
+
+    nextStep();
+  });
+};
+
+nextStep();
 
 /***/ }),
 

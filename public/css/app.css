@@ -3,3 +3,20 @@
   opacity: 0.1;
 }
 
+[type=radio]:checked {
+  background-image: none;
+}
+
+#register {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+#register .card {
+  display: none;
+}
+
+#register .card.show {
+  display: block;
+}
+
