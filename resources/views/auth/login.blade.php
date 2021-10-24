@@ -38,6 +38,12 @@
                                 </div>
                             </div> 
 
+                            <div class="col-span-6">
+                                <p class="text-xs">
+                                    Belum daftar? <a href="{{ route('register') }}" class="link link-primary">daftar sekarang</a>
+                                </p>
+                            </div> 
+
 						</div>
 
                     </div>
