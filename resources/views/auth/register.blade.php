@@ -100,7 +100,7 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Provinsi</span>
                                     </label> 
-                                    <select class="select select-bordered select-primary w-full max-w-xs">
+                                    <select name="province" class="select select-bordered select-primary w-full max-w-xs">
                                         <option disabled selected="selected">Pilih Provinsi</option>
                                         <option>Bali</option>
                                         <option>Jakarta</option>
@@ -115,7 +115,7 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Kabupaten/Kota</span>
                                     </label> 
-                                    <select class="select select-bordered select-primary w-full max-w-xs">
+                                    <select name="city" class="select select-bordered select-primary w-full max-w-xs">
                                         <option disabled selected="selected">Pilih Kabupaten/Kota</option> 
                                         <option>Badung</option>
                                         <option>Klungkung</option>
@@ -129,7 +129,7 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Kecamatan/Desa</span>
                                     </label> 
-                                    <select class="select select-bordered select-primary w-full">
+                                    <select name="district" class="select select-bordered select-primary w-full">
                                         <option disabled selected="selected">Pilih Kecamatan/Desa</option> 
                                         <option>Denpasar Selatan</option>
                                         <option>Denpasar Barat</option>
@@ -151,7 +151,7 @@
 		<div class="mt-5 md:mt-0 md:col-span-2">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <form action="#" method="POST">
-                    <div class="px-4 py-5 bg-white sm:p-6">
+                    <div class="wrapper-form px-4 py-5 bg-white sm:p-6">
 
 						<div class="grid grid-cols-6 gap-3">
 
@@ -160,10 +160,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Jumlah anak yang didaftarkan</span>
                                     </label> 
-                                    <select class="select select-bordered select-primary w-full">
-                                        <option selected="selected">1 anak</option>
-                                        <option>2 anak</option>
-                                        <option>3 anak</option>
+                                    <select name="total_student" class="select select-bordered select-primary w-full">
+                                        <option selected="selected" value="1">1 anak</option>
+                                        <option value="2">2 anak</option>
+                                        <option value="3">3 anak</option>
                                     </select>
                                 </div>
                             </div> 
@@ -174,14 +174,17 @@
 
 						</div>
 
-                        <div class="student-form grid grid-cols-6 gap-6">
+                        <div id="studentForm1" class="student-form grid grid-cols-6 gap-6">
 
 							<div class="col-span-6 sm:col-span-3">
                                 <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nama Lengkap Anak</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input name="full_name" type="text" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div> 
 							<div class="col-span-6 sm:col-span-3">
@@ -189,7 +192,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nama Panggilan Anak</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input name="nickname" type="text" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 
@@ -203,8 +209,11 @@
                                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                             <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                                         </div>
-                                        <input id="tanggal_lahir" datepicker type="text" class="input input-primary input-bordered pl-10 p-2.5 w-full" placeholder="01/01/1990">
+                                        <input name="date_birth" id="tanggal_lahir" datepicker type="text" class="input input-primary input-bordered pl-10 p-2.5 w-full" placeholder="01/01/2003">
                                     </div>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -213,10 +222,13 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Jenis kelamin</span>
                                     </label> 
-                                    <select class="select select-bordered select-primary w-full">
+                                    <select name="gender" class="select select-bordered select-primary w-full">
                                         <option selected="selected" value="laki-laki">Laki - laki</option>
                                         <option value="perempuan">Perempuan</option>
                                     </select>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 
@@ -225,7 +237,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">No Whatshapp</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input name="phone_number" type="text" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -234,7 +249,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Instagram</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input name="instagram" type="text" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -243,8 +261,15 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Facebook</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input name="facebook" type="text" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
+                            </div>
+
+                            <div class="col-span-6">
+                                <div class="divider"></div>
                             </div>
 
 						</div>
@@ -269,7 +294,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Apa motivasi Ayah/Bunda mengikutkan anandanya belajar online bersama Rumah Kreatif Khansa?</span>
                                     </label> 
-                                    <textarea class="textarea h-24 textarea-bordered textarea-primary"></textarea>
+                                    <textarea name="motivation" class="textarea h-24 textarea-bordered textarea-primary"></textarea>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div> 
 							<div class="col-span-6">
@@ -278,19 +306,19 @@
                                         <span class="block text-sm font-medium text-gray-700">Darimana Ayah/Bunda mengetahui kelas belajar online bersama Rumah Kreatif Khansa?</span>
                                     </label> 
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="opt" checked="checked" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" checked="checked" class="radio radio-primary mr-3" value="">
                                         <span class="label-text">Instagram</span> 
                                     </label>
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="opt" checked="checked" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="">
                                         <span class="label-text">Facebook</span> 
                                     </label>
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="opt" checked="checked" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="">
                                         <span class="label-text">Whatsapp</span> 
                                     </label>
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="opt" checked="checked" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="">
                                         <span class="label-text mr-3">Lainnya: </span>
                                         <input type="text" class="input input-primary input-bordered w-full">
                                     </label>
@@ -337,8 +365,11 @@
                                         <span class="block text-sm font-medium text-gray-700">Bukti tranfer</span>
                                     </label> 
                                     <div class="relative">
-                                        <input class="block w-full overflow-hidden cursor-pointer bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:text-sm rounded-lg block w-full" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                        <input name="payment_slip" class="block w-full overflow-hidden cursor-pointer bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:text-sm rounded-lg block w-full" aria-describedby="user_avatar_help" id="user_avatar" type="file">
                                     </div>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -347,12 +378,15 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Jangka pendaftaran</span>
                                     </label> 
-                                    <select class="select select-bordered select-primary w-full">
+                                    <select name="registration_period" class="select select-bordered select-primary w-full">
                                         <option disabled selected="selected">Pilih jangka pendaftaran</option> 
                                         <option>1 bulan</option>
                                         <option>2 bulan</option>
                                         <option>3 bulan</option>
                                     </select>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 
@@ -361,7 +395,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Catatan</span>
                                     </label> 
-                                    <textarea class="textarea h-24 textarea-bordered textarea-primary"></textarea>
+                                    <textarea name="note" class="textarea h-24 textarea-bordered textarea-primary"></textarea>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -370,7 +407,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nama Bank</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input type="bank_name" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -379,7 +419,10 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nominal</span>
                                     </label> 
-                                    <input type="text" class="input input-primary input-bordered">
+                                    <input name="nominal" type="text" class="input input-primary input-bordered">
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div>
 

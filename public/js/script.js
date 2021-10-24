@@ -26770,42 +26770,124 @@ var nextStep = function nextStep() {
   });
 };
 
-nextStep(); // Validation
+nextStep(); // Multiple form of student
 
-var formData = $('#account-info form').serializeArray();
-formData.forEach(function (field) {
-  $("input[name=".concat(field.name, "]")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default.a.debounce(function () {
-    var formData = $('#account-info form').serializeArray();
-    var data = {};
-    formData.forEach(function (val) {
-      data[val.name] = val.value;
-    });
-    var rules = {
-      name: 'required',
-      email: 'required|email',
-      phone: 'required',
-      password: 'required',
-      confirm_password: 'same:password'
-    };
-    var error_message = {
-      "required.name": "Nama Orang tua/wali wajib diisi",
-      "required.email": "Email wajib diisi",
-      "email.email": "Format email tidak valid",
-      "required.phone": "Nomor telefon wajib diisi",
-      "required.password": "Kata sandi wajib diisi",
-      "same.confirm_password": "Konfirmasi password dan password harus sama"
-    };
-    var validation = new validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a(data, rules, error_message);
-    validation.passes(); // true
+var cloneStudentForm = function cloneStudentForm() {
+  $('select[name=total_student]').on('change', function () {
+    // Remove student form except the first one
+    $(".student-form").not(":eq(0)").remove();
+    var totalStudent = $('select[name=total_student]').val();
+    var cloneIndex = $('.student-form').length + 1;
 
-    validation.fails(); // false
-
-    $("input[name=".concat(field.name, "]")).siblings('.error').find('.label-text-alt').text('');
-
-    if (validation.errors.first(field.name)) {
-      $("input[name=".concat(field.name, "]")).siblings('.error').find('.label-text-alt').text(validation.errors.first(field.name));
+    for (var i = 1; i < totalStudent; i++) {
+      $('.student-form').first().clone().appendTo('.wrapper-form').attr('id', 'studentForm' + (i + 1));
     }
-  }, 700));
+  });
+};
+
+cloneStudentForm(); // Validation
+
+var typingValidation = function typingValidation(targetElement, rulesParam, errorMessage) {
+  var formData = $("".concat(targetElement, " form")).serializeArray();
+  formData.forEach(function (field) {
+    $("input[name=".concat(field.name, "], select[name=").concat(field.name, "], textarea[name=").concat(field.name, "]")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default.a.debounce(function () {
+      var formData = $("".concat(targetElement, " form")).serializeArray();
+      var error_message = {};
+      var rules = {};
+      var data = {};
+
+      if (formData.length > 0) {
+        formData.forEach(function (val) {
+          data[val.name] = val.value;
+        });
+      }
+
+      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(rulesParam)) {
+        rules = rulesParam;
+      }
+
+      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(errorMessage)) {
+        error_message = errorMessage;
+      }
+
+      var validation = new validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a(data, rules, error_message);
+      validation.passes(); // true
+
+      validation.fails(); // false
+
+      $("input[name=".concat(field.name, "], select[name=").concat(field.name, "], textarea[name=").concat(field.name, "]")).closest('.form-control').find('.error .label-text-alt').text('');
+
+      if (validation.errors.first(field.name)) {
+        $("input[name=".concat(field.name, "], select[name=").concat(field.name, "], textarea[name=").concat(field.name, "]")).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name));
+      }
+    }, 700));
+  });
+};
+
+typingValidation('#account-info', {
+  name: 'required',
+  email: 'required|email',
+  phone: 'required|numeric',
+  password: 'required',
+  confirm_password: 'required|same:password'
+}, {
+  "required.name": "Nama Orang tua/wali wajib diisi",
+  "required.email": "Email wajib diisi",
+  "email.email": "Format email tidak valid",
+  "required.phone": "Nomor telefon wajib diisi",
+  "numeric.phone": "Nomor telefon harus berupa angka",
+  "required.password": "Kata sandi wajib diisi",
+  "required.confirm_password": "Konfirmasi password wajib diisi",
+  "same.confirm_password": "Konfirmasi password dan password harus sama"
+});
+typingValidation('#address', {
+  province: 'required',
+  city: 'required',
+  district: 'required'
+}, {
+  "required.province": "Provinsi wajib dipilih",
+  "required.city": "Kabupaten/kota wajib dipilih",
+  "required.district": "Kecamatan/desa wajib dipilih"
+});
+typingValidation('#student', {
+  full_name: 'required',
+  nickname: 'required',
+  date_birth: 'required',
+  gender: 'required',
+  phone_number: 'required:numeric',
+  instagram: 'required',
+  facebook: 'required'
+}, {
+  "required.full_name": "Nama lengkap wajib dipilih",
+  "required.nickname": "Nama panggilan wajib dipilih",
+  "required.date_birth": "Tanggal lahir wajib dipilih",
+  "required.gender": "Jenis kelamin wajib dipilih",
+  "required.phone_number": "No whatsapp wajib dipilih",
+  "numeric.phone_number": "No whatsapp harus berupa angka",
+  "required.instagram": "Instagram wajib dipilih",
+  "required.facebook": "Facebook wajib dipilih"
+});
+typingValidation('#survey', {
+  motivation: 'required',
+  source_info: 'required',
+  publish: 'required'
+}, {
+  "required.motivation": "Motivasi wajib dipilih",
+  "required.source_info": "Sumber informasi wajib dipilih",
+  "required.publish": "Posting wajib dipilih"
+});
+typingValidation('#payment', {
+  payment_slip: 'required',
+  registration_period: 'required',
+  note: 'required',
+  bank_name: 'required',
+  nominal: 'required'
+}, {
+  "required.payment_slip": "Bukti transfer wajib dipilih",
+  "required.registration_period": "Jangka pendataran wajib dipilih",
+  "required.note": "Catatan wajib dipilih",
+  "required.bank_name": "Nama bank wajib dipilih",
+  "required.nominal": "Nominal wajib dipilih"
 });
 
 /***/ }),
