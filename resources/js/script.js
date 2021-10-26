@@ -185,8 +185,6 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
         if(validation.passes())  {
             nextStep()
         }
-
-        console.log('validation ==> ', validation)
     })
 }
 

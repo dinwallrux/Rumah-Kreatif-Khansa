@@ -26924,8 +26924,6 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
     if (validation.passes()) {
       nextStep();
     }
-
-    console.log('validation ==> ', validation);
   });
 };
 
