@@ -2,31 +2,28 @@ import Datepicker from '@themesberg/tailwind-datepicker/js/Datepicker';
 import Validator from 'validatorjs';
 import _ from 'lodash';
 
+// Set validator language
+Validator.useLang('id')
+
 // Register datepicker
 const datepickerEl = document.getElementById('tanggal_lahir');
 new Datepicker(datepickerEl, {});
 
 
-let register = $('#register');
-let card = register.find('.card');
+// Next register steps
+let card = $('#register').find('.card');
 let steps = $('.steps');
 let step = steps.find('.step');
 let current = 0;
 
 let nextStep = () => {
-    $(card[current]).find('.next').on('click', (e) => {
-        e.preventDefault();
-        current+= 1;
-        $(card[current]).addClass('show');
-        $(card[current-1]).removeClass('show');
-        
-        // Activate steps
-        $(step[current]).addClass('step-primary');
-        // Run the function again after change the card
-        nextStep();
-    })
+    current++;
+    $(card[current]).addClass('show');
+    $(card[current-1]).removeClass('show');
+    
+    // Activate steps
+    $(step[current]).addClass('step-primary');
 }
-nextStep();
 
 // Multiple form of student
 let cloneStudentForm = () => {
@@ -43,7 +40,7 @@ let cloneStudentForm = () => {
 }
 cloneStudentForm()
 
-// Validation
+// Typing validation
 let typingValidation = (targetElement, rulesParam, errorMessage) => {
     let formData = $(`${targetElement} form`).serializeArray();
     formData.forEach((field) => {
@@ -111,7 +108,7 @@ typingValidation('#student', {
     nickname: 'required',
     date_birth: 'required',
     gender: 'required',
-    phone_number: 'required:numeric',
+    phone_number: 'required|numeric',
     instagram: 'required',
     facebook: 'required'
 }, {
@@ -147,4 +144,118 @@ typingValidation('#payment', {
     "required.note": "Catatan wajib dipilih",
     "required.bank_name": "Nama bank wajib dipilih",
     "required.nominal": "Nominal wajib dipilih"
+});
+
+// Submit validation
+let submitValidation = (targetElement, rulesParam, errorMessage) => {
+    // let formData = $(`${targetElement} form`).serializeArray();
+
+    $(`${targetElement} .btn`).on('click', () => {
+        let formData = $(`${targetElement} form`).serializeArray();
+        let error_message = {}
+        let rules = {}
+        let data = {}
+
+        if (formData.length > 0) {
+            formData.forEach(val => {
+                data[val.name] = val.value;
+            });
+        }
+        
+        if (!_.isEmpty(rulesParam)) {
+            rules = rulesParam
+        }
+    
+        if (!_.isEmpty(errorMessage)) {
+            error_message = errorMessage
+        }
+    
+        let validation = new Validator(data, rules, error_message);
+        validation.checkAsync()
+        
+        for (let key in validation.input) {
+            $(`input[name=${key}], select[name=${key}], textarea[name=${key}]`).closest('.form-control').find('.error .label-text-alt').text('')
+        }
+        if (validation.fails()) {
+            for (let key in validation.errors.errors) {
+                $(`input[name=${key}], select[name=${key}], textarea[name=${key}]`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(key))
+            }
+        }
+
+        if(validation.passes())  {
+            nextStep()
+        }
+
+        console.log('validation ==> ', validation)
+    })
+}
+
+submitValidation('#account-info', {
+    name: 'required',
+    email: 'required|email',
+    phone: 'required|numeric',
+    password: 'required',
+    confirm_password: 'required|same:password'
+}, {
+    "required.name": "Nama Orang tua/wali wajib diisi",
+    "required.email": "Email wajib diisi",
+    "email.email": "Format email tidak valid",
+    "required.phone": "Nomor telefon wajib diisi",
+    "numeric.phone": "Nomor telefon harus berupa angka",
+    "required.password": "Kata sandi wajib diisi",
+    "required.confirm_password": "Konfirmasi password wajib diisi",
+    "same.confirm_password": "Konfirmasi password dan password harus sama"
+});
+
+submitValidation('#address', {
+    province: 'required',
+    city: 'required',
+    district: 'required'
+}, {
+    "required.province": "Provinsi wajib dipilih",
+    "required.city": "Kabupaten/kota wajib dipilih",
+    "required.district": "Kecamatan/desa wajib dipilih"
+});
+
+submitValidation('#student', {
+    full_name: 'required',
+    nickname: 'required',
+    date_birth: 'required',
+    gender: 'required',
+    phone_number: 'required:numeric',
+    instagram: 'required',
+    facebook: 'required'
+}, {
+    "required.full_name": "Nama lengkap wajib diisi",
+    "required.nickname": "Nama panggilan wajib diisi",
+    "required.date_birth": "Tanggal lahir wajib diisi",
+    "required.gender": "Jenis kelamin wajib dipilih",
+    "required.phone_number": "No whatsapp wajib diisi",
+    "numeric.phone_number": "No whatsapp harus berupa angka",
+    "required.instagram": "Instagram wajib diisi",
+    "required.facebook": "Facebook wajib diisi"
+});
+
+submitValidation('#survey', {
+    motivation: 'required',
+    source_info: 'required',
+    publish: 'required'
+}, {
+    "required.motivation": "Motivasi wajib diisi",
+    "required.source_info": "Sumber informasi wajib dipilih",
+    "required.publish": "Posting wajib dipilih"
+});
+
+submitValidation('#payment', {
+    payment_slip: 'required',
+    registration_period: 'required',
+    note: 'required',
+    bank_name: 'required',
+    nominal: 'required'
+}, {
+    "required.payment_slip": "Bukti transfer wajib diisi",
+    "required.registration_period": "Jangka pendataran wajib dipilih",
+    "required.note": "Catatan wajib diisi",
+    "required.bank_name": "Nama bank wajib diisi",
+    "required.nominal": "Nominal wajib diisi"
 });

@@ -108,6 +108,9 @@
                                         <option>Sulawesi</option>
                                         <option>Sumatera</option>
                                     </select>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
                             </div> 
 							<div class="col-span-6 sm:col-span-3">
@@ -121,6 +124,9 @@
                                         <option>Klungkung</option>
                                         <option>Kota Denpasar</option>
                                     </select>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 
@@ -134,6 +140,9 @@
                                         <option>Denpasar Selatan</option>
                                         <option>Denpasar Barat</option>
                                     </select>
+                                    <label class="label error">
+                                        <span class="label-text-alt text-red-600"></span>
+                                    </label>
                                 </div>
 							</div>
 
@@ -209,7 +218,7 @@
                                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                             <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                                         </div>
-                                        <input name="date_birth" id="tanggal_lahir" datepicker type="text" class="input input-primary input-bordered pl-10 p-2.5 w-full" placeholder="01/01/2003">
+                                        <input name="date_birth" id="tanggal_lahir" autocomplete="off" datepicker type="text" class="input input-primary input-bordered pl-10 p-2.5 w-full" placeholder="01/01/2003">
                                     </div>
                                     <label class="label error">
                                         <span class="label-text-alt text-red-600"></span>
@@ -306,21 +315,21 @@
                                         <span class="block text-sm font-medium text-gray-700">Darimana Ayah/Bunda mengetahui kelas belajar online bersama Rumah Kreatif Khansa?</span>
                                     </label> 
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="source_info" checked="checked" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" checked="checked" class="radio radio-primary mr-3" value="instagram">
                                         <span class="label-text">Instagram</span> 
                                     </label>
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="facebook">
                                         <span class="label-text">Facebook</span> 
                                     </label>
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="whatsapp">
                                         <span class="label-text">Whatsapp</span> 
                                     </label>
                                     <label class="cursor-pointer label justify-start">
-                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="">
+                                        <input type="radio" name="source_info" class="radio radio-primary mr-3" value="lainnya">
                                         <span class="label-text mr-3">Lainnya: </span>
-                                        <input type="text" class="input input-primary input-bordered w-full">
+                                        <input type="text" name="lainnya" class="input input-primary input-bordered w-full">
                                     </label>
                                 </div>
 							</div>
@@ -365,7 +374,7 @@
                                         <span class="block text-sm font-medium text-gray-700">Bukti tranfer</span>
                                     </label> 
                                     <div class="relative">
-                                        <input name="payment_slip" class="block w-full overflow-hidden cursor-pointer bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:text-sm rounded-lg block w-full" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                        <input type="file" name="payment_slip" class="block w-full overflow-hidden cursor-pointer bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:text-sm rounded-lg block w-full">
                                     </div>
                                     <label class="label error">
                                         <span class="label-text-alt text-red-600"></span>
@@ -379,7 +388,7 @@
                                         <span class="block text-sm font-medium text-gray-700">Jangka pendaftaran</span>
                                     </label> 
                                     <select name="registration_period" class="select select-bordered select-primary w-full">
-                                        <option disabled selected="selected">Pilih jangka pendaftaran</option> 
+                                        <option selected="selected" value="">Pilih jangka pendaftaran</option> 
                                         <option>1 bulan</option>
                                         <option>2 bulan</option>
                                         <option>3 bulan</option>
@@ -407,7 +416,7 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nama Bank</span>
                                     </label> 
-                                    <input type="bank_name" class="input input-primary input-bordered">
+                                    <input type="text" name="bank_name" class="input input-primary input-bordered">
                                     <label class="label error">
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
@@ -419,7 +428,7 @@
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nominal</span>
                                     </label> 
-                                    <input name="nominal" type="text" class="input input-primary input-bordered">
+                                    <input type="text" name="nominal" class="input input-primary input-bordered">
                                     <label class="label error">
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>

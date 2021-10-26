@@ -26747,30 +26747,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
 
 
- // Register datepicker
+ // Set validator language
+
+validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a.useLang('id'); // Register datepicker
 
 var datepickerEl = document.getElementById('tanggal_lahir');
-new _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl, {});
-var register = $('#register');
-var card = register.find('.card');
+new _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl, {}); // Next register steps
+
+var card = $('#register').find('.card');
 var steps = $('.steps');
 var step = steps.find('.step');
 var current = 0;
 
 var nextStep = function nextStep() {
-  $(card[current]).find('.next').on('click', function (e) {
-    e.preventDefault();
-    current += 1;
-    $(card[current]).addClass('show');
-    $(card[current - 1]).removeClass('show'); // Activate steps
+  current++;
+  $(card[current]).addClass('show');
+  $(card[current - 1]).removeClass('show'); // Activate steps
 
-    $(step[current]).addClass('step-primary'); // Run the function again after change the card
+  $(step[current]).addClass('step-primary');
+}; // Multiple form of student
 
-    nextStep();
-  });
-};
-
-nextStep(); // Multiple form of student
 
 var cloneStudentForm = function cloneStudentForm() {
   $('select[name=total_student]').on('change', function () {
@@ -26785,7 +26781,7 @@ var cloneStudentForm = function cloneStudentForm() {
   });
 };
 
-cloneStudentForm(); // Validation
+cloneStudentForm(); // Typing validation
 
 var typingValidation = function typingValidation(targetElement, rulesParam, errorMessage) {
   var formData = $("".concat(targetElement, " form")).serializeArray();
@@ -26854,7 +26850,7 @@ typingValidation('#student', {
   nickname: 'required',
   date_birth: 'required',
   gender: 'required',
-  phone_number: 'required:numeric',
+  phone_number: 'required|numeric',
   instagram: 'required',
   facebook: 'required'
 }, {
@@ -26888,6 +26884,115 @@ typingValidation('#payment', {
   "required.note": "Catatan wajib dipilih",
   "required.bank_name": "Nama bank wajib dipilih",
   "required.nominal": "Nominal wajib dipilih"
+}); // Submit validation
+
+var submitValidation = function submitValidation(targetElement, rulesParam, errorMessage) {
+  // let formData = $(`${targetElement} form`).serializeArray();
+  $("".concat(targetElement, " .btn")).on('click', function () {
+    var formData = $("".concat(targetElement, " form")).serializeArray();
+    var error_message = {};
+    var rules = {};
+    var data = {};
+
+    if (formData.length > 0) {
+      formData.forEach(function (val) {
+        data[val.name] = val.value;
+      });
+    }
+
+    if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(rulesParam)) {
+      rules = rulesParam;
+    }
+
+    if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(errorMessage)) {
+      error_message = errorMessage;
+    }
+
+    var validation = new validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a(data, rules, error_message);
+    validation.checkAsync();
+
+    for (var key in validation.input) {
+      $("input[name=".concat(key, "], select[name=").concat(key, "], textarea[name=").concat(key, "]")).closest('.form-control').find('.error .label-text-alt').text('');
+    }
+
+    if (validation.fails()) {
+      for (var _key in validation.errors.errors) {
+        $("input[name=".concat(_key, "], select[name=").concat(_key, "], textarea[name=").concat(_key, "]")).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(_key));
+      }
+    }
+
+    if (validation.passes()) {
+      nextStep();
+    }
+
+    console.log('validation ==> ', validation);
+  });
+};
+
+submitValidation('#account-info', {
+  name: 'required',
+  email: 'required|email',
+  phone: 'required|numeric',
+  password: 'required',
+  confirm_password: 'required|same:password'
+}, {
+  "required.name": "Nama Orang tua/wali wajib diisi",
+  "required.email": "Email wajib diisi",
+  "email.email": "Format email tidak valid",
+  "required.phone": "Nomor telefon wajib diisi",
+  "numeric.phone": "Nomor telefon harus berupa angka",
+  "required.password": "Kata sandi wajib diisi",
+  "required.confirm_password": "Konfirmasi password wajib diisi",
+  "same.confirm_password": "Konfirmasi password dan password harus sama"
+});
+submitValidation('#address', {
+  province: 'required',
+  city: 'required',
+  district: 'required'
+}, {
+  "required.province": "Provinsi wajib dipilih",
+  "required.city": "Kabupaten/kota wajib dipilih",
+  "required.district": "Kecamatan/desa wajib dipilih"
+});
+submitValidation('#student', {
+  full_name: 'required',
+  nickname: 'required',
+  date_birth: 'required',
+  gender: 'required',
+  phone_number: 'required:numeric',
+  instagram: 'required',
+  facebook: 'required'
+}, {
+  "required.full_name": "Nama lengkap wajib diisi",
+  "required.nickname": "Nama panggilan wajib diisi",
+  "required.date_birth": "Tanggal lahir wajib diisi",
+  "required.gender": "Jenis kelamin wajib dipilih",
+  "required.phone_number": "No whatsapp wajib diisi",
+  "numeric.phone_number": "No whatsapp harus berupa angka",
+  "required.instagram": "Instagram wajib diisi",
+  "required.facebook": "Facebook wajib diisi"
+});
+submitValidation('#survey', {
+  motivation: 'required',
+  source_info: 'required',
+  publish: 'required'
+}, {
+  "required.motivation": "Motivasi wajib diisi",
+  "required.source_info": "Sumber informasi wajib dipilih",
+  "required.publish": "Posting wajib dipilih"
+});
+submitValidation('#payment', {
+  payment_slip: 'required',
+  registration_period: 'required',
+  note: 'required',
+  bank_name: 'required',
+  nominal: 'required'
+}, {
+  "required.payment_slip": "Bukti transfer wajib diisi",
+  "required.registration_period": "Jangka pendataran wajib dipilih",
+  "required.note": "Catatan wajib diisi",
+  "required.bank_name": "Nama bank wajib diisi",
+  "required.nominal": "Nominal wajib diisi"
 });
 
 /***/ }),
