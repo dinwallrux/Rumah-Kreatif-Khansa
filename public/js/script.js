@@ -26833,8 +26833,8 @@ typingValidation('#account-info', {
   "required.phone": "Nomor telefon wajib diisi",
   "numeric.phone": "Nomor telefon harus berupa angka",
   "required.password": "Kata sandi wajib diisi",
-  "required.confirm_password": "Konfirmasi password wajib diisi",
-  "same.confirm_password": "Konfirmasi password dan password harus sama"
+  "required.confirm_password": "Konfirmasi kata sandi wajib diisi",
+  "same.confirm_password": "Konfirmasi kata sandi tidak sama"
 });
 typingValidation('#address', {
   province: 'required',
@@ -26940,8 +26940,8 @@ submitValidation('#account-info', {
   "required.phone": "Nomor telefon wajib diisi",
   "numeric.phone": "Nomor telefon harus berupa angka",
   "required.password": "Kata sandi wajib diisi",
-  "required.confirm_password": "Konfirmasi password wajib diisi",
-  "same.confirm_password": "Konfirmasi password dan password harus sama"
+  "required.confirm_password": "Konfirmasi kata sandi wajib diisi",
+  "same.confirm_password": "Konfirmasi kata sandi tidak sama"
 });
 submitValidation('#address', {
   province: 'required',
@@ -26980,13 +26980,11 @@ submitValidation('#survey', {
   "required.publish": "Posting wajib dipilih"
 });
 submitValidation('#payment', {
-  payment_slip: 'required',
   registration_period: 'required',
   note: 'required',
   bank_name: 'required',
   nominal: 'required'
 }, {
-  "required.payment_slip": "Bukti transfer wajib diisi",
   "required.registration_period": "Jangka pendataran wajib dipilih",
   "required.note": "Catatan wajib diisi",
   "required.bank_name": "Nama bank wajib diisi",
