@@ -149,7 +149,8 @@
 						</div>
                     </div>
                 </form>
-                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
+                    <button class="back btn btn-outline btn-accent">Kembali</button>
                     <button class="next btn btn-primary">Lanjut</button>
                 </div>
             </div>
@@ -285,7 +286,8 @@
 
                     </div>
                 </form>
-                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
+                    <button class="back btn btn-outline btn-accent">Kembali</button>
                     <button class="next btn btn-primary">Lanjut</button>
                 </div>
             </div>
@@ -353,7 +355,8 @@
 						</div>
                     </div>
                 </form>
-                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
+                    <button class="back btn btn-outline btn-accent">Kembali</button>
                     <button class="next btn btn-primary">Lanjut</button>
                 </div>
             </div>
@@ -439,7 +442,8 @@
 
                     </div>
                 </form>
-                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
+                    <button class="back btn btn-outline btn-accent">Kembali</button>
                     <button id="submit-register" class="btn btn-primary">Daftar</button>
                 </div>
             </div>

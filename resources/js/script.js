@@ -25,6 +25,26 @@ let nextStep = () => {
     $(step[current]).addClass('step-primary');
 }
 
+let backStep = () => {
+    current--;
+    $(card[current]).addClass('show');
+    $(card[current+1]).removeClass('show');
+    
+    // Activate steps
+    $(step[current+1]).removeClass('step-primary');
+}
+
+let backStepAction = () => {
+    $(card[current+1]).find('.back').on('click', (e) => {
+        e.preventDefault()
+        // Re-run function
+        backStepAction()
+        
+        backStep()
+    })
+}
+backStepAction()
+
 // Multiple form of student
 let cloneStudentForm = () => {
     $('select[name=total_student]').on('change', () => {
@@ -150,7 +170,7 @@ typingValidation('#payment', {
 let submitValidation = (targetElement, rulesParam, errorMessage) => {
     // let formData = $(`${targetElement} form`).serializeArray();
 
-    $(`${targetElement} .btn`).on('click', () => {
+    $(`${targetElement} .btn.btn-primary`).on('click', () => {
         let formData = $(`${targetElement} form`).serializeArray();
         let error_message = {}
         let rules = {}

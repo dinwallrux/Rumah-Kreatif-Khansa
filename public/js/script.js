@@ -26765,8 +26765,26 @@ var nextStep = function nextStep() {
   $(card[current - 1]).removeClass('show'); // Activate steps
 
   $(step[current]).addClass('step-primary');
-}; // Multiple form of student
+};
 
+var backStep = function backStep() {
+  current--;
+  $(card[current]).addClass('show');
+  $(card[current + 1]).removeClass('show'); // Activate steps
+
+  $(step[current + 1]).removeClass('step-primary');
+};
+
+var backStepAction = function backStepAction() {
+  $(card[current + 1]).find('.back').on('click', function (e) {
+    e.preventDefault(); // Re-run function
+
+    backStepAction();
+    backStep();
+  });
+};
+
+backStepAction(); // Multiple form of student
 
 var cloneStudentForm = function cloneStudentForm() {
   $('select[name=total_student]').on('change', function () {
@@ -26888,7 +26906,7 @@ typingValidation('#payment', {
 
 var submitValidation = function submitValidation(targetElement, rulesParam, errorMessage) {
   // let formData = $(`${targetElement} form`).serializeArray();
-  $("".concat(targetElement, " .btn")).on('click', function () {
+  $("".concat(targetElement, " .btn.btn-primary")).on('click', function () {
     var formData = $("".concat(targetElement, " form")).serializeArray();
     var error_message = {};
     var rules = {};
