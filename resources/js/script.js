@@ -35,11 +35,8 @@ let backStep = () => {
 }
 
 let backStepAction = () => {
-    $(card[current+1]).find('.back').on('click', (e) => {
+    $(card).find('.back').on('click', (e) => {
         e.preventDefault()
-        // Re-run function
-        backStepAction()
-        
         backStep()
     })
 }
@@ -97,72 +94,72 @@ let typingValidation = (targetElement, rulesParam, errorMessage) => {
 }
 
 typingValidation('#account-info', {
-    name: 'required',
+    nama_orang_tua: 'required',
     email: 'required|email',
-    phone: 'required|numeric',
-    password: 'required',
-    confirm_password: 'required|same:password'
+    no_whatsapp_orang_tua: 'required|numeric',
+    kata_sandi: 'required',
+    konfirmasi_kata_sandi: 'required|same:kata_sandi'
 }, {
-    "required.name": "Nama Orang tua/wali wajib diisi",
+    "required.nama_orang_tua": "Nama Orang tua/wali wajib diisi",
     "required.email": "Email wajib diisi",
     "email.email": "Format email tidak valid",
-    "required.phone": "Nomor telefon wajib diisi",
-    "numeric.phone": "Nomor telefon harus berupa angka",
-    "required.password": "Kata sandi wajib diisi",
-    "required.confirm_password": "Konfirmasi kata sandi wajib diisi",
-    "same.confirm_password": "Konfirmasi kata sandi tidak sama"
+    "required.no_whatsapp_orang_tua": "Nomor telefon wajib diisi",
+    "numeric.no_whatsapp_orang_tua": "Nomor telefon harus berupa angka",
+    "required.kata_sandi": "Kata sandi wajib diisi",
+    "required.konfirmasi_kata_sandi": "Konfirmasi kata sandi wajib diisi",
+    "same.konfirmasi_kata_sandi": "Konfirmasi kata sandi tidak sama"
 });
 
 typingValidation('#address', {
-    province: 'required',
-    city: 'required',
-    district: 'required'
+    provinsi: 'required',
+    kota: 'required',
+    kecamatan: 'required'
 }, {
-    "required.province": "Provinsi wajib dipilih",
-    "required.city": "Kabupaten/kota wajib dipilih",
-    "required.district": "Kecamatan/desa wajib dipilih"
+    "required.provinsi": "Provinsi wajib dipilih",
+    "required.kota": "Kabupaten/kota wajib dipilih",
+    "required.kecamatan": "Kecamatan/desa wajib dipilih"
 });
 
 typingValidation('#student', {
-    full_name: 'required',
-    nickname: 'required',
-    date_birth: 'required',
-    gender: 'required',
-    phone_number: 'required|numeric',
+    nama_lengkap_anak: 'required',
+    nama_panggilan_anak: 'required',
+    tanggal_lahir: 'required',
+    jenis_kelamin: 'required',
+    no_whatsapp_anak: 'required|numeric',
     instagram: 'required',
     facebook: 'required'
 }, {
-    "required.full_name": "Nama lengkap wajib dipilih",
-    "required.nickname": "Nama panggilan wajib dipilih",
-    "required.date_birth": "Tanggal lahir wajib dipilih",
-    "required.gender": "Jenis kelamin wajib dipilih",
-    "required.phone_number": "No whatsapp wajib dipilih",
-    "numeric.phone_number": "No whatsapp harus berupa angka",
+    "required.nama_lengkap_anak": "Nama lengkap wajib dipilih",
+    "required.nama_panggilan_anak": "Nama panggilan wajib dipilih",
+    "required.tanggal_lahir": "Tanggal lahir wajib dipilih",
+    "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
+    "required.no_whatsapp_anak": "No whatsapp wajib dipilih",
+    "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
     "required.instagram": "Instagram wajib dipilih",
     "required.facebook": "Facebook wajib dipilih"
 });
 
 typingValidation('#survey', {
-    motivation: 'required',
-    source_info: 'required',
-    publish: 'required'
+    motivasi: 'required',
+    sumber_info: 'required',
+    posting_hasil_karya: 'required'
 }, {
-    "required.motivation": "Motivasi wajib dipilih",
-    "required.source_info": "Sumber informasi wajib dipilih",
-    "required.publish": "Posting wajib dipilih"
+    "required.motivasi": "Motivasi wajib dipilih",
+    "required.sumber_info": "Sumber informasi wajib dipilih",
+    "required.posting_hasil_karya": "Posting wajib dipilih"
 });
 
 typingValidation('#payment', {
-    payment_slip: 'required',
-    registration_period: 'required',
-    note: 'required',
-    bank_name: 'required',
+    bukti_pembayaran: 'required',
+    jangka_pendaftaran: 'required',
+    catatan: 'required',
+    nama_bank: 'required',
     nominal: 'required'
 }, {
-    "required.payment_slip": "Bukti transfer wajib dipilih",
-    "required.registration_period": "Jangka pendataran wajib dipilih",
-    "required.note": "Catatan wajib dipilih",
-    "required.bank_name": "Nama bank wajib dipilih",
+    "required.bukti_pembayaran": "Bukti transfer wajib dipilih",
+    "required.jangka_pendaftaran": "Jangka pendataran wajib dipilih",
+    "required.catatan": "Catatan wajib dipilih",
+    "required.nama_bank": "Nama bank wajib dipilih",
     "required.nominal": "Nominal wajib dipilih"
 });
 
@@ -183,10 +180,10 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
         }
 
         // add payment slip to variable data in manually
-        let paymentSlip = $('input[name=payment_slip]')
+        let paymentSlip = $('input[name=bukti_pembayaran]')
         let paymentSlipValue = paymentSlip.val();
         if (paymentSlip.length) {
-            data['payment_slip'] = paymentSlipValue
+            data['bukti_pembayaran'] = paymentSlipValue
         }
         
         if (!_.isEmpty(rulesParam)) {
@@ -211,7 +208,7 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
 
         if(validation.passes())  {
             if (current === 4) {
-                return;
+                return
             }
             nextStep()
         }
@@ -219,71 +216,71 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
 }
 
 submitValidation('#account-info', {
-    name: 'required',
+    nama_orang_tua: 'required',
     email: 'required|email',
-    phone: 'required|numeric',
-    password: 'required',
-    confirm_password: 'required|same:password'
+    no_whatsapp_orang_tua: 'required|numeric',
+    kata_sandi: 'required',
+    konfirmasi_kata_sandi: 'required|same:kata_sandi'
 }, {
-    "required.name": "Nama Orang tua/wali wajib diisi",
+    "required.nama_orang_tua": "Nama Orang tua/wali wajib diisi",
     "required.email": "Email wajib diisi",
     "email.email": "Format email tidak valid",
-    "required.phone": "Nomor telefon wajib diisi",
-    "numeric.phone": "Nomor telefon harus berupa angka",
-    "required.password": "Kata sandi wajib diisi",
-    "required.confirm_password": "Konfirmasi kata sandi wajib diisi",
-    "same.confirm_password": "Konfirmasi kata sandi tidak sama"
+    "required.no_whatsapp_orang_tua": "Nomor telefon wajib diisi",
+    "numeric.no_whatsapp_orang_tua": "Nomor telefon harus berupa angka",
+    "required.kata_sandi": "Kata sandi wajib diisi",
+    "required.konfirmasi_kata_sandi": "Konfirmasi kata sandi wajib diisi",
+    "same.konfirmasi_kata_sandi": "Konfirmasi kata sandi tidak sama"
 });
 
 submitValidation('#address', {
-    province: 'required',
-    city: 'required',
-    district: 'required'
+    provinsi: 'required',
+    kota: 'required',
+    kecamatan: 'required'
 }, {
-    "required.province": "Provinsi wajib dipilih",
-    "required.city": "Kabupaten/kota wajib dipilih",
-    "required.district": "Kecamatan/desa wajib dipilih"
+    "required.provinsi": "Provinsi wajib dipilih",
+    "required.kota": "Kabupaten/kota wajib dipilih",
+    "required.kecamatan": "Kecamatan/desa wajib dipilih"
 });
 
 submitValidation('#student', {
-    full_name: 'required',
-    nickname: 'required',
-    date_birth: 'required',
-    gender: 'required',
-    phone_number: 'required:numeric',
+    nama_lengkap_anak: 'required',
+    nama_panggilan_anak: 'required',
+    tanggal_lahir: 'required',
+    jenis_kelamin: 'required',
+    no_whatsapp_anak: 'required:numeric',
     instagram: 'required',
     facebook: 'required'
 }, {
-    "required.full_name": "Nama lengkap wajib diisi",
-    "required.nickname": "Nama panggilan wajib diisi",
-    "required.date_birth": "Tanggal lahir wajib diisi",
-    "required.gender": "Jenis kelamin wajib dipilih",
-    "required.phone_number": "No whatsapp wajib diisi",
-    "numeric.phone_number": "No whatsapp harus berupa angka",
+    "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
+    "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
+    "required.tanggal_lahir": "Tanggal lahir wajib diisi",
+    "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
+    "required.no_whatsapp_anak": "No whatsapp wajib diisi",
+    "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
     "required.instagram": "Instagram wajib diisi",
     "required.facebook": "Facebook wajib diisi"
 });
 
 submitValidation('#survey', {
-    motivation: 'required',
-    source_info: 'required',
-    publish: 'required'
+    motivasi: 'required',
+    sumber_info: 'required',
+    posting_hasil_karya: 'required'
 }, {
-    "required.motivation": "Motivasi wajib diisi",
-    "required.source_info": "Sumber informasi wajib dipilih",
-    "required.publish": "Posting wajib dipilih"
+    "required.motivasi": "Motivasi wajib diisi",
+    "required.sumber_info": "Sumber informasi wajib dipilih",
+    "required.posting_hasil_karya": "Posting wajib dipilih"
 });
 
 submitValidation('#payment', {
-    payment_slip: 'required',
-    registration_period: 'required',
-    note: 'required',
-    bank_name: 'required',
+    bukti_pembayaran: 'required',
+    jangka_pendaftaran: 'required',
+    catatan: 'required',
+    nama_bank: 'required',
     nominal: 'required'
 }, {
-    "required.payment_slip": "Bukti transfer wajib diisi",
-    "required.registration_period": "Jangka pendataran wajib dipilih",
-    "required.note": "Catatan wajib diisi",
-    "required.bank_name": "Nama bank wajib diisi",
+    "required.bukti_pembayaran": "Bukti transfer wajib diisi",
+    "required.jangka_pendaftaran": "Jangka pendataran wajib dipilih",
+    "required.catatan": "Catatan wajib diisi",
+    "required.nama_bank": "Nama bank wajib diisi",
     "required.nominal": "Nominal wajib diisi"
 });
