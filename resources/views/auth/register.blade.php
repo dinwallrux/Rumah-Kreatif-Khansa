@@ -440,7 +440,7 @@
                     </div>
                 </form>
                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                    <button class="btn btn-primary">Daftar</button>
+                    <button id="submit-register" class="btn btn-primary">Daftar</button>
                 </div>
             </div>
 		</div>

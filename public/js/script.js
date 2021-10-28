@@ -26898,6 +26898,14 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
       formData.forEach(function (val) {
         data[val.name] = val.value;
       });
+    } // add payment slip to variable data in manually
+
+
+    var paymentSlip = $('input[name=payment_slip]');
+    var paymentSlipValue = paymentSlip.val();
+
+    if (paymentSlip.length) {
+      data['payment_slip'] = paymentSlipValue;
     }
 
     if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(rulesParam)) {
@@ -26922,6 +26930,10 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
     }
 
     if (validation.passes()) {
+      if (current === 4) {
+        return;
+      }
+
       nextStep();
     }
   });
@@ -26980,11 +26992,13 @@ submitValidation('#survey', {
   "required.publish": "Posting wajib dipilih"
 });
 submitValidation('#payment', {
+  payment_slip: 'required',
   registration_period: 'required',
   note: 'required',
   bank_name: 'required',
   nominal: 'required'
 }, {
+  "required.payment_slip": "Bukti transfer wajib diisi",
   "required.registration_period": "Jangka pendataran wajib dipilih",
   "required.note": "Catatan wajib diisi",
   "required.bank_name": "Nama bank wajib diisi",

@@ -161,6 +161,13 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
                 data[val.name] = val.value;
             });
         }
+
+        // add payment slip to variable data in manually
+        let paymentSlip = $('input[name=payment_slip]')
+        let paymentSlipValue = paymentSlip.val();
+        if (paymentSlip.length) {
+            data['payment_slip'] = paymentSlipValue
+        }
         
         if (!_.isEmpty(rulesParam)) {
             rules = rulesParam
@@ -183,6 +190,9 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
         }
 
         if(validation.passes())  {
+            if (current === 4) {
+                return;
+            }
             nextStep()
         }
     })
@@ -245,11 +255,13 @@ submitValidation('#survey', {
 });
 
 submitValidation('#payment', {
+    payment_slip: 'required',
     registration_period: 'required',
     note: 'required',
     bank_name: 'required',
     nominal: 'required'
 }, {
+    "required.payment_slip": "Bukti transfer wajib diisi",
     "required.registration_period": "Jangka pendataran wajib dipilih",
     "required.note": "Catatan wajib diisi",
     "required.bank_name": "Nama bank wajib diisi",
