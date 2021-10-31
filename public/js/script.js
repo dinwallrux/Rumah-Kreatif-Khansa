@@ -26751,8 +26751,12 @@ __webpack_require__.r(__webpack_exports__);
 
 validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a.useLang('id'); // Register datepicker
 
-var datepickerEl = document.getElementById('tanggal_lahir');
-new _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl, {}); // Next register steps
+var registerDatePicker = function registerDatePicker(targetElement) {
+  var datepickerEl1 = targetElement.find('#tanggal_lahir')[0];
+  new _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl1, {});
+};
+
+registerDatePicker($('#studentForm1')); // Next register steps
 
 var card = $('#register').find('.card');
 var steps = $('.steps');
@@ -26784,20 +26788,35 @@ var backStepAction = function backStepAction() {
 
 backStepAction(); // Multiple form of student
 
-var cloneStudentForm = function cloneStudentForm() {
+var cloneStudentForm = function cloneStudentForm(cb) {
   $('select[name=total_student]').on('change', function () {
     // Remove student form except the first one
     $(".student-form").not(":eq(0)").remove();
     var totalStudent = $('select[name=total_student]').val();
-    var cloneIndex = $('.student-form').length + 1;
 
     for (var i = 1; i < totalStudent; i++) {
       $('.student-form').first().clone().appendTo('.wrapper-form').attr('id', 'studentForm' + (i + 1));
-    }
-  });
-};
+      var studentForm = $("#studentForm".concat(i + 1));
+      var fields = studentForm.find('input, select'); // Register datepicker to tanggal lahir in form 2 & 3
 
-cloneStudentForm(); // Typing validation
+      registerDatePicker(studentForm);
+
+      for (var a = 0; a < fields.length; a++) {
+        // Remove value of the field while clonning form
+        studentForm.find('input').val(''); // Remove error text while clonning form
+
+        studentForm.find('.error .label-text-alt').text(''); // Rename attr name of the field after clonning form
+
+        var nameAttr = $(fields[a]).attr('name');
+        $(fields[a]).attr('name', nameAttr + (i + 1));
+      }
+    } // re-run function validation typing while jumlah anak is change
+
+
+    cb();
+  });
+}; // Typing validation
+
 
 var typingValidation = function typingValidation(targetElement, rulesParam, errorMessage) {
   var formData = $("".concat(targetElement, " form")).serializeArray();
@@ -26815,7 +26834,15 @@ var typingValidation = function typingValidation(targetElement, rulesParam, erro
       }
 
       if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(rulesParam)) {
-        rules = rulesParam;
+        var filterRules = [];
+        var listFields = $("".concat(targetElement, " form")).find('input, textarea, select');
+
+        for (var i = 0; i < listFields.length; i++) {
+          var nameField = $(listFields[i]).attr('name');
+          filterRules.push(nameField);
+        }
+
+        rules = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.pick(rulesParam, filterRules);
       }
 
       if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(errorMessage)) {
@@ -26866,18 +26893,98 @@ typingValidation('#student', {
   nama_panggilan_anak: 'required',
   tanggal_lahir: 'required',
   jenis_kelamin: 'required',
-  no_whatsapp_anak: 'required|numeric',
+  no_whatsapp_anak: 'required:numeric',
   instagram: 'required',
-  facebook: 'required'
+  facebook: 'required',
+  nama_lengkap_anak2: 'required',
+  nama_panggilan_anak2: 'required',
+  tanggal_lahir2: 'required',
+  jenis_kelamin2: 'required',
+  no_whatsapp_anak2: 'required:numeric',
+  instagram2: 'required',
+  facebook2: 'required',
+  nama_lengkap_anak3: 'required',
+  nama_panggilan_anak3: 'required',
+  tanggal_lahir3: 'required',
+  jenis_kelamin3: 'required',
+  no_whatsapp_anak3: 'required:numeric',
+  instagram3: 'required',
+  facebook3: 'required'
 }, {
-  "required.nama_lengkap_anak": "Nama lengkap wajib dipilih",
-  "required.nama_panggilan_anak": "Nama panggilan wajib dipilih",
-  "required.tanggal_lahir": "Tanggal lahir wajib dipilih",
+  "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
+  "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
+  "required.tanggal_lahir": "Tanggal lahir wajib diisi",
   "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
-  "required.no_whatsapp_anak": "No whatsapp wajib dipilih",
+  "required.no_whatsapp_anak": "No whatsapp wajib diisi",
   "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
-  "required.instagram": "Instagram wajib dipilih",
-  "required.facebook": "Facebook wajib dipilih"
+  "required.instagram": "Instagram wajib diisi",
+  "required.facebook": "Facebook wajib diisi",
+  "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
+  "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
+  "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
+  "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
+  "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
+  "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
+  "required.instagram2": "Instagram wajib diisi",
+  "required.facebook2": "Facebook wajib diisi",
+  "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
+  "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
+  "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
+  "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
+  "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
+  "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
+  "required.instagram3": "Instagram wajib diisi",
+  "required.facebook3": "Facebook wajib diisi"
+});
+cloneStudentForm(function () {
+  typingValidation('#student', {
+    nama_lengkap_anak: 'required',
+    nama_panggilan_anak: 'required',
+    tanggal_lahir: 'required',
+    jenis_kelamin: 'required',
+    no_whatsapp_anak: 'required:numeric',
+    instagram: 'required',
+    facebook: 'required',
+    nama_lengkap_anak2: 'required',
+    nama_panggilan_anak2: 'required',
+    tanggal_lahir2: 'required',
+    jenis_kelamin2: 'required',
+    no_whatsapp_anak2: 'required:numeric',
+    instagram2: 'required',
+    facebook2: 'required',
+    nama_lengkap_anak3: 'required',
+    nama_panggilan_anak3: 'required',
+    tanggal_lahir3: 'required',
+    jenis_kelamin3: 'required',
+    no_whatsapp_anak3: 'required:numeric',
+    instagram3: 'required',
+    facebook3: 'required'
+  }, {
+    "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
+    "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
+    "required.tanggal_lahir": "Tanggal lahir wajib diisi",
+    "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
+    "required.no_whatsapp_anak": "No whatsapp wajib diisi",
+    "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
+    "required.instagram": "Instagram wajib diisi",
+    "required.facebook": "Facebook wajib diisi",
+    "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
+    "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
+    "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
+    "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
+    "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
+    "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
+    "required.instagram2": "Instagram wajib diisi",
+    "required.facebook2": "Facebook wajib diisi",
+    "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
+    "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
+    "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
+    "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
+    "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
+    "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
+    "required.instagram3": "Instagram wajib diisi",
+    "required.facebook3": "Facebook wajib diisi"
+  });
 });
 typingValidation('#survey', {
   motivasi: 'required',
@@ -26925,7 +27032,15 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
     }
 
     if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(rulesParam)) {
-      rules = rulesParam;
+      var filterRules = [];
+      var listFields = $("".concat(targetElement, " form")).find('input, textarea, select');
+
+      for (var i = 0; i < listFields.length; i++) {
+        var nameField = $(listFields[i]).attr('name');
+        filterRules.push(nameField);
+      }
+
+      rules = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.pick(rulesParam, filterRules);
     }
 
     if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(errorMessage)) {
@@ -26934,6 +27049,7 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
 
     var validation = new validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a(data, rules, error_message);
     validation.checkAsync();
+    console.log('fails ==> ', validation); // remove error text
 
     for (var key in validation.input) {
       $("input[name=".concat(key, "], select[name=").concat(key, "], textarea[name=").concat(key, "]")).closest('.form-control').find('.error .label-text-alt').text('');
@@ -26987,7 +27103,21 @@ submitValidation('#student', {
   jenis_kelamin: 'required',
   no_whatsapp_anak: 'required:numeric',
   instagram: 'required',
-  facebook: 'required'
+  facebook: 'required',
+  nama_lengkap_anak2: 'required',
+  nama_panggilan_anak2: 'required',
+  tanggal_lahir2: 'required',
+  jenis_kelamin2: 'required',
+  no_whatsapp_anak2: 'required:numeric',
+  instagram2: 'required',
+  facebook2: 'required',
+  nama_lengkap_anak3: 'required',
+  nama_panggilan_anak3: 'required',
+  tanggal_lahir3: 'required',
+  jenis_kelamin3: 'required',
+  no_whatsapp_anak3: 'required:numeric',
+  instagram3: 'required',
+  facebook3: 'required'
 }, {
   "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
   "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
@@ -26996,7 +27126,23 @@ submitValidation('#student', {
   "required.no_whatsapp_anak": "No whatsapp wajib diisi",
   "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
   "required.instagram": "Instagram wajib diisi",
-  "required.facebook": "Facebook wajib diisi"
+  "required.facebook": "Facebook wajib diisi",
+  "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
+  "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
+  "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
+  "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
+  "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
+  "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
+  "required.instagram2": "Instagram wajib diisi",
+  "required.facebook2": "Facebook wajib diisi",
+  "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
+  "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
+  "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
+  "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
+  "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
+  "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
+  "required.instagram3": "Instagram wajib diisi",
+  "required.facebook3": "Facebook wajib diisi"
 });
 submitValidation('#survey', {
   motivasi: 'required',
