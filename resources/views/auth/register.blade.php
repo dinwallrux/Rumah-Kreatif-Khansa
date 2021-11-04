@@ -16,12 +16,12 @@
         </ul>
     </div>
 
-	<div id="account-info" class="show card md:grid md:grid-cols-2 md:gap-6">
-		<div class="mt-5 md:mt-0 md:col-span-2">
+    <div id="account-info" class="show card md:grid md:grid-cols-2 md:gap-6">
+        <div class="mt-5 md:mt-0 md:col-span-2">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <form action="#" method="POST">
                     <div class="px-4 py-5 bg-white sm:p-6">
-						<div class="grid grid-cols-6 gap-6">
+                        <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-3">
                                 <div class="form-control">
                                     <label class="label">
@@ -33,8 +33,8 @@
                                     </label>
                                 </div>
                             </div> 
-							<div class="col-span-6 sm:col-span-3">
-								<div class="form-control">
+                            <div class="col-span-6 sm:col-span-3">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Email</span>
                                     </label> 
@@ -43,10 +43,10 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
-							<div class="col-span-6">
-								<div class="form-control">
+                            <div class="col-span-6">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">No Whatsapp</span>
                                     </label> 
@@ -55,7 +55,7 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
                             <div class="col-span-6 sm:col-span-3">
                                 <div class="form-control">
@@ -68,8 +68,8 @@
                                     </label>
                                 </div>
                             </div> 
-							<div class="col-span-6 sm:col-span-3">
-								<div class="form-control">
+                            <div class="col-span-6 sm:col-span-3">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Konfirmasi kata sandi</span>
                                     </label> 
@@ -78,23 +78,23 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
-						</div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                    <button class="next btn btn-primary">Lanjut</button>
+                    <button type="button" class="next btn btn-primary">Lanjut</button>
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
     
     <div id="address" class="card md:grid md:grid-cols-2 md:gap-6">
-		<div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="mt-5 md:mt-0 md:col-span-2">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <form action="#" method="POST">
                     <div class="px-4 py-5 bg-white sm:p-6">
-						<div class="grid grid-cols-6 gap-6">
+                        <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-3">
                                 <div class="form-control">
                                     <label class="label">
@@ -113,8 +113,8 @@
                                     </label>
                                 </div>
                             </div> 
-							<div class="col-span-6 sm:col-span-3">
-								<div class="form-control">
+                            <div class="col-span-6 sm:col-span-3">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Kabupaten/Kota</span>
                                     </label> 
@@ -128,10 +128,10 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
-							<div class="col-span-6">
-								<div class="form-control">
+                            <div class="col-span-6">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Kecamatan/Desa</span>
                                     </label> 
@@ -144,26 +144,26 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
-						</div>
+                        </div>
                     </div>
                 </form>
                 <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
-                    <button class="back btn btn-outline btn-accent">Kembali</button>
-                    <button class="next btn btn-primary">Lanjut</button>
+                    <button type="button" class="back btn btn-outline btn-accent">Kembali</button>
+                    <button type="button" class="next btn btn-primary">Lanjut</button>
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 
     <div id="student" class="card md:grid md:grid-cols-2 md:gap-6">
-		<div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="mt-5 md:mt-0 md:col-span-2">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <form action="#" method="POST">
                     <div class="wrapper-form px-4 py-5 bg-white sm:p-6">
 
-						<div class="grid grid-cols-6 gap-3">
+                        <div class="grid grid-cols-6 gap-3">
 
                             <div class="col-span-6">
                                 <div class="form-control">
@@ -182,11 +182,11 @@
                                 <div class="divider"></div>
                             </div>
 
-						</div>
+                        </div>
 
                         <div id="studentForm1" class="student-form grid grid-cols-6 gap-6">
 
-							<div class="col-span-6 sm:col-span-3">
+                            <div class="col-span-6 sm:col-span-3">
                                 <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nama Lengkap Anak</span>
@@ -197,8 +197,8 @@
                                     </label>
                                 </div>
                             </div> 
-							<div class="col-span-6 sm:col-span-3">
-								<div class="form-control">
+                            <div class="col-span-6 sm:col-span-3">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Nama Panggilan Anak</span>
                                     </label> 
@@ -207,7 +207,7 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
                             {{-- datepicker --}}
                             <div class="col-span-6">
@@ -227,8 +227,8 @@
                                 </div>
                             </div>
 
-							<div class="col-span-6 sm:col-span-3">
-								<div class="form-control">
+                            <div class="col-span-6 sm:col-span-3">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Jenis kelamin</span>
                                     </label> 
@@ -240,7 +240,7 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
                             <div class="col-span-6 sm:col-span-3">
                                 <div class="form-control">
@@ -282,24 +282,24 @@
                                 <div class="divider"></div>
                             </div>
 
-						</div>
+                        </div>
 
                     </div>
                 </form>
                 <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
-                    <button class="back btn btn-outline btn-accent">Kembali</button>
-                    <button class="next btn btn-primary">Lanjut</button>
+                    <button type="button" class="back btn btn-outline btn-accent">Kembali</button>
+                    <button type="button" class="next btn btn-primary">Lanjut</button>
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 
     <div id="survey" class="card md:grid md:grid-cols-2 md:gap-6">
-		<div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="mt-5 md:mt-0 md:col-span-2">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <form action="#" method="POST">
                     <div class="px-4 py-5 bg-white sm:p-6">
-						<div class="grid grid-cols-6 gap-6">
+                        <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6">
                                 <div class="form-control">
                                     <label class="label">
@@ -311,8 +311,8 @@
                                     </label>
                                 </div>
                             </div> 
-							<div class="col-span-6">
-								<div class="form-control">
+                            <div class="col-span-6">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Darimana Ayah/Bunda mengetahui kelas belajar online bersama Rumah Kreatif Khansa?</span>
                                     </label> 
@@ -334,10 +334,10 @@
                                         <input type="text" name="lainnya" class="input input-primary input-bordered w-full">
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
-							<div class="col-span-6">
-								<div class="form-control">
+                            <div class="col-span-6">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Apakah Ayah/Bunda berkenan jika kami memposting hasil karya belajar Ananda di sosial media resmi kami?</span>
                                     </label> 
@@ -350,26 +350,26 @@
                                         <span class="label-text">Tidak</span> 
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
-						</div>
+                        </div>
                     </div>
                 </form>
                 <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
-                    <button class="back btn btn-outline btn-accent">Kembali</button>
-                    <button class="next btn btn-primary">Lanjut</button>
+                    <button type="button" class="back btn btn-outline btn-accent">Kembali</button>
+                    <button type="button" class="next btn btn-primary">Lanjut</button>
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 
     <div id="payment" class="card md:grid md:grid-cols-2 md:gap-6">
-		<div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="mt-5 md:mt-0 md:col-span-2">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <form action="#" method="POST">
                     <div class="px-4 py-5 bg-white sm:p-6">
 
-						<div class="grid grid-cols-6 gap-3">
+                        <div class="grid grid-cols-6 gap-3">
 
                             <div class="col-span-6">
                                 <div class="form-control">
@@ -386,7 +386,7 @@
                             </div>
 
                             <div class="col-span-6">
-								<div class="form-control">
+                                <div class="form-control">
                                     <label class="label">
                                         <span class="block text-sm font-medium text-gray-700">Jangka pendaftaran</span>
                                     </label> 
@@ -400,7 +400,7 @@
                                         <span class="label-text-alt text-red-600"></span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
                             <div class="col-span-6">
                                 <div class="form-control">
@@ -438,16 +438,16 @@
                                 </div>
                             </div>
 
-						</div>
+                        </div>
 
                     </div>
                 </form>
                 <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
-                    <button class="back btn btn-outline btn-accent">Kembali</button>
-                    <button id="submit-register" class="btn btn-primary">Daftar</button>
+                    <button type="button" class="back btn btn-outline btn-accent">Kembali</button>
+                    <button type="submit" id="submit-register" class="btn btn-primary">Daftar</button>
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 @endsection
