@@ -15,7 +15,7 @@ class CreatePembelajaranTable extends Migration
     {
         Schema::create('pembelajaran', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_anak')->nullable()->constrained('anak');
+            $table->foreignId('anak_id')->constrained('anak')->onDelete('cascade');
             $table->string('bulan')->nullable();
             $table->string('tahun')->nullable();
             $table->text('bukti_transfer')->nullable();

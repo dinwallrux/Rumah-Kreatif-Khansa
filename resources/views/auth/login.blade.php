@@ -40,7 +40,7 @@
 
                             <div class="col-span-6">
                                 <p class="text-xs">
-                                    Belum daftar? <a href="{{ route('register') }}" class="link link-primary">daftar sekarang</a>
+                                    Belum daftar? <a href="{{ route('daftar.index') }}" class="link link-primary">daftar sekarang</a>
                                 </p>
                             </div> 
 

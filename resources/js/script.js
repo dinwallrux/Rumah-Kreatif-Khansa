@@ -1,6 +1,7 @@
 import Datepicker from '@themesberg/tailwind-datepicker/js/Datepicker';
 import Validator from 'validatorjs';
-import _ from 'lodash';
+import _, { forEach } from 'lodash';
+import { each } from 'jquery';
 
 // Set validator language
 Validator.useLang('id')
@@ -78,23 +79,27 @@ let cloneStudentForm = (cb) => {
 
 // Typing validation
 let typingValidation = (targetElement, rulesParam, errorMessage) => {
-    let formData = $(`${targetElement} form`).serializeArray();
-    formData.forEach((field) => {
-        $(`input[name=${field.name}], select[name=${field.name}], textarea[name=${field.name}]`).keyup(_.debounce(() => {
-            let formData = $(`${targetElement} form`).serializeArray();
-            let error_message = {}
-            let rules = {}
-            let data = {}
+    let formData = $(`${targetElement} .wrap-form`).find('input, select, textarea')
+    let error_message = {}
+    let rules = {}
+    let data = {}
 
-            if (formData.length > 0) {
-                formData.forEach(val => {
-                    data[val.name] = val.value;
-                });
-            }
+    formData.map((i, field) => {
+        let fieldName = $(field).attr('name')
+
+        // set field name as a key in data variable
+        data[fieldName] = '';
+
+        $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).keyup(_.debounce((e) => {
+            let fieldValue = $(e.target).val()
+            let fieldName = $(field).attr('name')
+
+            // store field value to data variable
+            data[fieldName] = fieldValue;
             
             if (!_.isEmpty(rulesParam)) {
                 let filterRules = []
-                let listFields = $(`${targetElement} form`).find('input, textarea, select')
+                let listFields = $(`${targetElement} .wrap-form`).find('input, textarea, select')
                 for(let i = 0; i < listFields.length; i++) {
                     let nameField = $(listFields[i]).attr('name')
                     filterRules.push(nameField)
@@ -110,9 +115,9 @@ let typingValidation = (targetElement, rulesParam, errorMessage) => {
             validation.passes(); // true
             validation.fails(); // false
         
-            $(`input[name=${field.name}], select[name=${field.name}], textarea[name=${field.name}]`).closest('.form-control').find('.error .label-text-alt').text('')
-            if (validation.errors.first(field.name)) {
-                $(`input[name=${field.name}], select[name=${field.name}], textarea[name=${field.name}]`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name))
+            $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).closest('.form-control').find('.error .label-text-alt').text('')
+            if (validation.errors.first(fieldName)) {
+                $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name))
             }
         }, 700))
     });
@@ -270,19 +275,19 @@ typingValidation('#payment', {
 
 // Submit validation
 let submitValidation = (targetElement, rulesParam, errorMessage) => {
-    // let formData = $(`${targetElement} form`).serializeArray();
+    let error_message = {}
+    let rules = {}
+    let data = {}
 
-    $(`${targetElement} .btn.btn-primary`).on('click', () => {
-        let formData = $(`${targetElement} form`).serializeArray();
-        let error_message = {}
-        let rules = {}
-        let data = {}
+    $(`${targetElement} .btn.btn-primary`).on('click', (e) => {
+        let formData = $(`${targetElement} .wrap-form`).find('input, textarea, select')
 
-        if (formData.length > 0) {
-            formData.forEach(val => {
-                data[val.name] = val.value;
-            });
-        }
+        formData.map((i, field) => {
+            let fieldValue = $(field).val()
+            let fieldName = $(field).attr('name')
+
+            data[fieldName] = fieldValue;
+        });
 
         // add payment slip to variable data in manually
         let paymentSlip = $('input[name=bukti_pembayaran]')
@@ -293,7 +298,7 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
         
         if (!_.isEmpty(rulesParam)) {
             let filterRules = []
-            let listFields = $(`${targetElement} form`).find('input, textarea, select')
+            let listFields = $(`${targetElement} .wrap-form`).find('input, textarea, select')
             for(let i = 0; i < listFields.length; i++) {
                 let nameField = $(listFields[i]).attr('name')
                 filterRules.push(nameField)
@@ -307,14 +312,13 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
     
         let validation = new Validator(data, rules, error_message);
         validation.checkAsync()
-
-        console.log('fails ==> ', validation);
         
         // remove error text
         for (let key in validation.input) {
             $(`input[name=${key}], select[name=${key}], textarea[name=${key}]`).closest('.form-control').find('.error .label-text-alt').text('')
         }
         if (validation.fails()) {
+            e.preventDefault()
             for (let key in validation.errors.errors) {
                 $(`input[name=${key}], select[name=${key}], textarea[name=${key}]`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(key))
             }

@@ -15,7 +15,7 @@ class CreateAnakTable extends Migration
     {
         Schema::create('anak', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_orang_tua')->nullable()->constrained('orang_tua');
+            $table->foreignId('orang_tua_id')->constrained('orang_tua')->onDelete('cascade');
             $table->string('nama_lengkap')->nullable();
             $table->string('nama_panggilan')->nullable();
             $table->string('tanggal_lahir')->nullable();

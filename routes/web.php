@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('front');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/datepicker', 'HomeController@datepicker')->name('datepicker');
+
+Route::resource('daftar', Auth\RegisterController::class)->only([
+    'index', 'store'
+]);
+Route::resource('login', Auth\LoginController::class)->only([
+    'index', 'store'
+]);

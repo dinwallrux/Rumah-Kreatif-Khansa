@@ -15,8 +15,8 @@ class CreateMateriTable extends Migration
     {
         Schema::create('materi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_pembelajaran')->nullable()->constrained('pembelajaran');
-            $table->foreignId('id_guru')->nullable()->constrained('guru');
+            $table->foreignId('pembelajaran_id')->constrained('pembelajaran')->onDelete('cascade');
+            $table->foreignId('guru_id')->constrained('guru')->onDelete('cascade');
             $table->string('bulan')->nullable();
             $table->string('tahun')->nullable();
             $table->timestamps();
