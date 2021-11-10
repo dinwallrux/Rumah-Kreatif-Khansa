@@ -378,7 +378,7 @@
                                     <h2 class="font-medium mb-1" style="width: 600px;">
                                         Lampiran Bukti Transfer
                                     </h2>
-                                    <p class="label-text-alt" style="width: 600px;">
+                                    <p class="label-text-alt mb-3" style="width: 600px;">
                                         Terlampir adalah daftar nomor rekening Rumah Kreatif Khansa. <br><br>
 
                                         Biaya Belajar di Kelas Online Rumah Kreatif Khansa adalah *Rp 30.000,-/anak/bulan*. Ayah dan Bunda silahkan melakukan pembayaran ke salah satu dari nomor rekening yang kami lampirkan. <br><br>
