@@ -37664,7 +37664,9 @@ var nextStep = function nextStep() {
   $(card[current]).addClass('show');
   $(card[current - 1]).removeClass('show'); // Activate steps
 
-  $(step[current]).addClass('step-primary');
+  $(step[current]).addClass('step-primary'); // Add icon check in the last step
+
+  $(step[current - 1]).attr('data-content', '✓');
 };
 
 var backStep = function backStep() {
@@ -37725,7 +37727,12 @@ var typingValidation = function typingValidation(targetElement, rulesParam, erro
     data[fieldName] = '';
     $("input[name=".concat(fieldName, "], select[name=").concat(fieldName, "], textarea[name=").concat(fieldName, "]")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default.a.debounce(function (e) {
       var fieldValue = $(e.target).val();
-      var fieldName = $(field).attr('name'); // store field value to data variable
+      var fieldName = $(field).attr('name');
+
+      if (fieldName === 'no_whatsapp_orang_tua') {
+        $('input[name=no_whatsapp_anak]').val(fieldValue);
+      } // store field value to data variable
+
 
       data[fieldName] = fieldValue;
 

@@ -24,16 +24,19 @@ let nextStep = () => {
     current++;
     $(card[current]).addClass('show');
     $(card[current-1]).removeClass('show');
-    
+
     // Activate steps
     $(step[current]).addClass('step-primary');
+
+    // Add icon check in the last step
+    $(step[current-1]).attr('data-content', '✓');
 }
 
 let backStep = () => {
     current--;
     $(card[current]).addClass('show');
     $(card[current+1]).removeClass('show');
-    
+
     // Activate steps
     $(step[current+1]).removeClass('step-primary');
 }
@@ -94,9 +97,13 @@ let typingValidation = (targetElement, rulesParam, errorMessage) => {
             let fieldValue = $(e.target).val()
             let fieldName = $(field).attr('name')
 
+            if(fieldName === 'no_whatsapp_orang_tua') {
+                $('input[name=no_whatsapp_anak]').val(fieldValue)
+            }
+
             // store field value to data variable
             data[fieldName] = fieldValue;
-            
+
             if (!_.isEmpty(rulesParam)) {
                 let filterRules = []
                 let listFields = $(`${targetElement} .wrap-form`).find('input, textarea, select')
@@ -106,15 +113,15 @@ let typingValidation = (targetElement, rulesParam, errorMessage) => {
                 }
                 rules = _.pick(rulesParam, filterRules)
             }
-        
+
             if (!_.isEmpty(errorMessage)) {
                 error_message = errorMessage
             }
-        
+
             let validation = new Validator(data, rules, error_message);
             validation.passes(); // true
             validation.fails(); // false
-        
+
             $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).closest('.form-control').find('.error .label-text-alt').text('')
             if (validation.errors.first(fieldName)) {
                 $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name))
@@ -295,7 +302,7 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
         if (paymentSlip.length) {
             data['bukti_pembayaran'] = paymentSlipValue
         }
-        
+
         if (!_.isEmpty(rulesParam)) {
             let filterRules = []
             let listFields = $(`${targetElement} .wrap-form`).find('input, textarea, select')
@@ -305,14 +312,14 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
             }
             rules = _.pick(rulesParam, filterRules)
         }
-    
+
         if (!_.isEmpty(errorMessage)) {
             error_message = errorMessage
         }
-    
+
         let validation = new Validator(data, rules, error_message);
         validation.checkAsync()
-        
+
         // remove error text
         for (let key in validation.input) {
             $(`input[name=${key}], select[name=${key}], textarea[name=${key}]`).closest('.form-control').find('.error .label-text-alt').text('')
