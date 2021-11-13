@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -25,6 +27,29 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $loginData = $request->validate(
+            [
+                'email' => 'required|email',
+                'password' => 'required'
+            ],
+            [
+                'email.required' => 'Email wajib diisi',
+                'email.email' => 'Email tidak valid',
+                'password.required' => 'Kata sandi wajib diisi'
+            ]
+        );
+
+        if (Auth::attempt($loginData)) {
+            return redirect()->route('dashboard');
+        } else {
+            Session::flash('error', 'Email atau Password Salah');
+            return redirect()->route('login.index');
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login.index');
     }
 }

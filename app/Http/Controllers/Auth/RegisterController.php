@@ -91,5 +91,7 @@ class RegisterController extends Controller
             'email' => $validateAttributes['email'],
             'password' => Hash::make($validateAttributes['password'])
         ]);
+
+        return redirect()->route('login.index');
     }
 }
