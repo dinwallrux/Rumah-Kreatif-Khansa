@@ -32,7 +32,6 @@
         "@themesberg/flowbite": "^1.0.4",
         "@themesberg/tailwind-datepicker": "^1.0.1",
         "alpinejs": "^3.4.2",
-        "ansi-html": "0.0.7",
         "daisyui": "^1.14.5",
         "glob-parent": "^6.0.2",
         "nth-check": "^2.0.1",
