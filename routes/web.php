@@ -28,6 +28,10 @@ Route::resource('login', Auth\LoginController::class)->only([
 // logout
 Route::get('logout', 'Auth\LoginController@logout')->name('logout')->middleware('auth');
 
+// get address
+Route::get('province/{id}/regencies', 'AddressController@getRegencies');
+Route::get('province/{id}/regencies/{regencyId}/districts', 'AddressController@getDistricts');
+
 // admin route
 Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('/', 'DashboardController@index')->name('dashboard');

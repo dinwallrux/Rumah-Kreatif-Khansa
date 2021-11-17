@@ -1,101 +1,17 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@themesberg/tailwind-datepicker/js/Datepicker.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/Datepicker.js ***!
   \***********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Datepicker; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Datepicker)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/date-format.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date-format.js");
@@ -121,7 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function stringifyDates(dates, config) {
   return dates
-    .map(dt => Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(dt, config.format, config.locale))
+    .map(dt => (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.formatDate)(dt, config.format, config.locale))
     .join(config.dateDelimiter);
 }
 
@@ -138,7 +54,7 @@ function processInputDates(datepicker, inputDates, clear = false) {
 
   const rangeEnd = rangepicker && datepicker === rangepicker.datepickers[1];
   let newDates = inputDates.reduce((dates, dt) => {
-    let date = Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["parseDate"])(dt, config.format, config.locale);
+    let date = (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.parseDate)(dt, config.format, config.locale);
     if (date === undefined) {
       return dates;
     }
@@ -158,7 +74,7 @@ function processInputDates(datepicker, inputDates, clear = false) {
       }
     }
     if (
-      Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["isInRange"])(date, config.minDate, config.maxDate)
+      (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.isInRange)(date, config.minDate, config.maxDate)
       && !dates.includes(date)
       && !config.datesDisabled.includes(date)
       && !config.daysOfWeekDisabled.includes(new Date(date).getDay())
@@ -216,7 +132,7 @@ function setDate(datepicker, inputDates, options) {
   if (newDates.toString() !== datepicker.dates.toString()) {
     datepicker.dates = newDates;
     refreshUI(datepicker, render ? 3 : 1);
-    Object(_events_functions_js__WEBPACK_IMPORTED_MODULE_8__["triggerDatepickerEvent"])(datepicker, 'changeDate');
+    (0,_events_functions_js__WEBPACK_IMPORTED_MODULE_8__.triggerDatepickerEvent)(datepicker, 'changeDate');
   } else {
     refreshUI(datepicker, 1);
   }
@@ -245,12 +161,12 @@ class Datepicker {
     const config = this.config = Object.assign({
       buttonClass: (options.buttonClass && String(options.buttonClass)) || 'button',
       container: document.body,
-      defaultViewDate: Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["today"])(),
+      defaultViewDate: (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.today)(),
       maxDate: undefined,
       minDate: undefined,
-    }, Object(_options_processOptions_js__WEBPACK_IMPORTED_MODULE_6__["default"])(_options_defaultOptions_js__WEBPACK_IMPORTED_MODULE_5__["default"], this));
+    }, (0,_options_processOptions_js__WEBPACK_IMPORTED_MODULE_6__["default"])(_options_defaultOptions_js__WEBPACK_IMPORTED_MODULE_5__["default"], this));
     this._options = options;
-    Object.assign(config, Object(_options_processOptions_js__WEBPACK_IMPORTED_MODULE_6__["default"])(options, this));
+    Object.assign(config, (0,_options_processOptions_js__WEBPACK_IMPORTED_MODULE_6__["default"])(options, this));
 
     // configure by type
     const inline = this.inline = element.tagName !== 'INPUT';
@@ -259,7 +175,7 @@ class Datepicker {
 
     if (inline) {
       config.container = element;
-      initialDates = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["stringToArray"])(element.dataset.date, config.dateDelimiter);
+      initialDates = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.stringToArray)(element.dataset.date, config.dateDelimiter);
       delete element.dataset.date;
     } else {
       const container = options.container ? document.querySelector(options.container) : null;
@@ -268,7 +184,7 @@ class Datepicker {
       }
       inputField = this.inputField = element;
       inputField.classList.add('datepicker-input');
-      initialDates = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["stringToArray"])(inputField.value, config.dateDelimiter);
+      initialDates = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.stringToArray)(inputField.value, config.dateDelimiter);
     }
     if (rangepicker) {
       // check validiry
@@ -306,18 +222,18 @@ class Datepicker {
       this.show();
     } else {
       // set up event listeners in other modes
-      const onMousedownDocument = _events_otherListeners_js__WEBPACK_IMPORTED_MODULE_10__["onClickOutside"].bind(null, this);
+      const onMousedownDocument = _events_otherListeners_js__WEBPACK_IMPORTED_MODULE_10__.onClickOutside.bind(null, this);
       const listeners = [
-        [inputField, 'keydown', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__["onKeydown"].bind(null, this)],
-        [inputField, 'focus', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__["onFocus"].bind(null, this)],
-        [inputField, 'mousedown', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__["onMousedown"].bind(null, this)],
-        [inputField, 'click', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickInput"].bind(null, this)],
-        [inputField, 'paste', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__["onPaste"].bind(null, this)],
+        [inputField, 'keydown', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__.onKeydown.bind(null, this)],
+        [inputField, 'focus', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__.onFocus.bind(null, this)],
+        [inputField, 'mousedown', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__.onMousedown.bind(null, this)],
+        [inputField, 'click', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickInput.bind(null, this)],
+        [inputField, 'paste', _events_inputFieldListeners_js__WEBPACK_IMPORTED_MODULE_9__.onPaste.bind(null, this)],
         [document, 'mousedown', onMousedownDocument],
         [document, 'touchstart', onMousedownDocument],
         [window, 'resize', picker.place.bind(picker)]
       ];
-      Object(_lib_event_js__WEBPACK_IMPORTED_MODULE_3__["registerListeners"])(this, listeners);
+      (0,_lib_event_js__WEBPACK_IMPORTED_MODULE_3__.registerListeners)(this, listeners);
     }
   }
 
@@ -336,7 +252,7 @@ class Datepicker {
    * @return {String} formatted date
    */
   static formatDate(date, format, lang) {
-    return Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(date, format, lang && _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__["locales"][lang] || _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__["locales"].en);
+    return (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.formatDate)(date, format, lang && _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__.locales[lang] || _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__.locales.en);
   }
 
   /**
@@ -355,7 +271,7 @@ class Datepicker {
    * @return {Number} time value of parsed date
    */
   static parseDate(dateStr, format, lang) {
-    return Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["parseDate"])(dateStr, format, lang && _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__["locales"][lang] || _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__["locales"].en);
+    return (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.parseDate)(dateStr, format, lang && _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__.locales[lang] || _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__.locales.en);
   }
 
   /**
@@ -363,7 +279,7 @@ class Datepicker {
    * en`:_English (US)_ is pre-installed.
    */
   static get locales() {
-    return _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__["locales"];
+    return _i18n_base_locales_js__WEBPACK_IMPORTED_MODULE_4__.locales;
   }
 
   /**
@@ -386,7 +302,7 @@ class Datepicker {
    */
   setOptions(options) {
     const picker = this.picker;
-    const newOptions = Object(_options_processOptions_js__WEBPACK_IMPORTED_MODULE_6__["default"])(options, this);
+    const newOptions = (0,_options_processOptions_js__WEBPACK_IMPORTED_MODULE_6__["default"])(options, this);
     Object.assign(this._options, options);
     Object.assign(this.config, newOptions);
     picker.setOptions(newOptions);
@@ -429,7 +345,7 @@ class Datepicker {
    */
   destroy() {
     this.hide();
-    Object(_lib_event_js__WEBPACK_IMPORTED_MODULE_3__["unregisterListeners"])(this);
+    (0,_lib_event_js__WEBPACK_IMPORTED_MODULE_3__.unregisterListeners)(this);
     this.picker.detach();
     if (!this.inline) {
       this.inputField.classList.remove('datepicker-input');
@@ -451,7 +367,7 @@ class Datepicker {
    */
   getDate(format = undefined) {
     const callback = format
-      ? date => Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(date, format, this.config.locale)
+      ? date => (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.formatDate)(date, format, this.config.locale)
       : date => new Date(date);
 
     if (this.config.multidate) {
@@ -504,7 +420,7 @@ class Datepicker {
   setDate(...args) {
     const dates = [...args];
     const opts = {};
-    const lastArg = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["lastItemOf"])(args);
+    const lastArg = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.lastItemOf)(args);
     if (
       typeof lastArg === 'object'
       && !Array.isArray(lastArg)
@@ -534,7 +450,7 @@ class Datepicker {
     }
 
     const opts = {clear: true, autohide: !!(options && options.autohide)};
-    const inputDates = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["stringToArray"])(this.inputField.value, this.config.dateDelimiter);
+    const inputDates = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.stringToArray)(this.inputField.value, this.config.dateDelimiter);
     setDate(this, inputDates, opts);
   }
 
@@ -602,15 +518,16 @@ class Datepicker {
 /*!*****************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/events/functions.js ***!
   \*****************************************************************************/
-/*! exports provided: triggerDatepickerEvent, goToPrevOrNext, switchView, unfocus */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triggerDatepickerEvent", function() { return triggerDatepickerEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goToPrevOrNext", function() { return goToPrevOrNext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchView", function() { return switchView; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unfocus", function() { return unfocus; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "triggerDatepickerEvent": () => (/* binding */ triggerDatepickerEvent),
+/* harmony export */   "goToPrevOrNext": () => (/* binding */ goToPrevOrNext),
+/* harmony export */   "switchView": () => (/* binding */ switchView),
+/* harmony export */   "unfocus": () => (/* binding */ unfocus)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 
@@ -633,15 +550,15 @@ function goToPrevOrNext(datepicker, direction) {
   let newViewDate;
   switch (currentView.id) {
     case 0:
-      newViewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addMonths"])(viewDate, direction);
+      newViewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addMonths)(viewDate, direction);
       break;
     case 1:
-      newViewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addYears"])(viewDate, direction);
+      newViewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addYears)(viewDate, direction);
       break;
     default:
-      newViewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addYears"])(viewDate, direction * currentView.navStep);
+      newViewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addYears)(viewDate, direction * currentView.navStep);
   }
-  newViewDate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["limitToRange"])(newViewDate, minDate, maxDate);
+  newViewDate = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.limitToRange)(newViewDate, minDate, maxDate);
   datepicker.picker.changeFocus(newViewDate).render();
 }
 
@@ -669,16 +586,17 @@ function unfocus(datepicker) {
 /*!***************************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/events/inputFieldListeners.js ***!
   \***************************************************************************************/
-/*! exports provided: onKeydown, onFocus, onMousedown, onClickInput, onPaste */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onKeydown", function() { return onKeydown; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onFocus", function() { return onFocus; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onMousedown", function() { return onMousedown; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickInput", function() { return onClickInput; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onPaste", function() { return onPaste; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "onKeydown": () => (/* binding */ onKeydown),
+/* harmony export */   "onFocus": () => (/* binding */ onFocus),
+/* harmony export */   "onMousedown": () => (/* binding */ onMousedown),
+/* harmony export */   "onClickInput": () => (/* binding */ onClickInput),
+/* harmony export */   "onPaste": () => (/* binding */ onPaste)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./functions.js */ "./node_modules/@themesberg/tailwind-datepicker/js/events/functions.js");
@@ -694,7 +612,7 @@ __webpack_require__.r(__webpack_exports__);
 // testFn: function to test the unavailablity of the date
 //   - args: time value; retun: true if unavailable
 function findNextAvailableOne(date, addFn, increase, testFn, min, max) {
-  if (!Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["isInRange"])(date, min, max)) {
+  if (!(0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.isInRange)(date, min, max)) {
     return;
   }
   if (testFn(date)) {
@@ -716,18 +634,18 @@ function moveByArrowKey(datepicker, ev, direction, vertical) {
   switch (currentView.id) {
     case 0:
       if (vertical) {
-        viewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addDays"])(viewDate, direction * 7);
+        viewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addDays)(viewDate, direction * 7);
       } else if (ev.ctrlKey || ev.metaKey) {
-        viewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addYears"])(viewDate, direction);
+        viewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addYears)(viewDate, direction);
       } else {
-        viewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addDays"])(viewDate, direction);
+        viewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addDays)(viewDate, direction);
       }
-      addFn = _lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addDays"];
+      addFn = _lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addDays;
       testFn = (date) => currentView.disabled.includes(date);
       break;
     case 1:
-      viewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addMonths"])(viewDate, vertical ? direction * 4 : direction);
-      addFn = _lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addMonths"];
+      viewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addMonths)(viewDate, vertical ? direction * 4 : direction);
+      addFn = _lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addMonths;
       testFn = (date) => {
         const dt = new Date(date);
         const {year, disabled} = currentView;
@@ -735,9 +653,9 @@ function moveByArrowKey(datepicker, ev, direction, vertical) {
       };
       break;
     default:
-      viewDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addYears"])(viewDate, direction * (vertical ? 4 : 1) * step);
-      addFn = _lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addYears"];
-      testFn = date => currentView.disabled.includes(Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["startOfYearPeriod"])(date, step));
+      viewDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addYears)(viewDate, direction * (vertical ? 4 : 1) * step);
+      addFn = _lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addYears;
+      testFn = date => currentView.disabled.includes((0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.startOfYearPeriod)(date, step));
   }
   viewDate = findNextAvailableOne(
     viewDate,
@@ -754,7 +672,7 @@ function moveByArrowKey(datepicker, ev, direction, vertical) {
 
 function onKeydown(datepicker, ev) {
   if (ev.key === 'Tab') {
-    Object(_functions_js__WEBPACK_IMPORTED_MODULE_2__["unfocus"])(datepicker);
+    (0,_functions_js__WEBPACK_IMPORTED_MODULE_2__.unfocus)(datepicker);
     return;
   }
 
@@ -790,7 +708,7 @@ function onKeydown(datepicker, ev) {
         break;
       case 'ArrowLeft':
         if (ev.ctrlKey || ev.metaKey) {
-          Object(_functions_js__WEBPACK_IMPORTED_MODULE_2__["goToPrevOrNext"])(datepicker, -1);
+          (0,_functions_js__WEBPACK_IMPORTED_MODULE_2__.goToPrevOrNext)(datepicker, -1);
         } else if (ev.shiftKey) {
           datepicker.enterEditMode();
           return;
@@ -800,7 +718,7 @@ function onKeydown(datepicker, ev) {
         break;
       case 'ArrowRight':
         if (ev.ctrlKey || ev.metaKey) {
-          Object(_functions_js__WEBPACK_IMPORTED_MODULE_2__["goToPrevOrNext"])(datepicker, 1);
+          (0,_functions_js__WEBPACK_IMPORTED_MODULE_2__.goToPrevOrNext)(datepicker, 1);
         } else if (ev.shiftKey) {
           datepicker.enterEditMode();
           return;
@@ -810,7 +728,7 @@ function onKeydown(datepicker, ev) {
         break;
       case 'ArrowUp':
         if (ev.ctrlKey || ev.metaKey) {
-          Object(_functions_js__WEBPACK_IMPORTED_MODULE_2__["switchView"])(datepicker);
+          (0,_functions_js__WEBPACK_IMPORTED_MODULE_2__.switchView)(datepicker);
         } else if (ev.shiftKey) {
           datepicker.enterEditMode();
           return;
@@ -896,12 +814,13 @@ function onPaste(datepicker, ev) {
 /*!**********************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/events/otherListeners.js ***!
   \**********************************************************************************/
-/*! exports provided: onClickOutside */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickOutside", function() { return onClickOutside; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "onClickOutside": () => (/* binding */ onClickOutside)
+/* harmony export */ });
 /* harmony import */ var _lib_event_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/event.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/event.js");
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions.js */ "./node_modules/@themesberg/tailwind-datepicker/js/events/functions.js");
 
@@ -914,10 +833,10 @@ function onClickOutside(datepicker, ev) {
     return;
   }
   const pickerElem = datepicker.picker.element;
-  if (Object(_lib_event_js__WEBPACK_IMPORTED_MODULE_0__["findElementInEventPath"])(ev, el => el === element || el === pickerElem)) {
+  if ((0,_lib_event_js__WEBPACK_IMPORTED_MODULE_0__.findElementInEventPath)(ev, el => el === element || el === pickerElem)) {
     return;
   }
-  Object(_functions_js__WEBPACK_IMPORTED_MODULE_1__["unfocus"])(datepicker);
+  (0,_functions_js__WEBPACK_IMPORTED_MODULE_1__.unfocus)(datepicker);
 }
 
 
@@ -927,18 +846,19 @@ function onClickOutside(datepicker, ev) {
 /*!***********************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/events/pickerListeners.js ***!
   \***********************************************************************************/
-/*! exports provided: onClickTodayBtn, onClickClearBtn, onClickViewSwitch, onClickPrevBtn, onClickNextBtn, onClickView, onClickPicker */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickTodayBtn", function() { return onClickTodayBtn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickClearBtn", function() { return onClickClearBtn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickViewSwitch", function() { return onClickViewSwitch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickPrevBtn", function() { return onClickPrevBtn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickNextBtn", function() { return onClickNextBtn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickView", function() { return onClickView; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onClickPicker", function() { return onClickPicker; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "onClickTodayBtn": () => (/* binding */ onClickTodayBtn),
+/* harmony export */   "onClickClearBtn": () => (/* binding */ onClickClearBtn),
+/* harmony export */   "onClickViewSwitch": () => (/* binding */ onClickViewSwitch),
+/* harmony export */   "onClickPrevBtn": () => (/* binding */ onClickPrevBtn),
+/* harmony export */   "onClickNextBtn": () => (/* binding */ onClickNextBtn),
+/* harmony export */   "onClickView": () => (/* binding */ onClickView),
+/* harmony export */   "onClickPicker": () => (/* binding */ onClickPicker)
+/* harmony export */ });
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _lib_event_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/event.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/event.js");
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./functions.js */ "./node_modules/@themesberg/tailwind-datepicker/js/events/functions.js");
@@ -951,15 +871,15 @@ function goToSelectedMonthOrYear(datepicker, selection) {
   const viewDate = new Date(picker.viewDate);
   const viewId = picker.currentView.id;
   const newDate = viewId === 1
-    ? Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_0__["addMonths"])(viewDate, selection - viewDate.getMonth())
-    : Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_0__["addYears"])(viewDate, selection - viewDate.getFullYear());
+    ? (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_0__.addMonths)(viewDate, selection - viewDate.getMonth())
+    : (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_0__.addYears)(viewDate, selection - viewDate.getFullYear());
 
   picker.changeFocus(newDate).changeView(viewId - 1).render();
 }
 
 function onClickTodayBtn(datepicker) {
   const picker = datepicker.picker;
-  const currentDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_0__["today"])();
+  const currentDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_0__.today)();
   if (datepicker.config.todayBtnMode === 1) {
     if (datepicker.config.autohide) {
       datepicker.setDate(currentDate);
@@ -979,20 +899,20 @@ function onClickClearBtn(datepicker) {
 }
 
 function onClickViewSwitch(datepicker) {
-  Object(_functions_js__WEBPACK_IMPORTED_MODULE_2__["switchView"])(datepicker);
+  (0,_functions_js__WEBPACK_IMPORTED_MODULE_2__.switchView)(datepicker);
 }
 
 function onClickPrevBtn(datepicker) {
-  Object(_functions_js__WEBPACK_IMPORTED_MODULE_2__["goToPrevOrNext"])(datepicker, -1);
+  (0,_functions_js__WEBPACK_IMPORTED_MODULE_2__.goToPrevOrNext)(datepicker, -1);
 }
 
 function onClickNextBtn(datepicker) {
-  Object(_functions_js__WEBPACK_IMPORTED_MODULE_2__["goToPrevOrNext"])(datepicker, 1);
+  (0,_functions_js__WEBPACK_IMPORTED_MODULE_2__.goToPrevOrNext)(datepicker, 1);
 }
 
 // For the picker's main block to delegete the events from `datepicker-cell`s
 function onClickView(datepicker, ev) {
-  const target = Object(_lib_event_js__WEBPACK_IMPORTED_MODULE_1__["findElementInEventPath"])(ev, '.datepicker-cell');
+  const target = (0,_lib_event_js__WEBPACK_IMPORTED_MODULE_1__.findElementInEventPath)(ev, '.datepicker-cell');
   if (!target || target.classList.contains('disabled')) {
     return;
   }
@@ -1020,12 +940,13 @@ function onClickPicker(datepicker) {
 /*!******************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/i18n/base-locales.js ***!
   \******************************************************************************/
-/*! exports provided: locales */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "locales", function() { return locales; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "locales": () => (/* binding */ locales)
+/* harmony export */ });
 // default locales
 const locales = {
   en: {
@@ -1047,15 +968,16 @@ const locales = {
 /*!****************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/lib/date-format.js ***!
   \****************************************************************************/
-/*! exports provided: reFormatTokens, reNonDateParts, parseDate, formatDate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reFormatTokens", function() { return reFormatTokens; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reNonDateParts", function() { return reNonDateParts; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseDate", function() { return parseDate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDate", function() { return formatDate; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "reFormatTokens": () => (/* binding */ reFormatTokens),
+/* harmony export */   "reNonDateParts": () => (/* binding */ reNonDateParts),
+/* harmony export */   "parseDate": () => (/* binding */ parseDate),
+/* harmony export */   "formatDate": () => (/* binding */ formatDate)
+/* harmony export */ });
 /* harmony import */ var _date_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 
@@ -1198,33 +1120,33 @@ function parseFormatString(format) {
         const newDate = parseFns[key](origDate, dateParts[key], locale);
         // ingnore the part failed to parse
         return isNaN(newDate) ? origDate : newDate;
-      }, Object(_date_js__WEBPACK_IMPORTED_MODULE_0__["today"])());
+      }, (0,_date_js__WEBPACK_IMPORTED_MODULE_0__.today)());
     },
     formatter(date, locale) {
       let dateStr = partFormatters.reduce((str, fn, index) => {
         return str += `${separators[index]}${fn(date, locale)}`;
       }, '');
       // separators' length is always parts' length + 1,
-      return dateStr += Object(_utils_js__WEBPACK_IMPORTED_MODULE_1__["lastItemOf"])(separators);
+      return dateStr += (0,_utils_js__WEBPACK_IMPORTED_MODULE_1__.lastItemOf)(separators);
     },
   };
 }
 
 function parseDate(dateStr, format, locale) {
   if (dateStr instanceof Date || typeof dateStr === 'number') {
-    const date = Object(_date_js__WEBPACK_IMPORTED_MODULE_0__["stripTime"])(dateStr);
+    const date = (0,_date_js__WEBPACK_IMPORTED_MODULE_0__.stripTime)(dateStr);
     return isNaN(date) ? undefined : date;
   }
   if (!dateStr) {
     return undefined;
   }
   if (dateStr === 'today') {
-    return Object(_date_js__WEBPACK_IMPORTED_MODULE_0__["today"])();
+    return (0,_date_js__WEBPACK_IMPORTED_MODULE_0__.today)();
   }
 
   if (format && format.toValue) {
     const date = format.toValue(dateStr, format, locale);
-    return isNaN(date) ? undefined : Object(_date_js__WEBPACK_IMPORTED_MODULE_0__["stripTime"])(date);
+    return isNaN(date) ? undefined : (0,_date_js__WEBPACK_IMPORTED_MODULE_0__.stripTime)(date);
   }
 
   return parseFormatString(format).parser(dateStr, locale);
@@ -1251,21 +1173,22 @@ function formatDate(date, format, locale) {
 /*!*********************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js ***!
   \*********************************************************************/
-/*! exports provided: stripTime, today, dateValue, addDays, addWeeks, addMonths, addYears, dayOfTheWeekOf, getWeek, startOfYearPeriod */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stripTime", function() { return stripTime; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "today", function() { return today; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dateValue", function() { return dateValue; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addDays", function() { return addDays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addWeeks", function() { return addWeeks; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addMonths", function() { return addMonths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addYears", function() { return addYears; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dayOfTheWeekOf", function() { return dayOfTheWeekOf; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWeek", function() { return getWeek; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startOfYearPeriod", function() { return startOfYearPeriod; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "stripTime": () => (/* binding */ stripTime),
+/* harmony export */   "today": () => (/* binding */ today),
+/* harmony export */   "dateValue": () => (/* binding */ dateValue),
+/* harmony export */   "addDays": () => (/* binding */ addDays),
+/* harmony export */   "addWeeks": () => (/* binding */ addWeeks),
+/* harmony export */   "addMonths": () => (/* binding */ addMonths),
+/* harmony export */   "addYears": () => (/* binding */ addYears),
+/* harmony export */   "dayOfTheWeekOf": () => (/* binding */ dayOfTheWeekOf),
+/* harmony export */   "getWeek": () => (/* binding */ getWeek),
+/* harmony export */   "startOfYearPeriod": () => (/* binding */ startOfYearPeriod)
+/* harmony export */ });
 function stripTime(timeValue) {
   return new Date(timeValue).setHours(0, 0, 0, 0);
 }
@@ -1356,17 +1279,18 @@ function startOfYearPeriod(date, years) {
 /*!********************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/lib/dom.js ***!
   \********************************************************************/
-/*! exports provided: parseHTML, isVisible, hideElement, showElement, emptyChildNodes, replaceChildNodes */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseHTML", function() { return parseHTML; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isVisible", function() { return isVisible; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hideElement", function() { return hideElement; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showElement", function() { return showElement; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "emptyChildNodes", function() { return emptyChildNodes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "replaceChildNodes", function() { return replaceChildNodes; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "parseHTML": () => (/* binding */ parseHTML),
+/* harmony export */   "isVisible": () => (/* binding */ isVisible),
+/* harmony export */   "hideElement": () => (/* binding */ hideElement),
+/* harmony export */   "showElement": () => (/* binding */ showElement),
+/* harmony export */   "emptyChildNodes": () => (/* binding */ emptyChildNodes),
+/* harmony export */   "replaceChildNodes": () => (/* binding */ replaceChildNodes)
+/* harmony export */ });
 const range = document.createRange();
 
 function parseHTML(html) {
@@ -1429,14 +1353,15 @@ function replaceChildNodes(el, newChildNodes) {
 /*!**********************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/lib/event.js ***!
   \**********************************************************************/
-/*! exports provided: registerListeners, unregisterListeners, findElementInEventPath */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerListeners", function() { return registerListeners; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unregisterListeners", function() { return unregisterListeners; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findElementInEventPath", function() { return findElementInEventPath; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "registerListeners": () => (/* binding */ registerListeners),
+/* harmony export */   "unregisterListeners": () => (/* binding */ unregisterListeners),
+/* harmony export */   "findElementInEventPath": () => (/* binding */ findElementInEventPath)
+/* harmony export */ });
 const listenerRegistry = new WeakMap();
 const {addEventListener, removeEventListener} = EventTarget.prototype;
 
@@ -1513,19 +1438,20 @@ function findElementInEventPath(ev, selector) {
 /*!**********************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js ***!
   \**********************************************************************/
-/*! exports provided: hasProperty, lastItemOf, pushUnique, stringToArray, isInRange, limitToRange, createTagRepeat, optimizeTemplateHTML */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasProperty", function() { return hasProperty; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lastItemOf", function() { return lastItemOf; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pushUnique", function() { return pushUnique; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stringToArray", function() { return stringToArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isInRange", function() { return isInRange; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "limitToRange", function() { return limitToRange; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createTagRepeat", function() { return createTagRepeat; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "optimizeTemplateHTML", function() { return optimizeTemplateHTML; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "hasProperty": () => (/* binding */ hasProperty),
+/* harmony export */   "lastItemOf": () => (/* binding */ lastItemOf),
+/* harmony export */   "pushUnique": () => (/* binding */ pushUnique),
+/* harmony export */   "stringToArray": () => (/* binding */ stringToArray),
+/* harmony export */   "isInRange": () => (/* binding */ isInRange),
+/* harmony export */   "limitToRange": () => (/* binding */ limitToRange),
+/* harmony export */   "createTagRepeat": () => (/* binding */ createTagRepeat),
+/* harmony export */   "optimizeTemplateHTML": () => (/* binding */ optimizeTemplateHTML)
+/* harmony export */ });
 function hasProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
@@ -1595,11 +1521,13 @@ function optimizeTemplateHTML(html) {
 /*!***********************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/options/defaultOptions.js ***!
   \***********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 // config options updatable by setOptions() and their default values
 const defaultOptions = {
   autohide: false,
@@ -1637,7 +1565,7 @@ const defaultOptions = {
   weekStart: 0,
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (defaultOptions);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defaultOptions);
 
 
 /***/ }),
@@ -1646,12 +1574,13 @@ const defaultOptions = {
 /*!***********************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/options/processOptions.js ***!
   \***********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return processOptions; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ processOptions)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/date-format.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date-format.js");
@@ -1672,7 +1601,7 @@ const {
 // Reducer function to filter out invalid day-of-week from the input
 function sanitizeDOW(dow, day) {
   return dow.length < 6 && day >= 0 && day < 7
-    ? Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["pushUnique"])(dow, day)
+    ? (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.pushUnique)(dow, day)
     : dow;
 }
 
@@ -1682,7 +1611,7 @@ function calcEndOfWeek(startOfWeek) {
 
 // validate input date. if invalid, fallback to the original value
 function validateDate(value, format, locale, origValue) {
-  const date = Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["parseDate"])(value, format, locale);
+  const date = (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.parseDate)(value, format, locale);
   return date !== undefined ? date : origValue;
 }
 
@@ -1753,7 +1682,7 @@ function processOptions(options, datepicker) {
   if (inOpts.format) {
     const hasToDisplay = typeof inOpts.format.toDisplay === 'function';
     const hasToValue = typeof inOpts.format.toValue === 'function';
-    const validFormatString = _lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["reFormatTokens"].test(inOpts.format);
+    const validFormatString = _lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.reFormatTokens.test(inOpts.format);
     if ((hasToDisplay && hasToValue) || validFormatString) {
       format = config.format = inOpts.format;
     }
@@ -1768,7 +1697,7 @@ function processOptions(options, datepicker) {
   let maxDt = maxDate;
   if (inOpts.minDate !== undefined) {
     minDt = inOpts.minDate === null
-      ? Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(0, 0, 1)  // set 0000-01-01 to prevent negative values for year
+      ? (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(0, 0, 1)  // set 0000-01-01 to prevent negative values for year
       : validateDate(inOpts.minDate, format, locale, minDt);
     delete inOpts.minDate;
   }
@@ -1792,13 +1721,13 @@ function processOptions(options, datepicker) {
 
   if (inOpts.datesDisabled) {
     config.datesDisabled = inOpts.datesDisabled.reduce((dates, dt) => {
-      const date = Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["parseDate"])(dt, format, locale);
-      return date !== undefined ? Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["pushUnique"])(dates, date) : dates;
+      const date = (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.parseDate)(dt, format, locale);
+      return date !== undefined ? (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.pushUnique)(dates, date) : dates;
     }, []);
     delete inOpts.datesDisabled;
   }
   if (inOpts.defaultViewDate !== undefined) {
-    const viewDate = Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["parseDate"])(inOpts.defaultViewDate, format, locale);
+    const viewDate = (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.parseDate)(inOpts.defaultViewDate, format, locale);
     if (viewDate !== undefined) {
       config.defaultViewDate = viewDate;
     }
@@ -1875,14 +1804,14 @@ function processOptions(options, datepicker) {
 
   //*** template ***//
   if (inOpts.prevArrow) {
-    const prevArrow = Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["parseHTML"])(inOpts.prevArrow);
+    const prevArrow = (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.parseHTML)(inOpts.prevArrow);
     if (prevArrow.childNodes.length > 0) {
       config.prevArrow = prevArrow.childNodes;
     }
     delete inOpts.prevArrow;
   }
   if (inOpts.nextArrow) {
-    const nextArrow = Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["parseHTML"])(inOpts.nextArrow);
+    const nextArrow = (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.parseHTML)(inOpts.nextArrow);
     if (nextArrow.childNodes.length > 0) {
       config.nextArrow = nextArrow.childNodes;
     }
@@ -1913,7 +1842,7 @@ function processOptions(options, datepicker) {
 
   //*** copy the rest ***//
   Object.keys(inOpts).forEach((key) => {
-    if (inOpts[key] !== undefined && Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(_defaultOptions_js__WEBPACK_IMPORTED_MODULE_4__["default"], key)) {
+    if (inOpts[key] !== undefined && (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(_defaultOptions_js__WEBPACK_IMPORTED_MODULE_4__["default"], key)) {
       config[key] = inOpts[key];
     }
   });
@@ -1928,12 +1857,13 @@ function processOptions(options, datepicker) {
 /*!**************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/Picker.js ***!
   \**************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Picker; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Picker)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _lib_dom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/dom.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/dom.js");
@@ -1959,22 +1889,22 @@ function processPickerOptions(picker, options) {
   if (options.title !== undefined) {
     if (options.title) {
       picker.controls.title.textContent = options.title;
-      Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["showElement"])(picker.controls.title);
+      (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.showElement)(picker.controls.title);
     } else {
       picker.controls.title.textContent = '';
-      Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["hideElement"])(picker.controls.title);
+      (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.hideElement)(picker.controls.title);
     }
   }
   if (options.prevArrow) {
     const prevBtn = picker.controls.prevBtn;
-    Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["emptyChildNodes"])(prevBtn);
+    (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.emptyChildNodes)(prevBtn);
     options.prevArrow.forEach((node) => {
       prevBtn.appendChild(node.cloneNode(true));
     });
   }
   if (options.nextArrow) {
     const nextBtn = picker.controls.nextBtn;
-    Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["emptyChildNodes"])(nextBtn);
+    (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.emptyChildNodes)(nextBtn);
     options.nextArrow.forEach((node) => {
       nextBtn.appendChild(node.cloneNode(true));
     });
@@ -1985,20 +1915,20 @@ function processPickerOptions(picker, options) {
   }
   if (options.todayBtn !== undefined) {
     if (options.todayBtn) {
-      Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["showElement"])(picker.controls.todayBtn);
+      (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.showElement)(picker.controls.todayBtn);
     } else {
-      Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["hideElement"])(picker.controls.todayBtn);
+      (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.hideElement)(picker.controls.todayBtn);
     }
   }
-  if (Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'minDate') || Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'maxDate')) {
+  if ((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'minDate') || (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'maxDate')) {
     const {minDate, maxDate} = picker.datepicker.config;
-    picker.controls.todayBtn.disabled = !Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["isInRange"])(Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["today"])(), minDate, maxDate);
+    picker.controls.todayBtn.disabled = !(0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.isInRange)((0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.today)(), minDate, maxDate);
   }
   if (options.clearBtn !== undefined) {
     if (options.clearBtn) {
-      Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["showElement"])(picker.controls.clearBtn);
+      (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.showElement)(picker.controls.clearBtn);
     } else {
-      Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["hideElement"])(picker.controls.clearBtn);
+      (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.hideElement)(picker.controls.clearBtn);
     }
   }
 }
@@ -2008,8 +1938,8 @@ function processPickerOptions(picker, options) {
 // - limitted to minDate or maxDate if it exceeds the range
 function computeResetViewDate(datepicker) {
   const {dates, config} = datepicker;
-  const viewDate = dates.length > 0 ? Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["lastItemOf"])(dates) : config.defaultViewDate;
-  return Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["limitToRange"])(viewDate, config.minDate, config.maxDate);
+  const viewDate = dates.length > 0 ? (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.lastItemOf)(dates) : config.defaultViewDate;
+  return (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.limitToRange)(viewDate, config.minDate, config.maxDate);
 }
 
 // Change current view's view date
@@ -2021,10 +1951,10 @@ function setViewDate(picker, newDate) {
 
   picker.viewDate = newDate;
   if (viewYear !== oldViewDate.getFullYear()) {
-    Object(_events_functions_js__WEBPACK_IMPORTED_MODULE_8__["triggerDatepickerEvent"])(picker.datepicker, 'changeYear');
+    (0,_events_functions_js__WEBPACK_IMPORTED_MODULE_8__.triggerDatepickerEvent)(picker.datepicker, 'changeYear');
   }
   if (newViewDate.getMonth() !== oldViewDate.getMonth()) {
-    Object(_events_functions_js__WEBPACK_IMPORTED_MODULE_8__["triggerDatepickerEvent"])(picker.datepicker, 'changeMonth');
+    (0,_events_functions_js__WEBPACK_IMPORTED_MODULE_8__.triggerDatepickerEvent)(picker.datepicker, 'changeMonth');
   }
 
   // return whether the new date is in different period on time from the one
@@ -2050,7 +1980,7 @@ class Picker {
     this.datepicker = datepicker;
 
     const template = _templates_pickerTemplate_js__WEBPACK_IMPORTED_MODULE_4__["default"].replace(/%buttonClass%/g, datepicker.config.buttonClass);
-    const element = this.element = Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["parseHTML"])(template).firstChild;
+    const element = this.element = (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.parseHTML)(template).firstChild;
     const [header, main, footer] = element.firstChild.children;
     const title = header.firstElementChild;
     const [prevBtn, viewSwitch, nextBtn] = header.lastElementChild.children;
@@ -2074,14 +2004,14 @@ class Picker {
     this.viewDate = computeResetViewDate(datepicker);
 
     // set up event listeners
-    Object(_lib_event_js__WEBPACK_IMPORTED_MODULE_3__["registerListeners"])(datepicker, [
-      [element, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickPicker"].bind(null, datepicker), {capture: true}],
-      [main, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickView"].bind(null, datepicker)],
-      [controls.viewSwitch, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickViewSwitch"].bind(null, datepicker)],
-      [controls.prevBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickPrevBtn"].bind(null, datepicker)],
-      [controls.nextBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickNextBtn"].bind(null, datepicker)],
-      [controls.todayBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickTodayBtn"].bind(null, datepicker)],
-      [controls.clearBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__["onClickClearBtn"].bind(null, datepicker)],
+    (0,_lib_event_js__WEBPACK_IMPORTED_MODULE_3__.registerListeners)(datepicker, [
+      [element, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickPicker.bind(null, datepicker), {capture: true}],
+      [main, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickView.bind(null, datepicker)],
+      [controls.viewSwitch, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickViewSwitch.bind(null, datepicker)],
+      [controls.prevBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickPrevBtn.bind(null, datepicker)],
+      [controls.nextBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickNextBtn.bind(null, datepicker)],
+      [controls.todayBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickTodayBtn.bind(null, datepicker)],
+      [controls.clearBtn, 'click', _events_pickerListeners_js__WEBPACK_IMPORTED_MODULE_9__.onClickClearBtn.bind(null, datepicker)],
     ]);
 
     // set up views
@@ -2133,7 +2063,7 @@ class Picker {
         datepicker.inputField.blur();
       }
     }
-    Object(_events_functions_js__WEBPACK_IMPORTED_MODULE_8__["triggerDatepickerEvent"])(datepicker, 'show');
+    (0,_events_functions_js__WEBPACK_IMPORTED_MODULE_8__.triggerDatepickerEvent)(datepicker, 'show');
   }
 
   hide() {
@@ -2144,7 +2074,7 @@ class Picker {
     this.element.classList.remove('active', 'block');
     this.element.classList.add('active', 'block', 'hidden');
     this.active = false;
-    Object(_events_functions_js__WEBPACK_IMPORTED_MODULE_8__["triggerDatepickerEvent"])(this.datepicker, 'hide');
+    (0,_events_functions_js__WEBPACK_IMPORTED_MODULE_8__.triggerDatepickerEvent)(this.datepicker, 'hide');
   }
 
   place() {
@@ -2236,7 +2166,7 @@ class Picker {
     if (newView.id !== oldView.id) {
       this.currentView = newView;
       this._renderMethod = 'render';
-      Object(_events_functions_js__WEBPACK_IMPORTED_MODULE_8__["triggerDatepickerEvent"])(this.datepicker, 'changeView');
+      (0,_events_functions_js__WEBPACK_IMPORTED_MODULE_8__.triggerDatepickerEvent)(this.datepicker, 'changeView');
       this.main.replaceChild(newView.element, oldView.element);
     }
     return this;
@@ -2278,20 +2208,22 @@ class Picker {
 /*!***************************************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/templates/calendarWeeksTemplate.js ***!
   \***************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 
 
-const calendarWeeksTemplate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["optimizeTemplateHTML"])(`<div class="calendar-weeks">
+const calendarWeeksTemplate = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.optimizeTemplateHTML)(`<div class="calendar-weeks">
   <div class="days-of-week flex"><span class="dow h-6 leading-6 text-sm font-medium text-gray-500"></span></div>
-  <div class="weeks">${Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["createTagRepeat"])('span', 6, {class: 'week block flex-1 leading-9 border-0 rounded-lg cursor-default text-center text-gray-900 font-semibold text-sm'})}</div>
+  <div class="weeks">${(0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.createTagRepeat)('span', 6, {class: 'week block flex-1 leading-9 border-0 rounded-lg cursor-default text-center text-gray-900 font-semibold text-sm'})}</div>
 </div>`);
 
-/* harmony default export */ __webpack_exports__["default"] = (calendarWeeksTemplate);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (calendarWeeksTemplate);
 
 
 /***/ }),
@@ -2300,20 +2232,22 @@ const calendarWeeksTemplate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__[
 /*!******************************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/templates/daysTemplate.js ***!
   \******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 
 
-const daysTemplate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["optimizeTemplateHTML"])(`<div class="days">
-  <div class="days-of-week grid grid-cols-7 mb-1">${Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["createTagRepeat"])('span', 7, {class: 'dow block flex-1 leading-9 border-0 rounded-lg cursor-default text-center text-gray-900 font-semibold text-sm'})}</div>
-  <div class="datepicker-grid w-64 grid grid-cols-7">${Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["createTagRepeat"])('span', 42 , {class: 'block flex-1 leading-9 border-0 rounded-lg cursor-default text-center text-gray-900 font-semibold text-sm h-6 leading-6 text-sm font-medium text-gray-500'})}</div>
+const daysTemplate = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.optimizeTemplateHTML)(`<div class="days">
+  <div class="days-of-week grid grid-cols-7 mb-1">${(0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.createTagRepeat)('span', 7, {class: 'dow block flex-1 leading-9 border-0 rounded-lg cursor-default text-center text-gray-900 font-semibold text-sm'})}</div>
+  <div class="datepicker-grid w-64 grid grid-cols-7">${(0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.createTagRepeat)('span', 42 , {class: 'block flex-1 leading-9 border-0 rounded-lg cursor-default text-center text-gray-900 font-semibold text-sm h-6 leading-6 text-sm font-medium text-gray-500'})}</div>
 </div>`);
 
-/* harmony default export */ __webpack_exports__["default"] = (daysTemplate);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (daysTemplate);
 
 
 /***/ }),
@@ -2322,15 +2256,17 @@ const daysTemplate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["optimize
 /*!********************************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/templates/pickerTemplate.js ***!
   \********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 
 
-const pickerTemplate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["optimizeTemplateHTML"])(`<div class="datepicker hidden">
+const pickerTemplate = (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.optimizeTemplateHTML)(`<div class="datepicker hidden">
   <div class="datepicker-picker inline-block rounded-lg bg-white shadow-lg p-4">
     <div class="datepicker-header">
       <div class="datepicker-title bg-white px-2 py-3 text-center font-semibold"></div>
@@ -2350,7 +2286,7 @@ const pickerTemplate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["optimi
   </div>
 </div>`);
 
-/* harmony default export */ __webpack_exports__["default"] = (pickerTemplate);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pickerTemplate);
 
 
 /***/ }),
@@ -2359,12 +2295,13 @@ const pickerTemplate = Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["optimi
 /*!**********************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/views/DaysView.js ***!
   \**********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DaysView; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ DaysView)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib/date-format.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date-format.js");
@@ -2391,7 +2328,7 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
 
   init(options, onConstruction = true) {
     if (onConstruction) {
-      const inner = Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["parseHTML"])(_templates_daysTemplate_js__WEBPACK_IMPORTED_MODULE_4__["default"]).firstChild;
+      const inner = (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.parseHTML)(_templates_daysTemplate_js__WEBPACK_IMPORTED_MODULE_4__["default"]).firstChild;
       this.dow = inner.firstChild;
       this.grid = inner.lastChild;
       this.element.appendChild(inner);
@@ -2402,10 +2339,10 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
   setOptions(options) {
     let updateDOW;
 
-    if (Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'minDate')) {
+    if ((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'minDate')) {
       this.minDate = options.minDate;
     }
-    if (Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'maxDate')) {
+    if ((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'maxDate')) {
       this.maxDate = options.maxDate;
     }
     if (options.datesDisabled) {
@@ -2440,7 +2377,7 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
 
     if (options.calendarWeeks !== undefined) {
       if (options.calendarWeeks && !this.calendarWeeks) {
-        const weeksElem = Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["parseHTML"])(_templates_calendarWeeksTemplate_js__WEBPACK_IMPORTED_MODULE_5__["default"]).firstChild;
+        const weeksElem = (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.parseHTML)(_templates_calendarWeeksTemplate_js__WEBPACK_IMPORTED_MODULE_5__["default"]).firstChild;
         this.calendarWeeks = {
           element: weeksElem,
           dow: weeksElem.firstChild,
@@ -2454,14 +2391,14 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
     }
     if (options.showDaysOfWeek !== undefined) {
       if (options.showDaysOfWeek) {
-        Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["showElement"])(this.dow);
+        (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.showElement)(this.dow);
         if (this.calendarWeeks) {
-          Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["showElement"])(this.calendarWeeks.dow);
+          (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.showElement)(this.calendarWeeks.dow);
         }
       } else {
-        Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["hideElement"])(this.dow);
+        (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.hideElement)(this.dow);
         if (this.calendarWeeks) {
-          Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__["hideElement"])(this.calendarWeeks.dow);
+          (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_3__.hideElement)(this.calendarWeeks.dow);
         }
       }
     }
@@ -2481,11 +2418,11 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
     const viewDate = new Date(this.picker.viewDate);
     const viewYear = viewDate.getFullYear();
     const viewMonth = viewDate.getMonth();
-    const firstOfMonth = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(viewYear, viewMonth, 1);
-    const start = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dayOfTheWeekOf"])(firstOfMonth, this.weekStart, this.weekStart);
+    const firstOfMonth = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(viewYear, viewMonth, 1);
+    const start = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dayOfTheWeekOf)(firstOfMonth, this.weekStart, this.weekStart);
 
     this.first = firstOfMonth;
-    this.last = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(viewYear, viewMonth + 1, 0);
+    this.last = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(viewYear, viewMonth + 1, 0);
     this.start = start;
     this.focused = this.picker.viewDate;
   }
@@ -2502,26 +2439,26 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
    // Update the entire view UI
   render() {
     // update today marker on ever render
-    this.today = this.todayHighlight ? Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["today"])() : undefined;
+    this.today = this.todayHighlight ? (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.today)() : undefined;
     // refresh disabled dates on every render in order to clear the ones added
     // by beforeShow hook at previous render
     this.disabled = [...this.datesDisabled];
 
-    const switchLabel = Object(_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(this.focused, this.switchLabelFormat, this.locale);
+    const switchLabel = (0,_lib_date_format_js__WEBPACK_IMPORTED_MODULE_2__.formatDate)(this.focused, this.switchLabelFormat, this.locale);
     this.picker.setViewSwitchLabel(switchLabel);
     this.picker.setPrevBtnDisabled(this.first <= this.minDate);
     this.picker.setNextBtnDisabled(this.last >= this.maxDate);
 
     if (this.calendarWeeks) {
       // start of the UTC week (Monday) of the 1st of the month
-      const startOfWeek = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dayOfTheWeekOf"])(this.first, 1, 1);
+      const startOfWeek = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dayOfTheWeekOf)(this.first, 1, 1);
       Array.from(this.calendarWeeks.weeks.children).forEach((el, index) => {
-        el.textContent = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["getWeek"])(Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addWeeks"])(startOfWeek, index));
+        el.textContent = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.getWeek)((0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addWeeks)(startOfWeek, index));
       });
     }
     Array.from(this.grid.children).forEach((el, index) => {
       const classList = el.classList;
-      const current = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["addDays"])(this.start, index);
+      const current = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.addDays)(this.start, index);
       const date = new Date(current);
       const day = date.getDay();
 
@@ -2542,7 +2479,7 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
       }
       if (this.daysOfWeekDisabled.includes(day)) {
         classList.add('disabled', 'cursor-not-allowed');
-        Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["pushUnique"])(this.disabled, current);
+        (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.pushUnique)(this.disabled, current);
       }
       if (this.daysOfWeekHighlighted.includes(day)) {
         classList.add('highlighted');
@@ -2627,12 +2564,13 @@ class DaysView extends _View_js__WEBPACK_IMPORTED_MODULE_6__["default"] {
 /*!************************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/views/MonthsView.js ***!
   \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MonthsView; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MonthsView)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _lib_dom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib/dom.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/dom.js");
@@ -2670,7 +2608,7 @@ class MonthsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
     if (onConstruction) {
       this.grid = this.element;
       this.element.classList.add('months', 'datepicker-grid', 'w-64', 'grid', 'grid-cols-4');
-      this.grid.appendChild(Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["parseHTML"])(Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["createTagRepeat"])('span', 12, {'data-month': ix => ix})));
+      this.grid.appendChild((0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.parseHTML)((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.createTagRepeat)('span', 12, {'data-month': ix => ix})));
     }
     super.init(options);
   }
@@ -2679,7 +2617,7 @@ class MonthsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
     if (options.locale) {
       this.monthNames = options.locale.monthsShort;
     }
-    if (Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'minDate')) {
+    if ((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'minDate')) {
       if (options.minDate === undefined) {
         this.minYear = this.minMonth = this.minDate = undefined;
       } else {
@@ -2689,14 +2627,14 @@ class MonthsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
         this.minDate = minDateObj.setDate(1);
       }
     }
-    if (Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'maxDate')) {
+    if ((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'maxDate')) {
       if (options.maxDate === undefined) {
         this.maxYear = this.maxMonth = this.maxDate = undefined;
       } else {
         const maxDateObj = new Date(options.maxDate);
         this.maxYear = maxDateObj.getFullYear();
         this.maxMonth = maxDateObj.getMonth();
-        this.maxDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(this.maxYear, this.maxMonth + 1, 0);
+        this.maxDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(this.maxYear, this.maxMonth + 1, 0);
       }
     }
     if (options.beforeShowMonth !== undefined) {
@@ -2723,7 +2661,7 @@ class MonthsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
       if (selected[year] === undefined) {
         selected[year] = [month];
       } else {
-        Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["pushUnique"])(selected[year], month);
+        (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.pushUnique)(selected[year], month);
       }
       return selected;
     }, {});
@@ -2753,7 +2691,7 @@ class MonthsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
 
     Array.from(this.grid.children).forEach((el, index) => {
       const classList = el.classList;
-      const date = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(this.year, index, 1);
+      const date = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(this.year, index, 1);
 
       el.className = `datepicker-cell hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm ${this.cellClass}`;
       if (this.isMinView) {
@@ -2842,12 +2780,13 @@ class MonthsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
 /*!******************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/views/View.js ***!
   \******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return View; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ View)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_dom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/dom.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/dom.js");
 
@@ -2858,7 +2797,7 @@ class View {
   constructor(picker, config) {
     Object.assign(this, config, {
       picker,
-      element: Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_1__["parseHTML"])(`<div class="datepicker-view flex"></div>`).firstChild,
+      element: (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_1__.parseHTML)(`<div class="datepicker-view flex"></div>`).firstChild,
       selected: [],
     });
     this.init(this.picker.datepicker.config);
@@ -2890,17 +2829,17 @@ class View {
     if (result) {
       if (result.enabled === false) {
         el.classList.add('disabled');
-        Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["pushUnique"])(this.disabled, current);
+        (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.pushUnique)(this.disabled, current);
       }
       if (result.classes) {
         const extraClasses = result.classes.split(/\s+/);
         el.classList.add(...extraClasses);
         if (extraClasses.includes('disabled')) {
-          Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["pushUnique"])(this.disabled, current);
+          (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.pushUnique)(this.disabled, current);
         }
       }
       if (result.content) {
-        Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_1__["replaceChildNodes"])(el, result.content);
+        (0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_1__.replaceChildNodes)(el, result.content);
       }
     }
   }
@@ -2913,12 +2852,13 @@ class View {
 /*!***********************************************************************************!*\
   !*** ./node_modules/@themesberg/tailwind-datepicker/js/picker/views/YearsView.js ***!
   \***********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return YearsView; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ YearsView)
+/* harmony export */ });
 /* harmony import */ var _lib_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/utils.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/utils.js");
 /* harmony import */ var _lib_date_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/date.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/date.js");
 /* harmony import */ var _lib_dom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib/dom.js */ "./node_modules/@themesberg/tailwind-datepicker/js/lib/dom.js");
@@ -2944,26 +2884,26 @@ class YearsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
       this.beforeShowOption = `beforeShow${toTitleCase(this.cellClass)}`;
       this.grid = this.element;
       this.element.classList.add(this.name, 'datepicker-grid', 'w-64', 'grid', 'grid-cols-4');
-      this.grid.appendChild(Object(_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__["parseHTML"])(Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["createTagRepeat"])('span', 12)));
+      this.grid.appendChild((0,_lib_dom_js__WEBPACK_IMPORTED_MODULE_2__.parseHTML)((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.createTagRepeat)('span', 12)));
     }
     super.init(options);
   }
 
   setOptions(options) {
-    if (Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'minDate')) {
+    if ((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'minDate')) {
       if (options.minDate === undefined) {
         this.minYear = this.minDate = undefined;
       } else {
-        this.minYear = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["startOfYearPeriod"])(options.minDate, this.step);
-        this.minDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(this.minYear, 0, 1);
+        this.minYear = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.startOfYearPeriod)(options.minDate, this.step);
+        this.minDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(this.minYear, 0, 1);
       }
     }
-    if (Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["hasProperty"])(options, 'maxDate')) {
+    if ((0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.hasProperty)(options, 'maxDate')) {
       if (options.maxDate === undefined) {
         this.maxYear = this.maxDate = undefined;
       } else {
-        this.maxYear = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["startOfYearPeriod"])(options.maxDate, this.step);
-        this.maxDate = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(this.maxYear, 11, 31);
+        this.maxYear = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.startOfYearPeriod)(options.maxDate, this.step);
+        this.maxDate = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(this.maxYear, 11, 31);
       }
     }
     if (options[this.beforeShowOption] !== undefined) {
@@ -2975,25 +2915,25 @@ class YearsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
   // Update view's settings to reflect the viewDate set on the picker
   updateFocus() {
     const viewDate = new Date(this.picker.viewDate);
-    const first = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["startOfYearPeriod"])(viewDate, this.navStep);
+    const first = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.startOfYearPeriod)(viewDate, this.navStep);
     const last = first + 9 * this.step;
 
     this.first = first;
     this.last = last;
     this.start = first - this.step;
-    this.focused = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["startOfYearPeriod"])(viewDate, this.step);
+    this.focused = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.startOfYearPeriod)(viewDate, this.step);
   }
 
   // Update view's settings to reflect the selected dates
   updateSelection() {
     const {dates, rangepicker} = this.picker.datepicker;
     this.selected = dates.reduce((years, timeValue) => {
-      return Object(_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__["pushUnique"])(years, Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["startOfYearPeriod"])(timeValue, this.step));
+      return (0,_lib_utils_js__WEBPACK_IMPORTED_MODULE_0__.pushUnique)(years, (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.startOfYearPeriod)(timeValue, this.step));
     }, []);
     if (rangepicker && rangepicker.dates) {
       this.range = rangepicker.dates.map(timeValue => {
         if (timeValue !== undefined) {
-          return Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["startOfYearPeriod"])(timeValue, this.step);
+          return (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.startOfYearPeriod)(timeValue, this.step);
         }
       });
     }
@@ -3012,7 +2952,7 @@ class YearsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
     Array.from(this.grid.children).forEach((el, index) => {
       const classList = el.classList;
       const current = this.start + (index * this.step);
-      const date = Object(_lib_date_js__WEBPACK_IMPORTED_MODULE_1__["dateValue"])(current, 0, 1);
+      const date = (0,_lib_date_js__WEBPACK_IMPORTED_MODULE_1__.dateValue)(current, 0, 1);
 
       el.className = `datepicker-cell hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm ${this.cellClass}`;
       if (this.isMinView) {
@@ -3097,10907 +3037,14 @@ class YearsView extends _View_js__WEBPACK_IMPORTED_MODULE_3__["default"] {
 
 /***/ }),
 
-/***/ "./node_modules/jquery/dist/jquery.js":
-/*!********************************************!*\
-  !*** ./node_modules/jquery/dist/jquery.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.6.0
- * https://jquery.com/
- *
- * Includes Sizzle.js
- * https://sizzlejs.com/
- *
- * Copyright OpenJS Foundation and other contributors
- * Released under the MIT license
- * https://jquery.org/license
- *
- * Date: 2021-03-02T17:08Z
- */
-( function( global, factory ) {
-
-	"use strict";
-
-	if (  true && typeof module.exports === "object" ) {
-
-		// For CommonJS and CommonJS-like environments where a proper `window`
-		// is present, execute the factory and get jQuery.
-		// For environments that do not have a `window` with a `document`
-		// (such as Node.js), expose a factory as module.exports.
-		// This accentuates the need for the creation of a real `window`.
-		// e.g. var jQuery = require("jquery")(window);
-		// See ticket #14549 for more info.
-		module.exports = global.document ?
-			factory( global, true ) :
-			function( w ) {
-				if ( !w.document ) {
-					throw new Error( "jQuery requires a window with a document" );
-				}
-				return factory( w );
-			};
-	} else {
-		factory( global );
-	}
-
-// Pass this if window is not defined yet
-} )( typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
-
-// Edge <= 12 - 13+, Firefox <=18 - 45+, IE 10 - 11, Safari 5.1 - 9+, iOS 6 - 9.1
-// throw exceptions when non-strict code (e.g., ASP.NET 4.5) accesses strict mode
-// arguments.callee.caller (trac-13335). But as of jQuery 3.0 (2016), strict mode should be common
-// enough that all such attempts are guarded in a try block.
-"use strict";
-
-var arr = [];
-
-var getProto = Object.getPrototypeOf;
-
-var slice = arr.slice;
-
-var flat = arr.flat ? function( array ) {
-	return arr.flat.call( array );
-} : function( array ) {
-	return arr.concat.apply( [], array );
-};
-
-
-var push = arr.push;
-
-var indexOf = arr.indexOf;
-
-var class2type = {};
-
-var toString = class2type.toString;
-
-var hasOwn = class2type.hasOwnProperty;
-
-var fnToString = hasOwn.toString;
-
-var ObjectFunctionString = fnToString.call( Object );
-
-var support = {};
-
-var isFunction = function isFunction( obj ) {
-
-		// Support: Chrome <=57, Firefox <=52
-		// In some browsers, typeof returns "function" for HTML <object> elements
-		// (i.e., `typeof document.createElement( "object" ) === "function"`).
-		// We don't want to classify *any* DOM node as a function.
-		// Support: QtWeb <=3.8.5, WebKit <=534.34, wkhtmltopdf tool <=0.12.5
-		// Plus for old WebKit, typeof returns "function" for HTML collections
-		// (e.g., `typeof document.getElementsByTagName("div") === "function"`). (gh-4756)
-		return typeof obj === "function" && typeof obj.nodeType !== "number" &&
-			typeof obj.item !== "function";
-	};
-
-
-var isWindow = function isWindow( obj ) {
-		return obj != null && obj === obj.window;
-	};
-
-
-var document = window.document;
-
-
-
-	var preservedScriptAttributes = {
-		type: true,
-		src: true,
-		nonce: true,
-		noModule: true
-	};
-
-	function DOMEval( code, node, doc ) {
-		doc = doc || document;
-
-		var i, val,
-			script = doc.createElement( "script" );
-
-		script.text = code;
-		if ( node ) {
-			for ( i in preservedScriptAttributes ) {
-
-				// Support: Firefox 64+, Edge 18+
-				// Some browsers don't support the "nonce" property on scripts.
-				// On the other hand, just using `getAttribute` is not enough as
-				// the `nonce` attribute is reset to an empty string whenever it
-				// becomes browsing-context connected.
-				// See https://github.com/whatwg/html/issues/2369
-				// See https://html.spec.whatwg.org/#nonce-attributes
-				// The `node.getAttribute` check was added for the sake of
-				// `jQuery.globalEval` so that it can fake a nonce-containing node
-				// via an object.
-				val = node[ i ] || node.getAttribute && node.getAttribute( i );
-				if ( val ) {
-					script.setAttribute( i, val );
-				}
-			}
-		}
-		doc.head.appendChild( script ).parentNode.removeChild( script );
-	}
-
-
-function toType( obj ) {
-	if ( obj == null ) {
-		return obj + "";
-	}
-
-	// Support: Android <=2.3 only (functionish RegExp)
-	return typeof obj === "object" || typeof obj === "function" ?
-		class2type[ toString.call( obj ) ] || "object" :
-		typeof obj;
-}
-/* global Symbol */
-// Defining this global in .eslintrc.json would create a danger of using the global
-// unguarded in another place, it seems safer to define global only for this module
-
-
-
-var
-	version = "3.6.0",
-
-	// Define a local copy of jQuery
-	jQuery = function( selector, context ) {
-
-		// The jQuery object is actually just the init constructor 'enhanced'
-		// Need init if jQuery is called (just allow error to be thrown if not included)
-		return new jQuery.fn.init( selector, context );
-	};
-
-jQuery.fn = jQuery.prototype = {
-
-	// The current version of jQuery being used
-	jquery: version,
-
-	constructor: jQuery,
-
-	// The default length of a jQuery object is 0
-	length: 0,
-
-	toArray: function() {
-		return slice.call( this );
-	},
-
-	// Get the Nth element in the matched element set OR
-	// Get the whole matched element set as a clean array
-	get: function( num ) {
-
-		// Return all the elements in a clean array
-		if ( num == null ) {
-			return slice.call( this );
-		}
-
-		// Return just the one element from the set
-		return num < 0 ? this[ num + this.length ] : this[ num ];
-	},
-
-	// Take an array of elements and push it onto the stack
-	// (returning the new matched element set)
-	pushStack: function( elems ) {
-
-		// Build a new jQuery matched element set
-		var ret = jQuery.merge( this.constructor(), elems );
-
-		// Add the old object onto the stack (as a reference)
-		ret.prevObject = this;
-
-		// Return the newly-formed element set
-		return ret;
-	},
-
-	// Execute a callback for every element in the matched set.
-	each: function( callback ) {
-		return jQuery.each( this, callback );
-	},
-
-	map: function( callback ) {
-		return this.pushStack( jQuery.map( this, function( elem, i ) {
-			return callback.call( elem, i, elem );
-		} ) );
-	},
-
-	slice: function() {
-		return this.pushStack( slice.apply( this, arguments ) );
-	},
-
-	first: function() {
-		return this.eq( 0 );
-	},
-
-	last: function() {
-		return this.eq( -1 );
-	},
-
-	even: function() {
-		return this.pushStack( jQuery.grep( this, function( _elem, i ) {
-			return ( i + 1 ) % 2;
-		} ) );
-	},
-
-	odd: function() {
-		return this.pushStack( jQuery.grep( this, function( _elem, i ) {
-			return i % 2;
-		} ) );
-	},
-
-	eq: function( i ) {
-		var len = this.length,
-			j = +i + ( i < 0 ? len : 0 );
-		return this.pushStack( j >= 0 && j < len ? [ this[ j ] ] : [] );
-	},
-
-	end: function() {
-		return this.prevObject || this.constructor();
-	},
-
-	// For internal use only.
-	// Behaves like an Array's method, not like a jQuery method.
-	push: push,
-	sort: arr.sort,
-	splice: arr.splice
-};
-
-jQuery.extend = jQuery.fn.extend = function() {
-	var options, name, src, copy, copyIsArray, clone,
-		target = arguments[ 0 ] || {},
-		i = 1,
-		length = arguments.length,
-		deep = false;
-
-	// Handle a deep copy situation
-	if ( typeof target === "boolean" ) {
-		deep = target;
-
-		// Skip the boolean and the target
-		target = arguments[ i ] || {};
-		i++;
-	}
-
-	// Handle case when target is a string or something (possible in deep copy)
-	if ( typeof target !== "object" && !isFunction( target ) ) {
-		target = {};
-	}
-
-	// Extend jQuery itself if only one argument is passed
-	if ( i === length ) {
-		target = this;
-		i--;
-	}
-
-	for ( ; i < length; i++ ) {
-
-		// Only deal with non-null/undefined values
-		if ( ( options = arguments[ i ] ) != null ) {
-
-			// Extend the base object
-			for ( name in options ) {
-				copy = options[ name ];
-
-				// Prevent Object.prototype pollution
-				// Prevent never-ending loop
-				if ( name === "__proto__" || target === copy ) {
-					continue;
-				}
-
-				// Recurse if we're merging plain objects or arrays
-				if ( deep && copy && ( jQuery.isPlainObject( copy ) ||
-					( copyIsArray = Array.isArray( copy ) ) ) ) {
-					src = target[ name ];
-
-					// Ensure proper type for the source value
-					if ( copyIsArray && !Array.isArray( src ) ) {
-						clone = [];
-					} else if ( !copyIsArray && !jQuery.isPlainObject( src ) ) {
-						clone = {};
-					} else {
-						clone = src;
-					}
-					copyIsArray = false;
-
-					// Never move original objects, clone them
-					target[ name ] = jQuery.extend( deep, clone, copy );
-
-				// Don't bring in undefined values
-				} else if ( copy !== undefined ) {
-					target[ name ] = copy;
-				}
-			}
-		}
-	}
-
-	// Return the modified object
-	return target;
-};
-
-jQuery.extend( {
-
-	// Unique for each copy of jQuery on the page
-	expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
-
-	// Assume jQuery is ready without the ready module
-	isReady: true,
-
-	error: function( msg ) {
-		throw new Error( msg );
-	},
-
-	noop: function() {},
-
-	isPlainObject: function( obj ) {
-		var proto, Ctor;
-
-		// Detect obvious negatives
-		// Use toString instead of jQuery.type to catch host objects
-		if ( !obj || toString.call( obj ) !== "[object Object]" ) {
-			return false;
-		}
-
-		proto = getProto( obj );
-
-		// Objects with no prototype (e.g., `Object.create( null )`) are plain
-		if ( !proto ) {
-			return true;
-		}
-
-		// Objects with prototype are plain iff they were constructed by a global Object function
-		Ctor = hasOwn.call( proto, "constructor" ) && proto.constructor;
-		return typeof Ctor === "function" && fnToString.call( Ctor ) === ObjectFunctionString;
-	},
-
-	isEmptyObject: function( obj ) {
-		var name;
-
-		for ( name in obj ) {
-			return false;
-		}
-		return true;
-	},
-
-	// Evaluates a script in a provided context; falls back to the global one
-	// if not specified.
-	globalEval: function( code, options, doc ) {
-		DOMEval( code, { nonce: options && options.nonce }, doc );
-	},
-
-	each: function( obj, callback ) {
-		var length, i = 0;
-
-		if ( isArrayLike( obj ) ) {
-			length = obj.length;
-			for ( ; i < length; i++ ) {
-				if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
-					break;
-				}
-			}
-		} else {
-			for ( i in obj ) {
-				if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
-					break;
-				}
-			}
-		}
-
-		return obj;
-	},
-
-	// results is for internal usage only
-	makeArray: function( arr, results ) {
-		var ret = results || [];
-
-		if ( arr != null ) {
-			if ( isArrayLike( Object( arr ) ) ) {
-				jQuery.merge( ret,
-					typeof arr === "string" ?
-						[ arr ] : arr
-				);
-			} else {
-				push.call( ret, arr );
-			}
-		}
-
-		return ret;
-	},
-
-	inArray: function( elem, arr, i ) {
-		return arr == null ? -1 : indexOf.call( arr, elem, i );
-	},
-
-	// Support: Android <=4.0 only, PhantomJS 1 only
-	// push.apply(_, arraylike) throws on ancient WebKit
-	merge: function( first, second ) {
-		var len = +second.length,
-			j = 0,
-			i = first.length;
-
-		for ( ; j < len; j++ ) {
-			first[ i++ ] = second[ j ];
-		}
-
-		first.length = i;
-
-		return first;
-	},
-
-	grep: function( elems, callback, invert ) {
-		var callbackInverse,
-			matches = [],
-			i = 0,
-			length = elems.length,
-			callbackExpect = !invert;
-
-		// Go through the array, only saving the items
-		// that pass the validator function
-		for ( ; i < length; i++ ) {
-			callbackInverse = !callback( elems[ i ], i );
-			if ( callbackInverse !== callbackExpect ) {
-				matches.push( elems[ i ] );
-			}
-		}
-
-		return matches;
-	},
-
-	// arg is for internal usage only
-	map: function( elems, callback, arg ) {
-		var length, value,
-			i = 0,
-			ret = [];
-
-		// Go through the array, translating each of the items to their new values
-		if ( isArrayLike( elems ) ) {
-			length = elems.length;
-			for ( ; i < length; i++ ) {
-				value = callback( elems[ i ], i, arg );
-
-				if ( value != null ) {
-					ret.push( value );
-				}
-			}
-
-		// Go through every key on the object,
-		} else {
-			for ( i in elems ) {
-				value = callback( elems[ i ], i, arg );
-
-				if ( value != null ) {
-					ret.push( value );
-				}
-			}
-		}
-
-		// Flatten any nested arrays
-		return flat( ret );
-	},
-
-	// A global GUID counter for objects
-	guid: 1,
-
-	// jQuery.support is not used in Core but other projects attach their
-	// properties to it so it needs to exist.
-	support: support
-} );
-
-if ( typeof Symbol === "function" ) {
-	jQuery.fn[ Symbol.iterator ] = arr[ Symbol.iterator ];
-}
-
-// Populate the class2type map
-jQuery.each( "Boolean Number String Function Array Date RegExp Object Error Symbol".split( " " ),
-	function( _i, name ) {
-		class2type[ "[object " + name + "]" ] = name.toLowerCase();
-	} );
-
-function isArrayLike( obj ) {
-
-	// Support: real iOS 8.2 only (not reproducible in simulator)
-	// `in` check used to prevent JIT error (gh-2145)
-	// hasOwn isn't used here due to false negatives
-	// regarding Nodelist length in IE
-	var length = !!obj && "length" in obj && obj.length,
-		type = toType( obj );
-
-	if ( isFunction( obj ) || isWindow( obj ) ) {
-		return false;
-	}
-
-	return type === "array" || length === 0 ||
-		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
-}
-var Sizzle =
-/*!
- * Sizzle CSS Selector Engine v2.3.6
- * https://sizzlejs.com/
- *
- * Copyright JS Foundation and other contributors
- * Released under the MIT license
- * https://js.foundation/
- *
- * Date: 2021-02-16
- */
-( function( window ) {
-var i,
-	support,
-	Expr,
-	getText,
-	isXML,
-	tokenize,
-	compile,
-	select,
-	outermostContext,
-	sortInput,
-	hasDuplicate,
-
-	// Local document vars
-	setDocument,
-	document,
-	docElem,
-	documentIsHTML,
-	rbuggyQSA,
-	rbuggyMatches,
-	matches,
-	contains,
-
-	// Instance-specific data
-	expando = "sizzle" + 1 * new Date(),
-	preferredDoc = window.document,
-	dirruns = 0,
-	done = 0,
-	classCache = createCache(),
-	tokenCache = createCache(),
-	compilerCache = createCache(),
-	nonnativeSelectorCache = createCache(),
-	sortOrder = function( a, b ) {
-		if ( a === b ) {
-			hasDuplicate = true;
-		}
-		return 0;
-	},
-
-	// Instance methods
-	hasOwn = ( {} ).hasOwnProperty,
-	arr = [],
-	pop = arr.pop,
-	pushNative = arr.push,
-	push = arr.push,
-	slice = arr.slice,
-
-	// Use a stripped-down indexOf as it's faster than native
-	// https://jsperf.com/thor-indexof-vs-for/5
-	indexOf = function( list, elem ) {
-		var i = 0,
-			len = list.length;
-		for ( ; i < len; i++ ) {
-			if ( list[ i ] === elem ) {
-				return i;
-			}
-		}
-		return -1;
-	},
-
-	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|" +
-		"ismap|loop|multiple|open|readonly|required|scoped",
-
-	// Regular expressions
-
-	// http://www.w3.org/TR/css3-selectors/#whitespace
-	whitespace = "[\\x20\\t\\r\\n\\f]",
-
-	// https://www.w3.org/TR/css-syntax-3/#ident-token-diagram
-	identifier = "(?:\\\\[\\da-fA-F]{1,6}" + whitespace +
-		"?|\\\\[^\\r\\n\\f]|[\\w-]|[^\0-\\x7f])+",
-
-	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
-	attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
-
-		// Operator (capture 2)
-		"*([*^$|!~]?=)" + whitespace +
-
-		// "Attribute values must be CSS identifiers [capture 5]
-		// or strings [capture 3 or capture 4]"
-		"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" +
-		whitespace + "*\\]",
-
-	pseudos = ":(" + identifier + ")(?:\\((" +
-
-		// To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
-		// 1. quoted (capture 3; capture 4 or capture 5)
-		"('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|" +
-
-		// 2. simple (capture 6)
-		"((?:\\\\.|[^\\\\()[\\]]|" + attributes + ")*)|" +
-
-		// 3. anything else (capture 2)
-		".*" +
-		")\\)|)",
-
-	// Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
-	rwhitespace = new RegExp( whitespace + "+", "g" ),
-	rtrim = new RegExp( "^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" +
-		whitespace + "+$", "g" ),
-
-	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
-	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace +
-		"*" ),
-	rdescend = new RegExp( whitespace + "|>" ),
-
-	rpseudo = new RegExp( pseudos ),
-	ridentifier = new RegExp( "^" + identifier + "$" ),
-
-	matchExpr = {
-		"ID": new RegExp( "^#(" + identifier + ")" ),
-		"CLASS": new RegExp( "^\\.(" + identifier + ")" ),
-		"TAG": new RegExp( "^(" + identifier + "|[*])" ),
-		"ATTR": new RegExp( "^" + attributes ),
-		"PSEUDO": new RegExp( "^" + pseudos ),
-		"CHILD": new RegExp( "^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" +
-			whitespace + "*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" +
-			whitespace + "*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
-		"bool": new RegExp( "^(?:" + booleans + ")$", "i" ),
-
-		// For use in libraries implementing .is()
-		// We use this for POS matching in `select`
-		"needsContext": new RegExp( "^" + whitespace +
-			"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" + whitespace +
-			"*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
-	},
-
-	rhtml = /HTML$/i,
-	rinputs = /^(?:input|select|textarea|button)$/i,
-	rheader = /^h\d$/i,
-
-	rnative = /^[^{]+\{\s*\[native \w/,
-
-	// Easily-parseable/retrievable ID or TAG or CLASS selectors
-	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
-
-	rsibling = /[+~]/,
-
-	// CSS escapes
-	// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
-	runescape = new RegExp( "\\\\[\\da-fA-F]{1,6}" + whitespace + "?|\\\\([^\\r\\n\\f])", "g" ),
-	funescape = function( escape, nonHex ) {
-		var high = "0x" + escape.slice( 1 ) - 0x10000;
-
-		return nonHex ?
-
-			// Strip the backslash prefix from a non-hex escape sequence
-			nonHex :
-
-			// Replace a hexadecimal escape sequence with the encoded Unicode code point
-			// Support: IE <=11+
-			// For values outside the Basic Multilingual Plane (BMP), manually construct a
-			// surrogate pair
-			high < 0 ?
-				String.fromCharCode( high + 0x10000 ) :
-				String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
-	},
-
-	// CSS string/identifier serialization
-	// https://drafts.csswg.org/cssom/#common-serializing-idioms
-	rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
-	fcssescape = function( ch, asCodePoint ) {
-		if ( asCodePoint ) {
-
-			// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
-			if ( ch === "\0" ) {
-				return "\uFFFD";
-			}
-
-			// Control characters and (dependent upon position) numbers get escaped as code points
-			return ch.slice( 0, -1 ) + "\\" +
-				ch.charCodeAt( ch.length - 1 ).toString( 16 ) + " ";
-		}
-
-		// Other potentially-special ASCII characters get backslash-escaped
-		return "\\" + ch;
-	},
-
-	// Used for iframes
-	// See setDocument()
-	// Removing the function wrapper causes a "Permission Denied"
-	// error in IE
-	unloadHandler = function() {
-		setDocument();
-	},
-
-	inDisabledFieldset = addCombinator(
-		function( elem ) {
-			return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
-		},
-		{ dir: "parentNode", next: "legend" }
-	);
-
-// Optimize for push.apply( _, NodeList )
-try {
-	push.apply(
-		( arr = slice.call( preferredDoc.childNodes ) ),
-		preferredDoc.childNodes
-	);
-
-	// Support: Android<4.0
-	// Detect silently failing push.apply
-	// eslint-disable-next-line no-unused-expressions
-	arr[ preferredDoc.childNodes.length ].nodeType;
-} catch ( e ) {
-	push = { apply: arr.length ?
-
-		// Leverage slice if possible
-		function( target, els ) {
-			pushNative.apply( target, slice.call( els ) );
-		} :
-
-		// Support: IE<9
-		// Otherwise append directly
-		function( target, els ) {
-			var j = target.length,
-				i = 0;
-
-			// Can't trust NodeList.length
-			while ( ( target[ j++ ] = els[ i++ ] ) ) {}
-			target.length = j - 1;
-		}
-	};
-}
-
-function Sizzle( selector, context, results, seed ) {
-	var m, i, elem, nid, match, groups, newSelector,
-		newContext = context && context.ownerDocument,
-
-		// nodeType defaults to 9, since context defaults to document
-		nodeType = context ? context.nodeType : 9;
-
-	results = results || [];
-
-	// Return early from calls with invalid selector or context
-	if ( typeof selector !== "string" || !selector ||
-		nodeType !== 1 && nodeType !== 9 && nodeType !== 11 ) {
-
-		return results;
-	}
-
-	// Try to shortcut find operations (as opposed to filters) in HTML documents
-	if ( !seed ) {
-		setDocument( context );
-		context = context || document;
-
-		if ( documentIsHTML ) {
-
-			// If the selector is sufficiently simple, try using a "get*By*" DOM method
-			// (excepting DocumentFragment context, where the methods don't exist)
-			if ( nodeType !== 11 && ( match = rquickExpr.exec( selector ) ) ) {
-
-				// ID selector
-				if ( ( m = match[ 1 ] ) ) {
-
-					// Document context
-					if ( nodeType === 9 ) {
-						if ( ( elem = context.getElementById( m ) ) ) {
-
-							// Support: IE, Opera, Webkit
-							// TODO: identify versions
-							// getElementById can match elements by name instead of ID
-							if ( elem.id === m ) {
-								results.push( elem );
-								return results;
-							}
-						} else {
-							return results;
-						}
-
-					// Element context
-					} else {
-
-						// Support: IE, Opera, Webkit
-						// TODO: identify versions
-						// getElementById can match elements by name instead of ID
-						if ( newContext && ( elem = newContext.getElementById( m ) ) &&
-							contains( context, elem ) &&
-							elem.id === m ) {
-
-							results.push( elem );
-							return results;
-						}
-					}
-
-				// Type selector
-				} else if ( match[ 2 ] ) {
-					push.apply( results, context.getElementsByTagName( selector ) );
-					return results;
-
-				// Class selector
-				} else if ( ( m = match[ 3 ] ) && support.getElementsByClassName &&
-					context.getElementsByClassName ) {
-
-					push.apply( results, context.getElementsByClassName( m ) );
-					return results;
-				}
-			}
-
-			// Take advantage of querySelectorAll
-			if ( support.qsa &&
-				!nonnativeSelectorCache[ selector + " " ] &&
-				( !rbuggyQSA || !rbuggyQSA.test( selector ) ) &&
-
-				// Support: IE 8 only
-				// Exclude object elements
-				( nodeType !== 1 || context.nodeName.toLowerCase() !== "object" ) ) {
-
-				newSelector = selector;
-				newContext = context;
-
-				// qSA considers elements outside a scoping root when evaluating child or
-				// descendant combinators, which is not what we want.
-				// In such cases, we work around the behavior by prefixing every selector in the
-				// list with an ID selector referencing the scope context.
-				// The technique has to be used as well when a leading combinator is used
-				// as such selectors are not recognized by querySelectorAll.
-				// Thanks to Andrew Dupont for this technique.
-				if ( nodeType === 1 &&
-					( rdescend.test( selector ) || rcombinators.test( selector ) ) ) {
-
-					// Expand context for sibling selectors
-					newContext = rsibling.test( selector ) && testContext( context.parentNode ) ||
-						context;
-
-					// We can use :scope instead of the ID hack if the browser
-					// supports it & if we're not changing the context.
-					if ( newContext !== context || !support.scope ) {
-
-						// Capture the context ID, setting it first if necessary
-						if ( ( nid = context.getAttribute( "id" ) ) ) {
-							nid = nid.replace( rcssescape, fcssescape );
-						} else {
-							context.setAttribute( "id", ( nid = expando ) );
-						}
-					}
-
-					// Prefix every selector in the list
-					groups = tokenize( selector );
-					i = groups.length;
-					while ( i-- ) {
-						groups[ i ] = ( nid ? "#" + nid : ":scope" ) + " " +
-							toSelector( groups[ i ] );
-					}
-					newSelector = groups.join( "," );
-				}
-
-				try {
-					push.apply( results,
-						newContext.querySelectorAll( newSelector )
-					);
-					return results;
-				} catch ( qsaError ) {
-					nonnativeSelectorCache( selector, true );
-				} finally {
-					if ( nid === expando ) {
-						context.removeAttribute( "id" );
-					}
-				}
-			}
-		}
-	}
-
-	// All others
-	return select( selector.replace( rtrim, "$1" ), context, results, seed );
-}
-
-/**
- * Create key-value caches of limited size
- * @returns {function(string, object)} Returns the Object data after storing it on itself with
- *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
- *	deleting the oldest entry
- */
-function createCache() {
-	var keys = [];
-
-	function cache( key, value ) {
-
-		// Use (key + " ") to avoid collision with native prototype properties (see Issue #157)
-		if ( keys.push( key + " " ) > Expr.cacheLength ) {
-
-			// Only keep the most recent entries
-			delete cache[ keys.shift() ];
-		}
-		return ( cache[ key + " " ] = value );
-	}
-	return cache;
-}
-
-/**
- * Mark a function for special use by Sizzle
- * @param {Function} fn The function to mark
- */
-function markFunction( fn ) {
-	fn[ expando ] = true;
-	return fn;
-}
-
-/**
- * Support testing using an element
- * @param {Function} fn Passed the created element and returns a boolean result
- */
-function assert( fn ) {
-	var el = document.createElement( "fieldset" );
-
-	try {
-		return !!fn( el );
-	} catch ( e ) {
-		return false;
-	} finally {
-
-		// Remove from its parent by default
-		if ( el.parentNode ) {
-			el.parentNode.removeChild( el );
-		}
-
-		// release memory in IE
-		el = null;
-	}
-}
-
-/**
- * Adds the same handler for all of the specified attrs
- * @param {String} attrs Pipe-separated list of attributes
- * @param {Function} handler The method that will be applied
- */
-function addHandle( attrs, handler ) {
-	var arr = attrs.split( "|" ),
-		i = arr.length;
-
-	while ( i-- ) {
-		Expr.attrHandle[ arr[ i ] ] = handler;
-	}
-}
-
-/**
- * Checks document order of two siblings
- * @param {Element} a
- * @param {Element} b
- * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
- */
-function siblingCheck( a, b ) {
-	var cur = b && a,
-		diff = cur && a.nodeType === 1 && b.nodeType === 1 &&
-			a.sourceIndex - b.sourceIndex;
-
-	// Use IE sourceIndex if available on both nodes
-	if ( diff ) {
-		return diff;
-	}
-
-	// Check if b follows a
-	if ( cur ) {
-		while ( ( cur = cur.nextSibling ) ) {
-			if ( cur === b ) {
-				return -1;
-			}
-		}
-	}
-
-	return a ? 1 : -1;
-}
-
-/**
- * Returns a function to use in pseudos for input types
- * @param {String} type
- */
-function createInputPseudo( type ) {
-	return function( elem ) {
-		var name = elem.nodeName.toLowerCase();
-		return name === "input" && elem.type === type;
-	};
-}
-
-/**
- * Returns a function to use in pseudos for buttons
- * @param {String} type
- */
-function createButtonPseudo( type ) {
-	return function( elem ) {
-		var name = elem.nodeName.toLowerCase();
-		return ( name === "input" || name === "button" ) && elem.type === type;
-	};
-}
-
-/**
- * Returns a function to use in pseudos for :enabled/:disabled
- * @param {Boolean} disabled true for :disabled; false for :enabled
- */
-function createDisabledPseudo( disabled ) {
-
-	// Known :disabled false positives: fieldset[disabled] > legend:nth-of-type(n+2) :can-disable
-	return function( elem ) {
-
-		// Only certain elements can match :enabled or :disabled
-		// https://html.spec.whatwg.org/multipage/scripting.html#selector-enabled
-		// https://html.spec.whatwg.org/multipage/scripting.html#selector-disabled
-		if ( "form" in elem ) {
-
-			// Check for inherited disabledness on relevant non-disabled elements:
-			// * listed form-associated elements in a disabled fieldset
-			//   https://html.spec.whatwg.org/multipage/forms.html#category-listed
-			//   https://html.spec.whatwg.org/multipage/forms.html#concept-fe-disabled
-			// * option elements in a disabled optgroup
-			//   https://html.spec.whatwg.org/multipage/forms.html#concept-option-disabled
-			// All such elements have a "form" property.
-			if ( elem.parentNode && elem.disabled === false ) {
-
-				// Option elements defer to a parent optgroup if present
-				if ( "label" in elem ) {
-					if ( "label" in elem.parentNode ) {
-						return elem.parentNode.disabled === disabled;
-					} else {
-						return elem.disabled === disabled;
-					}
-				}
-
-				// Support: IE 6 - 11
-				// Use the isDisabled shortcut property to check for disabled fieldset ancestors
-				return elem.isDisabled === disabled ||
-
-					// Where there is no isDisabled, check manually
-					/* jshint -W018 */
-					elem.isDisabled !== !disabled &&
-					inDisabledFieldset( elem ) === disabled;
-			}
-
-			return elem.disabled === disabled;
-
-		// Try to winnow out elements that can't be disabled before trusting the disabled property.
-		// Some victims get caught in our net (label, legend, menu, track), but it shouldn't
-		// even exist on them, let alone have a boolean value.
-		} else if ( "label" in elem ) {
-			return elem.disabled === disabled;
-		}
-
-		// Remaining elements are neither :enabled nor :disabled
-		return false;
-	};
-}
-
-/**
- * Returns a function to use in pseudos for positionals
- * @param {Function} fn
- */
-function createPositionalPseudo( fn ) {
-	return markFunction( function( argument ) {
-		argument = +argument;
-		return markFunction( function( seed, matches ) {
-			var j,
-				matchIndexes = fn( [], seed.length, argument ),
-				i = matchIndexes.length;
-
-			// Match elements found at the specified indexes
-			while ( i-- ) {
-				if ( seed[ ( j = matchIndexes[ i ] ) ] ) {
-					seed[ j ] = !( matches[ j ] = seed[ j ] );
-				}
-			}
-		} );
-	} );
-}
-
-/**
- * Checks a node for validity as a Sizzle context
- * @param {Element|Object=} context
- * @returns {Element|Object|Boolean} The input node if acceptable, otherwise a falsy value
- */
-function testContext( context ) {
-	return context && typeof context.getElementsByTagName !== "undefined" && context;
-}
-
-// Expose support vars for convenience
-support = Sizzle.support = {};
-
-/**
- * Detects XML nodes
- * @param {Element|Object} elem An element or a document
- * @returns {Boolean} True iff elem is a non-HTML XML node
- */
-isXML = Sizzle.isXML = function( elem ) {
-	var namespace = elem && elem.namespaceURI,
-		docElem = elem && ( elem.ownerDocument || elem ).documentElement;
-
-	// Support: IE <=8
-	// Assume HTML when documentElement doesn't yet exist, such as inside loading iframes
-	// https://bugs.jquery.com/ticket/4833
-	return !rhtml.test( namespace || docElem && docElem.nodeName || "HTML" );
-};
-
-/**
- * Sets document-related variables once based on the current document
- * @param {Element|Object} [doc] An element or document object to use to set the document
- * @returns {Object} Returns the current document
- */
-setDocument = Sizzle.setDocument = function( node ) {
-	var hasCompare, subWindow,
-		doc = node ? node.ownerDocument || node : preferredDoc;
-
-	// Return early if doc is invalid or already selected
-	// Support: IE 11+, Edge 17 - 18+
-	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
-	if ( doc == document || doc.nodeType !== 9 || !doc.documentElement ) {
-		return document;
-	}
-
-	// Update global variables
-	document = doc;
-	docElem = document.documentElement;
-	documentIsHTML = !isXML( document );
-
-	// Support: IE 9 - 11+, Edge 12 - 18+
-	// Accessing iframe documents after unload throws "permission denied" errors (jQuery #13936)
-	// Support: IE 11+, Edge 17 - 18+
-	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
-	if ( preferredDoc != document &&
-		( subWindow = document.defaultView ) && subWindow.top !== subWindow ) {
-
-		// Support: IE 11, Edge
-		if ( subWindow.addEventListener ) {
-			subWindow.addEventListener( "unload", unloadHandler, false );
-
-		// Support: IE 9 - 10 only
-		} else if ( subWindow.attachEvent ) {
-			subWindow.attachEvent( "onunload", unloadHandler );
-		}
-	}
-
-	// Support: IE 8 - 11+, Edge 12 - 18+, Chrome <=16 - 25 only, Firefox <=3.6 - 31 only,
-	// Safari 4 - 5 only, Opera <=11.6 - 12.x only
-	// IE/Edge & older browsers don't support the :scope pseudo-class.
-	// Support: Safari 6.0 only
-	// Safari 6.0 supports :scope but it's an alias of :root there.
-	support.scope = assert( function( el ) {
-		docElem.appendChild( el ).appendChild( document.createElement( "div" ) );
-		return typeof el.querySelectorAll !== "undefined" &&
-			!el.querySelectorAll( ":scope fieldset div" ).length;
-	} );
-
-	/* Attributes
-	---------------------------------------------------------------------- */
-
-	// Support: IE<8
-	// Verify that getAttribute really returns attributes and not properties
-	// (excepting IE8 booleans)
-	support.attributes = assert( function( el ) {
-		el.className = "i";
-		return !el.getAttribute( "className" );
-	} );
-
-	/* getElement(s)By*
-	---------------------------------------------------------------------- */
-
-	// Check if getElementsByTagName("*") returns only elements
-	support.getElementsByTagName = assert( function( el ) {
-		el.appendChild( document.createComment( "" ) );
-		return !el.getElementsByTagName( "*" ).length;
-	} );
-
-	// Support: IE<9
-	support.getElementsByClassName = rnative.test( document.getElementsByClassName );
-
-	// Support: IE<10
-	// Check if getElementById returns elements by name
-	// The broken getElementById methods don't pick up programmatically-set names,
-	// so use a roundabout getElementsByName test
-	support.getById = assert( function( el ) {
-		docElem.appendChild( el ).id = expando;
-		return !document.getElementsByName || !document.getElementsByName( expando ).length;
-	} );
-
-	// ID filter and find
-	if ( support.getById ) {
-		Expr.filter[ "ID" ] = function( id ) {
-			var attrId = id.replace( runescape, funescape );
-			return function( elem ) {
-				return elem.getAttribute( "id" ) === attrId;
-			};
-		};
-		Expr.find[ "ID" ] = function( id, context ) {
-			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
-				var elem = context.getElementById( id );
-				return elem ? [ elem ] : [];
-			}
-		};
-	} else {
-		Expr.filter[ "ID" ] =  function( id ) {
-			var attrId = id.replace( runescape, funescape );
-			return function( elem ) {
-				var node = typeof elem.getAttributeNode !== "undefined" &&
-					elem.getAttributeNode( "id" );
-				return node && node.value === attrId;
-			};
-		};
-
-		// Support: IE 6 - 7 only
-		// getElementById is not reliable as a find shortcut
-		Expr.find[ "ID" ] = function( id, context ) {
-			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
-				var node, i, elems,
-					elem = context.getElementById( id );
-
-				if ( elem ) {
-
-					// Verify the id attribute
-					node = elem.getAttributeNode( "id" );
-					if ( node && node.value === id ) {
-						return [ elem ];
-					}
-
-					// Fall back on getElementsByName
-					elems = context.getElementsByName( id );
-					i = 0;
-					while ( ( elem = elems[ i++ ] ) ) {
-						node = elem.getAttributeNode( "id" );
-						if ( node && node.value === id ) {
-							return [ elem ];
-						}
-					}
-				}
-
-				return [];
-			}
-		};
-	}
-
-	// Tag
-	Expr.find[ "TAG" ] = support.getElementsByTagName ?
-		function( tag, context ) {
-			if ( typeof context.getElementsByTagName !== "undefined" ) {
-				return context.getElementsByTagName( tag );
-
-			// DocumentFragment nodes don't have gEBTN
-			} else if ( support.qsa ) {
-				return context.querySelectorAll( tag );
-			}
-		} :
-
-		function( tag, context ) {
-			var elem,
-				tmp = [],
-				i = 0,
-
-				// By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
-				results = context.getElementsByTagName( tag );
-
-			// Filter out possible comments
-			if ( tag === "*" ) {
-				while ( ( elem = results[ i++ ] ) ) {
-					if ( elem.nodeType === 1 ) {
-						tmp.push( elem );
-					}
-				}
-
-				return tmp;
-			}
-			return results;
-		};
-
-	// Class
-	Expr.find[ "CLASS" ] = support.getElementsByClassName && function( className, context ) {
-		if ( typeof context.getElementsByClassName !== "undefined" && documentIsHTML ) {
-			return context.getElementsByClassName( className );
-		}
-	};
-
-	/* QSA/matchesSelector
-	---------------------------------------------------------------------- */
-
-	// QSA and matchesSelector support
-
-	// matchesSelector(:active) reports false when true (IE9/Opera 11.5)
-	rbuggyMatches = [];
-
-	// qSa(:focus) reports false when true (Chrome 21)
-	// We allow this because of a bug in IE8/9 that throws an error
-	// whenever `document.activeElement` is accessed on an iframe
-	// So, we allow :focus to pass through QSA all the time to avoid the IE error
-	// See https://bugs.jquery.com/ticket/13378
-	rbuggyQSA = [];
-
-	if ( ( support.qsa = rnative.test( document.querySelectorAll ) ) ) {
-
-		// Build QSA regex
-		// Regex strategy adopted from Diego Perini
-		assert( function( el ) {
-
-			var input;
-
-			// Select is set to empty string on purpose
-			// This is to test IE's treatment of not explicitly
-			// setting a boolean content attribute,
-			// since its presence should be enough
-			// https://bugs.jquery.com/ticket/12359
-			docElem.appendChild( el ).innerHTML = "<a id='" + expando + "'></a>" +
-				"<select id='" + expando + "-\r\\' msallowcapture=''>" +
-				"<option selected=''></option></select>";
-
-			// Support: IE8, Opera 11-12.16
-			// Nothing should be selected when empty strings follow ^= or $= or *=
-			// The test attribute must be unknown in Opera but "safe" for WinRT
-			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
-			if ( el.querySelectorAll( "[msallowcapture^='']" ).length ) {
-				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
-			}
-
-			// Support: IE8
-			// Boolean attributes and "value" are not treated correctly
-			if ( !el.querySelectorAll( "[selected]" ).length ) {
-				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
-			}
-
-			// Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
-			if ( !el.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
-				rbuggyQSA.push( "~=" );
-			}
-
-			// Support: IE 11+, Edge 15 - 18+
-			// IE 11/Edge don't find elements on a `[name='']` query in some cases.
-			// Adding a temporary attribute to the document before the selection works
-			// around the issue.
-			// Interestingly, IE 10 & older don't seem to have the issue.
-			input = document.createElement( "input" );
-			input.setAttribute( "name", "" );
-			el.appendChild( input );
-			if ( !el.querySelectorAll( "[name='']" ).length ) {
-				rbuggyQSA.push( "\\[" + whitespace + "*name" + whitespace + "*=" +
-					whitespace + "*(?:''|\"\")" );
-			}
-
-			// Webkit/Opera - :checked should return selected option elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-			// IE8 throws error here and will not see later tests
-			if ( !el.querySelectorAll( ":checked" ).length ) {
-				rbuggyQSA.push( ":checked" );
-			}
-
-			// Support: Safari 8+, iOS 8+
-			// https://bugs.webkit.org/show_bug.cgi?id=136851
-			// In-page `selector#id sibling-combinator selector` fails
-			if ( !el.querySelectorAll( "a#" + expando + "+*" ).length ) {
-				rbuggyQSA.push( ".#.+[+~]" );
-			}
-
-			// Support: Firefox <=3.6 - 5 only
-			// Old Firefox doesn't throw on a badly-escaped identifier.
-			el.querySelectorAll( "\\\f" );
-			rbuggyQSA.push( "[\\r\\n\\f]" );
-		} );
-
-		assert( function( el ) {
-			el.innerHTML = "<a href='' disabled='disabled'></a>" +
-				"<select disabled='disabled'><option/></select>";
-
-			// Support: Windows 8 Native Apps
-			// The type and name attributes are restricted during .innerHTML assignment
-			var input = document.createElement( "input" );
-			input.setAttribute( "type", "hidden" );
-			el.appendChild( input ).setAttribute( "name", "D" );
-
-			// Support: IE8
-			// Enforce case-sensitivity of name attribute
-			if ( el.querySelectorAll( "[name=d]" ).length ) {
-				rbuggyQSA.push( "name" + whitespace + "*[*^$|!~]?=" );
-			}
-
-			// FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
-			// IE8 throws error here and will not see later tests
-			if ( el.querySelectorAll( ":enabled" ).length !== 2 ) {
-				rbuggyQSA.push( ":enabled", ":disabled" );
-			}
-
-			// Support: IE9-11+
-			// IE's :disabled selector does not pick up the children of disabled fieldsets
-			docElem.appendChild( el ).disabled = true;
-			if ( el.querySelectorAll( ":disabled" ).length !== 2 ) {
-				rbuggyQSA.push( ":enabled", ":disabled" );
-			}
-
-			// Support: Opera 10 - 11 only
-			// Opera 10-11 does not throw on post-comma invalid pseudos
-			el.querySelectorAll( "*,:x" );
-			rbuggyQSA.push( ",.*:" );
-		} );
-	}
-
-	if ( ( support.matchesSelector = rnative.test( ( matches = docElem.matches ||
-		docElem.webkitMatchesSelector ||
-		docElem.mozMatchesSelector ||
-		docElem.oMatchesSelector ||
-		docElem.msMatchesSelector ) ) ) ) {
-
-		assert( function( el ) {
-
-			// Check to see if it's possible to do matchesSelector
-			// on a disconnected node (IE 9)
-			support.disconnectedMatch = matches.call( el, "*" );
-
-			// This should fail with an exception
-			// Gecko does not error, returns false instead
-			matches.call( el, "[s!='']:x" );
-			rbuggyMatches.push( "!=", pseudos );
-		} );
-	}
-
-	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join( "|" ) );
-	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join( "|" ) );
-
-	/* Contains
-	---------------------------------------------------------------------- */
-	hasCompare = rnative.test( docElem.compareDocumentPosition );
-
-	// Element contains another
-	// Purposefully self-exclusive
-	// As in, an element does not contain itself
-	contains = hasCompare || rnative.test( docElem.contains ) ?
-		function( a, b ) {
-			var adown = a.nodeType === 9 ? a.documentElement : a,
-				bup = b && b.parentNode;
-			return a === bup || !!( bup && bup.nodeType === 1 && (
-				adown.contains ?
-					adown.contains( bup ) :
-					a.compareDocumentPosition && a.compareDocumentPosition( bup ) & 16
-			) );
-		} :
-		function( a, b ) {
-			if ( b ) {
-				while ( ( b = b.parentNode ) ) {
-					if ( b === a ) {
-						return true;
-					}
-				}
-			}
-			return false;
-		};
-
-	/* Sorting
-	---------------------------------------------------------------------- */
-
-	// Document order sorting
-	sortOrder = hasCompare ?
-	function( a, b ) {
-
-		// Flag for duplicate removal
-		if ( a === b ) {
-			hasDuplicate = true;
-			return 0;
-		}
-
-		// Sort on method existence if only one input has compareDocumentPosition
-		var compare = !a.compareDocumentPosition - !b.compareDocumentPosition;
-		if ( compare ) {
-			return compare;
-		}
-
-		// Calculate position if both inputs belong to the same document
-		// Support: IE 11+, Edge 17 - 18+
-		// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-		// two documents; shallow comparisons work.
-		// eslint-disable-next-line eqeqeq
-		compare = ( a.ownerDocument || a ) == ( b.ownerDocument || b ) ?
-			a.compareDocumentPosition( b ) :
-
-			// Otherwise we know they are disconnected
-			1;
-
-		// Disconnected nodes
-		if ( compare & 1 ||
-			( !support.sortDetached && b.compareDocumentPosition( a ) === compare ) ) {
-
-			// Choose the first element that is related to our preferred document
-			// Support: IE 11+, Edge 17 - 18+
-			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-			// two documents; shallow comparisons work.
-			// eslint-disable-next-line eqeqeq
-			if ( a == document || a.ownerDocument == preferredDoc &&
-				contains( preferredDoc, a ) ) {
-				return -1;
-			}
-
-			// Support: IE 11+, Edge 17 - 18+
-			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-			// two documents; shallow comparisons work.
-			// eslint-disable-next-line eqeqeq
-			if ( b == document || b.ownerDocument == preferredDoc &&
-				contains( preferredDoc, b ) ) {
-				return 1;
-			}
-
-			// Maintain original order
-			return sortInput ?
-				( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
-				0;
-		}
-
-		return compare & 4 ? -1 : 1;
-	} :
-	function( a, b ) {
-
-		// Exit early if the nodes are identical
-		if ( a === b ) {
-			hasDuplicate = true;
-			return 0;
-		}
-
-		var cur,
-			i = 0,
-			aup = a.parentNode,
-			bup = b.parentNode,
-			ap = [ a ],
-			bp = [ b ];
-
-		// Parentless nodes are either documents or disconnected
-		if ( !aup || !bup ) {
-
-			// Support: IE 11+, Edge 17 - 18+
-			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-			// two documents; shallow comparisons work.
-			/* eslint-disable eqeqeq */
-			return a == document ? -1 :
-				b == document ? 1 :
-				/* eslint-enable eqeqeq */
-				aup ? -1 :
-				bup ? 1 :
-				sortInput ?
-				( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
-				0;
-
-		// If the nodes are siblings, we can do a quick check
-		} else if ( aup === bup ) {
-			return siblingCheck( a, b );
-		}
-
-		// Otherwise we need full lists of their ancestors for comparison
-		cur = a;
-		while ( ( cur = cur.parentNode ) ) {
-			ap.unshift( cur );
-		}
-		cur = b;
-		while ( ( cur = cur.parentNode ) ) {
-			bp.unshift( cur );
-		}
-
-		// Walk down the tree looking for a discrepancy
-		while ( ap[ i ] === bp[ i ] ) {
-			i++;
-		}
-
-		return i ?
-
-			// Do a sibling check if the nodes have a common ancestor
-			siblingCheck( ap[ i ], bp[ i ] ) :
-
-			// Otherwise nodes in our document sort first
-			// Support: IE 11+, Edge 17 - 18+
-			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-			// two documents; shallow comparisons work.
-			/* eslint-disable eqeqeq */
-			ap[ i ] == preferredDoc ? -1 :
-			bp[ i ] == preferredDoc ? 1 :
-			/* eslint-enable eqeqeq */
-			0;
-	};
-
-	return document;
-};
-
-Sizzle.matches = function( expr, elements ) {
-	return Sizzle( expr, null, null, elements );
-};
-
-Sizzle.matchesSelector = function( elem, expr ) {
-	setDocument( elem );
-
-	if ( support.matchesSelector && documentIsHTML &&
-		!nonnativeSelectorCache[ expr + " " ] &&
-		( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
-		( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
-
-		try {
-			var ret = matches.call( elem, expr );
-
-			// IE 9's matchesSelector returns false on disconnected nodes
-			if ( ret || support.disconnectedMatch ||
-
-				// As well, disconnected nodes are said to be in a document
-				// fragment in IE 9
-				elem.document && elem.document.nodeType !== 11 ) {
-				return ret;
-			}
-		} catch ( e ) {
-			nonnativeSelectorCache( expr, true );
-		}
-	}
-
-	return Sizzle( expr, document, null, [ elem ] ).length > 0;
-};
-
-Sizzle.contains = function( context, elem ) {
-
-	// Set document vars if needed
-	// Support: IE 11+, Edge 17 - 18+
-	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
-	if ( ( context.ownerDocument || context ) != document ) {
-		setDocument( context );
-	}
-	return contains( context, elem );
-};
-
-Sizzle.attr = function( elem, name ) {
-
-	// Set document vars if needed
-	// Support: IE 11+, Edge 17 - 18+
-	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
-	if ( ( elem.ownerDocument || elem ) != document ) {
-		setDocument( elem );
-	}
-
-	var fn = Expr.attrHandle[ name.toLowerCase() ],
-
-		// Don't get fooled by Object.prototype properties (jQuery #13807)
-		val = fn && hasOwn.call( Expr.attrHandle, name.toLowerCase() ) ?
-			fn( elem, name, !documentIsHTML ) :
-			undefined;
-
-	return val !== undefined ?
-		val :
-		support.attributes || !documentIsHTML ?
-			elem.getAttribute( name ) :
-			( val = elem.getAttributeNode( name ) ) && val.specified ?
-				val.value :
-				null;
-};
-
-Sizzle.escape = function( sel ) {
-	return ( sel + "" ).replace( rcssescape, fcssescape );
-};
-
-Sizzle.error = function( msg ) {
-	throw new Error( "Syntax error, unrecognized expression: " + msg );
-};
-
-/**
- * Document sorting and removing duplicates
- * @param {ArrayLike} results
- */
-Sizzle.uniqueSort = function( results ) {
-	var elem,
-		duplicates = [],
-		j = 0,
-		i = 0;
-
-	// Unless we *know* we can detect duplicates, assume their presence
-	hasDuplicate = !support.detectDuplicates;
-	sortInput = !support.sortStable && results.slice( 0 );
-	results.sort( sortOrder );
-
-	if ( hasDuplicate ) {
-		while ( ( elem = results[ i++ ] ) ) {
-			if ( elem === results[ i ] ) {
-				j = duplicates.push( i );
-			}
-		}
-		while ( j-- ) {
-			results.splice( duplicates[ j ], 1 );
-		}
-	}
-
-	// Clear input after sorting to release objects
-	// See https://github.com/jquery/sizzle/pull/225
-	sortInput = null;
-
-	return results;
-};
-
-/**
- * Utility function for retrieving the text value of an array of DOM nodes
- * @param {Array|Element} elem
- */
-getText = Sizzle.getText = function( elem ) {
-	var node,
-		ret = "",
-		i = 0,
-		nodeType = elem.nodeType;
-
-	if ( !nodeType ) {
-
-		// If no nodeType, this is expected to be an array
-		while ( ( node = elem[ i++ ] ) ) {
-
-			// Do not traverse comment nodes
-			ret += getText( node );
-		}
-	} else if ( nodeType === 1 || nodeType === 9 || nodeType === 11 ) {
-
-		// Use textContent for elements
-		// innerText usage removed for consistency of new lines (jQuery #11153)
-		if ( typeof elem.textContent === "string" ) {
-			return elem.textContent;
-		} else {
-
-			// Traverse its children
-			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
-				ret += getText( elem );
-			}
-		}
-	} else if ( nodeType === 3 || nodeType === 4 ) {
-		return elem.nodeValue;
-	}
-
-	// Do not include comment or processing instruction nodes
-
-	return ret;
-};
-
-Expr = Sizzle.selectors = {
-
-	// Can be adjusted by the user
-	cacheLength: 50,
-
-	createPseudo: markFunction,
-
-	match: matchExpr,
-
-	attrHandle: {},
-
-	find: {},
-
-	relative: {
-		">": { dir: "parentNode", first: true },
-		" ": { dir: "parentNode" },
-		"+": { dir: "previousSibling", first: true },
-		"~": { dir: "previousSibling" }
-	},
-
-	preFilter: {
-		"ATTR": function( match ) {
-			match[ 1 ] = match[ 1 ].replace( runescape, funescape );
-
-			// Move the given value to match[3] whether quoted or unquoted
-			match[ 3 ] = ( match[ 3 ] || match[ 4 ] ||
-				match[ 5 ] || "" ).replace( runescape, funescape );
-
-			if ( match[ 2 ] === "~=" ) {
-				match[ 3 ] = " " + match[ 3 ] + " ";
-			}
-
-			return match.slice( 0, 4 );
-		},
-
-		"CHILD": function( match ) {
-
-			/* matches from matchExpr["CHILD"]
-				1 type (only|nth|...)
-				2 what (child|of-type)
-				3 argument (even|odd|\d*|\d*n([+-]\d+)?|...)
-				4 xn-component of xn+y argument ([+-]?\d*n|)
-				5 sign of xn-component
-				6 x of xn-component
-				7 sign of y-component
-				8 y of y-component
-			*/
-			match[ 1 ] = match[ 1 ].toLowerCase();
-
-			if ( match[ 1 ].slice( 0, 3 ) === "nth" ) {
-
-				// nth-* requires argument
-				if ( !match[ 3 ] ) {
-					Sizzle.error( match[ 0 ] );
-				}
-
-				// numeric x and y parameters for Expr.filter.CHILD
-				// remember that false/true cast respectively to 0/1
-				match[ 4 ] = +( match[ 4 ] ?
-					match[ 5 ] + ( match[ 6 ] || 1 ) :
-					2 * ( match[ 3 ] === "even" || match[ 3 ] === "odd" ) );
-				match[ 5 ] = +( ( match[ 7 ] + match[ 8 ] ) || match[ 3 ] === "odd" );
-
-				// other types prohibit arguments
-			} else if ( match[ 3 ] ) {
-				Sizzle.error( match[ 0 ] );
-			}
-
-			return match;
-		},
-
-		"PSEUDO": function( match ) {
-			var excess,
-				unquoted = !match[ 6 ] && match[ 2 ];
-
-			if ( matchExpr[ "CHILD" ].test( match[ 0 ] ) ) {
-				return null;
-			}
-
-			// Accept quoted arguments as-is
-			if ( match[ 3 ] ) {
-				match[ 2 ] = match[ 4 ] || match[ 5 ] || "";
-
-			// Strip excess characters from unquoted arguments
-			} else if ( unquoted && rpseudo.test( unquoted ) &&
-
-				// Get excess from tokenize (recursively)
-				( excess = tokenize( unquoted, true ) ) &&
-
-				// advance to the next closing parenthesis
-				( excess = unquoted.indexOf( ")", unquoted.length - excess ) - unquoted.length ) ) {
-
-				// excess is a negative index
-				match[ 0 ] = match[ 0 ].slice( 0, excess );
-				match[ 2 ] = unquoted.slice( 0, excess );
-			}
-
-			// Return only captures needed by the pseudo filter method (type and argument)
-			return match.slice( 0, 3 );
-		}
-	},
-
-	filter: {
-
-		"TAG": function( nodeNameSelector ) {
-			var nodeName = nodeNameSelector.replace( runescape, funescape ).toLowerCase();
-			return nodeNameSelector === "*" ?
-				function() {
-					return true;
-				} :
-				function( elem ) {
-					return elem.nodeName && elem.nodeName.toLowerCase() === nodeName;
-				};
-		},
-
-		"CLASS": function( className ) {
-			var pattern = classCache[ className + " " ];
-
-			return pattern ||
-				( pattern = new RegExp( "(^|" + whitespace +
-					")" + className + "(" + whitespace + "|$)" ) ) && classCache(
-						className, function( elem ) {
-							return pattern.test(
-								typeof elem.className === "string" && elem.className ||
-								typeof elem.getAttribute !== "undefined" &&
-									elem.getAttribute( "class" ) ||
-								""
-							);
-				} );
-		},
-
-		"ATTR": function( name, operator, check ) {
-			return function( elem ) {
-				var result = Sizzle.attr( elem, name );
-
-				if ( result == null ) {
-					return operator === "!=";
-				}
-				if ( !operator ) {
-					return true;
-				}
-
-				result += "";
-
-				/* eslint-disable max-len */
-
-				return operator === "=" ? result === check :
-					operator === "!=" ? result !== check :
-					operator === "^=" ? check && result.indexOf( check ) === 0 :
-					operator === "*=" ? check && result.indexOf( check ) > -1 :
-					operator === "$=" ? check && result.slice( -check.length ) === check :
-					operator === "~=" ? ( " " + result.replace( rwhitespace, " " ) + " " ).indexOf( check ) > -1 :
-					operator === "|=" ? result === check || result.slice( 0, check.length + 1 ) === check + "-" :
-					false;
-				/* eslint-enable max-len */
-
-			};
-		},
-
-		"CHILD": function( type, what, _argument, first, last ) {
-			var simple = type.slice( 0, 3 ) !== "nth",
-				forward = type.slice( -4 ) !== "last",
-				ofType = what === "of-type";
-
-			return first === 1 && last === 0 ?
-
-				// Shortcut for :nth-*(n)
-				function( elem ) {
-					return !!elem.parentNode;
-				} :
-
-				function( elem, _context, xml ) {
-					var cache, uniqueCache, outerCache, node, nodeIndex, start,
-						dir = simple !== forward ? "nextSibling" : "previousSibling",
-						parent = elem.parentNode,
-						name = ofType && elem.nodeName.toLowerCase(),
-						useCache = !xml && !ofType,
-						diff = false;
-
-					if ( parent ) {
-
-						// :(first|last|only)-(child|of-type)
-						if ( simple ) {
-							while ( dir ) {
-								node = elem;
-								while ( ( node = node[ dir ] ) ) {
-									if ( ofType ?
-										node.nodeName.toLowerCase() === name :
-										node.nodeType === 1 ) {
-
-										return false;
-									}
-								}
-
-								// Reverse direction for :only-* (if we haven't yet done so)
-								start = dir = type === "only" && !start && "nextSibling";
-							}
-							return true;
-						}
-
-						start = [ forward ? parent.firstChild : parent.lastChild ];
-
-						// non-xml :nth-child(...) stores cache data on `parent`
-						if ( forward && useCache ) {
-
-							// Seek `elem` from a previously-cached index
-
-							// ...in a gzip-friendly way
-							node = parent;
-							outerCache = node[ expando ] || ( node[ expando ] = {} );
-
-							// Support: IE <9 only
-							// Defend against cloned attroperties (jQuery gh-1709)
-							uniqueCache = outerCache[ node.uniqueID ] ||
-								( outerCache[ node.uniqueID ] = {} );
-
-							cache = uniqueCache[ type ] || [];
-							nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
-							diff = nodeIndex && cache[ 2 ];
-							node = nodeIndex && parent.childNodes[ nodeIndex ];
-
-							while ( ( node = ++nodeIndex && node && node[ dir ] ||
-
-								// Fallback to seeking `elem` from the start
-								( diff = nodeIndex = 0 ) || start.pop() ) ) {
-
-								// When found, cache indexes on `parent` and break
-								if ( node.nodeType === 1 && ++diff && node === elem ) {
-									uniqueCache[ type ] = [ dirruns, nodeIndex, diff ];
-									break;
-								}
-							}
-
-						} else {
-
-							// Use previously-cached element index if available
-							if ( useCache ) {
-
-								// ...in a gzip-friendly way
-								node = elem;
-								outerCache = node[ expando ] || ( node[ expando ] = {} );
-
-								// Support: IE <9 only
-								// Defend against cloned attroperties (jQuery gh-1709)
-								uniqueCache = outerCache[ node.uniqueID ] ||
-									( outerCache[ node.uniqueID ] = {} );
-
-								cache = uniqueCache[ type ] || [];
-								nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
-								diff = nodeIndex;
-							}
-
-							// xml :nth-child(...)
-							// or :nth-last-child(...) or :nth(-last)?-of-type(...)
-							if ( diff === false ) {
-
-								// Use the same loop as above to seek `elem` from the start
-								while ( ( node = ++nodeIndex && node && node[ dir ] ||
-									( diff = nodeIndex = 0 ) || start.pop() ) ) {
-
-									if ( ( ofType ?
-										node.nodeName.toLowerCase() === name :
-										node.nodeType === 1 ) &&
-										++diff ) {
-
-										// Cache the index of each encountered element
-										if ( useCache ) {
-											outerCache = node[ expando ] ||
-												( node[ expando ] = {} );
-
-											// Support: IE <9 only
-											// Defend against cloned attroperties (jQuery gh-1709)
-											uniqueCache = outerCache[ node.uniqueID ] ||
-												( outerCache[ node.uniqueID ] = {} );
-
-											uniqueCache[ type ] = [ dirruns, diff ];
-										}
-
-										if ( node === elem ) {
-											break;
-										}
-									}
-								}
-							}
-						}
-
-						// Incorporate the offset, then check against cycle size
-						diff -= last;
-						return diff === first || ( diff % first === 0 && diff / first >= 0 );
-					}
-				};
-		},
-
-		"PSEUDO": function( pseudo, argument ) {
-
-			// pseudo-class names are case-insensitive
-			// http://www.w3.org/TR/selectors/#pseudo-classes
-			// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
-			// Remember that setFilters inherits from pseudos
-			var args,
-				fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
-					Sizzle.error( "unsupported pseudo: " + pseudo );
-
-			// The user may use createPseudo to indicate that
-			// arguments are needed to create the filter function
-			// just as Sizzle does
-			if ( fn[ expando ] ) {
-				return fn( argument );
-			}
-
-			// But maintain support for old signatures
-			if ( fn.length > 1 ) {
-				args = [ pseudo, pseudo, "", argument ];
-				return Expr.setFilters.hasOwnProperty( pseudo.toLowerCase() ) ?
-					markFunction( function( seed, matches ) {
-						var idx,
-							matched = fn( seed, argument ),
-							i = matched.length;
-						while ( i-- ) {
-							idx = indexOf( seed, matched[ i ] );
-							seed[ idx ] = !( matches[ idx ] = matched[ i ] );
-						}
-					} ) :
-					function( elem ) {
-						return fn( elem, 0, args );
-					};
-			}
-
-			return fn;
-		}
-	},
-
-	pseudos: {
-
-		// Potentially complex pseudos
-		"not": markFunction( function( selector ) {
-
-			// Trim the selector passed to compile
-			// to avoid treating leading and trailing
-			// spaces as combinators
-			var input = [],
-				results = [],
-				matcher = compile( selector.replace( rtrim, "$1" ) );
-
-			return matcher[ expando ] ?
-				markFunction( function( seed, matches, _context, xml ) {
-					var elem,
-						unmatched = matcher( seed, null, xml, [] ),
-						i = seed.length;
-
-					// Match elements unmatched by `matcher`
-					while ( i-- ) {
-						if ( ( elem = unmatched[ i ] ) ) {
-							seed[ i ] = !( matches[ i ] = elem );
-						}
-					}
-				} ) :
-				function( elem, _context, xml ) {
-					input[ 0 ] = elem;
-					matcher( input, null, xml, results );
-
-					// Don't keep the element (issue #299)
-					input[ 0 ] = null;
-					return !results.pop();
-				};
-		} ),
-
-		"has": markFunction( function( selector ) {
-			return function( elem ) {
-				return Sizzle( selector, elem ).length > 0;
-			};
-		} ),
-
-		"contains": markFunction( function( text ) {
-			text = text.replace( runescape, funescape );
-			return function( elem ) {
-				return ( elem.textContent || getText( elem ) ).indexOf( text ) > -1;
-			};
-		} ),
-
-		// "Whether an element is represented by a :lang() selector
-		// is based solely on the element's language value
-		// being equal to the identifier C,
-		// or beginning with the identifier C immediately followed by "-".
-		// The matching of C against the element's language value is performed case-insensitively.
-		// The identifier C does not have to be a valid language name."
-		// http://www.w3.org/TR/selectors/#lang-pseudo
-		"lang": markFunction( function( lang ) {
-
-			// lang value must be a valid identifier
-			if ( !ridentifier.test( lang || "" ) ) {
-				Sizzle.error( "unsupported lang: " + lang );
-			}
-			lang = lang.replace( runescape, funescape ).toLowerCase();
-			return function( elem ) {
-				var elemLang;
-				do {
-					if ( ( elemLang = documentIsHTML ?
-						elem.lang :
-						elem.getAttribute( "xml:lang" ) || elem.getAttribute( "lang" ) ) ) {
-
-						elemLang = elemLang.toLowerCase();
-						return elemLang === lang || elemLang.indexOf( lang + "-" ) === 0;
-					}
-				} while ( ( elem = elem.parentNode ) && elem.nodeType === 1 );
-				return false;
-			};
-		} ),
-
-		// Miscellaneous
-		"target": function( elem ) {
-			var hash = window.location && window.location.hash;
-			return hash && hash.slice( 1 ) === elem.id;
-		},
-
-		"root": function( elem ) {
-			return elem === docElem;
-		},
-
-		"focus": function( elem ) {
-			return elem === document.activeElement &&
-				( !document.hasFocus || document.hasFocus() ) &&
-				!!( elem.type || elem.href || ~elem.tabIndex );
-		},
-
-		// Boolean properties
-		"enabled": createDisabledPseudo( false ),
-		"disabled": createDisabledPseudo( true ),
-
-		"checked": function( elem ) {
-
-			// In CSS3, :checked should return both checked and selected elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-			var nodeName = elem.nodeName.toLowerCase();
-			return ( nodeName === "input" && !!elem.checked ) ||
-				( nodeName === "option" && !!elem.selected );
-		},
-
-		"selected": function( elem ) {
-
-			// Accessing this property makes selected-by-default
-			// options in Safari work properly
-			if ( elem.parentNode ) {
-				// eslint-disable-next-line no-unused-expressions
-				elem.parentNode.selectedIndex;
-			}
-
-			return elem.selected === true;
-		},
-
-		// Contents
-		"empty": function( elem ) {
-
-			// http://www.w3.org/TR/selectors/#empty-pseudo
-			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
-			//   but not by others (comment: 8; processing instruction: 7; etc.)
-			// nodeType < 6 works because attributes (2) do not appear as children
-			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
-				if ( elem.nodeType < 6 ) {
-					return false;
-				}
-			}
-			return true;
-		},
-
-		"parent": function( elem ) {
-			return !Expr.pseudos[ "empty" ]( elem );
-		},
-
-		// Element/input types
-		"header": function( elem ) {
-			return rheader.test( elem.nodeName );
-		},
-
-		"input": function( elem ) {
-			return rinputs.test( elem.nodeName );
-		},
-
-		"button": function( elem ) {
-			var name = elem.nodeName.toLowerCase();
-			return name === "input" && elem.type === "button" || name === "button";
-		},
-
-		"text": function( elem ) {
-			var attr;
-			return elem.nodeName.toLowerCase() === "input" &&
-				elem.type === "text" &&
-
-				// Support: IE<8
-				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
-				( ( attr = elem.getAttribute( "type" ) ) == null ||
-					attr.toLowerCase() === "text" );
-		},
-
-		// Position-in-collection
-		"first": createPositionalPseudo( function() {
-			return [ 0 ];
-		} ),
-
-		"last": createPositionalPseudo( function( _matchIndexes, length ) {
-			return [ length - 1 ];
-		} ),
-
-		"eq": createPositionalPseudo( function( _matchIndexes, length, argument ) {
-			return [ argument < 0 ? argument + length : argument ];
-		} ),
-
-		"even": createPositionalPseudo( function( matchIndexes, length ) {
-			var i = 0;
-			for ( ; i < length; i += 2 ) {
-				matchIndexes.push( i );
-			}
-			return matchIndexes;
-		} ),
-
-		"odd": createPositionalPseudo( function( matchIndexes, length ) {
-			var i = 1;
-			for ( ; i < length; i += 2 ) {
-				matchIndexes.push( i );
-			}
-			return matchIndexes;
-		} ),
-
-		"lt": createPositionalPseudo( function( matchIndexes, length, argument ) {
-			var i = argument < 0 ?
-				argument + length :
-				argument > length ?
-					length :
-					argument;
-			for ( ; --i >= 0; ) {
-				matchIndexes.push( i );
-			}
-			return matchIndexes;
-		} ),
-
-		"gt": createPositionalPseudo( function( matchIndexes, length, argument ) {
-			var i = argument < 0 ? argument + length : argument;
-			for ( ; ++i < length; ) {
-				matchIndexes.push( i );
-			}
-			return matchIndexes;
-		} )
-	}
-};
-
-Expr.pseudos[ "nth" ] = Expr.pseudos[ "eq" ];
-
-// Add button/input type pseudos
-for ( i in { radio: true, checkbox: true, file: true, password: true, image: true } ) {
-	Expr.pseudos[ i ] = createInputPseudo( i );
-}
-for ( i in { submit: true, reset: true } ) {
-	Expr.pseudos[ i ] = createButtonPseudo( i );
-}
-
-// Easy API for creating new setFilters
-function setFilters() {}
-setFilters.prototype = Expr.filters = Expr.pseudos;
-Expr.setFilters = new setFilters();
-
-tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
-	var matched, match, tokens, type,
-		soFar, groups, preFilters,
-		cached = tokenCache[ selector + " " ];
-
-	if ( cached ) {
-		return parseOnly ? 0 : cached.slice( 0 );
-	}
-
-	soFar = selector;
-	groups = [];
-	preFilters = Expr.preFilter;
-
-	while ( soFar ) {
-
-		// Comma and first run
-		if ( !matched || ( match = rcomma.exec( soFar ) ) ) {
-			if ( match ) {
-
-				// Don't consume trailing commas as valid
-				soFar = soFar.slice( match[ 0 ].length ) || soFar;
-			}
-			groups.push( ( tokens = [] ) );
-		}
-
-		matched = false;
-
-		// Combinators
-		if ( ( match = rcombinators.exec( soFar ) ) ) {
-			matched = match.shift();
-			tokens.push( {
-				value: matched,
-
-				// Cast descendant combinators to space
-				type: match[ 0 ].replace( rtrim, " " )
-			} );
-			soFar = soFar.slice( matched.length );
-		}
-
-		// Filters
-		for ( type in Expr.filter ) {
-			if ( ( match = matchExpr[ type ].exec( soFar ) ) && ( !preFilters[ type ] ||
-				( match = preFilters[ type ]( match ) ) ) ) {
-				matched = match.shift();
-				tokens.push( {
-					value: matched,
-					type: type,
-					matches: match
-				} );
-				soFar = soFar.slice( matched.length );
-			}
-		}
-
-		if ( !matched ) {
-			break;
-		}
-	}
-
-	// Return the length of the invalid excess
-	// if we're just parsing
-	// Otherwise, throw an error or return tokens
-	return parseOnly ?
-		soFar.length :
-		soFar ?
-			Sizzle.error( selector ) :
-
-			// Cache the tokens
-			tokenCache( selector, groups ).slice( 0 );
-};
-
-function toSelector( tokens ) {
-	var i = 0,
-		len = tokens.length,
-		selector = "";
-	for ( ; i < len; i++ ) {
-		selector += tokens[ i ].value;
-	}
-	return selector;
-}
-
-function addCombinator( matcher, combinator, base ) {
-	var dir = combinator.dir,
-		skip = combinator.next,
-		key = skip || dir,
-		checkNonElements = base && key === "parentNode",
-		doneName = done++;
-
-	return combinator.first ?
-
-		// Check against closest ancestor/preceding element
-		function( elem, context, xml ) {
-			while ( ( elem = elem[ dir ] ) ) {
-				if ( elem.nodeType === 1 || checkNonElements ) {
-					return matcher( elem, context, xml );
-				}
-			}
-			return false;
-		} :
-
-		// Check against all ancestor/preceding elements
-		function( elem, context, xml ) {
-			var oldCache, uniqueCache, outerCache,
-				newCache = [ dirruns, doneName ];
-
-			// We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
-			if ( xml ) {
-				while ( ( elem = elem[ dir ] ) ) {
-					if ( elem.nodeType === 1 || checkNonElements ) {
-						if ( matcher( elem, context, xml ) ) {
-							return true;
-						}
-					}
-				}
-			} else {
-				while ( ( elem = elem[ dir ] ) ) {
-					if ( elem.nodeType === 1 || checkNonElements ) {
-						outerCache = elem[ expando ] || ( elem[ expando ] = {} );
-
-						// Support: IE <9 only
-						// Defend against cloned attroperties (jQuery gh-1709)
-						uniqueCache = outerCache[ elem.uniqueID ] ||
-							( outerCache[ elem.uniqueID ] = {} );
-
-						if ( skip && skip === elem.nodeName.toLowerCase() ) {
-							elem = elem[ dir ] || elem;
-						} else if ( ( oldCache = uniqueCache[ key ] ) &&
-							oldCache[ 0 ] === dirruns && oldCache[ 1 ] === doneName ) {
-
-							// Assign to newCache so results back-propagate to previous elements
-							return ( newCache[ 2 ] = oldCache[ 2 ] );
-						} else {
-
-							// Reuse newcache so results back-propagate to previous elements
-							uniqueCache[ key ] = newCache;
-
-							// A match means we're done; a fail means we have to keep checking
-							if ( ( newCache[ 2 ] = matcher( elem, context, xml ) ) ) {
-								return true;
-							}
-						}
-					}
-				}
-			}
-			return false;
-		};
-}
-
-function elementMatcher( matchers ) {
-	return matchers.length > 1 ?
-		function( elem, context, xml ) {
-			var i = matchers.length;
-			while ( i-- ) {
-				if ( !matchers[ i ]( elem, context, xml ) ) {
-					return false;
-				}
-			}
-			return true;
-		} :
-		matchers[ 0 ];
-}
-
-function multipleContexts( selector, contexts, results ) {
-	var i = 0,
-		len = contexts.length;
-	for ( ; i < len; i++ ) {
-		Sizzle( selector, contexts[ i ], results );
-	}
-	return results;
-}
-
-function condense( unmatched, map, filter, context, xml ) {
-	var elem,
-		newUnmatched = [],
-		i = 0,
-		len = unmatched.length,
-		mapped = map != null;
-
-	for ( ; i < len; i++ ) {
-		if ( ( elem = unmatched[ i ] ) ) {
-			if ( !filter || filter( elem, context, xml ) ) {
-				newUnmatched.push( elem );
-				if ( mapped ) {
-					map.push( i );
-				}
-			}
-		}
-	}
-
-	return newUnmatched;
-}
-
-function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postSelector ) {
-	if ( postFilter && !postFilter[ expando ] ) {
-		postFilter = setMatcher( postFilter );
-	}
-	if ( postFinder && !postFinder[ expando ] ) {
-		postFinder = setMatcher( postFinder, postSelector );
-	}
-	return markFunction( function( seed, results, context, xml ) {
-		var temp, i, elem,
-			preMap = [],
-			postMap = [],
-			preexisting = results.length,
-
-			// Get initial elements from seed or context
-			elems = seed || multipleContexts(
-				selector || "*",
-				context.nodeType ? [ context ] : context,
-				[]
-			),
-
-			// Prefilter to get matcher input, preserving a map for seed-results synchronization
-			matcherIn = preFilter && ( seed || !selector ) ?
-				condense( elems, preMap, preFilter, context, xml ) :
-				elems,
-
-			matcherOut = matcher ?
-
-				// If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
-				postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
-
-					// ...intermediate processing is necessary
-					[] :
-
-					// ...otherwise use results directly
-					results :
-				matcherIn;
-
-		// Find primary matches
-		if ( matcher ) {
-			matcher( matcherIn, matcherOut, context, xml );
-		}
-
-		// Apply postFilter
-		if ( postFilter ) {
-			temp = condense( matcherOut, postMap );
-			postFilter( temp, [], context, xml );
-
-			// Un-match failing elements by moving them back to matcherIn
-			i = temp.length;
-			while ( i-- ) {
-				if ( ( elem = temp[ i ] ) ) {
-					matcherOut[ postMap[ i ] ] = !( matcherIn[ postMap[ i ] ] = elem );
-				}
-			}
-		}
-
-		if ( seed ) {
-			if ( postFinder || preFilter ) {
-				if ( postFinder ) {
-
-					// Get the final matcherOut by condensing this intermediate into postFinder contexts
-					temp = [];
-					i = matcherOut.length;
-					while ( i-- ) {
-						if ( ( elem = matcherOut[ i ] ) ) {
-
-							// Restore matcherIn since elem is not yet a final match
-							temp.push( ( matcherIn[ i ] = elem ) );
-						}
-					}
-					postFinder( null, ( matcherOut = [] ), temp, xml );
-				}
-
-				// Move matched elements from seed to results to keep them synchronized
-				i = matcherOut.length;
-				while ( i-- ) {
-					if ( ( elem = matcherOut[ i ] ) &&
-						( temp = postFinder ? indexOf( seed, elem ) : preMap[ i ] ) > -1 ) {
-
-						seed[ temp ] = !( results[ temp ] = elem );
-					}
-				}
-			}
-
-		// Add elements to results, through postFinder if defined
-		} else {
-			matcherOut = condense(
-				matcherOut === results ?
-					matcherOut.splice( preexisting, matcherOut.length ) :
-					matcherOut
-			);
-			if ( postFinder ) {
-				postFinder( null, results, matcherOut, xml );
-			} else {
-				push.apply( results, matcherOut );
-			}
-		}
-	} );
-}
-
-function matcherFromTokens( tokens ) {
-	var checkContext, matcher, j,
-		len = tokens.length,
-		leadingRelative = Expr.relative[ tokens[ 0 ].type ],
-		implicitRelative = leadingRelative || Expr.relative[ " " ],
-		i = leadingRelative ? 1 : 0,
-
-		// The foundational matcher ensures that elements are reachable from top-level context(s)
-		matchContext = addCombinator( function( elem ) {
-			return elem === checkContext;
-		}, implicitRelative, true ),
-		matchAnyContext = addCombinator( function( elem ) {
-			return indexOf( checkContext, elem ) > -1;
-		}, implicitRelative, true ),
-		matchers = [ function( elem, context, xml ) {
-			var ret = ( !leadingRelative && ( xml || context !== outermostContext ) ) || (
-				( checkContext = context ).nodeType ?
-					matchContext( elem, context, xml ) :
-					matchAnyContext( elem, context, xml ) );
-
-			// Avoid hanging onto element (issue #299)
-			checkContext = null;
-			return ret;
-		} ];
-
-	for ( ; i < len; i++ ) {
-		if ( ( matcher = Expr.relative[ tokens[ i ].type ] ) ) {
-			matchers = [ addCombinator( elementMatcher( matchers ), matcher ) ];
-		} else {
-			matcher = Expr.filter[ tokens[ i ].type ].apply( null, tokens[ i ].matches );
-
-			// Return special upon seeing a positional matcher
-			if ( matcher[ expando ] ) {
-
-				// Find the next relative operator (if any) for proper handling
-				j = ++i;
-				for ( ; j < len; j++ ) {
-					if ( Expr.relative[ tokens[ j ].type ] ) {
-						break;
-					}
-				}
-				return setMatcher(
-					i > 1 && elementMatcher( matchers ),
-					i > 1 && toSelector(
-
-					// If the preceding token was a descendant combinator, insert an implicit any-element `*`
-					tokens
-						.slice( 0, i - 1 )
-						.concat( { value: tokens[ i - 2 ].type === " " ? "*" : "" } )
-					).replace( rtrim, "$1" ),
-					matcher,
-					i < j && matcherFromTokens( tokens.slice( i, j ) ),
-					j < len && matcherFromTokens( ( tokens = tokens.slice( j ) ) ),
-					j < len && toSelector( tokens )
-				);
-			}
-			matchers.push( matcher );
-		}
-	}
-
-	return elementMatcher( matchers );
-}
-
-function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
-	var bySet = setMatchers.length > 0,
-		byElement = elementMatchers.length > 0,
-		superMatcher = function( seed, context, xml, results, outermost ) {
-			var elem, j, matcher,
-				matchedCount = 0,
-				i = "0",
-				unmatched = seed && [],
-				setMatched = [],
-				contextBackup = outermostContext,
-
-				// We must always have either seed elements or outermost context
-				elems = seed || byElement && Expr.find[ "TAG" ]( "*", outermost ),
-
-				// Use integer dirruns iff this is the outermost matcher
-				dirrunsUnique = ( dirruns += contextBackup == null ? 1 : Math.random() || 0.1 ),
-				len = elems.length;
-
-			if ( outermost ) {
-
-				// Support: IE 11+, Edge 17 - 18+
-				// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-				// two documents; shallow comparisons work.
-				// eslint-disable-next-line eqeqeq
-				outermostContext = context == document || context || outermost;
-			}
-
-			// Add elements passing elementMatchers directly to results
-			// Support: IE<9, Safari
-			// Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by id
-			for ( ; i !== len && ( elem = elems[ i ] ) != null; i++ ) {
-				if ( byElement && elem ) {
-					j = 0;
-
-					// Support: IE 11+, Edge 17 - 18+
-					// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-					// two documents; shallow comparisons work.
-					// eslint-disable-next-line eqeqeq
-					if ( !context && elem.ownerDocument != document ) {
-						setDocument( elem );
-						xml = !documentIsHTML;
-					}
-					while ( ( matcher = elementMatchers[ j++ ] ) ) {
-						if ( matcher( elem, context || document, xml ) ) {
-							results.push( elem );
-							break;
-						}
-					}
-					if ( outermost ) {
-						dirruns = dirrunsUnique;
-					}
-				}
-
-				// Track unmatched elements for set filters
-				if ( bySet ) {
-
-					// They will have gone through all possible matchers
-					if ( ( elem = !matcher && elem ) ) {
-						matchedCount--;
-					}
-
-					// Lengthen the array for every element, matched or not
-					if ( seed ) {
-						unmatched.push( elem );
-					}
-				}
-			}
-
-			// `i` is now the count of elements visited above, and adding it to `matchedCount`
-			// makes the latter nonnegative.
-			matchedCount += i;
-
-			// Apply set filters to unmatched elements
-			// NOTE: This can be skipped if there are no unmatched elements (i.e., `matchedCount`
-			// equals `i`), unless we didn't visit _any_ elements in the above loop because we have
-			// no element matchers and no seed.
-			// Incrementing an initially-string "0" `i` allows `i` to remain a string only in that
-			// case, which will result in a "00" `matchedCount` that differs from `i` but is also
-			// numerically zero.
-			if ( bySet && i !== matchedCount ) {
-				j = 0;
-				while ( ( matcher = setMatchers[ j++ ] ) ) {
-					matcher( unmatched, setMatched, context, xml );
-				}
-
-				if ( seed ) {
-
-					// Reintegrate element matches to eliminate the need for sorting
-					if ( matchedCount > 0 ) {
-						while ( i-- ) {
-							if ( !( unmatched[ i ] || setMatched[ i ] ) ) {
-								setMatched[ i ] = pop.call( results );
-							}
-						}
-					}
-
-					// Discard index placeholder values to get only actual matches
-					setMatched = condense( setMatched );
-				}
-
-				// Add matches to results
-				push.apply( results, setMatched );
-
-				// Seedless set matches succeeding multiple successful matchers stipulate sorting
-				if ( outermost && !seed && setMatched.length > 0 &&
-					( matchedCount + setMatchers.length ) > 1 ) {
-
-					Sizzle.uniqueSort( results );
-				}
-			}
-
-			// Override manipulation of globals by nested matchers
-			if ( outermost ) {
-				dirruns = dirrunsUnique;
-				outermostContext = contextBackup;
-			}
-
-			return unmatched;
-		};
-
-	return bySet ?
-		markFunction( superMatcher ) :
-		superMatcher;
-}
-
-compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
-	var i,
-		setMatchers = [],
-		elementMatchers = [],
-		cached = compilerCache[ selector + " " ];
-
-	if ( !cached ) {
-
-		// Generate a function of recursive functions that can be used to check each element
-		if ( !match ) {
-			match = tokenize( selector );
-		}
-		i = match.length;
-		while ( i-- ) {
-			cached = matcherFromTokens( match[ i ] );
-			if ( cached[ expando ] ) {
-				setMatchers.push( cached );
-			} else {
-				elementMatchers.push( cached );
-			}
-		}
-
-		// Cache the compiled function
-		cached = compilerCache(
-			selector,
-			matcherFromGroupMatchers( elementMatchers, setMatchers )
-		);
-
-		// Save selector and tokenization
-		cached.selector = selector;
-	}
-	return cached;
-};
-
-/**
- * A low-level selection function that works with Sizzle's compiled
- *  selector functions
- * @param {String|Function} selector A selector or a pre-compiled
- *  selector function built with Sizzle.compile
- * @param {Element} context
- * @param {Array} [results]
- * @param {Array} [seed] A set of elements to match against
- */
-select = Sizzle.select = function( selector, context, results, seed ) {
-	var i, tokens, token, type, find,
-		compiled = typeof selector === "function" && selector,
-		match = !seed && tokenize( ( selector = compiled.selector || selector ) );
-
-	results = results || [];
-
-	// Try to minimize operations if there is only one selector in the list and no seed
-	// (the latter of which guarantees us context)
-	if ( match.length === 1 ) {
-
-		// Reduce context if the leading compound selector is an ID
-		tokens = match[ 0 ] = match[ 0 ].slice( 0 );
-		if ( tokens.length > 2 && ( token = tokens[ 0 ] ).type === "ID" &&
-			context.nodeType === 9 && documentIsHTML && Expr.relative[ tokens[ 1 ].type ] ) {
-
-			context = ( Expr.find[ "ID" ]( token.matches[ 0 ]
-				.replace( runescape, funescape ), context ) || [] )[ 0 ];
-			if ( !context ) {
-				return results;
-
-			// Precompiled matchers will still verify ancestry, so step up a level
-			} else if ( compiled ) {
-				context = context.parentNode;
-			}
-
-			selector = selector.slice( tokens.shift().value.length );
-		}
-
-		// Fetch a seed set for right-to-left matching
-		i = matchExpr[ "needsContext" ].test( selector ) ? 0 : tokens.length;
-		while ( i-- ) {
-			token = tokens[ i ];
-
-			// Abort if we hit a combinator
-			if ( Expr.relative[ ( type = token.type ) ] ) {
-				break;
-			}
-			if ( ( find = Expr.find[ type ] ) ) {
-
-				// Search, expanding context for leading sibling combinators
-				if ( ( seed = find(
-					token.matches[ 0 ].replace( runescape, funescape ),
-					rsibling.test( tokens[ 0 ].type ) && testContext( context.parentNode ) ||
-						context
-				) ) ) {
-
-					// If seed is empty or no tokens remain, we can return early
-					tokens.splice( i, 1 );
-					selector = seed.length && toSelector( tokens );
-					if ( !selector ) {
-						push.apply( results, seed );
-						return results;
-					}
-
-					break;
-				}
-			}
-		}
-	}
-
-	// Compile and execute a filtering function if one is not provided
-	// Provide `match` to avoid retokenization if we modified the selector above
-	( compiled || compile( selector, match ) )(
-		seed,
-		context,
-		!documentIsHTML,
-		results,
-		!context || rsibling.test( selector ) && testContext( context.parentNode ) || context
-	);
-	return results;
-};
-
-// One-time assignments
-
-// Sort stability
-support.sortStable = expando.split( "" ).sort( sortOrder ).join( "" ) === expando;
-
-// Support: Chrome 14-35+
-// Always assume duplicates if they aren't passed to the comparison function
-support.detectDuplicates = !!hasDuplicate;
-
-// Initialize against the default document
-setDocument();
-
-// Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
-// Detached nodes confoundingly follow *each other*
-support.sortDetached = assert( function( el ) {
-
-	// Should return 1, but returns 4 (following)
-	return el.compareDocumentPosition( document.createElement( "fieldset" ) ) & 1;
-} );
-
-// Support: IE<8
-// Prevent attribute/property "interpolation"
-// https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
-if ( !assert( function( el ) {
-	el.innerHTML = "<a href='#'></a>";
-	return el.firstChild.getAttribute( "href" ) === "#";
-} ) ) {
-	addHandle( "type|href|height|width", function( elem, name, isXML ) {
-		if ( !isXML ) {
-			return elem.getAttribute( name, name.toLowerCase() === "type" ? 1 : 2 );
-		}
-	} );
-}
-
-// Support: IE<9
-// Use defaultValue in place of getAttribute("value")
-if ( !support.attributes || !assert( function( el ) {
-	el.innerHTML = "<input/>";
-	el.firstChild.setAttribute( "value", "" );
-	return el.firstChild.getAttribute( "value" ) === "";
-} ) ) {
-	addHandle( "value", function( elem, _name, isXML ) {
-		if ( !isXML && elem.nodeName.toLowerCase() === "input" ) {
-			return elem.defaultValue;
-		}
-	} );
-}
-
-// Support: IE<9
-// Use getAttributeNode to fetch booleans when getAttribute lies
-if ( !assert( function( el ) {
-	return el.getAttribute( "disabled" ) == null;
-} ) ) {
-	addHandle( booleans, function( elem, name, isXML ) {
-		var val;
-		if ( !isXML ) {
-			return elem[ name ] === true ? name.toLowerCase() :
-				( val = elem.getAttributeNode( name ) ) && val.specified ?
-					val.value :
-					null;
-		}
-	} );
-}
-
-return Sizzle;
-
-} )( window );
-
-
-
-jQuery.find = Sizzle;
-jQuery.expr = Sizzle.selectors;
-
-// Deprecated
-jQuery.expr[ ":" ] = jQuery.expr.pseudos;
-jQuery.uniqueSort = jQuery.unique = Sizzle.uniqueSort;
-jQuery.text = Sizzle.getText;
-jQuery.isXMLDoc = Sizzle.isXML;
-jQuery.contains = Sizzle.contains;
-jQuery.escapeSelector = Sizzle.escape;
-
-
-
-
-var dir = function( elem, dir, until ) {
-	var matched = [],
-		truncate = until !== undefined;
-
-	while ( ( elem = elem[ dir ] ) && elem.nodeType !== 9 ) {
-		if ( elem.nodeType === 1 ) {
-			if ( truncate && jQuery( elem ).is( until ) ) {
-				break;
-			}
-			matched.push( elem );
-		}
-	}
-	return matched;
-};
-
-
-var siblings = function( n, elem ) {
-	var matched = [];
-
-	for ( ; n; n = n.nextSibling ) {
-		if ( n.nodeType === 1 && n !== elem ) {
-			matched.push( n );
-		}
-	}
-
-	return matched;
-};
-
-
-var rneedsContext = jQuery.expr.match.needsContext;
-
-
-
-function nodeName( elem, name ) {
-
-	return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
-
-}
-var rsingleTag = ( /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i );
-
-
-
-// Implement the identical functionality for filter and not
-function winnow( elements, qualifier, not ) {
-	if ( isFunction( qualifier ) ) {
-		return jQuery.grep( elements, function( elem, i ) {
-			return !!qualifier.call( elem, i, elem ) !== not;
-		} );
-	}
-
-	// Single element
-	if ( qualifier.nodeType ) {
-		return jQuery.grep( elements, function( elem ) {
-			return ( elem === qualifier ) !== not;
-		} );
-	}
-
-	// Arraylike of elements (jQuery, arguments, Array)
-	if ( typeof qualifier !== "string" ) {
-		return jQuery.grep( elements, function( elem ) {
-			return ( indexOf.call( qualifier, elem ) > -1 ) !== not;
-		} );
-	}
-
-	// Filtered directly for both simple and complex selectors
-	return jQuery.filter( qualifier, elements, not );
-}
-
-jQuery.filter = function( expr, elems, not ) {
-	var elem = elems[ 0 ];
-
-	if ( not ) {
-		expr = ":not(" + expr + ")";
-	}
-
-	if ( elems.length === 1 && elem.nodeType === 1 ) {
-		return jQuery.find.matchesSelector( elem, expr ) ? [ elem ] : [];
-	}
-
-	return jQuery.find.matches( expr, jQuery.grep( elems, function( elem ) {
-		return elem.nodeType === 1;
-	} ) );
-};
-
-jQuery.fn.extend( {
-	find: function( selector ) {
-		var i, ret,
-			len = this.length,
-			self = this;
-
-		if ( typeof selector !== "string" ) {
-			return this.pushStack( jQuery( selector ).filter( function() {
-				for ( i = 0; i < len; i++ ) {
-					if ( jQuery.contains( self[ i ], this ) ) {
-						return true;
-					}
-				}
-			} ) );
-		}
-
-		ret = this.pushStack( [] );
-
-		for ( i = 0; i < len; i++ ) {
-			jQuery.find( selector, self[ i ], ret );
-		}
-
-		return len > 1 ? jQuery.uniqueSort( ret ) : ret;
-	},
-	filter: function( selector ) {
-		return this.pushStack( winnow( this, selector || [], false ) );
-	},
-	not: function( selector ) {
-		return this.pushStack( winnow( this, selector || [], true ) );
-	},
-	is: function( selector ) {
-		return !!winnow(
-			this,
-
-			// If this is a positional/relative selector, check membership in the returned set
-			// so $("p:first").is("p:last") won't return true for a doc with two "p".
-			typeof selector === "string" && rneedsContext.test( selector ) ?
-				jQuery( selector ) :
-				selector || [],
-			false
-		).length;
-	}
-} );
-
-
-// Initialize a jQuery object
-
-
-// A central reference to the root jQuery(document)
-var rootjQuery,
-
-	// A simple way to check for HTML strings
-	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
-	// Strict HTML recognition (#11290: must start with <)
-	// Shortcut simple #id case for speed
-	rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/,
-
-	init = jQuery.fn.init = function( selector, context, root ) {
-		var match, elem;
-
-		// HANDLE: $(""), $(null), $(undefined), $(false)
-		if ( !selector ) {
-			return this;
-		}
-
-		// Method init() accepts an alternate rootjQuery
-		// so migrate can support jQuery.sub (gh-2101)
-		root = root || rootjQuery;
-
-		// Handle HTML strings
-		if ( typeof selector === "string" ) {
-			if ( selector[ 0 ] === "<" &&
-				selector[ selector.length - 1 ] === ">" &&
-				selector.length >= 3 ) {
-
-				// Assume that strings that start and end with <> are HTML and skip the regex check
-				match = [ null, selector, null ];
-
-			} else {
-				match = rquickExpr.exec( selector );
-			}
-
-			// Match html or make sure no context is specified for #id
-			if ( match && ( match[ 1 ] || !context ) ) {
-
-				// HANDLE: $(html) -> $(array)
-				if ( match[ 1 ] ) {
-					context = context instanceof jQuery ? context[ 0 ] : context;
-
-					// Option to run scripts is true for back-compat
-					// Intentionally let the error be thrown if parseHTML is not present
-					jQuery.merge( this, jQuery.parseHTML(
-						match[ 1 ],
-						context && context.nodeType ? context.ownerDocument || context : document,
-						true
-					) );
-
-					// HANDLE: $(html, props)
-					if ( rsingleTag.test( match[ 1 ] ) && jQuery.isPlainObject( context ) ) {
-						for ( match in context ) {
-
-							// Properties of context are called as methods if possible
-							if ( isFunction( this[ match ] ) ) {
-								this[ match ]( context[ match ] );
-
-							// ...and otherwise set as attributes
-							} else {
-								this.attr( match, context[ match ] );
-							}
-						}
-					}
-
-					return this;
-
-				// HANDLE: $(#id)
-				} else {
-					elem = document.getElementById( match[ 2 ] );
-
-					if ( elem ) {
-
-						// Inject the element directly into the jQuery object
-						this[ 0 ] = elem;
-						this.length = 1;
-					}
-					return this;
-				}
-
-			// HANDLE: $(expr, $(...))
-			} else if ( !context || context.jquery ) {
-				return ( context || root ).find( selector );
-
-			// HANDLE: $(expr, context)
-			// (which is just equivalent to: $(context).find(expr)
-			} else {
-				return this.constructor( context ).find( selector );
-			}
-
-		// HANDLE: $(DOMElement)
-		} else if ( selector.nodeType ) {
-			this[ 0 ] = selector;
-			this.length = 1;
-			return this;
-
-		// HANDLE: $(function)
-		// Shortcut for document ready
-		} else if ( isFunction( selector ) ) {
-			return root.ready !== undefined ?
-				root.ready( selector ) :
-
-				// Execute immediately if ready is not present
-				selector( jQuery );
-		}
-
-		return jQuery.makeArray( selector, this );
-	};
-
-// Give the init function the jQuery prototype for later instantiation
-init.prototype = jQuery.fn;
-
-// Initialize central reference
-rootjQuery = jQuery( document );
-
-
-var rparentsprev = /^(?:parents|prev(?:Until|All))/,
-
-	// Methods guaranteed to produce a unique set when starting from a unique set
-	guaranteedUnique = {
-		children: true,
-		contents: true,
-		next: true,
-		prev: true
-	};
-
-jQuery.fn.extend( {
-	has: function( target ) {
-		var targets = jQuery( target, this ),
-			l = targets.length;
-
-		return this.filter( function() {
-			var i = 0;
-			for ( ; i < l; i++ ) {
-				if ( jQuery.contains( this, targets[ i ] ) ) {
-					return true;
-				}
-			}
-		} );
-	},
-
-	closest: function( selectors, context ) {
-		var cur,
-			i = 0,
-			l = this.length,
-			matched = [],
-			targets = typeof selectors !== "string" && jQuery( selectors );
-
-		// Positional selectors never match, since there's no _selection_ context
-		if ( !rneedsContext.test( selectors ) ) {
-			for ( ; i < l; i++ ) {
-				for ( cur = this[ i ]; cur && cur !== context; cur = cur.parentNode ) {
-
-					// Always skip document fragments
-					if ( cur.nodeType < 11 && ( targets ?
-						targets.index( cur ) > -1 :
-
-						// Don't pass non-elements to Sizzle
-						cur.nodeType === 1 &&
-							jQuery.find.matchesSelector( cur, selectors ) ) ) {
-
-						matched.push( cur );
-						break;
-					}
-				}
-			}
-		}
-
-		return this.pushStack( matched.length > 1 ? jQuery.uniqueSort( matched ) : matched );
-	},
-
-	// Determine the position of an element within the set
-	index: function( elem ) {
-
-		// No argument, return index in parent
-		if ( !elem ) {
-			return ( this[ 0 ] && this[ 0 ].parentNode ) ? this.first().prevAll().length : -1;
-		}
-
-		// Index in selector
-		if ( typeof elem === "string" ) {
-			return indexOf.call( jQuery( elem ), this[ 0 ] );
-		}
-
-		// Locate the position of the desired element
-		return indexOf.call( this,
-
-			// If it receives a jQuery object, the first element is used
-			elem.jquery ? elem[ 0 ] : elem
-		);
-	},
-
-	add: function( selector, context ) {
-		return this.pushStack(
-			jQuery.uniqueSort(
-				jQuery.merge( this.get(), jQuery( selector, context ) )
-			)
-		);
-	},
-
-	addBack: function( selector ) {
-		return this.add( selector == null ?
-			this.prevObject : this.prevObject.filter( selector )
-		);
-	}
-} );
-
-function sibling( cur, dir ) {
-	while ( ( cur = cur[ dir ] ) && cur.nodeType !== 1 ) {}
-	return cur;
-}
-
-jQuery.each( {
-	parent: function( elem ) {
-		var parent = elem.parentNode;
-		return parent && parent.nodeType !== 11 ? parent : null;
-	},
-	parents: function( elem ) {
-		return dir( elem, "parentNode" );
-	},
-	parentsUntil: function( elem, _i, until ) {
-		return dir( elem, "parentNode", until );
-	},
-	next: function( elem ) {
-		return sibling( elem, "nextSibling" );
-	},
-	prev: function( elem ) {
-		return sibling( elem, "previousSibling" );
-	},
-	nextAll: function( elem ) {
-		return dir( elem, "nextSibling" );
-	},
-	prevAll: function( elem ) {
-		return dir( elem, "previousSibling" );
-	},
-	nextUntil: function( elem, _i, until ) {
-		return dir( elem, "nextSibling", until );
-	},
-	prevUntil: function( elem, _i, until ) {
-		return dir( elem, "previousSibling", until );
-	},
-	siblings: function( elem ) {
-		return siblings( ( elem.parentNode || {} ).firstChild, elem );
-	},
-	children: function( elem ) {
-		return siblings( elem.firstChild );
-	},
-	contents: function( elem ) {
-		if ( elem.contentDocument != null &&
-
-			// Support: IE 11+
-			// <object> elements with no `data` attribute has an object
-			// `contentDocument` with a `null` prototype.
-			getProto( elem.contentDocument ) ) {
-
-			return elem.contentDocument;
-		}
-
-		// Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
-		// Treat the template element as a regular one in browsers that
-		// don't support it.
-		if ( nodeName( elem, "template" ) ) {
-			elem = elem.content || elem;
-		}
-
-		return jQuery.merge( [], elem.childNodes );
-	}
-}, function( name, fn ) {
-	jQuery.fn[ name ] = function( until, selector ) {
-		var matched = jQuery.map( this, fn, until );
-
-		if ( name.slice( -5 ) !== "Until" ) {
-			selector = until;
-		}
-
-		if ( selector && typeof selector === "string" ) {
-			matched = jQuery.filter( selector, matched );
-		}
-
-		if ( this.length > 1 ) {
-
-			// Remove duplicates
-			if ( !guaranteedUnique[ name ] ) {
-				jQuery.uniqueSort( matched );
-			}
-
-			// Reverse order for parents* and prev-derivatives
-			if ( rparentsprev.test( name ) ) {
-				matched.reverse();
-			}
-		}
-
-		return this.pushStack( matched );
-	};
-} );
-var rnothtmlwhite = ( /[^\x20\t\r\n\f]+/g );
-
-
-
-// Convert String-formatted options into Object-formatted ones
-function createOptions( options ) {
-	var object = {};
-	jQuery.each( options.match( rnothtmlwhite ) || [], function( _, flag ) {
-		object[ flag ] = true;
-	} );
-	return object;
-}
-
-/*
- * Create a callback list using the following parameters:
- *
- *	options: an optional list of space-separated options that will change how
- *			the callback list behaves or a more traditional option object
- *
- * By default a callback list will act like an event callback list and can be
- * "fired" multiple times.
- *
- * Possible options:
- *
- *	once:			will ensure the callback list can only be fired once (like a Deferred)
- *
- *	memory:			will keep track of previous values and will call any callback added
- *					after the list has been fired right away with the latest "memorized"
- *					values (like a Deferred)
- *
- *	unique:			will ensure a callback can only be added once (no duplicate in the list)
- *
- *	stopOnFalse:	interrupt callings when a callback returns false
- *
- */
-jQuery.Callbacks = function( options ) {
-
-	// Convert options from String-formatted to Object-formatted if needed
-	// (we check in cache first)
-	options = typeof options === "string" ?
-		createOptions( options ) :
-		jQuery.extend( {}, options );
-
-	var // Flag to know if list is currently firing
-		firing,
-
-		// Last fire value for non-forgettable lists
-		memory,
-
-		// Flag to know if list was already fired
-		fired,
-
-		// Flag to prevent firing
-		locked,
-
-		// Actual callback list
-		list = [],
-
-		// Queue of execution data for repeatable lists
-		queue = [],
-
-		// Index of currently firing callback (modified by add/remove as needed)
-		firingIndex = -1,
-
-		// Fire callbacks
-		fire = function() {
-
-			// Enforce single-firing
-			locked = locked || options.once;
-
-			// Execute callbacks for all pending executions,
-			// respecting firingIndex overrides and runtime changes
-			fired = firing = true;
-			for ( ; queue.length; firingIndex = -1 ) {
-				memory = queue.shift();
-				while ( ++firingIndex < list.length ) {
-
-					// Run callback and check for early termination
-					if ( list[ firingIndex ].apply( memory[ 0 ], memory[ 1 ] ) === false &&
-						options.stopOnFalse ) {
-
-						// Jump to end and forget the data so .add doesn't re-fire
-						firingIndex = list.length;
-						memory = false;
-					}
-				}
-			}
-
-			// Forget the data if we're done with it
-			if ( !options.memory ) {
-				memory = false;
-			}
-
-			firing = false;
-
-			// Clean up if we're done firing for good
-			if ( locked ) {
-
-				// Keep an empty list if we have data for future add calls
-				if ( memory ) {
-					list = [];
-
-				// Otherwise, this object is spent
-				} else {
-					list = "";
-				}
-			}
-		},
-
-		// Actual Callbacks object
-		self = {
-
-			// Add a callback or a collection of callbacks to the list
-			add: function() {
-				if ( list ) {
-
-					// If we have memory from a past run, we should fire after adding
-					if ( memory && !firing ) {
-						firingIndex = list.length - 1;
-						queue.push( memory );
-					}
-
-					( function add( args ) {
-						jQuery.each( args, function( _, arg ) {
-							if ( isFunction( arg ) ) {
-								if ( !options.unique || !self.has( arg ) ) {
-									list.push( arg );
-								}
-							} else if ( arg && arg.length && toType( arg ) !== "string" ) {
-
-								// Inspect recursively
-								add( arg );
-							}
-						} );
-					} )( arguments );
-
-					if ( memory && !firing ) {
-						fire();
-					}
-				}
-				return this;
-			},
-
-			// Remove a callback from the list
-			remove: function() {
-				jQuery.each( arguments, function( _, arg ) {
-					var index;
-					while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
-						list.splice( index, 1 );
-
-						// Handle firing indexes
-						if ( index <= firingIndex ) {
-							firingIndex--;
-						}
-					}
-				} );
-				return this;
-			},
-
-			// Check if a given callback is in the list.
-			// If no argument is given, return whether or not list has callbacks attached.
-			has: function( fn ) {
-				return fn ?
-					jQuery.inArray( fn, list ) > -1 :
-					list.length > 0;
-			},
-
-			// Remove all callbacks from the list
-			empty: function() {
-				if ( list ) {
-					list = [];
-				}
-				return this;
-			},
-
-			// Disable .fire and .add
-			// Abort any current/pending executions
-			// Clear all callbacks and values
-			disable: function() {
-				locked = queue = [];
-				list = memory = "";
-				return this;
-			},
-			disabled: function() {
-				return !list;
-			},
-
-			// Disable .fire
-			// Also disable .add unless we have memory (since it would have no effect)
-			// Abort any pending executions
-			lock: function() {
-				locked = queue = [];
-				if ( !memory && !firing ) {
-					list = memory = "";
-				}
-				return this;
-			},
-			locked: function() {
-				return !!locked;
-			},
-
-			// Call all callbacks with the given context and arguments
-			fireWith: function( context, args ) {
-				if ( !locked ) {
-					args = args || [];
-					args = [ context, args.slice ? args.slice() : args ];
-					queue.push( args );
-					if ( !firing ) {
-						fire();
-					}
-				}
-				return this;
-			},
-
-			// Call all the callbacks with the given arguments
-			fire: function() {
-				self.fireWith( this, arguments );
-				return this;
-			},
-
-			// To know if the callbacks have already been called at least once
-			fired: function() {
-				return !!fired;
-			}
-		};
-
-	return self;
-};
-
-
-function Identity( v ) {
-	return v;
-}
-function Thrower( ex ) {
-	throw ex;
-}
-
-function adoptValue( value, resolve, reject, noValue ) {
-	var method;
-
-	try {
-
-		// Check for promise aspect first to privilege synchronous behavior
-		if ( value && isFunction( ( method = value.promise ) ) ) {
-			method.call( value ).done( resolve ).fail( reject );
-
-		// Other thenables
-		} else if ( value && isFunction( ( method = value.then ) ) ) {
-			method.call( value, resolve, reject );
-
-		// Other non-thenables
-		} else {
-
-			// Control `resolve` arguments by letting Array#slice cast boolean `noValue` to integer:
-			// * false: [ value ].slice( 0 ) => resolve( value )
-			// * true: [ value ].slice( 1 ) => resolve()
-			resolve.apply( undefined, [ value ].slice( noValue ) );
-		}
-
-	// For Promises/A+, convert exceptions into rejections
-	// Since jQuery.when doesn't unwrap thenables, we can skip the extra checks appearing in
-	// Deferred#then to conditionally suppress rejection.
-	} catch ( value ) {
-
-		// Support: Android 4.0 only
-		// Strict mode functions invoked without .call/.apply get global-object context
-		reject.apply( undefined, [ value ] );
-	}
-}
-
-jQuery.extend( {
-
-	Deferred: function( func ) {
-		var tuples = [
-
-				// action, add listener, callbacks,
-				// ... .then handlers, argument index, [final state]
-				[ "notify", "progress", jQuery.Callbacks( "memory" ),
-					jQuery.Callbacks( "memory" ), 2 ],
-				[ "resolve", "done", jQuery.Callbacks( "once memory" ),
-					jQuery.Callbacks( "once memory" ), 0, "resolved" ],
-				[ "reject", "fail", jQuery.Callbacks( "once memory" ),
-					jQuery.Callbacks( "once memory" ), 1, "rejected" ]
-			],
-			state = "pending",
-			promise = {
-				state: function() {
-					return state;
-				},
-				always: function() {
-					deferred.done( arguments ).fail( arguments );
-					return this;
-				},
-				"catch": function( fn ) {
-					return promise.then( null, fn );
-				},
-
-				// Keep pipe for back-compat
-				pipe: function( /* fnDone, fnFail, fnProgress */ ) {
-					var fns = arguments;
-
-					return jQuery.Deferred( function( newDefer ) {
-						jQuery.each( tuples, function( _i, tuple ) {
-
-							// Map tuples (progress, done, fail) to arguments (done, fail, progress)
-							var fn = isFunction( fns[ tuple[ 4 ] ] ) && fns[ tuple[ 4 ] ];
-
-							// deferred.progress(function() { bind to newDefer or newDefer.notify })
-							// deferred.done(function() { bind to newDefer or newDefer.resolve })
-							// deferred.fail(function() { bind to newDefer or newDefer.reject })
-							deferred[ tuple[ 1 ] ]( function() {
-								var returned = fn && fn.apply( this, arguments );
-								if ( returned && isFunction( returned.promise ) ) {
-									returned.promise()
-										.progress( newDefer.notify )
-										.done( newDefer.resolve )
-										.fail( newDefer.reject );
-								} else {
-									newDefer[ tuple[ 0 ] + "With" ](
-										this,
-										fn ? [ returned ] : arguments
-									);
-								}
-							} );
-						} );
-						fns = null;
-					} ).promise();
-				},
-				then: function( onFulfilled, onRejected, onProgress ) {
-					var maxDepth = 0;
-					function resolve( depth, deferred, handler, special ) {
-						return function() {
-							var that = this,
-								args = arguments,
-								mightThrow = function() {
-									var returned, then;
-
-									// Support: Promises/A+ section 2.3.3.3.3
-									// https://promisesaplus.com/#point-59
-									// Ignore double-resolution attempts
-									if ( depth < maxDepth ) {
-										return;
-									}
-
-									returned = handler.apply( that, args );
-
-									// Support: Promises/A+ section 2.3.1
-									// https://promisesaplus.com/#point-48
-									if ( returned === deferred.promise() ) {
-										throw new TypeError( "Thenable self-resolution" );
-									}
-
-									// Support: Promises/A+ sections 2.3.3.1, 3.5
-									// https://promisesaplus.com/#point-54
-									// https://promisesaplus.com/#point-75
-									// Retrieve `then` only once
-									then = returned &&
-
-										// Support: Promises/A+ section 2.3.4
-										// https://promisesaplus.com/#point-64
-										// Only check objects and functions for thenability
-										( typeof returned === "object" ||
-											typeof returned === "function" ) &&
-										returned.then;
-
-									// Handle a returned thenable
-									if ( isFunction( then ) ) {
-
-										// Special processors (notify) just wait for resolution
-										if ( special ) {
-											then.call(
-												returned,
-												resolve( maxDepth, deferred, Identity, special ),
-												resolve( maxDepth, deferred, Thrower, special )
-											);
-
-										// Normal processors (resolve) also hook into progress
-										} else {
-
-											// ...and disregard older resolution values
-											maxDepth++;
-
-											then.call(
-												returned,
-												resolve( maxDepth, deferred, Identity, special ),
-												resolve( maxDepth, deferred, Thrower, special ),
-												resolve( maxDepth, deferred, Identity,
-													deferred.notifyWith )
-											);
-										}
-
-									// Handle all other returned values
-									} else {
-
-										// Only substitute handlers pass on context
-										// and multiple values (non-spec behavior)
-										if ( handler !== Identity ) {
-											that = undefined;
-											args = [ returned ];
-										}
-
-										// Process the value(s)
-										// Default process is resolve
-										( special || deferred.resolveWith )( that, args );
-									}
-								},
-
-								// Only normal processors (resolve) catch and reject exceptions
-								process = special ?
-									mightThrow :
-									function() {
-										try {
-											mightThrow();
-										} catch ( e ) {
-
-											if ( jQuery.Deferred.exceptionHook ) {
-												jQuery.Deferred.exceptionHook( e,
-													process.stackTrace );
-											}
-
-											// Support: Promises/A+ section 2.3.3.3.4.1
-											// https://promisesaplus.com/#point-61
-											// Ignore post-resolution exceptions
-											if ( depth + 1 >= maxDepth ) {
-
-												// Only substitute handlers pass on context
-												// and multiple values (non-spec behavior)
-												if ( handler !== Thrower ) {
-													that = undefined;
-													args = [ e ];
-												}
-
-												deferred.rejectWith( that, args );
-											}
-										}
-									};
-
-							// Support: Promises/A+ section 2.3.3.3.1
-							// https://promisesaplus.com/#point-57
-							// Re-resolve promises immediately to dodge false rejection from
-							// subsequent errors
-							if ( depth ) {
-								process();
-							} else {
-
-								// Call an optional hook to record the stack, in case of exception
-								// since it's otherwise lost when execution goes async
-								if ( jQuery.Deferred.getStackHook ) {
-									process.stackTrace = jQuery.Deferred.getStackHook();
-								}
-								window.setTimeout( process );
-							}
-						};
-					}
-
-					return jQuery.Deferred( function( newDefer ) {
-
-						// progress_handlers.add( ... )
-						tuples[ 0 ][ 3 ].add(
-							resolve(
-								0,
-								newDefer,
-								isFunction( onProgress ) ?
-									onProgress :
-									Identity,
-								newDefer.notifyWith
-							)
-						);
-
-						// fulfilled_handlers.add( ... )
-						tuples[ 1 ][ 3 ].add(
-							resolve(
-								0,
-								newDefer,
-								isFunction( onFulfilled ) ?
-									onFulfilled :
-									Identity
-							)
-						);
-
-						// rejected_handlers.add( ... )
-						tuples[ 2 ][ 3 ].add(
-							resolve(
-								0,
-								newDefer,
-								isFunction( onRejected ) ?
-									onRejected :
-									Thrower
-							)
-						);
-					} ).promise();
-				},
-
-				// Get a promise for this deferred
-				// If obj is provided, the promise aspect is added to the object
-				promise: function( obj ) {
-					return obj != null ? jQuery.extend( obj, promise ) : promise;
-				}
-			},
-			deferred = {};
-
-		// Add list-specific methods
-		jQuery.each( tuples, function( i, tuple ) {
-			var list = tuple[ 2 ],
-				stateString = tuple[ 5 ];
-
-			// promise.progress = list.add
-			// promise.done = list.add
-			// promise.fail = list.add
-			promise[ tuple[ 1 ] ] = list.add;
-
-			// Handle state
-			if ( stateString ) {
-				list.add(
-					function() {
-
-						// state = "resolved" (i.e., fulfilled)
-						// state = "rejected"
-						state = stateString;
-					},
-
-					// rejected_callbacks.disable
-					// fulfilled_callbacks.disable
-					tuples[ 3 - i ][ 2 ].disable,
-
-					// rejected_handlers.disable
-					// fulfilled_handlers.disable
-					tuples[ 3 - i ][ 3 ].disable,
-
-					// progress_callbacks.lock
-					tuples[ 0 ][ 2 ].lock,
-
-					// progress_handlers.lock
-					tuples[ 0 ][ 3 ].lock
-				);
-			}
-
-			// progress_handlers.fire
-			// fulfilled_handlers.fire
-			// rejected_handlers.fire
-			list.add( tuple[ 3 ].fire );
-
-			// deferred.notify = function() { deferred.notifyWith(...) }
-			// deferred.resolve = function() { deferred.resolveWith(...) }
-			// deferred.reject = function() { deferred.rejectWith(...) }
-			deferred[ tuple[ 0 ] ] = function() {
-				deferred[ tuple[ 0 ] + "With" ]( this === deferred ? undefined : this, arguments );
-				return this;
-			};
-
-			// deferred.notifyWith = list.fireWith
-			// deferred.resolveWith = list.fireWith
-			// deferred.rejectWith = list.fireWith
-			deferred[ tuple[ 0 ] + "With" ] = list.fireWith;
-		} );
-
-		// Make the deferred a promise
-		promise.promise( deferred );
-
-		// Call given func if any
-		if ( func ) {
-			func.call( deferred, deferred );
-		}
-
-		// All done!
-		return deferred;
-	},
-
-	// Deferred helper
-	when: function( singleValue ) {
-		var
-
-			// count of uncompleted subordinates
-			remaining = arguments.length,
-
-			// count of unprocessed arguments
-			i = remaining,
-
-			// subordinate fulfillment data
-			resolveContexts = Array( i ),
-			resolveValues = slice.call( arguments ),
-
-			// the primary Deferred
-			primary = jQuery.Deferred(),
-
-			// subordinate callback factory
-			updateFunc = function( i ) {
-				return function( value ) {
-					resolveContexts[ i ] = this;
-					resolveValues[ i ] = arguments.length > 1 ? slice.call( arguments ) : value;
-					if ( !( --remaining ) ) {
-						primary.resolveWith( resolveContexts, resolveValues );
-					}
-				};
-			};
-
-		// Single- and empty arguments are adopted like Promise.resolve
-		if ( remaining <= 1 ) {
-			adoptValue( singleValue, primary.done( updateFunc( i ) ).resolve, primary.reject,
-				!remaining );
-
-			// Use .then() to unwrap secondary thenables (cf. gh-3000)
-			if ( primary.state() === "pending" ||
-				isFunction( resolveValues[ i ] && resolveValues[ i ].then ) ) {
-
-				return primary.then();
-			}
-		}
-
-		// Multiple arguments are aggregated like Promise.all array elements
-		while ( i-- ) {
-			adoptValue( resolveValues[ i ], updateFunc( i ), primary.reject );
-		}
-
-		return primary.promise();
-	}
-} );
-
-
-// These usually indicate a programmer mistake during development,
-// warn about them ASAP rather than swallowing them by default.
-var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
-
-jQuery.Deferred.exceptionHook = function( error, stack ) {
-
-	// Support: IE 8 - 9 only
-	// Console exists when dev tools are open, which can happen at any time
-	if ( window.console && window.console.warn && error && rerrorNames.test( error.name ) ) {
-		window.console.warn( "jQuery.Deferred exception: " + error.message, error.stack, stack );
-	}
-};
-
-
-
-
-jQuery.readyException = function( error ) {
-	window.setTimeout( function() {
-		throw error;
-	} );
-};
-
-
-
-
-// The deferred used on DOM ready
-var readyList = jQuery.Deferred();
-
-jQuery.fn.ready = function( fn ) {
-
-	readyList
-		.then( fn )
-
-		// Wrap jQuery.readyException in a function so that the lookup
-		// happens at the time of error handling instead of callback
-		// registration.
-		.catch( function( error ) {
-			jQuery.readyException( error );
-		} );
-
-	return this;
-};
-
-jQuery.extend( {
-
-	// Is the DOM ready to be used? Set to true once it occurs.
-	isReady: false,
-
-	// A counter to track how many items to wait for before
-	// the ready event fires. See #6781
-	readyWait: 1,
-
-	// Handle when the DOM is ready
-	ready: function( wait ) {
-
-		// Abort if there are pending holds or we're already ready
-		if ( wait === true ? --jQuery.readyWait : jQuery.isReady ) {
-			return;
-		}
-
-		// Remember that the DOM is ready
-		jQuery.isReady = true;
-
-		// If a normal DOM Ready event fired, decrement, and wait if need be
-		if ( wait !== true && --jQuery.readyWait > 0 ) {
-			return;
-		}
-
-		// If there are functions bound, to execute
-		readyList.resolveWith( document, [ jQuery ] );
-	}
-} );
-
-jQuery.ready.then = readyList.then;
-
-// The ready event handler and self cleanup method
-function completed() {
-	document.removeEventListener( "DOMContentLoaded", completed );
-	window.removeEventListener( "load", completed );
-	jQuery.ready();
-}
-
-// Catch cases where $(document).ready() is called
-// after the browser event has already occurred.
-// Support: IE <=9 - 10 only
-// Older IE sometimes signals "interactive" too soon
-if ( document.readyState === "complete" ||
-	( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
-
-	// Handle it asynchronously to allow scripts the opportunity to delay ready
-	window.setTimeout( jQuery.ready );
-
-} else {
-
-	// Use the handy event callback
-	document.addEventListener( "DOMContentLoaded", completed );
-
-	// A fallback to window.onload, that will always work
-	window.addEventListener( "load", completed );
-}
-
-
-
-
-// Multifunctional method to get and set values of a collection
-// The value/s can optionally be executed if it's a function
-var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
-	var i = 0,
-		len = elems.length,
-		bulk = key == null;
-
-	// Sets many values
-	if ( toType( key ) === "object" ) {
-		chainable = true;
-		for ( i in key ) {
-			access( elems, fn, i, key[ i ], true, emptyGet, raw );
-		}
-
-	// Sets one value
-	} else if ( value !== undefined ) {
-		chainable = true;
-
-		if ( !isFunction( value ) ) {
-			raw = true;
-		}
-
-		if ( bulk ) {
-
-			// Bulk operations run against the entire set
-			if ( raw ) {
-				fn.call( elems, value );
-				fn = null;
-
-			// ...except when executing function values
-			} else {
-				bulk = fn;
-				fn = function( elem, _key, value ) {
-					return bulk.call( jQuery( elem ), value );
-				};
-			}
-		}
-
-		if ( fn ) {
-			for ( ; i < len; i++ ) {
-				fn(
-					elems[ i ], key, raw ?
-						value :
-						value.call( elems[ i ], i, fn( elems[ i ], key ) )
-				);
-			}
-		}
-	}
-
-	if ( chainable ) {
-		return elems;
-	}
-
-	// Gets
-	if ( bulk ) {
-		return fn.call( elems );
-	}
-
-	return len ? fn( elems[ 0 ], key ) : emptyGet;
-};
-
-
-// Matches dashed string for camelizing
-var rmsPrefix = /^-ms-/,
-	rdashAlpha = /-([a-z])/g;
-
-// Used by camelCase as callback to replace()
-function fcamelCase( _all, letter ) {
-	return letter.toUpperCase();
-}
-
-// Convert dashed to camelCase; used by the css and data modules
-// Support: IE <=9 - 11, Edge 12 - 15
-// Microsoft forgot to hump their vendor prefix (#9572)
-function camelCase( string ) {
-	return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
-}
-var acceptData = function( owner ) {
-
-	// Accepts only:
-	//  - Node
-	//    - Node.ELEMENT_NODE
-	//    - Node.DOCUMENT_NODE
-	//  - Object
-	//    - Any
-	return owner.nodeType === 1 || owner.nodeType === 9 || !( +owner.nodeType );
-};
-
-
-
-
-function Data() {
-	this.expando = jQuery.expando + Data.uid++;
-}
-
-Data.uid = 1;
-
-Data.prototype = {
-
-	cache: function( owner ) {
-
-		// Check if the owner object already has a cache
-		var value = owner[ this.expando ];
-
-		// If not, create one
-		if ( !value ) {
-			value = {};
-
-			// We can accept data for non-element nodes in modern browsers,
-			// but we should not, see #8335.
-			// Always return an empty object.
-			if ( acceptData( owner ) ) {
-
-				// If it is a node unlikely to be stringify-ed or looped over
-				// use plain assignment
-				if ( owner.nodeType ) {
-					owner[ this.expando ] = value;
-
-				// Otherwise secure it in a non-enumerable property
-				// configurable must be true to allow the property to be
-				// deleted when data is removed
-				} else {
-					Object.defineProperty( owner, this.expando, {
-						value: value,
-						configurable: true
-					} );
-				}
-			}
-		}
-
-		return value;
-	},
-	set: function( owner, data, value ) {
-		var prop,
-			cache = this.cache( owner );
-
-		// Handle: [ owner, key, value ] args
-		// Always use camelCase key (gh-2257)
-		if ( typeof data === "string" ) {
-			cache[ camelCase( data ) ] = value;
-
-		// Handle: [ owner, { properties } ] args
-		} else {
-
-			// Copy the properties one-by-one to the cache object
-			for ( prop in data ) {
-				cache[ camelCase( prop ) ] = data[ prop ];
-			}
-		}
-		return cache;
-	},
-	get: function( owner, key ) {
-		return key === undefined ?
-			this.cache( owner ) :
-
-			// Always use camelCase key (gh-2257)
-			owner[ this.expando ] && owner[ this.expando ][ camelCase( key ) ];
-	},
-	access: function( owner, key, value ) {
-
-		// In cases where either:
-		//
-		//   1. No key was specified
-		//   2. A string key was specified, but no value provided
-		//
-		// Take the "read" path and allow the get method to determine
-		// which value to return, respectively either:
-		//
-		//   1. The entire cache object
-		//   2. The data stored at the key
-		//
-		if ( key === undefined ||
-				( ( key && typeof key === "string" ) && value === undefined ) ) {
-
-			return this.get( owner, key );
-		}
-
-		// When the key is not a string, or both a key and value
-		// are specified, set or extend (existing objects) with either:
-		//
-		//   1. An object of properties
-		//   2. A key and value
-		//
-		this.set( owner, key, value );
-
-		// Since the "set" path can have two possible entry points
-		// return the expected data based on which path was taken[*]
-		return value !== undefined ? value : key;
-	},
-	remove: function( owner, key ) {
-		var i,
-			cache = owner[ this.expando ];
-
-		if ( cache === undefined ) {
-			return;
-		}
-
-		if ( key !== undefined ) {
-
-			// Support array or space separated string of keys
-			if ( Array.isArray( key ) ) {
-
-				// If key is an array of keys...
-				// We always set camelCase keys, so remove that.
-				key = key.map( camelCase );
-			} else {
-				key = camelCase( key );
-
-				// If a key with the spaces exists, use it.
-				// Otherwise, create an array by matching non-whitespace
-				key = key in cache ?
-					[ key ] :
-					( key.match( rnothtmlwhite ) || [] );
-			}
-
-			i = key.length;
-
-			while ( i-- ) {
-				delete cache[ key[ i ] ];
-			}
-		}
-
-		// Remove the expando if there's no more data
-		if ( key === undefined || jQuery.isEmptyObject( cache ) ) {
-
-			// Support: Chrome <=35 - 45
-			// Webkit & Blink performance suffers when deleting properties
-			// from DOM nodes, so set to undefined instead
-			// https://bugs.chromium.org/p/chromium/issues/detail?id=378607 (bug restricted)
-			if ( owner.nodeType ) {
-				owner[ this.expando ] = undefined;
-			} else {
-				delete owner[ this.expando ];
-			}
-		}
-	},
-	hasData: function( owner ) {
-		var cache = owner[ this.expando ];
-		return cache !== undefined && !jQuery.isEmptyObject( cache );
-	}
-};
-var dataPriv = new Data();
-
-var dataUser = new Data();
-
-
-
-//	Implementation Summary
-//
-//	1. Enforce API surface and semantic compatibility with 1.9.x branch
-//	2. Improve the module's maintainability by reducing the storage
-//		paths to a single mechanism.
-//	3. Use the same single mechanism to support "private" and "user" data.
-//	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
-//	5. Avoid exposing implementation details on user objects (eg. expando properties)
-//	6. Provide a clear path for implementation upgrade to WeakMap in 2014
-
-var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
-	rmultiDash = /[A-Z]/g;
-
-function getData( data ) {
-	if ( data === "true" ) {
-		return true;
-	}
-
-	if ( data === "false" ) {
-		return false;
-	}
-
-	if ( data === "null" ) {
-		return null;
-	}
-
-	// Only convert to a number if it doesn't change the string
-	if ( data === +data + "" ) {
-		return +data;
-	}
-
-	if ( rbrace.test( data ) ) {
-		return JSON.parse( data );
-	}
-
-	return data;
-}
-
-function dataAttr( elem, key, data ) {
-	var name;
-
-	// If nothing was found internally, try to fetch any
-	// data from the HTML5 data-* attribute
-	if ( data === undefined && elem.nodeType === 1 ) {
-		name = "data-" + key.replace( rmultiDash, "-$&" ).toLowerCase();
-		data = elem.getAttribute( name );
-
-		if ( typeof data === "string" ) {
-			try {
-				data = getData( data );
-			} catch ( e ) {}
-
-			// Make sure we set the data so it isn't changed later
-			dataUser.set( elem, key, data );
-		} else {
-			data = undefined;
-		}
-	}
-	return data;
-}
-
-jQuery.extend( {
-	hasData: function( elem ) {
-		return dataUser.hasData( elem ) || dataPriv.hasData( elem );
-	},
-
-	data: function( elem, name, data ) {
-		return dataUser.access( elem, name, data );
-	},
-
-	removeData: function( elem, name ) {
-		dataUser.remove( elem, name );
-	},
-
-	// TODO: Now that all calls to _data and _removeData have been replaced
-	// with direct calls to dataPriv methods, these can be deprecated.
-	_data: function( elem, name, data ) {
-		return dataPriv.access( elem, name, data );
-	},
-
-	_removeData: function( elem, name ) {
-		dataPriv.remove( elem, name );
-	}
-} );
-
-jQuery.fn.extend( {
-	data: function( key, value ) {
-		var i, name, data,
-			elem = this[ 0 ],
-			attrs = elem && elem.attributes;
-
-		// Gets all values
-		if ( key === undefined ) {
-			if ( this.length ) {
-				data = dataUser.get( elem );
-
-				if ( elem.nodeType === 1 && !dataPriv.get( elem, "hasDataAttrs" ) ) {
-					i = attrs.length;
-					while ( i-- ) {
-
-						// Support: IE 11 only
-						// The attrs elements can be null (#14894)
-						if ( attrs[ i ] ) {
-							name = attrs[ i ].name;
-							if ( name.indexOf( "data-" ) === 0 ) {
-								name = camelCase( name.slice( 5 ) );
-								dataAttr( elem, name, data[ name ] );
-							}
-						}
-					}
-					dataPriv.set( elem, "hasDataAttrs", true );
-				}
-			}
-
-			return data;
-		}
-
-		// Sets multiple values
-		if ( typeof key === "object" ) {
-			return this.each( function() {
-				dataUser.set( this, key );
-			} );
-		}
-
-		return access( this, function( value ) {
-			var data;
-
-			// The calling jQuery object (element matches) is not empty
-			// (and therefore has an element appears at this[ 0 ]) and the
-			// `value` parameter was not undefined. An empty jQuery object
-			// will result in `undefined` for elem = this[ 0 ] which will
-			// throw an exception if an attempt to read a data cache is made.
-			if ( elem && value === undefined ) {
-
-				// Attempt to get data from the cache
-				// The key will always be camelCased in Data
-				data = dataUser.get( elem, key );
-				if ( data !== undefined ) {
-					return data;
-				}
-
-				// Attempt to "discover" the data in
-				// HTML5 custom data-* attrs
-				data = dataAttr( elem, key );
-				if ( data !== undefined ) {
-					return data;
-				}
-
-				// We tried really hard, but the data doesn't exist.
-				return;
-			}
-
-			// Set the data...
-			this.each( function() {
-
-				// We always store the camelCased key
-				dataUser.set( this, key, value );
-			} );
-		}, null, value, arguments.length > 1, null, true );
-	},
-
-	removeData: function( key ) {
-		return this.each( function() {
-			dataUser.remove( this, key );
-		} );
-	}
-} );
-
-
-jQuery.extend( {
-	queue: function( elem, type, data ) {
-		var queue;
-
-		if ( elem ) {
-			type = ( type || "fx" ) + "queue";
-			queue = dataPriv.get( elem, type );
-
-			// Speed up dequeue by getting out quickly if this is just a lookup
-			if ( data ) {
-				if ( !queue || Array.isArray( data ) ) {
-					queue = dataPriv.access( elem, type, jQuery.makeArray( data ) );
-				} else {
-					queue.push( data );
-				}
-			}
-			return queue || [];
-		}
-	},
-
-	dequeue: function( elem, type ) {
-		type = type || "fx";
-
-		var queue = jQuery.queue( elem, type ),
-			startLength = queue.length,
-			fn = queue.shift(),
-			hooks = jQuery._queueHooks( elem, type ),
-			next = function() {
-				jQuery.dequeue( elem, type );
-			};
-
-		// If the fx queue is dequeued, always remove the progress sentinel
-		if ( fn === "inprogress" ) {
-			fn = queue.shift();
-			startLength--;
-		}
-
-		if ( fn ) {
-
-			// Add a progress sentinel to prevent the fx queue from being
-			// automatically dequeued
-			if ( type === "fx" ) {
-				queue.unshift( "inprogress" );
-			}
-
-			// Clear up the last queue stop function
-			delete hooks.stop;
-			fn.call( elem, next, hooks );
-		}
-
-		if ( !startLength && hooks ) {
-			hooks.empty.fire();
-		}
-	},
-
-	// Not public - generate a queueHooks object, or return the current one
-	_queueHooks: function( elem, type ) {
-		var key = type + "queueHooks";
-		return dataPriv.get( elem, key ) || dataPriv.access( elem, key, {
-			empty: jQuery.Callbacks( "once memory" ).add( function() {
-				dataPriv.remove( elem, [ type + "queue", key ] );
-			} )
-		} );
-	}
-} );
-
-jQuery.fn.extend( {
-	queue: function( type, data ) {
-		var setter = 2;
-
-		if ( typeof type !== "string" ) {
-			data = type;
-			type = "fx";
-			setter--;
-		}
-
-		if ( arguments.length < setter ) {
-			return jQuery.queue( this[ 0 ], type );
-		}
-
-		return data === undefined ?
-			this :
-			this.each( function() {
-				var queue = jQuery.queue( this, type, data );
-
-				// Ensure a hooks for this queue
-				jQuery._queueHooks( this, type );
-
-				if ( type === "fx" && queue[ 0 ] !== "inprogress" ) {
-					jQuery.dequeue( this, type );
-				}
-			} );
-	},
-	dequeue: function( type ) {
-		return this.each( function() {
-			jQuery.dequeue( this, type );
-		} );
-	},
-	clearQueue: function( type ) {
-		return this.queue( type || "fx", [] );
-	},
-
-	// Get a promise resolved when queues of a certain type
-	// are emptied (fx is the type by default)
-	promise: function( type, obj ) {
-		var tmp,
-			count = 1,
-			defer = jQuery.Deferred(),
-			elements = this,
-			i = this.length,
-			resolve = function() {
-				if ( !( --count ) ) {
-					defer.resolveWith( elements, [ elements ] );
-				}
-			};
-
-		if ( typeof type !== "string" ) {
-			obj = type;
-			type = undefined;
-		}
-		type = type || "fx";
-
-		while ( i-- ) {
-			tmp = dataPriv.get( elements[ i ], type + "queueHooks" );
-			if ( tmp && tmp.empty ) {
-				count++;
-				tmp.empty.add( resolve );
-			}
-		}
-		resolve();
-		return defer.promise( obj );
-	}
-} );
-var pnum = ( /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/ ).source;
-
-var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
-
-
-var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
-
-var documentElement = document.documentElement;
-
-
-
-	var isAttached = function( elem ) {
-			return jQuery.contains( elem.ownerDocument, elem );
-		},
-		composed = { composed: true };
-
-	// Support: IE 9 - 11+, Edge 12 - 18+, iOS 10.0 - 10.2 only
-	// Check attachment across shadow DOM boundaries when possible (gh-3504)
-	// Support: iOS 10.0-10.2 only
-	// Early iOS 10 versions support `attachShadow` but not `getRootNode`,
-	// leading to errors. We need to check for `getRootNode`.
-	if ( documentElement.getRootNode ) {
-		isAttached = function( elem ) {
-			return jQuery.contains( elem.ownerDocument, elem ) ||
-				elem.getRootNode( composed ) === elem.ownerDocument;
-		};
-	}
-var isHiddenWithinTree = function( elem, el ) {
-
-		// isHiddenWithinTree might be called from jQuery#filter function;
-		// in that case, element will be second argument
-		elem = el || elem;
-
-		// Inline style trumps all
-		return elem.style.display === "none" ||
-			elem.style.display === "" &&
-
-			// Otherwise, check computed style
-			// Support: Firefox <=43 - 45
-			// Disconnected elements can have computed display: none, so first confirm that elem is
-			// in the document.
-			isAttached( elem ) &&
-
-			jQuery.css( elem, "display" ) === "none";
-	};
-
-
-
-function adjustCSS( elem, prop, valueParts, tween ) {
-	var adjusted, scale,
-		maxIterations = 20,
-		currentValue = tween ?
-			function() {
-				return tween.cur();
-			} :
-			function() {
-				return jQuery.css( elem, prop, "" );
-			},
-		initial = currentValue(),
-		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
-
-		// Starting value computation is required for potential unit mismatches
-		initialInUnit = elem.nodeType &&
-			( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
-			rcssNum.exec( jQuery.css( elem, prop ) );
-
-	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
-
-		// Support: Firefox <=54
-		// Halve the iteration target value to prevent interference from CSS upper bounds (gh-2144)
-		initial = initial / 2;
-
-		// Trust units reported by jQuery.css
-		unit = unit || initialInUnit[ 3 ];
-
-		// Iteratively approximate from a nonzero starting point
-		initialInUnit = +initial || 1;
-
-		while ( maxIterations-- ) {
-
-			// Evaluate and update our best guess (doubling guesses that zero out).
-			// Finish if the scale equals or crosses 1 (making the old*new product non-positive).
-			jQuery.style( elem, prop, initialInUnit + unit );
-			if ( ( 1 - scale ) * ( 1 - ( scale = currentValue() / initial || 0.5 ) ) <= 0 ) {
-				maxIterations = 0;
-			}
-			initialInUnit = initialInUnit / scale;
-
-		}
-
-		initialInUnit = initialInUnit * 2;
-		jQuery.style( elem, prop, initialInUnit + unit );
-
-		// Make sure we update the tween properties later on
-		valueParts = valueParts || [];
-	}
-
-	if ( valueParts ) {
-		initialInUnit = +initialInUnit || +initial || 0;
-
-		// Apply relative offset (+=/-=) if specified
-		adjusted = valueParts[ 1 ] ?
-			initialInUnit + ( valueParts[ 1 ] + 1 ) * valueParts[ 2 ] :
-			+valueParts[ 2 ];
-		if ( tween ) {
-			tween.unit = unit;
-			tween.start = initialInUnit;
-			tween.end = adjusted;
-		}
-	}
-	return adjusted;
-}
-
-
-var defaultDisplayMap = {};
-
-function getDefaultDisplay( elem ) {
-	var temp,
-		doc = elem.ownerDocument,
-		nodeName = elem.nodeName,
-		display = defaultDisplayMap[ nodeName ];
-
-	if ( display ) {
-		return display;
-	}
-
-	temp = doc.body.appendChild( doc.createElement( nodeName ) );
-	display = jQuery.css( temp, "display" );
-
-	temp.parentNode.removeChild( temp );
-
-	if ( display === "none" ) {
-		display = "block";
-	}
-	defaultDisplayMap[ nodeName ] = display;
-
-	return display;
-}
-
-function showHide( elements, show ) {
-	var display, elem,
-		values = [],
-		index = 0,
-		length = elements.length;
-
-	// Determine new display value for elements that need to change
-	for ( ; index < length; index++ ) {
-		elem = elements[ index ];
-		if ( !elem.style ) {
-			continue;
-		}
-
-		display = elem.style.display;
-		if ( show ) {
-
-			// Since we force visibility upon cascade-hidden elements, an immediate (and slow)
-			// check is required in this first loop unless we have a nonempty display value (either
-			// inline or about-to-be-restored)
-			if ( display === "none" ) {
-				values[ index ] = dataPriv.get( elem, "display" ) || null;
-				if ( !values[ index ] ) {
-					elem.style.display = "";
-				}
-			}
-			if ( elem.style.display === "" && isHiddenWithinTree( elem ) ) {
-				values[ index ] = getDefaultDisplay( elem );
-			}
-		} else {
-			if ( display !== "none" ) {
-				values[ index ] = "none";
-
-				// Remember what we're overwriting
-				dataPriv.set( elem, "display", display );
-			}
-		}
-	}
-
-	// Set the display of the elements in a second loop to avoid constant reflow
-	for ( index = 0; index < length; index++ ) {
-		if ( values[ index ] != null ) {
-			elements[ index ].style.display = values[ index ];
-		}
-	}
-
-	return elements;
-}
-
-jQuery.fn.extend( {
-	show: function() {
-		return showHide( this, true );
-	},
-	hide: function() {
-		return showHide( this );
-	},
-	toggle: function( state ) {
-		if ( typeof state === "boolean" ) {
-			return state ? this.show() : this.hide();
-		}
-
-		return this.each( function() {
-			if ( isHiddenWithinTree( this ) ) {
-				jQuery( this ).show();
-			} else {
-				jQuery( this ).hide();
-			}
-		} );
-	}
-} );
-var rcheckableType = ( /^(?:checkbox|radio)$/i );
-
-var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]*)/i );
-
-var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
-
-
-
-( function() {
-	var fragment = document.createDocumentFragment(),
-		div = fragment.appendChild( document.createElement( "div" ) ),
-		input = document.createElement( "input" );
-
-	// Support: Android 4.0 - 4.3 only
-	// Check state lost if the name is set (#11217)
-	// Support: Windows Web Apps (WWA)
-	// `name` and `type` must use .setAttribute for WWA (#14901)
-	input.setAttribute( "type", "radio" );
-	input.setAttribute( "checked", "checked" );
-	input.setAttribute( "name", "t" );
-
-	div.appendChild( input );
-
-	// Support: Android <=4.1 only
-	// Older WebKit doesn't clone checked state correctly in fragments
-	support.checkClone = div.cloneNode( true ).cloneNode( true ).lastChild.checked;
-
-	// Support: IE <=11 only
-	// Make sure textarea (and checkbox) defaultValue is properly cloned
-	div.innerHTML = "<textarea>x</textarea>";
-	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
-
-	// Support: IE <=9 only
-	// IE <=9 replaces <option> tags with their contents when inserted outside of
-	// the select element.
-	div.innerHTML = "<option></option>";
-	support.option = !!div.lastChild;
-} )();
-
-
-// We have to close these tags to support XHTML (#13200)
-var wrapMap = {
-
-	// XHTML parsers do not magically insert elements in the
-	// same way that tag soup parsers do. So we cannot shorten
-	// this by omitting <tbody> or other required elements.
-	thead: [ 1, "<table>", "</table>" ],
-	col: [ 2, "<table><colgroup>", "</colgroup></table>" ],
-	tr: [ 2, "<table><tbody>", "</tbody></table>" ],
-	td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
-
-	_default: [ 0, "", "" ]
-};
-
-wrapMap.tbody = wrapMap.tfoot = wrapMap.colgroup = wrapMap.caption = wrapMap.thead;
-wrapMap.th = wrapMap.td;
-
-// Support: IE <=9 only
-if ( !support.option ) {
-	wrapMap.optgroup = wrapMap.option = [ 1, "<select multiple='multiple'>", "</select>" ];
-}
-
-
-function getAll( context, tag ) {
-
-	// Support: IE <=9 - 11 only
-	// Use typeof to avoid zero-argument method invocation on host objects (#15151)
-	var ret;
-
-	if ( typeof context.getElementsByTagName !== "undefined" ) {
-		ret = context.getElementsByTagName( tag || "*" );
-
-	} else if ( typeof context.querySelectorAll !== "undefined" ) {
-		ret = context.querySelectorAll( tag || "*" );
-
-	} else {
-		ret = [];
-	}
-
-	if ( tag === undefined || tag && nodeName( context, tag ) ) {
-		return jQuery.merge( [ context ], ret );
-	}
-
-	return ret;
-}
-
-
-// Mark scripts as having already been evaluated
-function setGlobalEval( elems, refElements ) {
-	var i = 0,
-		l = elems.length;
-
-	for ( ; i < l; i++ ) {
-		dataPriv.set(
-			elems[ i ],
-			"globalEval",
-			!refElements || dataPriv.get( refElements[ i ], "globalEval" )
-		);
-	}
-}
-
-
-var rhtml = /<|&#?\w+;/;
-
-function buildFragment( elems, context, scripts, selection, ignored ) {
-	var elem, tmp, tag, wrap, attached, j,
-		fragment = context.createDocumentFragment(),
-		nodes = [],
-		i = 0,
-		l = elems.length;
-
-	for ( ; i < l; i++ ) {
-		elem = elems[ i ];
-
-		if ( elem || elem === 0 ) {
-
-			// Add nodes directly
-			if ( toType( elem ) === "object" ) {
-
-				// Support: Android <=4.0 only, PhantomJS 1 only
-				// push.apply(_, arraylike) throws on ancient WebKit
-				jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
-
-			// Convert non-html into a text node
-			} else if ( !rhtml.test( elem ) ) {
-				nodes.push( context.createTextNode( elem ) );
-
-			// Convert html into DOM nodes
-			} else {
-				tmp = tmp || fragment.appendChild( context.createElement( "div" ) );
-
-				// Deserialize a standard representation
-				tag = ( rtagName.exec( elem ) || [ "", "" ] )[ 1 ].toLowerCase();
-				wrap = wrapMap[ tag ] || wrapMap._default;
-				tmp.innerHTML = wrap[ 1 ] + jQuery.htmlPrefilter( elem ) + wrap[ 2 ];
-
-				// Descend through wrappers to the right content
-				j = wrap[ 0 ];
-				while ( j-- ) {
-					tmp = tmp.lastChild;
-				}
-
-				// Support: Android <=4.0 only, PhantomJS 1 only
-				// push.apply(_, arraylike) throws on ancient WebKit
-				jQuery.merge( nodes, tmp.childNodes );
-
-				// Remember the top-level container
-				tmp = fragment.firstChild;
-
-				// Ensure the created nodes are orphaned (#12392)
-				tmp.textContent = "";
-			}
-		}
-	}
-
-	// Remove wrapper from fragment
-	fragment.textContent = "";
-
-	i = 0;
-	while ( ( elem = nodes[ i++ ] ) ) {
-
-		// Skip elements already in the context collection (trac-4087)
-		if ( selection && jQuery.inArray( elem, selection ) > -1 ) {
-			if ( ignored ) {
-				ignored.push( elem );
-			}
-			continue;
-		}
-
-		attached = isAttached( elem );
-
-		// Append to fragment
-		tmp = getAll( fragment.appendChild( elem ), "script" );
-
-		// Preserve script evaluation history
-		if ( attached ) {
-			setGlobalEval( tmp );
-		}
-
-		// Capture executables
-		if ( scripts ) {
-			j = 0;
-			while ( ( elem = tmp[ j++ ] ) ) {
-				if ( rscriptType.test( elem.type || "" ) ) {
-					scripts.push( elem );
-				}
-			}
-		}
-	}
-
-	return fragment;
-}
-
-
-var rtypenamespace = /^([^.]*)(?:\.(.+)|)/;
-
-function returnTrue() {
-	return true;
-}
-
-function returnFalse() {
-	return false;
-}
-
-// Support: IE <=9 - 11+
-// focus() and blur() are asynchronous, except when they are no-op.
-// So expect focus to be synchronous when the element is already active,
-// and blur to be synchronous when the element is not already active.
-// (focus and blur are always synchronous in other supported browsers,
-// this just defines when we can count on it).
-function expectSync( elem, type ) {
-	return ( elem === safeActiveElement() ) === ( type === "focus" );
-}
-
-// Support: IE <=9 only
-// Accessing document.activeElement can throw unexpectedly
-// https://bugs.jquery.com/ticket/13393
-function safeActiveElement() {
-	try {
-		return document.activeElement;
-	} catch ( err ) { }
-}
-
-function on( elem, types, selector, data, fn, one ) {
-	var origFn, type;
-
-	// Types can be a map of types/handlers
-	if ( typeof types === "object" ) {
-
-		// ( types-Object, selector, data )
-		if ( typeof selector !== "string" ) {
-
-			// ( types-Object, data )
-			data = data || selector;
-			selector = undefined;
-		}
-		for ( type in types ) {
-			on( elem, type, selector, data, types[ type ], one );
-		}
-		return elem;
-	}
-
-	if ( data == null && fn == null ) {
-
-		// ( types, fn )
-		fn = selector;
-		data = selector = undefined;
-	} else if ( fn == null ) {
-		if ( typeof selector === "string" ) {
-
-			// ( types, selector, fn )
-			fn = data;
-			data = undefined;
-		} else {
-
-			// ( types, data, fn )
-			fn = data;
-			data = selector;
-			selector = undefined;
-		}
-	}
-	if ( fn === false ) {
-		fn = returnFalse;
-	} else if ( !fn ) {
-		return elem;
-	}
-
-	if ( one === 1 ) {
-		origFn = fn;
-		fn = function( event ) {
-
-			// Can use an empty set, since event contains the info
-			jQuery().off( event );
-			return origFn.apply( this, arguments );
-		};
-
-		// Use same guid so caller can remove using origFn
-		fn.guid = origFn.guid || ( origFn.guid = jQuery.guid++ );
-	}
-	return elem.each( function() {
-		jQuery.event.add( this, types, fn, data, selector );
-	} );
-}
-
-/*
- * Helper functions for managing events -- not part of the public interface.
- * Props to Dean Edwards' addEvent library for many of the ideas.
- */
-jQuery.event = {
-
-	global: {},
-
-	add: function( elem, types, handler, data, selector ) {
-
-		var handleObjIn, eventHandle, tmp,
-			events, t, handleObj,
-			special, handlers, type, namespaces, origType,
-			elemData = dataPriv.get( elem );
-
-		// Only attach events to objects that accept data
-		if ( !acceptData( elem ) ) {
-			return;
-		}
-
-		// Caller can pass in an object of custom data in lieu of the handler
-		if ( handler.handler ) {
-			handleObjIn = handler;
-			handler = handleObjIn.handler;
-			selector = handleObjIn.selector;
-		}
-
-		// Ensure that invalid selectors throw exceptions at attach time
-		// Evaluate against documentElement in case elem is a non-element node (e.g., document)
-		if ( selector ) {
-			jQuery.find.matchesSelector( documentElement, selector );
-		}
-
-		// Make sure that the handler has a unique ID, used to find/remove it later
-		if ( !handler.guid ) {
-			handler.guid = jQuery.guid++;
-		}
-
-		// Init the element's event structure and main handler, if this is the first
-		if ( !( events = elemData.events ) ) {
-			events = elemData.events = Object.create( null );
-		}
-		if ( !( eventHandle = elemData.handle ) ) {
-			eventHandle = elemData.handle = function( e ) {
-
-				// Discard the second event of a jQuery.event.trigger() and
-				// when an event is called after a page has unloaded
-				return typeof jQuery !== "undefined" && jQuery.event.triggered !== e.type ?
-					jQuery.event.dispatch.apply( elem, arguments ) : undefined;
-			};
-		}
-
-		// Handle multiple events separated by a space
-		types = ( types || "" ).match( rnothtmlwhite ) || [ "" ];
-		t = types.length;
-		while ( t-- ) {
-			tmp = rtypenamespace.exec( types[ t ] ) || [];
-			type = origType = tmp[ 1 ];
-			namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
-
-			// There *must* be a type, no attaching namespace-only handlers
-			if ( !type ) {
-				continue;
-			}
-
-			// If event changes its type, use the special event handlers for the changed type
-			special = jQuery.event.special[ type ] || {};
-
-			// If selector defined, determine special event api type, otherwise given type
-			type = ( selector ? special.delegateType : special.bindType ) || type;
-
-			// Update special based on newly reset type
-			special = jQuery.event.special[ type ] || {};
-
-			// handleObj is passed to all event handlers
-			handleObj = jQuery.extend( {
-				type: type,
-				origType: origType,
-				data: data,
-				handler: handler,
-				guid: handler.guid,
-				selector: selector,
-				needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
-				namespace: namespaces.join( "." )
-			}, handleObjIn );
-
-			// Init the event handler queue if we're the first
-			if ( !( handlers = events[ type ] ) ) {
-				handlers = events[ type ] = [];
-				handlers.delegateCount = 0;
-
-				// Only use addEventListener if the special events handler returns false
-				if ( !special.setup ||
-					special.setup.call( elem, data, namespaces, eventHandle ) === false ) {
-
-					if ( elem.addEventListener ) {
-						elem.addEventListener( type, eventHandle );
-					}
-				}
-			}
-
-			if ( special.add ) {
-				special.add.call( elem, handleObj );
-
-				if ( !handleObj.handler.guid ) {
-					handleObj.handler.guid = handler.guid;
-				}
-			}
-
-			// Add to the element's handler list, delegates in front
-			if ( selector ) {
-				handlers.splice( handlers.delegateCount++, 0, handleObj );
-			} else {
-				handlers.push( handleObj );
-			}
-
-			// Keep track of which events have ever been used, for event optimization
-			jQuery.event.global[ type ] = true;
-		}
-
-	},
-
-	// Detach an event or set of events from an element
-	remove: function( elem, types, handler, selector, mappedTypes ) {
-
-		var j, origCount, tmp,
-			events, t, handleObj,
-			special, handlers, type, namespaces, origType,
-			elemData = dataPriv.hasData( elem ) && dataPriv.get( elem );
-
-		if ( !elemData || !( events = elemData.events ) ) {
-			return;
-		}
-
-		// Once for each type.namespace in types; type may be omitted
-		types = ( types || "" ).match( rnothtmlwhite ) || [ "" ];
-		t = types.length;
-		while ( t-- ) {
-			tmp = rtypenamespace.exec( types[ t ] ) || [];
-			type = origType = tmp[ 1 ];
-			namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
-
-			// Unbind all events (on this namespace, if provided) for the element
-			if ( !type ) {
-				for ( type in events ) {
-					jQuery.event.remove( elem, type + types[ t ], handler, selector, true );
-				}
-				continue;
-			}
-
-			special = jQuery.event.special[ type ] || {};
-			type = ( selector ? special.delegateType : special.bindType ) || type;
-			handlers = events[ type ] || [];
-			tmp = tmp[ 2 ] &&
-				new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" );
-
-			// Remove matching events
-			origCount = j = handlers.length;
-			while ( j-- ) {
-				handleObj = handlers[ j ];
-
-				if ( ( mappedTypes || origType === handleObj.origType ) &&
-					( !handler || handler.guid === handleObj.guid ) &&
-					( !tmp || tmp.test( handleObj.namespace ) ) &&
-					( !selector || selector === handleObj.selector ||
-						selector === "**" && handleObj.selector ) ) {
-					handlers.splice( j, 1 );
-
-					if ( handleObj.selector ) {
-						handlers.delegateCount--;
-					}
-					if ( special.remove ) {
-						special.remove.call( elem, handleObj );
-					}
-				}
-			}
-
-			// Remove generic event handler if we removed something and no more handlers exist
-			// (avoids potential for endless recursion during removal of special event handlers)
-			if ( origCount && !handlers.length ) {
-				if ( !special.teardown ||
-					special.teardown.call( elem, namespaces, elemData.handle ) === false ) {
-
-					jQuery.removeEvent( elem, type, elemData.handle );
-				}
-
-				delete events[ type ];
-			}
-		}
-
-		// Remove data and the expando if it's no longer used
-		if ( jQuery.isEmptyObject( events ) ) {
-			dataPriv.remove( elem, "handle events" );
-		}
-	},
-
-	dispatch: function( nativeEvent ) {
-
-		var i, j, ret, matched, handleObj, handlerQueue,
-			args = new Array( arguments.length ),
-
-			// Make a writable jQuery.Event from the native event object
-			event = jQuery.event.fix( nativeEvent ),
-
-			handlers = (
-				dataPriv.get( this, "events" ) || Object.create( null )
-			)[ event.type ] || [],
-			special = jQuery.event.special[ event.type ] || {};
-
-		// Use the fix-ed jQuery.Event rather than the (read-only) native event
-		args[ 0 ] = event;
-
-		for ( i = 1; i < arguments.length; i++ ) {
-			args[ i ] = arguments[ i ];
-		}
-
-		event.delegateTarget = this;
-
-		// Call the preDispatch hook for the mapped type, and let it bail if desired
-		if ( special.preDispatch && special.preDispatch.call( this, event ) === false ) {
-			return;
-		}
-
-		// Determine handlers
-		handlerQueue = jQuery.event.handlers.call( this, event, handlers );
-
-		// Run delegates first; they may want to stop propagation beneath us
-		i = 0;
-		while ( ( matched = handlerQueue[ i++ ] ) && !event.isPropagationStopped() ) {
-			event.currentTarget = matched.elem;
-
-			j = 0;
-			while ( ( handleObj = matched.handlers[ j++ ] ) &&
-				!event.isImmediatePropagationStopped() ) {
-
-				// If the event is namespaced, then each handler is only invoked if it is
-				// specially universal or its namespaces are a superset of the event's.
-				if ( !event.rnamespace || handleObj.namespace === false ||
-					event.rnamespace.test( handleObj.namespace ) ) {
-
-					event.handleObj = handleObj;
-					event.data = handleObj.data;
-
-					ret = ( ( jQuery.event.special[ handleObj.origType ] || {} ).handle ||
-						handleObj.handler ).apply( matched.elem, args );
-
-					if ( ret !== undefined ) {
-						if ( ( event.result = ret ) === false ) {
-							event.preventDefault();
-							event.stopPropagation();
-						}
-					}
-				}
-			}
-		}
-
-		// Call the postDispatch hook for the mapped type
-		if ( special.postDispatch ) {
-			special.postDispatch.call( this, event );
-		}
-
-		return event.result;
-	},
-
-	handlers: function( event, handlers ) {
-		var i, handleObj, sel, matchedHandlers, matchedSelectors,
-			handlerQueue = [],
-			delegateCount = handlers.delegateCount,
-			cur = event.target;
-
-		// Find delegate handlers
-		if ( delegateCount &&
-
-			// Support: IE <=9
-			// Black-hole SVG <use> instance trees (trac-13180)
-			cur.nodeType &&
-
-			// Support: Firefox <=42
-			// Suppress spec-violating clicks indicating a non-primary pointer button (trac-3861)
-			// https://www.w3.org/TR/DOM-Level-3-Events/#event-type-click
-			// Support: IE 11 only
-			// ...but not arrow key "clicks" of radio inputs, which can have `button` -1 (gh-2343)
-			!( event.type === "click" && event.button >= 1 ) ) {
-
-			for ( ; cur !== this; cur = cur.parentNode || this ) {
-
-				// Don't check non-elements (#13208)
-				// Don't process clicks on disabled elements (#6911, #8165, #11382, #11764)
-				if ( cur.nodeType === 1 && !( event.type === "click" && cur.disabled === true ) ) {
-					matchedHandlers = [];
-					matchedSelectors = {};
-					for ( i = 0; i < delegateCount; i++ ) {
-						handleObj = handlers[ i ];
-
-						// Don't conflict with Object.prototype properties (#13203)
-						sel = handleObj.selector + " ";
-
-						if ( matchedSelectors[ sel ] === undefined ) {
-							matchedSelectors[ sel ] = handleObj.needsContext ?
-								jQuery( sel, this ).index( cur ) > -1 :
-								jQuery.find( sel, this, null, [ cur ] ).length;
-						}
-						if ( matchedSelectors[ sel ] ) {
-							matchedHandlers.push( handleObj );
-						}
-					}
-					if ( matchedHandlers.length ) {
-						handlerQueue.push( { elem: cur, handlers: matchedHandlers } );
-					}
-				}
-			}
-		}
-
-		// Add the remaining (directly-bound) handlers
-		cur = this;
-		if ( delegateCount < handlers.length ) {
-			handlerQueue.push( { elem: cur, handlers: handlers.slice( delegateCount ) } );
-		}
-
-		return handlerQueue;
-	},
-
-	addProp: function( name, hook ) {
-		Object.defineProperty( jQuery.Event.prototype, name, {
-			enumerable: true,
-			configurable: true,
-
-			get: isFunction( hook ) ?
-				function() {
-					if ( this.originalEvent ) {
-						return hook( this.originalEvent );
-					}
-				} :
-				function() {
-					if ( this.originalEvent ) {
-						return this.originalEvent[ name ];
-					}
-				},
-
-			set: function( value ) {
-				Object.defineProperty( this, name, {
-					enumerable: true,
-					configurable: true,
-					writable: true,
-					value: value
-				} );
-			}
-		} );
-	},
-
-	fix: function( originalEvent ) {
-		return originalEvent[ jQuery.expando ] ?
-			originalEvent :
-			new jQuery.Event( originalEvent );
-	},
-
-	special: {
-		load: {
-
-			// Prevent triggered image.load events from bubbling to window.load
-			noBubble: true
-		},
-		click: {
-
-			// Utilize native event to ensure correct state for checkable inputs
-			setup: function( data ) {
-
-				// For mutual compressibility with _default, replace `this` access with a local var.
-				// `|| data` is dead code meant only to preserve the variable through minification.
-				var el = this || data;
-
-				// Claim the first handler
-				if ( rcheckableType.test( el.type ) &&
-					el.click && nodeName( el, "input" ) ) {
-
-					// dataPriv.set( el, "click", ... )
-					leverageNative( el, "click", returnTrue );
-				}
-
-				// Return false to allow normal processing in the caller
-				return false;
-			},
-			trigger: function( data ) {
-
-				// For mutual compressibility with _default, replace `this` access with a local var.
-				// `|| data` is dead code meant only to preserve the variable through minification.
-				var el = this || data;
-
-				// Force setup before triggering a click
-				if ( rcheckableType.test( el.type ) &&
-					el.click && nodeName( el, "input" ) ) {
-
-					leverageNative( el, "click" );
-				}
-
-				// Return non-false to allow normal event-path propagation
-				return true;
-			},
-
-			// For cross-browser consistency, suppress native .click() on links
-			// Also prevent it if we're currently inside a leveraged native-event stack
-			_default: function( event ) {
-				var target = event.target;
-				return rcheckableType.test( target.type ) &&
-					target.click && nodeName( target, "input" ) &&
-					dataPriv.get( target, "click" ) ||
-					nodeName( target, "a" );
-			}
-		},
-
-		beforeunload: {
-			postDispatch: function( event ) {
-
-				// Support: Firefox 20+
-				// Firefox doesn't alert if the returnValue field is not set.
-				if ( event.result !== undefined && event.originalEvent ) {
-					event.originalEvent.returnValue = event.result;
-				}
-			}
-		}
-	}
-};
-
-// Ensure the presence of an event listener that handles manually-triggered
-// synthetic events by interrupting progress until reinvoked in response to
-// *native* events that it fires directly, ensuring that state changes have
-// already occurred before other listeners are invoked.
-function leverageNative( el, type, expectSync ) {
-
-	// Missing expectSync indicates a trigger call, which must force setup through jQuery.event.add
-	if ( !expectSync ) {
-		if ( dataPriv.get( el, type ) === undefined ) {
-			jQuery.event.add( el, type, returnTrue );
-		}
-		return;
-	}
-
-	// Register the controller as a special universal handler for all event namespaces
-	dataPriv.set( el, type, false );
-	jQuery.event.add( el, type, {
-		namespace: false,
-		handler: function( event ) {
-			var notAsync, result,
-				saved = dataPriv.get( this, type );
-
-			if ( ( event.isTrigger & 1 ) && this[ type ] ) {
-
-				// Interrupt processing of the outer synthetic .trigger()ed event
-				// Saved data should be false in such cases, but might be a leftover capture object
-				// from an async native handler (gh-4350)
-				if ( !saved.length ) {
-
-					// Store arguments for use when handling the inner native event
-					// There will always be at least one argument (an event object), so this array
-					// will not be confused with a leftover capture object.
-					saved = slice.call( arguments );
-					dataPriv.set( this, type, saved );
-
-					// Trigger the native event and capture its result
-					// Support: IE <=9 - 11+
-					// focus() and blur() are asynchronous
-					notAsync = expectSync( this, type );
-					this[ type ]();
-					result = dataPriv.get( this, type );
-					if ( saved !== result || notAsync ) {
-						dataPriv.set( this, type, false );
-					} else {
-						result = {};
-					}
-					if ( saved !== result ) {
-
-						// Cancel the outer synthetic event
-						event.stopImmediatePropagation();
-						event.preventDefault();
-
-						// Support: Chrome 86+
-						// In Chrome, if an element having a focusout handler is blurred by
-						// clicking outside of it, it invokes the handler synchronously. If
-						// that handler calls `.remove()` on the element, the data is cleared,
-						// leaving `result` undefined. We need to guard against this.
-						return result && result.value;
-					}
-
-				// If this is an inner synthetic event for an event with a bubbling surrogate
-				// (focus or blur), assume that the surrogate already propagated from triggering the
-				// native event and prevent that from happening again here.
-				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
-				// bubbling surrogate propagates *after* the non-bubbling base), but that seems
-				// less bad than duplication.
-				} else if ( ( jQuery.event.special[ type ] || {} ).delegateType ) {
-					event.stopPropagation();
-				}
-
-			// If this is a native event triggered above, everything is now in order
-			// Fire an inner synthetic event with the original arguments
-			} else if ( saved.length ) {
-
-				// ...and capture the result
-				dataPriv.set( this, type, {
-					value: jQuery.event.trigger(
-
-						// Support: IE <=9 - 11+
-						// Extend with the prototype to reset the above stopImmediatePropagation()
-						jQuery.extend( saved[ 0 ], jQuery.Event.prototype ),
-						saved.slice( 1 ),
-						this
-					)
-				} );
-
-				// Abort handling of the native event
-				event.stopImmediatePropagation();
-			}
-		}
-	} );
-}
-
-jQuery.removeEvent = function( elem, type, handle ) {
-
-	// This "if" is needed for plain objects
-	if ( elem.removeEventListener ) {
-		elem.removeEventListener( type, handle );
-	}
-};
-
-jQuery.Event = function( src, props ) {
-
-	// Allow instantiation without the 'new' keyword
-	if ( !( this instanceof jQuery.Event ) ) {
-		return new jQuery.Event( src, props );
-	}
-
-	// Event object
-	if ( src && src.type ) {
-		this.originalEvent = src;
-		this.type = src.type;
-
-		// Events bubbling up the document may have been marked as prevented
-		// by a handler lower down the tree; reflect the correct value.
-		this.isDefaultPrevented = src.defaultPrevented ||
-				src.defaultPrevented === undefined &&
-
-				// Support: Android <=2.3 only
-				src.returnValue === false ?
-			returnTrue :
-			returnFalse;
-
-		// Create target properties
-		// Support: Safari <=6 - 7 only
-		// Target should not be a text node (#504, #13143)
-		this.target = ( src.target && src.target.nodeType === 3 ) ?
-			src.target.parentNode :
-			src.target;
-
-		this.currentTarget = src.currentTarget;
-		this.relatedTarget = src.relatedTarget;
-
-	// Event type
-	} else {
-		this.type = src;
-	}
-
-	// Put explicitly provided properties onto the event object
-	if ( props ) {
-		jQuery.extend( this, props );
-	}
-
-	// Create a timestamp if incoming event doesn't have one
-	this.timeStamp = src && src.timeStamp || Date.now();
-
-	// Mark it as fixed
-	this[ jQuery.expando ] = true;
-};
-
-// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-// https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
-jQuery.Event.prototype = {
-	constructor: jQuery.Event,
-	isDefaultPrevented: returnFalse,
-	isPropagationStopped: returnFalse,
-	isImmediatePropagationStopped: returnFalse,
-	isSimulated: false,
-
-	preventDefault: function() {
-		var e = this.originalEvent;
-
-		this.isDefaultPrevented = returnTrue;
-
-		if ( e && !this.isSimulated ) {
-			e.preventDefault();
-		}
-	},
-	stopPropagation: function() {
-		var e = this.originalEvent;
-
-		this.isPropagationStopped = returnTrue;
-
-		if ( e && !this.isSimulated ) {
-			e.stopPropagation();
-		}
-	},
-	stopImmediatePropagation: function() {
-		var e = this.originalEvent;
-
-		this.isImmediatePropagationStopped = returnTrue;
-
-		if ( e && !this.isSimulated ) {
-			e.stopImmediatePropagation();
-		}
-
-		this.stopPropagation();
-	}
-};
-
-// Includes all common event props including KeyEvent and MouseEvent specific props
-jQuery.each( {
-	altKey: true,
-	bubbles: true,
-	cancelable: true,
-	changedTouches: true,
-	ctrlKey: true,
-	detail: true,
-	eventPhase: true,
-	metaKey: true,
-	pageX: true,
-	pageY: true,
-	shiftKey: true,
-	view: true,
-	"char": true,
-	code: true,
-	charCode: true,
-	key: true,
-	keyCode: true,
-	button: true,
-	buttons: true,
-	clientX: true,
-	clientY: true,
-	offsetX: true,
-	offsetY: true,
-	pointerId: true,
-	pointerType: true,
-	screenX: true,
-	screenY: true,
-	targetTouches: true,
-	toElement: true,
-	touches: true,
-	which: true
-}, jQuery.event.addProp );
-
-jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateType ) {
-	jQuery.event.special[ type ] = {
-
-		// Utilize native event if possible so blur/focus sequence is correct
-		setup: function() {
-
-			// Claim the first handler
-			// dataPriv.set( this, "focus", ... )
-			// dataPriv.set( this, "blur", ... )
-			leverageNative( this, type, expectSync );
-
-			// Return false to allow normal processing in the caller
-			return false;
-		},
-		trigger: function() {
-
-			// Force setup before trigger
-			leverageNative( this, type );
-
-			// Return non-false to allow normal event-path propagation
-			return true;
-		},
-
-		// Suppress native focus or blur as it's already being fired
-		// in leverageNative.
-		_default: function() {
-			return true;
-		},
-
-		delegateType: delegateType
-	};
-} );
-
-// Create mouseenter/leave events using mouseover/out and event-time checks
-// so that event delegation works in jQuery.
-// Do the same for pointerenter/pointerleave and pointerover/pointerout
-//
-// Support: Safari 7 only
-// Safari sends mouseenter too often; see:
-// https://bugs.chromium.org/p/chromium/issues/detail?id=470258
-// for the description of the bug (it existed in older Chrome versions as well).
-jQuery.each( {
-	mouseenter: "mouseover",
-	mouseleave: "mouseout",
-	pointerenter: "pointerover",
-	pointerleave: "pointerout"
-}, function( orig, fix ) {
-	jQuery.event.special[ orig ] = {
-		delegateType: fix,
-		bindType: fix,
-
-		handle: function( event ) {
-			var ret,
-				target = this,
-				related = event.relatedTarget,
-				handleObj = event.handleObj;
-
-			// For mouseenter/leave call the handler if related is outside the target.
-			// NB: No relatedTarget if the mouse left/entered the browser window
-			if ( !related || ( related !== target && !jQuery.contains( target, related ) ) ) {
-				event.type = handleObj.origType;
-				ret = handleObj.handler.apply( this, arguments );
-				event.type = fix;
-			}
-			return ret;
-		}
-	};
-} );
-
-jQuery.fn.extend( {
-
-	on: function( types, selector, data, fn ) {
-		return on( this, types, selector, data, fn );
-	},
-	one: function( types, selector, data, fn ) {
-		return on( this, types, selector, data, fn, 1 );
-	},
-	off: function( types, selector, fn ) {
-		var handleObj, type;
-		if ( types && types.preventDefault && types.handleObj ) {
-
-			// ( event )  dispatched jQuery.Event
-			handleObj = types.handleObj;
-			jQuery( types.delegateTarget ).off(
-				handleObj.namespace ?
-					handleObj.origType + "." + handleObj.namespace :
-					handleObj.origType,
-				handleObj.selector,
-				handleObj.handler
-			);
-			return this;
-		}
-		if ( typeof types === "object" ) {
-
-			// ( types-object [, selector] )
-			for ( type in types ) {
-				this.off( type, selector, types[ type ] );
-			}
-			return this;
-		}
-		if ( selector === false || typeof selector === "function" ) {
-
-			// ( types [, fn] )
-			fn = selector;
-			selector = undefined;
-		}
-		if ( fn === false ) {
-			fn = returnFalse;
-		}
-		return this.each( function() {
-			jQuery.event.remove( this, types, fn, selector );
-		} );
-	}
-} );
-
-
-var
-
-	// Support: IE <=10 - 11, Edge 12 - 13 only
-	// In IE/Edge using regex groups here causes severe slowdowns.
-	// See https://connect.microsoft.com/IE/feedback/details/1736512/
-	rnoInnerhtml = /<script|<style|<link/i,
-
-	// checked="checked" or checked
-	rchecked = /checked\s*(?:[^=]|=\s*.checked.)/i,
-	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
-
-// Prefer a tbody over its parent table for containing new rows
-function manipulationTarget( elem, content ) {
-	if ( nodeName( elem, "table" ) &&
-		nodeName( content.nodeType !== 11 ? content : content.firstChild, "tr" ) ) {
-
-		return jQuery( elem ).children( "tbody" )[ 0 ] || elem;
-	}
-
-	return elem;
-}
-
-// Replace/restore the type attribute of script elements for safe DOM manipulation
-function disableScript( elem ) {
-	elem.type = ( elem.getAttribute( "type" ) !== null ) + "/" + elem.type;
-	return elem;
-}
-function restoreScript( elem ) {
-	if ( ( elem.type || "" ).slice( 0, 5 ) === "true/" ) {
-		elem.type = elem.type.slice( 5 );
-	} else {
-		elem.removeAttribute( "type" );
-	}
-
-	return elem;
-}
-
-function cloneCopyEvent( src, dest ) {
-	var i, l, type, pdataOld, udataOld, udataCur, events;
-
-	if ( dest.nodeType !== 1 ) {
-		return;
-	}
-
-	// 1. Copy private data: events, handlers, etc.
-	if ( dataPriv.hasData( src ) ) {
-		pdataOld = dataPriv.get( src );
-		events = pdataOld.events;
-
-		if ( events ) {
-			dataPriv.remove( dest, "handle events" );
-
-			for ( type in events ) {
-				for ( i = 0, l = events[ type ].length; i < l; i++ ) {
-					jQuery.event.add( dest, type, events[ type ][ i ] );
-				}
-			}
-		}
-	}
-
-	// 2. Copy user data
-	if ( dataUser.hasData( src ) ) {
-		udataOld = dataUser.access( src );
-		udataCur = jQuery.extend( {}, udataOld );
-
-		dataUser.set( dest, udataCur );
-	}
-}
-
-// Fix IE bugs, see support tests
-function fixInput( src, dest ) {
-	var nodeName = dest.nodeName.toLowerCase();
-
-	// Fails to persist the checked state of a cloned checkbox or radio button.
-	if ( nodeName === "input" && rcheckableType.test( src.type ) ) {
-		dest.checked = src.checked;
-
-	// Fails to return the selected option to the default selected state when cloning options
-	} else if ( nodeName === "input" || nodeName === "textarea" ) {
-		dest.defaultValue = src.defaultValue;
-	}
-}
-
-function domManip( collection, args, callback, ignored ) {
-
-	// Flatten any nested arrays
-	args = flat( args );
-
-	var fragment, first, scripts, hasScripts, node, doc,
-		i = 0,
-		l = collection.length,
-		iNoClone = l - 1,
-		value = args[ 0 ],
-		valueIsFunction = isFunction( value );
-
-	// We can't cloneNode fragments that contain checked, in WebKit
-	if ( valueIsFunction ||
-			( l > 1 && typeof value === "string" &&
-				!support.checkClone && rchecked.test( value ) ) ) {
-		return collection.each( function( index ) {
-			var self = collection.eq( index );
-			if ( valueIsFunction ) {
-				args[ 0 ] = value.call( this, index, self.html() );
-			}
-			domManip( self, args, callback, ignored );
-		} );
-	}
-
-	if ( l ) {
-		fragment = buildFragment( args, collection[ 0 ].ownerDocument, false, collection, ignored );
-		first = fragment.firstChild;
-
-		if ( fragment.childNodes.length === 1 ) {
-			fragment = first;
-		}
-
-		// Require either new content or an interest in ignored elements to invoke the callback
-		if ( first || ignored ) {
-			scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
-			hasScripts = scripts.length;
-
-			// Use the original fragment for the last item
-			// instead of the first because it can end up
-			// being emptied incorrectly in certain situations (#8070).
-			for ( ; i < l; i++ ) {
-				node = fragment;
-
-				if ( i !== iNoClone ) {
-					node = jQuery.clone( node, true, true );
-
-					// Keep references to cloned scripts for later restoration
-					if ( hasScripts ) {
-
-						// Support: Android <=4.0 only, PhantomJS 1 only
-						// push.apply(_, arraylike) throws on ancient WebKit
-						jQuery.merge( scripts, getAll( node, "script" ) );
-					}
-				}
-
-				callback.call( collection[ i ], node, i );
-			}
-
-			if ( hasScripts ) {
-				doc = scripts[ scripts.length - 1 ].ownerDocument;
-
-				// Reenable scripts
-				jQuery.map( scripts, restoreScript );
-
-				// Evaluate executable scripts on first document insertion
-				for ( i = 0; i < hasScripts; i++ ) {
-					node = scripts[ i ];
-					if ( rscriptType.test( node.type || "" ) &&
-						!dataPriv.access( node, "globalEval" ) &&
-						jQuery.contains( doc, node ) ) {
-
-						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
-
-							// Optional AJAX dependency, but won't run scripts if not present
-							if ( jQuery._evalUrl && !node.noModule ) {
-								jQuery._evalUrl( node.src, {
-									nonce: node.nonce || node.getAttribute( "nonce" )
-								}, doc );
-							}
-						} else {
-							DOMEval( node.textContent.replace( rcleanScript, "" ), node, doc );
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return collection;
-}
-
-function remove( elem, selector, keepData ) {
-	var node,
-		nodes = selector ? jQuery.filter( selector, elem ) : elem,
-		i = 0;
-
-	for ( ; ( node = nodes[ i ] ) != null; i++ ) {
-		if ( !keepData && node.nodeType === 1 ) {
-			jQuery.cleanData( getAll( node ) );
-		}
-
-		if ( node.parentNode ) {
-			if ( keepData && isAttached( node ) ) {
-				setGlobalEval( getAll( node, "script" ) );
-			}
-			node.parentNode.removeChild( node );
-		}
-	}
-
-	return elem;
-}
-
-jQuery.extend( {
-	htmlPrefilter: function( html ) {
-		return html;
-	},
-
-	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
-		var i, l, srcElements, destElements,
-			clone = elem.cloneNode( true ),
-			inPage = isAttached( elem );
-
-		// Fix IE cloning issues
-		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
-				!jQuery.isXMLDoc( elem ) ) {
-
-			// We eschew Sizzle here for performance reasons: https://jsperf.com/getall-vs-sizzle/2
-			destElements = getAll( clone );
-			srcElements = getAll( elem );
-
-			for ( i = 0, l = srcElements.length; i < l; i++ ) {
-				fixInput( srcElements[ i ], destElements[ i ] );
-			}
-		}
-
-		// Copy the events from the original to the clone
-		if ( dataAndEvents ) {
-			if ( deepDataAndEvents ) {
-				srcElements = srcElements || getAll( elem );
-				destElements = destElements || getAll( clone );
-
-				for ( i = 0, l = srcElements.length; i < l; i++ ) {
-					cloneCopyEvent( srcElements[ i ], destElements[ i ] );
-				}
-			} else {
-				cloneCopyEvent( elem, clone );
-			}
-		}
-
-		// Preserve script evaluation history
-		destElements = getAll( clone, "script" );
-		if ( destElements.length > 0 ) {
-			setGlobalEval( destElements, !inPage && getAll( elem, "script" ) );
-		}
-
-		// Return the cloned set
-		return clone;
-	},
-
-	cleanData: function( elems ) {
-		var data, elem, type,
-			special = jQuery.event.special,
-			i = 0;
-
-		for ( ; ( elem = elems[ i ] ) !== undefined; i++ ) {
-			if ( acceptData( elem ) ) {
-				if ( ( data = elem[ dataPriv.expando ] ) ) {
-					if ( data.events ) {
-						for ( type in data.events ) {
-							if ( special[ type ] ) {
-								jQuery.event.remove( elem, type );
-
-							// This is a shortcut to avoid jQuery.event.remove's overhead
-							} else {
-								jQuery.removeEvent( elem, type, data.handle );
-							}
-						}
-					}
-
-					// Support: Chrome <=35 - 45+
-					// Assign undefined instead of using delete, see Data#remove
-					elem[ dataPriv.expando ] = undefined;
-				}
-				if ( elem[ dataUser.expando ] ) {
-
-					// Support: Chrome <=35 - 45+
-					// Assign undefined instead of using delete, see Data#remove
-					elem[ dataUser.expando ] = undefined;
-				}
-			}
-		}
-	}
-} );
-
-jQuery.fn.extend( {
-	detach: function( selector ) {
-		return remove( this, selector, true );
-	},
-
-	remove: function( selector ) {
-		return remove( this, selector );
-	},
-
-	text: function( value ) {
-		return access( this, function( value ) {
-			return value === undefined ?
-				jQuery.text( this ) :
-				this.empty().each( function() {
-					if ( this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9 ) {
-						this.textContent = value;
-					}
-				} );
-		}, null, value, arguments.length );
-	},
-
-	append: function() {
-		return domManip( this, arguments, function( elem ) {
-			if ( this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9 ) {
-				var target = manipulationTarget( this, elem );
-				target.appendChild( elem );
-			}
-		} );
-	},
-
-	prepend: function() {
-		return domManip( this, arguments, function( elem ) {
-			if ( this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9 ) {
-				var target = manipulationTarget( this, elem );
-				target.insertBefore( elem, target.firstChild );
-			}
-		} );
-	},
-
-	before: function() {
-		return domManip( this, arguments, function( elem ) {
-			if ( this.parentNode ) {
-				this.parentNode.insertBefore( elem, this );
-			}
-		} );
-	},
-
-	after: function() {
-		return domManip( this, arguments, function( elem ) {
-			if ( this.parentNode ) {
-				this.parentNode.insertBefore( elem, this.nextSibling );
-			}
-		} );
-	},
-
-	empty: function() {
-		var elem,
-			i = 0;
-
-		for ( ; ( elem = this[ i ] ) != null; i++ ) {
-			if ( elem.nodeType === 1 ) {
-
-				// Prevent memory leaks
-				jQuery.cleanData( getAll( elem, false ) );
-
-				// Remove any remaining nodes
-				elem.textContent = "";
-			}
-		}
-
-		return this;
-	},
-
-	clone: function( dataAndEvents, deepDataAndEvents ) {
-		dataAndEvents = dataAndEvents == null ? false : dataAndEvents;
-		deepDataAndEvents = deepDataAndEvents == null ? dataAndEvents : deepDataAndEvents;
-
-		return this.map( function() {
-			return jQuery.clone( this, dataAndEvents, deepDataAndEvents );
-		} );
-	},
-
-	html: function( value ) {
-		return access( this, function( value ) {
-			var elem = this[ 0 ] || {},
-				i = 0,
-				l = this.length;
-
-			if ( value === undefined && elem.nodeType === 1 ) {
-				return elem.innerHTML;
-			}
-
-			// See if we can take a shortcut and just use innerHTML
-			if ( typeof value === "string" && !rnoInnerhtml.test( value ) &&
-				!wrapMap[ ( rtagName.exec( value ) || [ "", "" ] )[ 1 ].toLowerCase() ] ) {
-
-				value = jQuery.htmlPrefilter( value );
-
-				try {
-					for ( ; i < l; i++ ) {
-						elem = this[ i ] || {};
-
-						// Remove element nodes and prevent memory leaks
-						if ( elem.nodeType === 1 ) {
-							jQuery.cleanData( getAll( elem, false ) );
-							elem.innerHTML = value;
-						}
-					}
-
-					elem = 0;
-
-				// If using innerHTML throws an exception, use the fallback method
-				} catch ( e ) {}
-			}
-
-			if ( elem ) {
-				this.empty().append( value );
-			}
-		}, null, value, arguments.length );
-	},
-
-	replaceWith: function() {
-		var ignored = [];
-
-		// Make the changes, replacing each non-ignored context element with the new content
-		return domManip( this, arguments, function( elem ) {
-			var parent = this.parentNode;
-
-			if ( jQuery.inArray( this, ignored ) < 0 ) {
-				jQuery.cleanData( getAll( this ) );
-				if ( parent ) {
-					parent.replaceChild( elem, this );
-				}
-			}
-
-		// Force callback invocation
-		}, ignored );
-	}
-} );
-
-jQuery.each( {
-	appendTo: "append",
-	prependTo: "prepend",
-	insertBefore: "before",
-	insertAfter: "after",
-	replaceAll: "replaceWith"
-}, function( name, original ) {
-	jQuery.fn[ name ] = function( selector ) {
-		var elems,
-			ret = [],
-			insert = jQuery( selector ),
-			last = insert.length - 1,
-			i = 0;
-
-		for ( ; i <= last; i++ ) {
-			elems = i === last ? this : this.clone( true );
-			jQuery( insert[ i ] )[ original ]( elems );
-
-			// Support: Android <=4.0 only, PhantomJS 1 only
-			// .get() because push.apply(_, arraylike) throws on ancient WebKit
-			push.apply( ret, elems.get() );
-		}
-
-		return this.pushStack( ret );
-	};
-} );
-var rnumnonpx = new RegExp( "^(" + pnum + ")(?!px)[a-z%]+$", "i" );
-
-var getStyles = function( elem ) {
-
-		// Support: IE <=11 only, Firefox <=30 (#15098, #14150)
-		// IE throws on elements created in popups
-		// FF meanwhile throws on frame elements through "defaultView.getComputedStyle"
-		var view = elem.ownerDocument.defaultView;
-
-		if ( !view || !view.opener ) {
-			view = window;
-		}
-
-		return view.getComputedStyle( elem );
-	};
-
-var swap = function( elem, options, callback ) {
-	var ret, name,
-		old = {};
-
-	// Remember the old values, and insert the new ones
-	for ( name in options ) {
-		old[ name ] = elem.style[ name ];
-		elem.style[ name ] = options[ name ];
-	}
-
-	ret = callback.call( elem );
-
-	// Revert the old values
-	for ( name in options ) {
-		elem.style[ name ] = old[ name ];
-	}
-
-	return ret;
-};
-
-
-var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
-
-
-
-( function() {
-
-	// Executing both pixelPosition & boxSizingReliable tests require only one layout
-	// so they're executed at the same time to save the second computation.
-	function computeStyleTests() {
-
-		// This is a singleton, we need to execute it only once
-		if ( !div ) {
-			return;
-		}
-
-		container.style.cssText = "position:absolute;left:-11111px;width:60px;" +
-			"margin-top:1px;padding:0;border:0";
-		div.style.cssText =
-			"position:relative;display:block;box-sizing:border-box;overflow:scroll;" +
-			"margin:auto;border:1px;padding:1px;" +
-			"width:60%;top:1%";
-		documentElement.appendChild( container ).appendChild( div );
-
-		var divStyle = window.getComputedStyle( div );
-		pixelPositionVal = divStyle.top !== "1%";
-
-		// Support: Android 4.0 - 4.3 only, Firefox <=3 - 44
-		reliableMarginLeftVal = roundPixelMeasures( divStyle.marginLeft ) === 12;
-
-		// Support: Android 4.0 - 4.3 only, Safari <=9.1 - 10.1, iOS <=7.0 - 9.3
-		// Some styles come back with percentage values, even though they shouldn't
-		div.style.right = "60%";
-		pixelBoxStylesVal = roundPixelMeasures( divStyle.right ) === 36;
-
-		// Support: IE 9 - 11 only
-		// Detect misreporting of content dimensions for box-sizing:border-box elements
-		boxSizingReliableVal = roundPixelMeasures( divStyle.width ) === 36;
-
-		// Support: IE 9 only
-		// Detect overflow:scroll screwiness (gh-3699)
-		// Support: Chrome <=64
-		// Don't get tricked when zoom affects offsetWidth (gh-4029)
-		div.style.position = "absolute";
-		scrollboxSizeVal = roundPixelMeasures( div.offsetWidth / 3 ) === 12;
-
-		documentElement.removeChild( container );
-
-		// Nullify the div so it wouldn't be stored in the memory and
-		// it will also be a sign that checks already performed
-		div = null;
-	}
-
-	function roundPixelMeasures( measure ) {
-		return Math.round( parseFloat( measure ) );
-	}
-
-	var pixelPositionVal, boxSizingReliableVal, scrollboxSizeVal, pixelBoxStylesVal,
-		reliableTrDimensionsVal, reliableMarginLeftVal,
-		container = document.createElement( "div" ),
-		div = document.createElement( "div" );
-
-	// Finish early in limited (non-browser) environments
-	if ( !div.style ) {
-		return;
-	}
-
-	// Support: IE <=9 - 11 only
-	// Style of cloned element affects source element cloned (#8908)
-	div.style.backgroundClip = "content-box";
-	div.cloneNode( true ).style.backgroundClip = "";
-	support.clearCloneStyle = div.style.backgroundClip === "content-box";
-
-	jQuery.extend( support, {
-		boxSizingReliable: function() {
-			computeStyleTests();
-			return boxSizingReliableVal;
-		},
-		pixelBoxStyles: function() {
-			computeStyleTests();
-			return pixelBoxStylesVal;
-		},
-		pixelPosition: function() {
-			computeStyleTests();
-			return pixelPositionVal;
-		},
-		reliableMarginLeft: function() {
-			computeStyleTests();
-			return reliableMarginLeftVal;
-		},
-		scrollboxSize: function() {
-			computeStyleTests();
-			return scrollboxSizeVal;
-		},
-
-		// Support: IE 9 - 11+, Edge 15 - 18+
-		// IE/Edge misreport `getComputedStyle` of table rows with width/height
-		// set in CSS while `offset*` properties report correct values.
-		// Behavior in IE 9 is more subtle than in newer versions & it passes
-		// some versions of this test; make sure not to make it pass there!
-		//
-		// Support: Firefox 70+
-		// Only Firefox includes border widths
-		// in computed dimensions. (gh-4529)
-		reliableTrDimensions: function() {
-			var table, tr, trChild, trStyle;
-			if ( reliableTrDimensionsVal == null ) {
-				table = document.createElement( "table" );
-				tr = document.createElement( "tr" );
-				trChild = document.createElement( "div" );
-
-				table.style.cssText = "position:absolute;left:-11111px;border-collapse:separate";
-				tr.style.cssText = "border:1px solid";
-
-				// Support: Chrome 86+
-				// Height set through cssText does not get applied.
-				// Computed height then comes back as 0.
-				tr.style.height = "1px";
-				trChild.style.height = "9px";
-
-				// Support: Android 8 Chrome 86+
-				// In our bodyBackground.html iframe,
-				// display for all div elements is set to "inline",
-				// which causes a problem only in Android 8 Chrome 86.
-				// Ensuring the div is display: block
-				// gets around this issue.
-				trChild.style.display = "block";
-
-				documentElement
-					.appendChild( table )
-					.appendChild( tr )
-					.appendChild( trChild );
-
-				trStyle = window.getComputedStyle( tr );
-				reliableTrDimensionsVal = ( parseInt( trStyle.height, 10 ) +
-					parseInt( trStyle.borderTopWidth, 10 ) +
-					parseInt( trStyle.borderBottomWidth, 10 ) ) === tr.offsetHeight;
-
-				documentElement.removeChild( table );
-			}
-			return reliableTrDimensionsVal;
-		}
-	} );
-} )();
-
-
-function curCSS( elem, name, computed ) {
-	var width, minWidth, maxWidth, ret,
-
-		// Support: Firefox 51+
-		// Retrieving style before computed somehow
-		// fixes an issue with getting wrong values
-		// on detached elements
-		style = elem.style;
-
-	computed = computed || getStyles( elem );
-
-	// getPropertyValue is needed for:
-	//   .css('filter') (IE 9 only, #12537)
-	//   .css('--customProperty) (#3144)
-	if ( computed ) {
-		ret = computed.getPropertyValue( name ) || computed[ name ];
-
-		if ( ret === "" && !isAttached( elem ) ) {
-			ret = jQuery.style( elem, name );
-		}
-
-		// A tribute to the "awesome hack by Dean Edwards"
-		// Android Browser returns percentage for some values,
-		// but width seems to be reliably pixels.
-		// This is against the CSSOM draft spec:
-		// https://drafts.csswg.org/cssom/#resolved-values
-		if ( !support.pixelBoxStyles() && rnumnonpx.test( ret ) && rboxStyle.test( name ) ) {
-
-			// Remember the original values
-			width = style.width;
-			minWidth = style.minWidth;
-			maxWidth = style.maxWidth;
-
-			// Put in the new values to get a computed value out
-			style.minWidth = style.maxWidth = style.width = ret;
-			ret = computed.width;
-
-			// Revert the changed values
-			style.width = width;
-			style.minWidth = minWidth;
-			style.maxWidth = maxWidth;
-		}
-	}
-
-	return ret !== undefined ?
-
-		// Support: IE <=9 - 11 only
-		// IE returns zIndex value as an integer.
-		ret + "" :
-		ret;
-}
-
-
-function addGetHookIf( conditionFn, hookFn ) {
-
-	// Define the hook, we'll check on the first run if it's really needed.
-	return {
-		get: function() {
-			if ( conditionFn() ) {
-
-				// Hook not needed (or it's not possible to use it due
-				// to missing dependency), remove it.
-				delete this.get;
-				return;
-			}
-
-			// Hook needed; redefine it so that the support test is not executed again.
-			return ( this.get = hookFn ).apply( this, arguments );
-		}
-	};
-}
-
-
-var cssPrefixes = [ "Webkit", "Moz", "ms" ],
-	emptyStyle = document.createElement( "div" ).style,
-	vendorProps = {};
-
-// Return a vendor-prefixed property or undefined
-function vendorPropName( name ) {
-
-	// Check for vendor prefixed names
-	var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),
-		i = cssPrefixes.length;
-
-	while ( i-- ) {
-		name = cssPrefixes[ i ] + capName;
-		if ( name in emptyStyle ) {
-			return name;
-		}
-	}
-}
-
-// Return a potentially-mapped jQuery.cssProps or vendor prefixed property
-function finalPropName( name ) {
-	var final = jQuery.cssProps[ name ] || vendorProps[ name ];
-
-	if ( final ) {
-		return final;
-	}
-	if ( name in emptyStyle ) {
-		return name;
-	}
-	return vendorProps[ name ] = vendorPropName( name ) || name;
-}
-
-
-var
-
-	// Swappable if display is none or starts with table
-	// except "table", "table-cell", or "table-caption"
-	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
-	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
-	rcustomProp = /^--/,
-	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
-	cssNormalTransform = {
-		letterSpacing: "0",
-		fontWeight: "400"
-	};
-
-function setPositiveNumber( _elem, value, subtract ) {
-
-	// Any relative (+/-) values have already been
-	// normalized at this point
-	var matches = rcssNum.exec( value );
-	return matches ?
-
-		// Guard against undefined "subtract", e.g., when used as in cssHooks
-		Math.max( 0, matches[ 2 ] - ( subtract || 0 ) ) + ( matches[ 3 ] || "px" ) :
-		value;
-}
-
-function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computedVal ) {
-	var i = dimension === "width" ? 1 : 0,
-		extra = 0,
-		delta = 0;
-
-	// Adjustment may not be necessary
-	if ( box === ( isBorderBox ? "border" : "content" ) ) {
-		return 0;
-	}
-
-	for ( ; i < 4; i += 2 ) {
-
-		// Both box models exclude margin
-		if ( box === "margin" ) {
-			delta += jQuery.css( elem, box + cssExpand[ i ], true, styles );
-		}
-
-		// If we get here with a content-box, we're seeking "padding" or "border" or "margin"
-		if ( !isBorderBox ) {
-
-			// Add padding
-			delta += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
-
-			// For "border" or "margin", add border
-			if ( box !== "padding" ) {
-				delta += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
-
-			// But still keep track of it otherwise
-			} else {
-				extra += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
-			}
-
-		// If we get here with a border-box (content + padding + border), we're seeking "content" or
-		// "padding" or "margin"
-		} else {
-
-			// For "content", subtract padding
-			if ( box === "content" ) {
-				delta -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
-			}
-
-			// For "content" or "padding", subtract border
-			if ( box !== "margin" ) {
-				delta -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
-			}
-		}
-	}
-
-	// Account for positive content-box scroll gutter when requested by providing computedVal
-	if ( !isBorderBox && computedVal >= 0 ) {
-
-		// offsetWidth/offsetHeight is a rounded sum of content, padding, scroll gutter, and border
-		// Assuming integer scroll gutter, subtract the rest and round down
-		delta += Math.max( 0, Math.ceil(
-			elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
-			computedVal -
-			delta -
-			extra -
-			0.5
-
-		// If offsetWidth/offsetHeight is unknown, then we can't determine content-box scroll gutter
-		// Use an explicit zero to avoid NaN (gh-3964)
-		) ) || 0;
-	}
-
-	return delta;
-}
-
-function getWidthOrHeight( elem, dimension, extra ) {
-
-	// Start with computed style
-	var styles = getStyles( elem ),
-
-		// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
-		// Fake content-box until we know it's needed to know the true value.
-		boxSizingNeeded = !support.boxSizingReliable() || extra,
-		isBorderBox = boxSizingNeeded &&
-			jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-		valueIsBorderBox = isBorderBox,
-
-		val = curCSS( elem, dimension, styles ),
-		offsetProp = "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 );
-
-	// Support: Firefox <=54
-	// Return a confounding non-pixel value or feign ignorance, as appropriate.
-	if ( rnumnonpx.test( val ) ) {
-		if ( !extra ) {
-			return val;
-		}
-		val = "auto";
-	}
-
-
-	// Support: IE 9 - 11 only
-	// Use offsetWidth/offsetHeight for when box sizing is unreliable.
-	// In those cases, the computed value can be trusted to be border-box.
-	if ( ( !support.boxSizingReliable() && isBorderBox ||
-
-		// Support: IE 10 - 11+, Edge 15 - 18+
-		// IE/Edge misreport `getComputedStyle` of table rows with width/height
-		// set in CSS while `offset*` properties report correct values.
-		// Interestingly, in some cases IE 9 doesn't suffer from this issue.
-		!support.reliableTrDimensions() && nodeName( elem, "tr" ) ||
-
-		// Fall back to offsetWidth/offsetHeight when value is "auto"
-		// This happens for inline elements with no explicit setting (gh-3571)
-		val === "auto" ||
-
-		// Support: Android <=4.1 - 4.3 only
-		// Also use offsetWidth/offsetHeight for misreported inline dimensions (gh-3602)
-		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) &&
-
-		// Make sure the element is visible & connected
-		elem.getClientRects().length ) {
-
-		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
-
-		// Where available, offsetWidth/offsetHeight approximate border box dimensions.
-		// Where not available (e.g., SVG), assume unreliable box-sizing and interpret the
-		// retrieved value as a content box dimension.
-		valueIsBorderBox = offsetProp in elem;
-		if ( valueIsBorderBox ) {
-			val = elem[ offsetProp ];
-		}
-	}
-
-	// Normalize "" and auto
-	val = parseFloat( val ) || 0;
-
-	// Adjust for the element's box model
-	return ( val +
-		boxModelAdjustment(
-			elem,
-			dimension,
-			extra || ( isBorderBox ? "border" : "content" ),
-			valueIsBorderBox,
-			styles,
-
-			// Provide the current computed size to request scroll gutter calculation (gh-3589)
-			val
-		)
-	) + "px";
-}
-
-jQuery.extend( {
-
-	// Add in style property hooks for overriding the default
-	// behavior of getting and setting a style property
-	cssHooks: {
-		opacity: {
-			get: function( elem, computed ) {
-				if ( computed ) {
-
-					// We should always get a number back from opacity
-					var ret = curCSS( elem, "opacity" );
-					return ret === "" ? "1" : ret;
-				}
-			}
-		}
-	},
-
-	// Don't automatically add "px" to these possibly-unitless properties
-	cssNumber: {
-		"animationIterationCount": true,
-		"columnCount": true,
-		"fillOpacity": true,
-		"flexGrow": true,
-		"flexShrink": true,
-		"fontWeight": true,
-		"gridArea": true,
-		"gridColumn": true,
-		"gridColumnEnd": true,
-		"gridColumnStart": true,
-		"gridRow": true,
-		"gridRowEnd": true,
-		"gridRowStart": true,
-		"lineHeight": true,
-		"opacity": true,
-		"order": true,
-		"orphans": true,
-		"widows": true,
-		"zIndex": true,
-		"zoom": true
-	},
-
-	// Add in properties whose names you wish to fix before
-	// setting or getting the value
-	cssProps: {},
-
-	// Get and set the style property on a DOM Node
-	style: function( elem, name, value, extra ) {
-
-		// Don't set styles on text and comment nodes
-		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
-			return;
-		}
-
-		// Make sure that we're working with the right name
-		var ret, type, hooks,
-			origName = camelCase( name ),
-			isCustomProp = rcustomProp.test( name ),
-			style = elem.style;
-
-		// Make sure that we're working with the right name. We don't
-		// want to query the value if it is a CSS custom property
-		// since they are user-defined.
-		if ( !isCustomProp ) {
-			name = finalPropName( origName );
-		}
-
-		// Gets hook for the prefixed version, then unprefixed version
-		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
-
-		// Check if we're setting a value
-		if ( value !== undefined ) {
-			type = typeof value;
-
-			// Convert "+=" or "-=" to relative numbers (#7345)
-			if ( type === "string" && ( ret = rcssNum.exec( value ) ) && ret[ 1 ] ) {
-				value = adjustCSS( elem, name, ret );
-
-				// Fixes bug #9237
-				type = "number";
-			}
-
-			// Make sure that null and NaN values aren't set (#7116)
-			if ( value == null || value !== value ) {
-				return;
-			}
-
-			// If a number was passed in, add the unit (except for certain CSS properties)
-			// The isCustomProp check can be removed in jQuery 4.0 when we only auto-append
-			// "px" to a few hardcoded values.
-			if ( type === "number" && !isCustomProp ) {
-				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
-			}
-
-			// background-* props affect original clone's values
-			if ( !support.clearCloneStyle && value === "" && name.indexOf( "background" ) === 0 ) {
-				style[ name ] = "inherit";
-			}
-
-			// If a hook was provided, use that value, otherwise just set the specified value
-			if ( !hooks || !( "set" in hooks ) ||
-				( value = hooks.set( elem, value, extra ) ) !== undefined ) {
-
-				if ( isCustomProp ) {
-					style.setProperty( name, value );
-				} else {
-					style[ name ] = value;
-				}
-			}
-
-		} else {
-
-			// If a hook was provided get the non-computed value from there
-			if ( hooks && "get" in hooks &&
-				( ret = hooks.get( elem, false, extra ) ) !== undefined ) {
-
-				return ret;
-			}
-
-			// Otherwise just get the value from the style object
-			return style[ name ];
-		}
-	},
-
-	css: function( elem, name, extra, styles ) {
-		var val, num, hooks,
-			origName = camelCase( name ),
-			isCustomProp = rcustomProp.test( name );
-
-		// Make sure that we're working with the right name. We don't
-		// want to modify the value if it is a CSS custom property
-		// since they are user-defined.
-		if ( !isCustomProp ) {
-			name = finalPropName( origName );
-		}
-
-		// Try prefixed name followed by the unprefixed name
-		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
-
-		// If a hook was provided get the computed value from there
-		if ( hooks && "get" in hooks ) {
-			val = hooks.get( elem, true, extra );
-		}
-
-		// Otherwise, if a way to get the computed value exists, use that
-		if ( val === undefined ) {
-			val = curCSS( elem, name, styles );
-		}
-
-		// Convert "normal" to computed value
-		if ( val === "normal" && name in cssNormalTransform ) {
-			val = cssNormalTransform[ name ];
-		}
-
-		// Make numeric if forced or a qualifier was provided and val looks numeric
-		if ( extra === "" || extra ) {
-			num = parseFloat( val );
-			return extra === true || isFinite( num ) ? num || 0 : val;
-		}
-
-		return val;
-	}
-} );
-
-jQuery.each( [ "height", "width" ], function( _i, dimension ) {
-	jQuery.cssHooks[ dimension ] = {
-		get: function( elem, computed, extra ) {
-			if ( computed ) {
-
-				// Certain elements can have dimension info if we invisibly show them
-				// but it must have a current display style that would benefit
-				return rdisplayswap.test( jQuery.css( elem, "display" ) ) &&
-
-					// Support: Safari 8+
-					// Table columns in Safari have non-zero offsetWidth & zero
-					// getBoundingClientRect().width unless display is changed.
-					// Support: IE <=11 only
-					// Running getBoundingClientRect on a disconnected node
-					// in IE throws an error.
-					( !elem.getClientRects().length || !elem.getBoundingClientRect().width ) ?
-					swap( elem, cssShow, function() {
-						return getWidthOrHeight( elem, dimension, extra );
-					} ) :
-					getWidthOrHeight( elem, dimension, extra );
-			}
-		},
-
-		set: function( elem, value, extra ) {
-			var matches,
-				styles = getStyles( elem ),
-
-				// Only read styles.position if the test has a chance to fail
-				// to avoid forcing a reflow.
-				scrollboxSizeBuggy = !support.scrollboxSize() &&
-					styles.position === "absolute",
-
-				// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-3991)
-				boxSizingNeeded = scrollboxSizeBuggy || extra,
-				isBorderBox = boxSizingNeeded &&
-					jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-				subtract = extra ?
-					boxModelAdjustment(
-						elem,
-						dimension,
-						extra,
-						isBorderBox,
-						styles
-					) :
-					0;
-
-			// Account for unreliable border-box dimensions by comparing offset* to computed and
-			// faking a content-box to get border and padding (gh-3699)
-			if ( isBorderBox && scrollboxSizeBuggy ) {
-				subtract -= Math.ceil(
-					elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
-					parseFloat( styles[ dimension ] ) -
-					boxModelAdjustment( elem, dimension, "border", false, styles ) -
-					0.5
-				);
-			}
-
-			// Convert to pixels if value adjustment is needed
-			if ( subtract && ( matches = rcssNum.exec( value ) ) &&
-				( matches[ 3 ] || "px" ) !== "px" ) {
-
-				elem.style[ dimension ] = value;
-				value = jQuery.css( elem, dimension );
-			}
-
-			return setPositiveNumber( elem, value, subtract );
-		}
-	};
-} );
-
-jQuery.cssHooks.marginLeft = addGetHookIf( support.reliableMarginLeft,
-	function( elem, computed ) {
-		if ( computed ) {
-			return ( parseFloat( curCSS( elem, "marginLeft" ) ) ||
-				elem.getBoundingClientRect().left -
-					swap( elem, { marginLeft: 0 }, function() {
-						return elem.getBoundingClientRect().left;
-					} )
-			) + "px";
-		}
-	}
-);
-
-// These hooks are used by animate to expand properties
-jQuery.each( {
-	margin: "",
-	padding: "",
-	border: "Width"
-}, function( prefix, suffix ) {
-	jQuery.cssHooks[ prefix + suffix ] = {
-		expand: function( value ) {
-			var i = 0,
-				expanded = {},
-
-				// Assumes a single number if not a string
-				parts = typeof value === "string" ? value.split( " " ) : [ value ];
-
-			for ( ; i < 4; i++ ) {
-				expanded[ prefix + cssExpand[ i ] + suffix ] =
-					parts[ i ] || parts[ i - 2 ] || parts[ 0 ];
-			}
-
-			return expanded;
-		}
-	};
-
-	if ( prefix !== "margin" ) {
-		jQuery.cssHooks[ prefix + suffix ].set = setPositiveNumber;
-	}
-} );
-
-jQuery.fn.extend( {
-	css: function( name, value ) {
-		return access( this, function( elem, name, value ) {
-			var styles, len,
-				map = {},
-				i = 0;
-
-			if ( Array.isArray( name ) ) {
-				styles = getStyles( elem );
-				len = name.length;
-
-				for ( ; i < len; i++ ) {
-					map[ name[ i ] ] = jQuery.css( elem, name[ i ], false, styles );
-				}
-
-				return map;
-			}
-
-			return value !== undefined ?
-				jQuery.style( elem, name, value ) :
-				jQuery.css( elem, name );
-		}, name, value, arguments.length > 1 );
-	}
-} );
-
-
-function Tween( elem, options, prop, end, easing ) {
-	return new Tween.prototype.init( elem, options, prop, end, easing );
-}
-jQuery.Tween = Tween;
-
-Tween.prototype = {
-	constructor: Tween,
-	init: function( elem, options, prop, end, easing, unit ) {
-		this.elem = elem;
-		this.prop = prop;
-		this.easing = easing || jQuery.easing._default;
-		this.options = options;
-		this.start = this.now = this.cur();
-		this.end = end;
-		this.unit = unit || ( jQuery.cssNumber[ prop ] ? "" : "px" );
-	},
-	cur: function() {
-		var hooks = Tween.propHooks[ this.prop ];
-
-		return hooks && hooks.get ?
-			hooks.get( this ) :
-			Tween.propHooks._default.get( this );
-	},
-	run: function( percent ) {
-		var eased,
-			hooks = Tween.propHooks[ this.prop ];
-
-		if ( this.options.duration ) {
-			this.pos = eased = jQuery.easing[ this.easing ](
-				percent, this.options.duration * percent, 0, 1, this.options.duration
-			);
-		} else {
-			this.pos = eased = percent;
-		}
-		this.now = ( this.end - this.start ) * eased + this.start;
-
-		if ( this.options.step ) {
-			this.options.step.call( this.elem, this.now, this );
-		}
-
-		if ( hooks && hooks.set ) {
-			hooks.set( this );
-		} else {
-			Tween.propHooks._default.set( this );
-		}
-		return this;
-	}
-};
-
-Tween.prototype.init.prototype = Tween.prototype;
-
-Tween.propHooks = {
-	_default: {
-		get: function( tween ) {
-			var result;
-
-			// Use a property on the element directly when it is not a DOM element,
-			// or when there is no matching style property that exists.
-			if ( tween.elem.nodeType !== 1 ||
-				tween.elem[ tween.prop ] != null && tween.elem.style[ tween.prop ] == null ) {
-				return tween.elem[ tween.prop ];
-			}
-
-			// Passing an empty string as a 3rd parameter to .css will automatically
-			// attempt a parseFloat and fallback to a string if the parse fails.
-			// Simple values such as "10px" are parsed to Float;
-			// complex values such as "rotate(1rad)" are returned as-is.
-			result = jQuery.css( tween.elem, tween.prop, "" );
-
-			// Empty strings, null, undefined and "auto" are converted to 0.
-			return !result || result === "auto" ? 0 : result;
-		},
-		set: function( tween ) {
-
-			// Use step hook for back compat.
-			// Use cssHook if its there.
-			// Use .style if available and use plain properties where available.
-			if ( jQuery.fx.step[ tween.prop ] ) {
-				jQuery.fx.step[ tween.prop ]( tween );
-			} else if ( tween.elem.nodeType === 1 && (
-				jQuery.cssHooks[ tween.prop ] ||
-					tween.elem.style[ finalPropName( tween.prop ) ] != null ) ) {
-				jQuery.style( tween.elem, tween.prop, tween.now + tween.unit );
-			} else {
-				tween.elem[ tween.prop ] = tween.now;
-			}
-		}
-	}
-};
-
-// Support: IE <=9 only
-// Panic based approach to setting things on disconnected nodes
-Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
-	set: function( tween ) {
-		if ( tween.elem.nodeType && tween.elem.parentNode ) {
-			tween.elem[ tween.prop ] = tween.now;
-		}
-	}
-};
-
-jQuery.easing = {
-	linear: function( p ) {
-		return p;
-	},
-	swing: function( p ) {
-		return 0.5 - Math.cos( p * Math.PI ) / 2;
-	},
-	_default: "swing"
-};
-
-jQuery.fx = Tween.prototype.init;
-
-// Back compat <1.8 extension point
-jQuery.fx.step = {};
-
-
-
-
-var
-	fxNow, inProgress,
-	rfxtypes = /^(?:toggle|show|hide)$/,
-	rrun = /queueHooks$/;
-
-function schedule() {
-	if ( inProgress ) {
-		if ( document.hidden === false && window.requestAnimationFrame ) {
-			window.requestAnimationFrame( schedule );
-		} else {
-			window.setTimeout( schedule, jQuery.fx.interval );
-		}
-
-		jQuery.fx.tick();
-	}
-}
-
-// Animations created synchronously will run synchronously
-function createFxNow() {
-	window.setTimeout( function() {
-		fxNow = undefined;
-	} );
-	return ( fxNow = Date.now() );
-}
-
-// Generate parameters to create a standard animation
-function genFx( type, includeWidth ) {
-	var which,
-		i = 0,
-		attrs = { height: type };
-
-	// If we include width, step value is 1 to do all cssExpand values,
-	// otherwise step value is 2 to skip over Left and Right
-	includeWidth = includeWidth ? 1 : 0;
-	for ( ; i < 4; i += 2 - includeWidth ) {
-		which = cssExpand[ i ];
-		attrs[ "margin" + which ] = attrs[ "padding" + which ] = type;
-	}
-
-	if ( includeWidth ) {
-		attrs.opacity = attrs.width = type;
-	}
-
-	return attrs;
-}
-
-function createTween( value, prop, animation ) {
-	var tween,
-		collection = ( Animation.tweeners[ prop ] || [] ).concat( Animation.tweeners[ "*" ] ),
-		index = 0,
-		length = collection.length;
-	for ( ; index < length; index++ ) {
-		if ( ( tween = collection[ index ].call( animation, prop, value ) ) ) {
-
-			// We're done with this property
-			return tween;
-		}
-	}
-}
-
-function defaultPrefilter( elem, props, opts ) {
-	var prop, value, toggle, hooks, oldfire, propTween, restoreDisplay, display,
-		isBox = "width" in props || "height" in props,
-		anim = this,
-		orig = {},
-		style = elem.style,
-		hidden = elem.nodeType && isHiddenWithinTree( elem ),
-		dataShow = dataPriv.get( elem, "fxshow" );
-
-	// Queue-skipping animations hijack the fx hooks
-	if ( !opts.queue ) {
-		hooks = jQuery._queueHooks( elem, "fx" );
-		if ( hooks.unqueued == null ) {
-			hooks.unqueued = 0;
-			oldfire = hooks.empty.fire;
-			hooks.empty.fire = function() {
-				if ( !hooks.unqueued ) {
-					oldfire();
-				}
-			};
-		}
-		hooks.unqueued++;
-
-		anim.always( function() {
-
-			// Ensure the complete handler is called before this completes
-			anim.always( function() {
-				hooks.unqueued--;
-				if ( !jQuery.queue( elem, "fx" ).length ) {
-					hooks.empty.fire();
-				}
-			} );
-		} );
-	}
-
-	// Detect show/hide animations
-	for ( prop in props ) {
-		value = props[ prop ];
-		if ( rfxtypes.test( value ) ) {
-			delete props[ prop ];
-			toggle = toggle || value === "toggle";
-			if ( value === ( hidden ? "hide" : "show" ) ) {
-
-				// Pretend to be hidden if this is a "show" and
-				// there is still data from a stopped show/hide
-				if ( value === "show" && dataShow && dataShow[ prop ] !== undefined ) {
-					hidden = true;
-
-				// Ignore all other no-op show/hide data
-				} else {
-					continue;
-				}
-			}
-			orig[ prop ] = dataShow && dataShow[ prop ] || jQuery.style( elem, prop );
-		}
-	}
-
-	// Bail out if this is a no-op like .hide().hide()
-	propTween = !jQuery.isEmptyObject( props );
-	if ( !propTween && jQuery.isEmptyObject( orig ) ) {
-		return;
-	}
-
-	// Restrict "overflow" and "display" styles during box animations
-	if ( isBox && elem.nodeType === 1 ) {
-
-		// Support: IE <=9 - 11, Edge 12 - 15
-		// Record all 3 overflow attributes because IE does not infer the shorthand
-		// from identically-valued overflowX and overflowY and Edge just mirrors
-		// the overflowX value there.
-		opts.overflow = [ style.overflow, style.overflowX, style.overflowY ];
-
-		// Identify a display type, preferring old show/hide data over the CSS cascade
-		restoreDisplay = dataShow && dataShow.display;
-		if ( restoreDisplay == null ) {
-			restoreDisplay = dataPriv.get( elem, "display" );
-		}
-		display = jQuery.css( elem, "display" );
-		if ( display === "none" ) {
-			if ( restoreDisplay ) {
-				display = restoreDisplay;
-			} else {
-
-				// Get nonempty value(s) by temporarily forcing visibility
-				showHide( [ elem ], true );
-				restoreDisplay = elem.style.display || restoreDisplay;
-				display = jQuery.css( elem, "display" );
-				showHide( [ elem ] );
-			}
-		}
-
-		// Animate inline elements as inline-block
-		if ( display === "inline" || display === "inline-block" && restoreDisplay != null ) {
-			if ( jQuery.css( elem, "float" ) === "none" ) {
-
-				// Restore the original display value at the end of pure show/hide animations
-				if ( !propTween ) {
-					anim.done( function() {
-						style.display = restoreDisplay;
-					} );
-					if ( restoreDisplay == null ) {
-						display = style.display;
-						restoreDisplay = display === "none" ? "" : display;
-					}
-				}
-				style.display = "inline-block";
-			}
-		}
-	}
-
-	if ( opts.overflow ) {
-		style.overflow = "hidden";
-		anim.always( function() {
-			style.overflow = opts.overflow[ 0 ];
-			style.overflowX = opts.overflow[ 1 ];
-			style.overflowY = opts.overflow[ 2 ];
-		} );
-	}
-
-	// Implement show/hide animations
-	propTween = false;
-	for ( prop in orig ) {
-
-		// General show/hide setup for this element animation
-		if ( !propTween ) {
-			if ( dataShow ) {
-				if ( "hidden" in dataShow ) {
-					hidden = dataShow.hidden;
-				}
-			} else {
-				dataShow = dataPriv.access( elem, "fxshow", { display: restoreDisplay } );
-			}
-
-			// Store hidden/visible for toggle so `.stop().toggle()` "reverses"
-			if ( toggle ) {
-				dataShow.hidden = !hidden;
-			}
-
-			// Show elements before animating them
-			if ( hidden ) {
-				showHide( [ elem ], true );
-			}
-
-			/* eslint-disable no-loop-func */
-
-			anim.done( function() {
-
-				/* eslint-enable no-loop-func */
-
-				// The final step of a "hide" animation is actually hiding the element
-				if ( !hidden ) {
-					showHide( [ elem ] );
-				}
-				dataPriv.remove( elem, "fxshow" );
-				for ( prop in orig ) {
-					jQuery.style( elem, prop, orig[ prop ] );
-				}
-			} );
-		}
-
-		// Per-property setup
-		propTween = createTween( hidden ? dataShow[ prop ] : 0, prop, anim );
-		if ( !( prop in dataShow ) ) {
-			dataShow[ prop ] = propTween.start;
-			if ( hidden ) {
-				propTween.end = propTween.start;
-				propTween.start = 0;
-			}
-		}
-	}
-}
-
-function propFilter( props, specialEasing ) {
-	var index, name, easing, value, hooks;
-
-	// camelCase, specialEasing and expand cssHook pass
-	for ( index in props ) {
-		name = camelCase( index );
-		easing = specialEasing[ name ];
-		value = props[ index ];
-		if ( Array.isArray( value ) ) {
-			easing = value[ 1 ];
-			value = props[ index ] = value[ 0 ];
-		}
-
-		if ( index !== name ) {
-			props[ name ] = value;
-			delete props[ index ];
-		}
-
-		hooks = jQuery.cssHooks[ name ];
-		if ( hooks && "expand" in hooks ) {
-			value = hooks.expand( value );
-			delete props[ name ];
-
-			// Not quite $.extend, this won't overwrite existing keys.
-			// Reusing 'index' because we have the correct "name"
-			for ( index in value ) {
-				if ( !( index in props ) ) {
-					props[ index ] = value[ index ];
-					specialEasing[ index ] = easing;
-				}
-			}
-		} else {
-			specialEasing[ name ] = easing;
-		}
-	}
-}
-
-function Animation( elem, properties, options ) {
-	var result,
-		stopped,
-		index = 0,
-		length = Animation.prefilters.length,
-		deferred = jQuery.Deferred().always( function() {
-
-			// Don't match elem in the :animated selector
-			delete tick.elem;
-		} ),
-		tick = function() {
-			if ( stopped ) {
-				return false;
-			}
-			var currentTime = fxNow || createFxNow(),
-				remaining = Math.max( 0, animation.startTime + animation.duration - currentTime ),
-
-				// Support: Android 2.3 only
-				// Archaic crash bug won't allow us to use `1 - ( 0.5 || 0 )` (#12497)
-				temp = remaining / animation.duration || 0,
-				percent = 1 - temp,
-				index = 0,
-				length = animation.tweens.length;
-
-			for ( ; index < length; index++ ) {
-				animation.tweens[ index ].run( percent );
-			}
-
-			deferred.notifyWith( elem, [ animation, percent, remaining ] );
-
-			// If there's more to do, yield
-			if ( percent < 1 && length ) {
-				return remaining;
-			}
-
-			// If this was an empty animation, synthesize a final progress notification
-			if ( !length ) {
-				deferred.notifyWith( elem, [ animation, 1, 0 ] );
-			}
-
-			// Resolve the animation and report its conclusion
-			deferred.resolveWith( elem, [ animation ] );
-			return false;
-		},
-		animation = deferred.promise( {
-			elem: elem,
-			props: jQuery.extend( {}, properties ),
-			opts: jQuery.extend( true, {
-				specialEasing: {},
-				easing: jQuery.easing._default
-			}, options ),
-			originalProperties: properties,
-			originalOptions: options,
-			startTime: fxNow || createFxNow(),
-			duration: options.duration,
-			tweens: [],
-			createTween: function( prop, end ) {
-				var tween = jQuery.Tween( elem, animation.opts, prop, end,
-					animation.opts.specialEasing[ prop ] || animation.opts.easing );
-				animation.tweens.push( tween );
-				return tween;
-			},
-			stop: function( gotoEnd ) {
-				var index = 0,
-
-					// If we are going to the end, we want to run all the tweens
-					// otherwise we skip this part
-					length = gotoEnd ? animation.tweens.length : 0;
-				if ( stopped ) {
-					return this;
-				}
-				stopped = true;
-				for ( ; index < length; index++ ) {
-					animation.tweens[ index ].run( 1 );
-				}
-
-				// Resolve when we played the last frame; otherwise, reject
-				if ( gotoEnd ) {
-					deferred.notifyWith( elem, [ animation, 1, 0 ] );
-					deferred.resolveWith( elem, [ animation, gotoEnd ] );
-				} else {
-					deferred.rejectWith( elem, [ animation, gotoEnd ] );
-				}
-				return this;
-			}
-		} ),
-		props = animation.props;
-
-	propFilter( props, animation.opts.specialEasing );
-
-	for ( ; index < length; index++ ) {
-		result = Animation.prefilters[ index ].call( animation, elem, props, animation.opts );
-		if ( result ) {
-			if ( isFunction( result.stop ) ) {
-				jQuery._queueHooks( animation.elem, animation.opts.queue ).stop =
-					result.stop.bind( result );
-			}
-			return result;
-		}
-	}
-
-	jQuery.map( props, createTween, animation );
-
-	if ( isFunction( animation.opts.start ) ) {
-		animation.opts.start.call( elem, animation );
-	}
-
-	// Attach callbacks from options
-	animation
-		.progress( animation.opts.progress )
-		.done( animation.opts.done, animation.opts.complete )
-		.fail( animation.opts.fail )
-		.always( animation.opts.always );
-
-	jQuery.fx.timer(
-		jQuery.extend( tick, {
-			elem: elem,
-			anim: animation,
-			queue: animation.opts.queue
-		} )
-	);
-
-	return animation;
-}
-
-jQuery.Animation = jQuery.extend( Animation, {
-
-	tweeners: {
-		"*": [ function( prop, value ) {
-			var tween = this.createTween( prop, value );
-			adjustCSS( tween.elem, prop, rcssNum.exec( value ), tween );
-			return tween;
-		} ]
-	},
-
-	tweener: function( props, callback ) {
-		if ( isFunction( props ) ) {
-			callback = props;
-			props = [ "*" ];
-		} else {
-			props = props.match( rnothtmlwhite );
-		}
-
-		var prop,
-			index = 0,
-			length = props.length;
-
-		for ( ; index < length; index++ ) {
-			prop = props[ index ];
-			Animation.tweeners[ prop ] = Animation.tweeners[ prop ] || [];
-			Animation.tweeners[ prop ].unshift( callback );
-		}
-	},
-
-	prefilters: [ defaultPrefilter ],
-
-	prefilter: function( callback, prepend ) {
-		if ( prepend ) {
-			Animation.prefilters.unshift( callback );
-		} else {
-			Animation.prefilters.push( callback );
-		}
-	}
-} );
-
-jQuery.speed = function( speed, easing, fn ) {
-	var opt = speed && typeof speed === "object" ? jQuery.extend( {}, speed ) : {
-		complete: fn || !fn && easing ||
-			isFunction( speed ) && speed,
-		duration: speed,
-		easing: fn && easing || easing && !isFunction( easing ) && easing
-	};
-
-	// Go to the end state if fx are off
-	if ( jQuery.fx.off ) {
-		opt.duration = 0;
-
-	} else {
-		if ( typeof opt.duration !== "number" ) {
-			if ( opt.duration in jQuery.fx.speeds ) {
-				opt.duration = jQuery.fx.speeds[ opt.duration ];
-
-			} else {
-				opt.duration = jQuery.fx.speeds._default;
-			}
-		}
-	}
-
-	// Normalize opt.queue - true/undefined/null -> "fx"
-	if ( opt.queue == null || opt.queue === true ) {
-		opt.queue = "fx";
-	}
-
-	// Queueing
-	opt.old = opt.complete;
-
-	opt.complete = function() {
-		if ( isFunction( opt.old ) ) {
-			opt.old.call( this );
-		}
-
-		if ( opt.queue ) {
-			jQuery.dequeue( this, opt.queue );
-		}
-	};
-
-	return opt;
-};
-
-jQuery.fn.extend( {
-	fadeTo: function( speed, to, easing, callback ) {
-
-		// Show any hidden elements after setting opacity to 0
-		return this.filter( isHiddenWithinTree ).css( "opacity", 0 ).show()
-
-			// Animate to the value specified
-			.end().animate( { opacity: to }, speed, easing, callback );
-	},
-	animate: function( prop, speed, easing, callback ) {
-		var empty = jQuery.isEmptyObject( prop ),
-			optall = jQuery.speed( speed, easing, callback ),
-			doAnimation = function() {
-
-				// Operate on a copy of prop so per-property easing won't be lost
-				var anim = Animation( this, jQuery.extend( {}, prop ), optall );
-
-				// Empty animations, or finishing resolves immediately
-				if ( empty || dataPriv.get( this, "finish" ) ) {
-					anim.stop( true );
-				}
-			};
-
-		doAnimation.finish = doAnimation;
-
-		return empty || optall.queue === false ?
-			this.each( doAnimation ) :
-			this.queue( optall.queue, doAnimation );
-	},
-	stop: function( type, clearQueue, gotoEnd ) {
-		var stopQueue = function( hooks ) {
-			var stop = hooks.stop;
-			delete hooks.stop;
-			stop( gotoEnd );
-		};
-
-		if ( typeof type !== "string" ) {
-			gotoEnd = clearQueue;
-			clearQueue = type;
-			type = undefined;
-		}
-		if ( clearQueue ) {
-			this.queue( type || "fx", [] );
-		}
-
-		return this.each( function() {
-			var dequeue = true,
-				index = type != null && type + "queueHooks",
-				timers = jQuery.timers,
-				data = dataPriv.get( this );
-
-			if ( index ) {
-				if ( data[ index ] && data[ index ].stop ) {
-					stopQueue( data[ index ] );
-				}
-			} else {
-				for ( index in data ) {
-					if ( data[ index ] && data[ index ].stop && rrun.test( index ) ) {
-						stopQueue( data[ index ] );
-					}
-				}
-			}
-
-			for ( index = timers.length; index--; ) {
-				if ( timers[ index ].elem === this &&
-					( type == null || timers[ index ].queue === type ) ) {
-
-					timers[ index ].anim.stop( gotoEnd );
-					dequeue = false;
-					timers.splice( index, 1 );
-				}
-			}
-
-			// Start the next in the queue if the last step wasn't forced.
-			// Timers currently will call their complete callbacks, which
-			// will dequeue but only if they were gotoEnd.
-			if ( dequeue || !gotoEnd ) {
-				jQuery.dequeue( this, type );
-			}
-		} );
-	},
-	finish: function( type ) {
-		if ( type !== false ) {
-			type = type || "fx";
-		}
-		return this.each( function() {
-			var index,
-				data = dataPriv.get( this ),
-				queue = data[ type + "queue" ],
-				hooks = data[ type + "queueHooks" ],
-				timers = jQuery.timers,
-				length = queue ? queue.length : 0;
-
-			// Enable finishing flag on private data
-			data.finish = true;
-
-			// Empty the queue first
-			jQuery.queue( this, type, [] );
-
-			if ( hooks && hooks.stop ) {
-				hooks.stop.call( this, true );
-			}
-
-			// Look for any active animations, and finish them
-			for ( index = timers.length; index--; ) {
-				if ( timers[ index ].elem === this && timers[ index ].queue === type ) {
-					timers[ index ].anim.stop( true );
-					timers.splice( index, 1 );
-				}
-			}
-
-			// Look for any animations in the old queue and finish them
-			for ( index = 0; index < length; index++ ) {
-				if ( queue[ index ] && queue[ index ].finish ) {
-					queue[ index ].finish.call( this );
-				}
-			}
-
-			// Turn off finishing flag
-			delete data.finish;
-		} );
-	}
-} );
-
-jQuery.each( [ "toggle", "show", "hide" ], function( _i, name ) {
-	var cssFn = jQuery.fn[ name ];
-	jQuery.fn[ name ] = function( speed, easing, callback ) {
-		return speed == null || typeof speed === "boolean" ?
-			cssFn.apply( this, arguments ) :
-			this.animate( genFx( name, true ), speed, easing, callback );
-	};
-} );
-
-// Generate shortcuts for custom animations
-jQuery.each( {
-	slideDown: genFx( "show" ),
-	slideUp: genFx( "hide" ),
-	slideToggle: genFx( "toggle" ),
-	fadeIn: { opacity: "show" },
-	fadeOut: { opacity: "hide" },
-	fadeToggle: { opacity: "toggle" }
-}, function( name, props ) {
-	jQuery.fn[ name ] = function( speed, easing, callback ) {
-		return this.animate( props, speed, easing, callback );
-	};
-} );
-
-jQuery.timers = [];
-jQuery.fx.tick = function() {
-	var timer,
-		i = 0,
-		timers = jQuery.timers;
-
-	fxNow = Date.now();
-
-	for ( ; i < timers.length; i++ ) {
-		timer = timers[ i ];
-
-		// Run the timer and safely remove it when done (allowing for external removal)
-		if ( !timer() && timers[ i ] === timer ) {
-			timers.splice( i--, 1 );
-		}
-	}
-
-	if ( !timers.length ) {
-		jQuery.fx.stop();
-	}
-	fxNow = undefined;
-};
-
-jQuery.fx.timer = function( timer ) {
-	jQuery.timers.push( timer );
-	jQuery.fx.start();
-};
-
-jQuery.fx.interval = 13;
-jQuery.fx.start = function() {
-	if ( inProgress ) {
-		return;
-	}
-
-	inProgress = true;
-	schedule();
-};
-
-jQuery.fx.stop = function() {
-	inProgress = null;
-};
-
-jQuery.fx.speeds = {
-	slow: 600,
-	fast: 200,
-
-	// Default speed
-	_default: 400
-};
-
-
-// Based off of the plugin by Clint Helfers, with permission.
-// https://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
-jQuery.fn.delay = function( time, type ) {
-	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
-	type = type || "fx";
-
-	return this.queue( type, function( next, hooks ) {
-		var timeout = window.setTimeout( next, time );
-		hooks.stop = function() {
-			window.clearTimeout( timeout );
-		};
-	} );
-};
-
-
-( function() {
-	var input = document.createElement( "input" ),
-		select = document.createElement( "select" ),
-		opt = select.appendChild( document.createElement( "option" ) );
-
-	input.type = "checkbox";
-
-	// Support: Android <=4.3 only
-	// Default value for a checkbox should be "on"
-	support.checkOn = input.value !== "";
-
-	// Support: IE <=11 only
-	// Must access selectedIndex to make default options select
-	support.optSelected = opt.selected;
-
-	// Support: IE <=11 only
-	// An input loses its value after becoming a radio
-	input = document.createElement( "input" );
-	input.value = "t";
-	input.type = "radio";
-	support.radioValue = input.value === "t";
-} )();
-
-
-var boolHook,
-	attrHandle = jQuery.expr.attrHandle;
-
-jQuery.fn.extend( {
-	attr: function( name, value ) {
-		return access( this, jQuery.attr, name, value, arguments.length > 1 );
-	},
-
-	removeAttr: function( name ) {
-		return this.each( function() {
-			jQuery.removeAttr( this, name );
-		} );
-	}
-} );
-
-jQuery.extend( {
-	attr: function( elem, name, value ) {
-		var ret, hooks,
-			nType = elem.nodeType;
-
-		// Don't get/set attributes on text, comment and attribute nodes
-		if ( nType === 3 || nType === 8 || nType === 2 ) {
-			return;
-		}
-
-		// Fallback to prop when attributes are not supported
-		if ( typeof elem.getAttribute === "undefined" ) {
-			return jQuery.prop( elem, name, value );
-		}
-
-		// Attribute hooks are determined by the lowercase version
-		// Grab necessary hook if one is defined
-		if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) {
-			hooks = jQuery.attrHooks[ name.toLowerCase() ] ||
-				( jQuery.expr.match.bool.test( name ) ? boolHook : undefined );
-		}
-
-		if ( value !== undefined ) {
-			if ( value === null ) {
-				jQuery.removeAttr( elem, name );
-				return;
-			}
-
-			if ( hooks && "set" in hooks &&
-				( ret = hooks.set( elem, value, name ) ) !== undefined ) {
-				return ret;
-			}
-
-			elem.setAttribute( name, value + "" );
-			return value;
-		}
-
-		if ( hooks && "get" in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
-			return ret;
-		}
-
-		ret = jQuery.find.attr( elem, name );
-
-		// Non-existent attributes return null, we normalize to undefined
-		return ret == null ? undefined : ret;
-	},
-
-	attrHooks: {
-		type: {
-			set: function( elem, value ) {
-				if ( !support.radioValue && value === "radio" &&
-					nodeName( elem, "input" ) ) {
-					var val = elem.value;
-					elem.setAttribute( "type", value );
-					if ( val ) {
-						elem.value = val;
-					}
-					return value;
-				}
-			}
-		}
-	},
-
-	removeAttr: function( elem, value ) {
-		var name,
-			i = 0,
-
-			// Attribute names can contain non-HTML whitespace characters
-			// https://html.spec.whatwg.org/multipage/syntax.html#attributes-2
-			attrNames = value && value.match( rnothtmlwhite );
-
-		if ( attrNames && elem.nodeType === 1 ) {
-			while ( ( name = attrNames[ i++ ] ) ) {
-				elem.removeAttribute( name );
-			}
-		}
-	}
-} );
-
-// Hooks for boolean attributes
-boolHook = {
-	set: function( elem, value, name ) {
-		if ( value === false ) {
-
-			// Remove boolean attributes when set to false
-			jQuery.removeAttr( elem, name );
-		} else {
-			elem.setAttribute( name, name );
-		}
-		return name;
-	}
-};
-
-jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( _i, name ) {
-	var getter = attrHandle[ name ] || jQuery.find.attr;
-
-	attrHandle[ name ] = function( elem, name, isXML ) {
-		var ret, handle,
-			lowercaseName = name.toLowerCase();
-
-		if ( !isXML ) {
-
-			// Avoid an infinite loop by temporarily removing this function from the getter
-			handle = attrHandle[ lowercaseName ];
-			attrHandle[ lowercaseName ] = ret;
-			ret = getter( elem, name, isXML ) != null ?
-				lowercaseName :
-				null;
-			attrHandle[ lowercaseName ] = handle;
-		}
-		return ret;
-	};
-} );
-
-
-
-
-var rfocusable = /^(?:input|select|textarea|button)$/i,
-	rclickable = /^(?:a|area)$/i;
-
-jQuery.fn.extend( {
-	prop: function( name, value ) {
-		return access( this, jQuery.prop, name, value, arguments.length > 1 );
-	},
-
-	removeProp: function( name ) {
-		return this.each( function() {
-			delete this[ jQuery.propFix[ name ] || name ];
-		} );
-	}
-} );
-
-jQuery.extend( {
-	prop: function( elem, name, value ) {
-		var ret, hooks,
-			nType = elem.nodeType;
-
-		// Don't get/set properties on text, comment and attribute nodes
-		if ( nType === 3 || nType === 8 || nType === 2 ) {
-			return;
-		}
-
-		if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) {
-
-			// Fix name and attach hooks
-			name = jQuery.propFix[ name ] || name;
-			hooks = jQuery.propHooks[ name ];
-		}
-
-		if ( value !== undefined ) {
-			if ( hooks && "set" in hooks &&
-				( ret = hooks.set( elem, value, name ) ) !== undefined ) {
-				return ret;
-			}
-
-			return ( elem[ name ] = value );
-		}
-
-		if ( hooks && "get" in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
-			return ret;
-		}
-
-		return elem[ name ];
-	},
-
-	propHooks: {
-		tabIndex: {
-			get: function( elem ) {
-
-				// Support: IE <=9 - 11 only
-				// elem.tabIndex doesn't always return the
-				// correct value when it hasn't been explicitly set
-				// https://web.archive.org/web/20141116233347/http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
-				// Use proper attribute retrieval(#12072)
-				var tabindex = jQuery.find.attr( elem, "tabindex" );
-
-				if ( tabindex ) {
-					return parseInt( tabindex, 10 );
-				}
-
-				if (
-					rfocusable.test( elem.nodeName ) ||
-					rclickable.test( elem.nodeName ) &&
-					elem.href
-				) {
-					return 0;
-				}
-
-				return -1;
-			}
-		}
-	},
-
-	propFix: {
-		"for": "htmlFor",
-		"class": "className"
-	}
-} );
-
-// Support: IE <=11 only
-// Accessing the selectedIndex property
-// forces the browser to respect setting selected
-// on the option
-// The getter ensures a default option is selected
-// when in an optgroup
-// eslint rule "no-unused-expressions" is disabled for this code
-// since it considers such accessions noop
-if ( !support.optSelected ) {
-	jQuery.propHooks.selected = {
-		get: function( elem ) {
-
-			/* eslint no-unused-expressions: "off" */
-
-			var parent = elem.parentNode;
-			if ( parent && parent.parentNode ) {
-				parent.parentNode.selectedIndex;
-			}
-			return null;
-		},
-		set: function( elem ) {
-
-			/* eslint no-unused-expressions: "off" */
-
-			var parent = elem.parentNode;
-			if ( parent ) {
-				parent.selectedIndex;
-
-				if ( parent.parentNode ) {
-					parent.parentNode.selectedIndex;
-				}
-			}
-		}
-	};
-}
-
-jQuery.each( [
-	"tabIndex",
-	"readOnly",
-	"maxLength",
-	"cellSpacing",
-	"cellPadding",
-	"rowSpan",
-	"colSpan",
-	"useMap",
-	"frameBorder",
-	"contentEditable"
-], function() {
-	jQuery.propFix[ this.toLowerCase() ] = this;
-} );
-
-
-
-
-	// Strip and collapse whitespace according to HTML spec
-	// https://infra.spec.whatwg.org/#strip-and-collapse-ascii-whitespace
-	function stripAndCollapse( value ) {
-		var tokens = value.match( rnothtmlwhite ) || [];
-		return tokens.join( " " );
-	}
-
-
-function getClass( elem ) {
-	return elem.getAttribute && elem.getAttribute( "class" ) || "";
-}
-
-function classesToArray( value ) {
-	if ( Array.isArray( value ) ) {
-		return value;
-	}
-	if ( typeof value === "string" ) {
-		return value.match( rnothtmlwhite ) || [];
-	}
-	return [];
-}
-
-jQuery.fn.extend( {
-	addClass: function( value ) {
-		var classes, elem, cur, curValue, clazz, j, finalValue,
-			i = 0;
-
-		if ( isFunction( value ) ) {
-			return this.each( function( j ) {
-				jQuery( this ).addClass( value.call( this, j, getClass( this ) ) );
-			} );
-		}
-
-		classes = classesToArray( value );
-
-		if ( classes.length ) {
-			while ( ( elem = this[ i++ ] ) ) {
-				curValue = getClass( elem );
-				cur = elem.nodeType === 1 && ( " " + stripAndCollapse( curValue ) + " " );
-
-				if ( cur ) {
-					j = 0;
-					while ( ( clazz = classes[ j++ ] ) ) {
-						if ( cur.indexOf( " " + clazz + " " ) < 0 ) {
-							cur += clazz + " ";
-						}
-					}
-
-					// Only assign if different to avoid unneeded rendering.
-					finalValue = stripAndCollapse( cur );
-					if ( curValue !== finalValue ) {
-						elem.setAttribute( "class", finalValue );
-					}
-				}
-			}
-		}
-
-		return this;
-	},
-
-	removeClass: function( value ) {
-		var classes, elem, cur, curValue, clazz, j, finalValue,
-			i = 0;
-
-		if ( isFunction( value ) ) {
-			return this.each( function( j ) {
-				jQuery( this ).removeClass( value.call( this, j, getClass( this ) ) );
-			} );
-		}
-
-		if ( !arguments.length ) {
-			return this.attr( "class", "" );
-		}
-
-		classes = classesToArray( value );
-
-		if ( classes.length ) {
-			while ( ( elem = this[ i++ ] ) ) {
-				curValue = getClass( elem );
-
-				// This expression is here for better compressibility (see addClass)
-				cur = elem.nodeType === 1 && ( " " + stripAndCollapse( curValue ) + " " );
-
-				if ( cur ) {
-					j = 0;
-					while ( ( clazz = classes[ j++ ] ) ) {
-
-						// Remove *all* instances
-						while ( cur.indexOf( " " + clazz + " " ) > -1 ) {
-							cur = cur.replace( " " + clazz + " ", " " );
-						}
-					}
-
-					// Only assign if different to avoid unneeded rendering.
-					finalValue = stripAndCollapse( cur );
-					if ( curValue !== finalValue ) {
-						elem.setAttribute( "class", finalValue );
-					}
-				}
-			}
-		}
-
-		return this;
-	},
-
-	toggleClass: function( value, stateVal ) {
-		var type = typeof value,
-			isValidValue = type === "string" || Array.isArray( value );
-
-		if ( typeof stateVal === "boolean" && isValidValue ) {
-			return stateVal ? this.addClass( value ) : this.removeClass( value );
-		}
-
-		if ( isFunction( value ) ) {
-			return this.each( function( i ) {
-				jQuery( this ).toggleClass(
-					value.call( this, i, getClass( this ), stateVal ),
-					stateVal
-				);
-			} );
-		}
-
-		return this.each( function() {
-			var className, i, self, classNames;
-
-			if ( isValidValue ) {
-
-				// Toggle individual class names
-				i = 0;
-				self = jQuery( this );
-				classNames = classesToArray( value );
-
-				while ( ( className = classNames[ i++ ] ) ) {
-
-					// Check each className given, space separated list
-					if ( self.hasClass( className ) ) {
-						self.removeClass( className );
-					} else {
-						self.addClass( className );
-					}
-				}
-
-			// Toggle whole class name
-			} else if ( value === undefined || type === "boolean" ) {
-				className = getClass( this );
-				if ( className ) {
-
-					// Store className if set
-					dataPriv.set( this, "__className__", className );
-				}
-
-				// If the element has a class name or if we're passed `false`,
-				// then remove the whole classname (if there was one, the above saved it).
-				// Otherwise bring back whatever was previously saved (if anything),
-				// falling back to the empty string if nothing was stored.
-				if ( this.setAttribute ) {
-					this.setAttribute( "class",
-						className || value === false ?
-							"" :
-							dataPriv.get( this, "__className__" ) || ""
-					);
-				}
-			}
-		} );
-	},
-
-	hasClass: function( selector ) {
-		var className, elem,
-			i = 0;
-
-		className = " " + selector + " ";
-		while ( ( elem = this[ i++ ] ) ) {
-			if ( elem.nodeType === 1 &&
-				( " " + stripAndCollapse( getClass( elem ) ) + " " ).indexOf( className ) > -1 ) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-} );
-
-
-
-
-var rreturn = /\r/g;
-
-jQuery.fn.extend( {
-	val: function( value ) {
-		var hooks, ret, valueIsFunction,
-			elem = this[ 0 ];
-
-		if ( !arguments.length ) {
-			if ( elem ) {
-				hooks = jQuery.valHooks[ elem.type ] ||
-					jQuery.valHooks[ elem.nodeName.toLowerCase() ];
-
-				if ( hooks &&
-					"get" in hooks &&
-					( ret = hooks.get( elem, "value" ) ) !== undefined
-				) {
-					return ret;
-				}
-
-				ret = elem.value;
-
-				// Handle most common string cases
-				if ( typeof ret === "string" ) {
-					return ret.replace( rreturn, "" );
-				}
-
-				// Handle cases where value is null/undef or number
-				return ret == null ? "" : ret;
-			}
-
-			return;
-		}
-
-		valueIsFunction = isFunction( value );
-
-		return this.each( function( i ) {
-			var val;
-
-			if ( this.nodeType !== 1 ) {
-				return;
-			}
-
-			if ( valueIsFunction ) {
-				val = value.call( this, i, jQuery( this ).val() );
-			} else {
-				val = value;
-			}
-
-			// Treat null/undefined as ""; convert numbers to string
-			if ( val == null ) {
-				val = "";
-
-			} else if ( typeof val === "number" ) {
-				val += "";
-
-			} else if ( Array.isArray( val ) ) {
-				val = jQuery.map( val, function( value ) {
-					return value == null ? "" : value + "";
-				} );
-			}
-
-			hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
-
-			// If set returns undefined, fall back to normal setting
-			if ( !hooks || !( "set" in hooks ) || hooks.set( this, val, "value" ) === undefined ) {
-				this.value = val;
-			}
-		} );
-	}
-} );
-
-jQuery.extend( {
-	valHooks: {
-		option: {
-			get: function( elem ) {
-
-				var val = jQuery.find.attr( elem, "value" );
-				return val != null ?
-					val :
-
-					// Support: IE <=10 - 11 only
-					// option.text throws exceptions (#14686, #14858)
-					// Strip and collapse whitespace
-					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
-					stripAndCollapse( jQuery.text( elem ) );
-			}
-		},
-		select: {
-			get: function( elem ) {
-				var value, option, i,
-					options = elem.options,
-					index = elem.selectedIndex,
-					one = elem.type === "select-one",
-					values = one ? null : [],
-					max = one ? index + 1 : options.length;
-
-				if ( index < 0 ) {
-					i = max;
-
-				} else {
-					i = one ? index : 0;
-				}
-
-				// Loop through all the selected options
-				for ( ; i < max; i++ ) {
-					option = options[ i ];
-
-					// Support: IE <=9 only
-					// IE8-9 doesn't update selected after form reset (#2551)
-					if ( ( option.selected || i === index ) &&
-
-							// Don't return options that are disabled or in a disabled optgroup
-							!option.disabled &&
-							( !option.parentNode.disabled ||
-								!nodeName( option.parentNode, "optgroup" ) ) ) {
-
-						// Get the specific value for the option
-						value = jQuery( option ).val();
-
-						// We don't need an array for one selects
-						if ( one ) {
-							return value;
-						}
-
-						// Multi-Selects return an array
-						values.push( value );
-					}
-				}
-
-				return values;
-			},
-
-			set: function( elem, value ) {
-				var optionSet, option,
-					options = elem.options,
-					values = jQuery.makeArray( value ),
-					i = options.length;
-
-				while ( i-- ) {
-					option = options[ i ];
-
-					/* eslint-disable no-cond-assign */
-
-					if ( option.selected =
-						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
-					) {
-						optionSet = true;
-					}
-
-					/* eslint-enable no-cond-assign */
-				}
-
-				// Force browsers to behave consistently when non-matching value is set
-				if ( !optionSet ) {
-					elem.selectedIndex = -1;
-				}
-				return values;
-			}
-		}
-	}
-} );
-
-// Radios and checkboxes getter/setter
-jQuery.each( [ "radio", "checkbox" ], function() {
-	jQuery.valHooks[ this ] = {
-		set: function( elem, value ) {
-			if ( Array.isArray( value ) ) {
-				return ( elem.checked = jQuery.inArray( jQuery( elem ).val(), value ) > -1 );
-			}
-		}
-	};
-	if ( !support.checkOn ) {
-		jQuery.valHooks[ this ].get = function( elem ) {
-			return elem.getAttribute( "value" ) === null ? "on" : elem.value;
-		};
-	}
-} );
-
-
-
-
-// Return jQuery for attributes-only inclusion
-
-
-support.focusin = "onfocusin" in window;
-
-
-var rfocusMorph = /^(?:focusinfocus|focusoutblur)$/,
-	stopPropagationCallback = function( e ) {
-		e.stopPropagation();
-	};
-
-jQuery.extend( jQuery.event, {
-
-	trigger: function( event, data, elem, onlyHandlers ) {
-
-		var i, cur, tmp, bubbleType, ontype, handle, special, lastElement,
-			eventPath = [ elem || document ],
-			type = hasOwn.call( event, "type" ) ? event.type : event,
-			namespaces = hasOwn.call( event, "namespace" ) ? event.namespace.split( "." ) : [];
-
-		cur = lastElement = tmp = elem = elem || document;
-
-		// Don't do events on text and comment nodes
-		if ( elem.nodeType === 3 || elem.nodeType === 8 ) {
-			return;
-		}
-
-		// focus/blur morphs to focusin/out; ensure we're not firing them right now
-		if ( rfocusMorph.test( type + jQuery.event.triggered ) ) {
-			return;
-		}
-
-		if ( type.indexOf( "." ) > -1 ) {
-
-			// Namespaced trigger; create a regexp to match event type in handle()
-			namespaces = type.split( "." );
-			type = namespaces.shift();
-			namespaces.sort();
-		}
-		ontype = type.indexOf( ":" ) < 0 && "on" + type;
-
-		// Caller can pass in a jQuery.Event object, Object, or just an event type string
-		event = event[ jQuery.expando ] ?
-			event :
-			new jQuery.Event( type, typeof event === "object" && event );
-
-		// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
-		event.isTrigger = onlyHandlers ? 2 : 3;
-		event.namespace = namespaces.join( "." );
-		event.rnamespace = event.namespace ?
-			new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" ) :
-			null;
-
-		// Clean up the event in case it is being reused
-		event.result = undefined;
-		if ( !event.target ) {
-			event.target = elem;
-		}
-
-		// Clone any incoming data and prepend the event, creating the handler arg list
-		data = data == null ?
-			[ event ] :
-			jQuery.makeArray( data, [ event ] );
-
-		// Allow special events to draw outside the lines
-		special = jQuery.event.special[ type ] || {};
-		if ( !onlyHandlers && special.trigger && special.trigger.apply( elem, data ) === false ) {
-			return;
-		}
-
-		// Determine event propagation path in advance, per W3C events spec (#9951)
-		// Bubble up to document, then to window; watch for a global ownerDocument var (#9724)
-		if ( !onlyHandlers && !special.noBubble && !isWindow( elem ) ) {
-
-			bubbleType = special.delegateType || type;
-			if ( !rfocusMorph.test( bubbleType + type ) ) {
-				cur = cur.parentNode;
-			}
-			for ( ; cur; cur = cur.parentNode ) {
-				eventPath.push( cur );
-				tmp = cur;
-			}
-
-			// Only add window if we got to document (e.g., not plain obj or detached DOM)
-			if ( tmp === ( elem.ownerDocument || document ) ) {
-				eventPath.push( tmp.defaultView || tmp.parentWindow || window );
-			}
-		}
-
-		// Fire handlers on the event path
-		i = 0;
-		while ( ( cur = eventPath[ i++ ] ) && !event.isPropagationStopped() ) {
-			lastElement = cur;
-			event.type = i > 1 ?
-				bubbleType :
-				special.bindType || type;
-
-			// jQuery handler
-			handle = ( dataPriv.get( cur, "events" ) || Object.create( null ) )[ event.type ] &&
-				dataPriv.get( cur, "handle" );
-			if ( handle ) {
-				handle.apply( cur, data );
-			}
-
-			// Native handler
-			handle = ontype && cur[ ontype ];
-			if ( handle && handle.apply && acceptData( cur ) ) {
-				event.result = handle.apply( cur, data );
-				if ( event.result === false ) {
-					event.preventDefault();
-				}
-			}
-		}
-		event.type = type;
-
-		// If nobody prevented the default action, do it now
-		if ( !onlyHandlers && !event.isDefaultPrevented() ) {
-
-			if ( ( !special._default ||
-				special._default.apply( eventPath.pop(), data ) === false ) &&
-				acceptData( elem ) ) {
-
-				// Call a native DOM method on the target with the same name as the event.
-				// Don't do default actions on window, that's where global variables be (#6170)
-				if ( ontype && isFunction( elem[ type ] ) && !isWindow( elem ) ) {
-
-					// Don't re-trigger an onFOO event when we call its FOO() method
-					tmp = elem[ ontype ];
-
-					if ( tmp ) {
-						elem[ ontype ] = null;
-					}
-
-					// Prevent re-triggering of the same event, since we already bubbled it above
-					jQuery.event.triggered = type;
-
-					if ( event.isPropagationStopped() ) {
-						lastElement.addEventListener( type, stopPropagationCallback );
-					}
-
-					elem[ type ]();
-
-					if ( event.isPropagationStopped() ) {
-						lastElement.removeEventListener( type, stopPropagationCallback );
-					}
-
-					jQuery.event.triggered = undefined;
-
-					if ( tmp ) {
-						elem[ ontype ] = tmp;
-					}
-				}
-			}
-		}
-
-		return event.result;
-	},
-
-	// Piggyback on a donor event to simulate a different one
-	// Used only for `focus(in | out)` events
-	simulate: function( type, elem, event ) {
-		var e = jQuery.extend(
-			new jQuery.Event(),
-			event,
-			{
-				type: type,
-				isSimulated: true
-			}
-		);
-
-		jQuery.event.trigger( e, null, elem );
-	}
-
-} );
-
-jQuery.fn.extend( {
-
-	trigger: function( type, data ) {
-		return this.each( function() {
-			jQuery.event.trigger( type, data, this );
-		} );
-	},
-	triggerHandler: function( type, data ) {
-		var elem = this[ 0 ];
-		if ( elem ) {
-			return jQuery.event.trigger( type, data, elem, true );
-		}
-	}
-} );
-
-
-// Support: Firefox <=44
-// Firefox doesn't have focus(in | out) events
-// Related ticket - https://bugzilla.mozilla.org/show_bug.cgi?id=687787
-//
-// Support: Chrome <=48 - 49, Safari <=9.0 - 9.1
-// focus(in | out) events fire after focus & blur events,
-// which is spec violation - http://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
-// Related ticket - https://bugs.chromium.org/p/chromium/issues/detail?id=449857
-if ( !support.focusin ) {
-	jQuery.each( { focus: "focusin", blur: "focusout" }, function( orig, fix ) {
-
-		// Attach a single capturing handler on the document while someone wants focusin/focusout
-		var handler = function( event ) {
-			jQuery.event.simulate( fix, event.target, jQuery.event.fix( event ) );
-		};
-
-		jQuery.event.special[ fix ] = {
-			setup: function() {
-
-				// Handle: regular nodes (via `this.ownerDocument`), window
-				// (via `this.document`) & document (via `this`).
-				var doc = this.ownerDocument || this.document || this,
-					attaches = dataPriv.access( doc, fix );
-
-				if ( !attaches ) {
-					doc.addEventListener( orig, handler, true );
-				}
-				dataPriv.access( doc, fix, ( attaches || 0 ) + 1 );
-			},
-			teardown: function() {
-				var doc = this.ownerDocument || this.document || this,
-					attaches = dataPriv.access( doc, fix ) - 1;
-
-				if ( !attaches ) {
-					doc.removeEventListener( orig, handler, true );
-					dataPriv.remove( doc, fix );
-
-				} else {
-					dataPriv.access( doc, fix, attaches );
-				}
-			}
-		};
-	} );
-}
-var location = window.location;
-
-var nonce = { guid: Date.now() };
-
-var rquery = ( /\?/ );
-
-
-
-// Cross-browser xml parsing
-jQuery.parseXML = function( data ) {
-	var xml, parserErrorElem;
-	if ( !data || typeof data !== "string" ) {
-		return null;
-	}
-
-	// Support: IE 9 - 11 only
-	// IE throws on parseFromString with invalid input.
-	try {
-		xml = ( new window.DOMParser() ).parseFromString( data, "text/xml" );
-	} catch ( e ) {}
-
-	parserErrorElem = xml && xml.getElementsByTagName( "parsererror" )[ 0 ];
-	if ( !xml || parserErrorElem ) {
-		jQuery.error( "Invalid XML: " + (
-			parserErrorElem ?
-				jQuery.map( parserErrorElem.childNodes, function( el ) {
-					return el.textContent;
-				} ).join( "\n" ) :
-				data
-		) );
-	}
-	return xml;
-};
-
-
-var
-	rbracket = /\[\]$/,
-	rCRLF = /\r?\n/g,
-	rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i,
-	rsubmittable = /^(?:input|select|textarea|keygen)/i;
-
-function buildParams( prefix, obj, traditional, add ) {
-	var name;
-
-	if ( Array.isArray( obj ) ) {
-
-		// Serialize array item.
-		jQuery.each( obj, function( i, v ) {
-			if ( traditional || rbracket.test( prefix ) ) {
-
-				// Treat each array item as a scalar.
-				add( prefix, v );
-
-			} else {
-
-				// Item is non-scalar (array or object), encode its numeric index.
-				buildParams(
-					prefix + "[" + ( typeof v === "object" && v != null ? i : "" ) + "]",
-					v,
-					traditional,
-					add
-				);
-			}
-		} );
-
-	} else if ( !traditional && toType( obj ) === "object" ) {
-
-		// Serialize object item.
-		for ( name in obj ) {
-			buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );
-		}
-
-	} else {
-
-		// Serialize scalar item.
-		add( prefix, obj );
-	}
-}
-
-// Serialize an array of form elements or a set of
-// key/values into a query string
-jQuery.param = function( a, traditional ) {
-	var prefix,
-		s = [],
-		add = function( key, valueOrFunction ) {
-
-			// If value is a function, invoke it and use its return value
-			var value = isFunction( valueOrFunction ) ?
-				valueOrFunction() :
-				valueOrFunction;
-
-			s[ s.length ] = encodeURIComponent( key ) + "=" +
-				encodeURIComponent( value == null ? "" : value );
-		};
-
-	if ( a == null ) {
-		return "";
-	}
-
-	// If an array was passed in, assume that it is an array of form elements.
-	if ( Array.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
-
-		// Serialize the form elements
-		jQuery.each( a, function() {
-			add( this.name, this.value );
-		} );
-
-	} else {
-
-		// If traditional, encode the "old" way (the way 1.3.2 or older
-		// did it), otherwise encode params recursively.
-		for ( prefix in a ) {
-			buildParams( prefix, a[ prefix ], traditional, add );
-		}
-	}
-
-	// Return the resulting serialization
-	return s.join( "&" );
-};
-
-jQuery.fn.extend( {
-	serialize: function() {
-		return jQuery.param( this.serializeArray() );
-	},
-	serializeArray: function() {
-		return this.map( function() {
-
-			// Can add propHook for "elements" to filter or add form elements
-			var elements = jQuery.prop( this, "elements" );
-			return elements ? jQuery.makeArray( elements ) : this;
-		} ).filter( function() {
-			var type = this.type;
-
-			// Use .is( ":disabled" ) so that fieldset[disabled] works
-			return this.name && !jQuery( this ).is( ":disabled" ) &&
-				rsubmittable.test( this.nodeName ) && !rsubmitterTypes.test( type ) &&
-				( this.checked || !rcheckableType.test( type ) );
-		} ).map( function( _i, elem ) {
-			var val = jQuery( this ).val();
-
-			if ( val == null ) {
-				return null;
-			}
-
-			if ( Array.isArray( val ) ) {
-				return jQuery.map( val, function( val ) {
-					return { name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
-				} );
-			}
-
-			return { name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
-		} ).get();
-	}
-} );
-
-
-var
-	r20 = /%20/g,
-	rhash = /#.*$/,
-	rantiCache = /([?&])_=[^&]*/,
-	rheaders = /^(.*?):[ \t]*([^\r\n]*)$/mg,
-
-	// #7653, #8125, #8152: local protocol detection
-	rlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/,
-	rnoContent = /^(?:GET|HEAD)$/,
-	rprotocol = /^\/\//,
-
-	/* Prefilters
-	 * 1) They are useful to introduce custom dataTypes (see ajax/jsonp.js for an example)
-	 * 2) These are called:
-	 *    - BEFORE asking for a transport
-	 *    - AFTER param serialization (s.data is a string if s.processData is true)
-	 * 3) key is the dataType
-	 * 4) the catchall symbol "*" can be used
-	 * 5) execution will start with transport dataType and THEN continue down to "*" if needed
-	 */
-	prefilters = {},
-
-	/* Transports bindings
-	 * 1) key is the dataType
-	 * 2) the catchall symbol "*" can be used
-	 * 3) selection will start with transport dataType and THEN go to "*" if needed
-	 */
-	transports = {},
-
-	// Avoid comment-prolog char sequence (#10098); must appease lint and evade compression
-	allTypes = "*/".concat( "*" ),
-
-	// Anchor tag for parsing the document origin
-	originAnchor = document.createElement( "a" );
-
-originAnchor.href = location.href;
-
-// Base "constructor" for jQuery.ajaxPrefilter and jQuery.ajaxTransport
-function addToPrefiltersOrTransports( structure ) {
-
-	// dataTypeExpression is optional and defaults to "*"
-	return function( dataTypeExpression, func ) {
-
-		if ( typeof dataTypeExpression !== "string" ) {
-			func = dataTypeExpression;
-			dataTypeExpression = "*";
-		}
-
-		var dataType,
-			i = 0,
-			dataTypes = dataTypeExpression.toLowerCase().match( rnothtmlwhite ) || [];
-
-		if ( isFunction( func ) ) {
-
-			// For each dataType in the dataTypeExpression
-			while ( ( dataType = dataTypes[ i++ ] ) ) {
-
-				// Prepend if requested
-				if ( dataType[ 0 ] === "+" ) {
-					dataType = dataType.slice( 1 ) || "*";
-					( structure[ dataType ] = structure[ dataType ] || [] ).unshift( func );
-
-				// Otherwise append
-				} else {
-					( structure[ dataType ] = structure[ dataType ] || [] ).push( func );
-				}
-			}
-		}
-	};
-}
-
-// Base inspection function for prefilters and transports
-function inspectPrefiltersOrTransports( structure, options, originalOptions, jqXHR ) {
-
-	var inspected = {},
-		seekingTransport = ( structure === transports );
-
-	function inspect( dataType ) {
-		var selected;
-		inspected[ dataType ] = true;
-		jQuery.each( structure[ dataType ] || [], function( _, prefilterOrFactory ) {
-			var dataTypeOrTransport = prefilterOrFactory( options, originalOptions, jqXHR );
-			if ( typeof dataTypeOrTransport === "string" &&
-				!seekingTransport && !inspected[ dataTypeOrTransport ] ) {
-
-				options.dataTypes.unshift( dataTypeOrTransport );
-				inspect( dataTypeOrTransport );
-				return false;
-			} else if ( seekingTransport ) {
-				return !( selected = dataTypeOrTransport );
-			}
-		} );
-		return selected;
-	}
-
-	return inspect( options.dataTypes[ 0 ] ) || !inspected[ "*" ] && inspect( "*" );
-}
-
-// A special extend for ajax options
-// that takes "flat" options (not to be deep extended)
-// Fixes #9887
-function ajaxExtend( target, src ) {
-	var key, deep,
-		flatOptions = jQuery.ajaxSettings.flatOptions || {};
-
-	for ( key in src ) {
-		if ( src[ key ] !== undefined ) {
-			( flatOptions[ key ] ? target : ( deep || ( deep = {} ) ) )[ key ] = src[ key ];
-		}
-	}
-	if ( deep ) {
-		jQuery.extend( true, target, deep );
-	}
-
-	return target;
-}
-
-/* Handles responses to an ajax request:
- * - finds the right dataType (mediates between content-type and expected dataType)
- * - returns the corresponding response
- */
-function ajaxHandleResponses( s, jqXHR, responses ) {
-
-	var ct, type, finalDataType, firstDataType,
-		contents = s.contents,
-		dataTypes = s.dataTypes;
-
-	// Remove auto dataType and get content-type in the process
-	while ( dataTypes[ 0 ] === "*" ) {
-		dataTypes.shift();
-		if ( ct === undefined ) {
-			ct = s.mimeType || jqXHR.getResponseHeader( "Content-Type" );
-		}
-	}
-
-	// Check if we're dealing with a known content-type
-	if ( ct ) {
-		for ( type in contents ) {
-			if ( contents[ type ] && contents[ type ].test( ct ) ) {
-				dataTypes.unshift( type );
-				break;
-			}
-		}
-	}
-
-	// Check to see if we have a response for the expected dataType
-	if ( dataTypes[ 0 ] in responses ) {
-		finalDataType = dataTypes[ 0 ];
-	} else {
-
-		// Try convertible dataTypes
-		for ( type in responses ) {
-			if ( !dataTypes[ 0 ] || s.converters[ type + " " + dataTypes[ 0 ] ] ) {
-				finalDataType = type;
-				break;
-			}
-			if ( !firstDataType ) {
-				firstDataType = type;
-			}
-		}
-
-		// Or just use first one
-		finalDataType = finalDataType || firstDataType;
-	}
-
-	// If we found a dataType
-	// We add the dataType to the list if needed
-	// and return the corresponding response
-	if ( finalDataType ) {
-		if ( finalDataType !== dataTypes[ 0 ] ) {
-			dataTypes.unshift( finalDataType );
-		}
-		return responses[ finalDataType ];
-	}
-}
-
-/* Chain conversions given the request and the original response
- * Also sets the responseXXX fields on the jqXHR instance
- */
-function ajaxConvert( s, response, jqXHR, isSuccess ) {
-	var conv2, current, conv, tmp, prev,
-		converters = {},
-
-		// Work with a copy of dataTypes in case we need to modify it for conversion
-		dataTypes = s.dataTypes.slice();
-
-	// Create converters map with lowercased keys
-	if ( dataTypes[ 1 ] ) {
-		for ( conv in s.converters ) {
-			converters[ conv.toLowerCase() ] = s.converters[ conv ];
-		}
-	}
-
-	current = dataTypes.shift();
-
-	// Convert to each sequential dataType
-	while ( current ) {
-
-		if ( s.responseFields[ current ] ) {
-			jqXHR[ s.responseFields[ current ] ] = response;
-		}
-
-		// Apply the dataFilter if provided
-		if ( !prev && isSuccess && s.dataFilter ) {
-			response = s.dataFilter( response, s.dataType );
-		}
-
-		prev = current;
-		current = dataTypes.shift();
-
-		if ( current ) {
-
-			// There's only work to do if current dataType is non-auto
-			if ( current === "*" ) {
-
-				current = prev;
-
-			// Convert response if prev dataType is non-auto and differs from current
-			} else if ( prev !== "*" && prev !== current ) {
-
-				// Seek a direct converter
-				conv = converters[ prev + " " + current ] || converters[ "* " + current ];
-
-				// If none found, seek a pair
-				if ( !conv ) {
-					for ( conv2 in converters ) {
-
-						// If conv2 outputs current
-						tmp = conv2.split( " " );
-						if ( tmp[ 1 ] === current ) {
-
-							// If prev can be converted to accepted input
-							conv = converters[ prev + " " + tmp[ 0 ] ] ||
-								converters[ "* " + tmp[ 0 ] ];
-							if ( conv ) {
-
-								// Condense equivalence converters
-								if ( conv === true ) {
-									conv = converters[ conv2 ];
-
-								// Otherwise, insert the intermediate dataType
-								} else if ( converters[ conv2 ] !== true ) {
-									current = tmp[ 0 ];
-									dataTypes.unshift( tmp[ 1 ] );
-								}
-								break;
-							}
-						}
-					}
-				}
-
-				// Apply converter (if not an equivalence)
-				if ( conv !== true ) {
-
-					// Unless errors are allowed to bubble, catch and return them
-					if ( conv && s.throws ) {
-						response = conv( response );
-					} else {
-						try {
-							response = conv( response );
-						} catch ( e ) {
-							return {
-								state: "parsererror",
-								error: conv ? e : "No conversion from " + prev + " to " + current
-							};
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return { state: "success", data: response };
-}
-
-jQuery.extend( {
-
-	// Counter for holding the number of active queries
-	active: 0,
-
-	// Last-Modified header cache for next request
-	lastModified: {},
-	etag: {},
-
-	ajaxSettings: {
-		url: location.href,
-		type: "GET",
-		isLocal: rlocalProtocol.test( location.protocol ),
-		global: true,
-		processData: true,
-		async: true,
-		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-
-		/*
-		timeout: 0,
-		data: null,
-		dataType: null,
-		username: null,
-		password: null,
-		cache: null,
-		throws: false,
-		traditional: false,
-		headers: {},
-		*/
-
-		accepts: {
-			"*": allTypes,
-			text: "text/plain",
-			html: "text/html",
-			xml: "application/xml, text/xml",
-			json: "application/json, text/javascript"
-		},
-
-		contents: {
-			xml: /\bxml\b/,
-			html: /\bhtml/,
-			json: /\bjson\b/
-		},
-
-		responseFields: {
-			xml: "responseXML",
-			text: "responseText",
-			json: "responseJSON"
-		},
-
-		// Data converters
-		// Keys separate source (or catchall "*") and destination types with a single space
-		converters: {
-
-			// Convert anything to text
-			"* text": String,
-
-			// Text to html (true = no transformation)
-			"text html": true,
-
-			// Evaluate text as a json expression
-			"text json": JSON.parse,
-
-			// Parse text as xml
-			"text xml": jQuery.parseXML
-		},
-
-		// For options that shouldn't be deep extended:
-		// you can add your own custom options here if
-		// and when you create one that shouldn't be
-		// deep extended (see ajaxExtend)
-		flatOptions: {
-			url: true,
-			context: true
-		}
-	},
-
-	// Creates a full fledged settings object into target
-	// with both ajaxSettings and settings fields.
-	// If target is omitted, writes into ajaxSettings.
-	ajaxSetup: function( target, settings ) {
-		return settings ?
-
-			// Building a settings object
-			ajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :
-
-			// Extending ajaxSettings
-			ajaxExtend( jQuery.ajaxSettings, target );
-	},
-
-	ajaxPrefilter: addToPrefiltersOrTransports( prefilters ),
-	ajaxTransport: addToPrefiltersOrTransports( transports ),
-
-	// Main method
-	ajax: function( url, options ) {
-
-		// If url is an object, simulate pre-1.5 signature
-		if ( typeof url === "object" ) {
-			options = url;
-			url = undefined;
-		}
-
-		// Force options to be an object
-		options = options || {};
-
-		var transport,
-
-			// URL without anti-cache param
-			cacheURL,
-
-			// Response headers
-			responseHeadersString,
-			responseHeaders,
-
-			// timeout handle
-			timeoutTimer,
-
-			// Url cleanup var
-			urlAnchor,
-
-			// Request state (becomes false upon send and true upon completion)
-			completed,
-
-			// To know if global events are to be dispatched
-			fireGlobals,
-
-			// Loop variable
-			i,
-
-			// uncached part of the url
-			uncached,
-
-			// Create the final options object
-			s = jQuery.ajaxSetup( {}, options ),
-
-			// Callbacks context
-			callbackContext = s.context || s,
-
-			// Context for global events is callbackContext if it is a DOM node or jQuery collection
-			globalEventContext = s.context &&
-				( callbackContext.nodeType || callbackContext.jquery ) ?
-				jQuery( callbackContext ) :
-				jQuery.event,
-
-			// Deferreds
-			deferred = jQuery.Deferred(),
-			completeDeferred = jQuery.Callbacks( "once memory" ),
-
-			// Status-dependent callbacks
-			statusCode = s.statusCode || {},
-
-			// Headers (they are sent all at once)
-			requestHeaders = {},
-			requestHeadersNames = {},
-
-			// Default abort message
-			strAbort = "canceled",
-
-			// Fake xhr
-			jqXHR = {
-				readyState: 0,
-
-				// Builds headers hashtable if needed
-				getResponseHeader: function( key ) {
-					var match;
-					if ( completed ) {
-						if ( !responseHeaders ) {
-							responseHeaders = {};
-							while ( ( match = rheaders.exec( responseHeadersString ) ) ) {
-								responseHeaders[ match[ 1 ].toLowerCase() + " " ] =
-									( responseHeaders[ match[ 1 ].toLowerCase() + " " ] || [] )
-										.concat( match[ 2 ] );
-							}
-						}
-						match = responseHeaders[ key.toLowerCase() + " " ];
-					}
-					return match == null ? null : match.join( ", " );
-				},
-
-				// Raw string
-				getAllResponseHeaders: function() {
-					return completed ? responseHeadersString : null;
-				},
-
-				// Caches the header
-				setRequestHeader: function( name, value ) {
-					if ( completed == null ) {
-						name = requestHeadersNames[ name.toLowerCase() ] =
-							requestHeadersNames[ name.toLowerCase() ] || name;
-						requestHeaders[ name ] = value;
-					}
-					return this;
-				},
-
-				// Overrides response content-type header
-				overrideMimeType: function( type ) {
-					if ( completed == null ) {
-						s.mimeType = type;
-					}
-					return this;
-				},
-
-				// Status-dependent callbacks
-				statusCode: function( map ) {
-					var code;
-					if ( map ) {
-						if ( completed ) {
-
-							// Execute the appropriate callbacks
-							jqXHR.always( map[ jqXHR.status ] );
-						} else {
-
-							// Lazy-add the new callbacks in a way that preserves old ones
-							for ( code in map ) {
-								statusCode[ code ] = [ statusCode[ code ], map[ code ] ];
-							}
-						}
-					}
-					return this;
-				},
-
-				// Cancel the request
-				abort: function( statusText ) {
-					var finalText = statusText || strAbort;
-					if ( transport ) {
-						transport.abort( finalText );
-					}
-					done( 0, finalText );
-					return this;
-				}
-			};
-
-		// Attach deferreds
-		deferred.promise( jqXHR );
-
-		// Add protocol if not provided (prefilters might expect it)
-		// Handle falsy url in the settings object (#10093: consistency with old signature)
-		// We also use the url parameter if available
-		s.url = ( ( url || s.url || location.href ) + "" )
-			.replace( rprotocol, location.protocol + "//" );
-
-		// Alias method option to type as per ticket #12004
-		s.type = options.method || options.type || s.method || s.type;
-
-		// Extract dataTypes list
-		s.dataTypes = ( s.dataType || "*" ).toLowerCase().match( rnothtmlwhite ) || [ "" ];
-
-		// A cross-domain request is in order when the origin doesn't match the current origin.
-		if ( s.crossDomain == null ) {
-			urlAnchor = document.createElement( "a" );
-
-			// Support: IE <=8 - 11, Edge 12 - 15
-			// IE throws exception on accessing the href property if url is malformed,
-			// e.g. http://example.com:80x/
-			try {
-				urlAnchor.href = s.url;
-
-				// Support: IE <=8 - 11 only
-				// Anchor's host property isn't correctly set when s.url is relative
-				urlAnchor.href = urlAnchor.href;
-				s.crossDomain = originAnchor.protocol + "//" + originAnchor.host !==
-					urlAnchor.protocol + "//" + urlAnchor.host;
-			} catch ( e ) {
-
-				// If there is an error parsing the URL, assume it is crossDomain,
-				// it can be rejected by the transport if it is invalid
-				s.crossDomain = true;
-			}
-		}
-
-		// Convert data if not already a string
-		if ( s.data && s.processData && typeof s.data !== "string" ) {
-			s.data = jQuery.param( s.data, s.traditional );
-		}
-
-		// Apply prefilters
-		inspectPrefiltersOrTransports( prefilters, s, options, jqXHR );
-
-		// If request was aborted inside a prefilter, stop there
-		if ( completed ) {
-			return jqXHR;
-		}
-
-		// We can fire global events as of now if asked to
-		// Don't fire events if jQuery.event is undefined in an AMD-usage scenario (#15118)
-		fireGlobals = jQuery.event && s.global;
-
-		// Watch for a new set of requests
-		if ( fireGlobals && jQuery.active++ === 0 ) {
-			jQuery.event.trigger( "ajaxStart" );
-		}
-
-		// Uppercase the type
-		s.type = s.type.toUpperCase();
-
-		// Determine if request has content
-		s.hasContent = !rnoContent.test( s.type );
-
-		// Save the URL in case we're toying with the If-Modified-Since
-		// and/or If-None-Match header later on
-		// Remove hash to simplify url manipulation
-		cacheURL = s.url.replace( rhash, "" );
-
-		// More options handling for requests with no content
-		if ( !s.hasContent ) {
-
-			// Remember the hash so we can put it back
-			uncached = s.url.slice( cacheURL.length );
-
-			// If data is available and should be processed, append data to url
-			if ( s.data && ( s.processData || typeof s.data === "string" ) ) {
-				cacheURL += ( rquery.test( cacheURL ) ? "&" : "?" ) + s.data;
-
-				// #9682: remove data so that it's not used in an eventual retry
-				delete s.data;
-			}
-
-			// Add or update anti-cache param if needed
-			if ( s.cache === false ) {
-				cacheURL = cacheURL.replace( rantiCache, "$1" );
-				uncached = ( rquery.test( cacheURL ) ? "&" : "?" ) + "_=" + ( nonce.guid++ ) +
-					uncached;
-			}
-
-			// Put hash and anti-cache on the URL that will be requested (gh-1732)
-			s.url = cacheURL + uncached;
-
-		// Change '%20' to '+' if this is encoded form body content (gh-2658)
-		} else if ( s.data && s.processData &&
-			( s.contentType || "" ).indexOf( "application/x-www-form-urlencoded" ) === 0 ) {
-			s.data = s.data.replace( r20, "+" );
-		}
-
-		// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
-		if ( s.ifModified ) {
-			if ( jQuery.lastModified[ cacheURL ] ) {
-				jqXHR.setRequestHeader( "If-Modified-Since", jQuery.lastModified[ cacheURL ] );
-			}
-			if ( jQuery.etag[ cacheURL ] ) {
-				jqXHR.setRequestHeader( "If-None-Match", jQuery.etag[ cacheURL ] );
-			}
-		}
-
-		// Set the correct header, if data is being sent
-		if ( s.data && s.hasContent && s.contentType !== false || options.contentType ) {
-			jqXHR.setRequestHeader( "Content-Type", s.contentType );
-		}
-
-		// Set the Accepts header for the server, depending on the dataType
-		jqXHR.setRequestHeader(
-			"Accept",
-			s.dataTypes[ 0 ] && s.accepts[ s.dataTypes[ 0 ] ] ?
-				s.accepts[ s.dataTypes[ 0 ] ] +
-					( s.dataTypes[ 0 ] !== "*" ? ", " + allTypes + "; q=0.01" : "" ) :
-				s.accepts[ "*" ]
-		);
-
-		// Check for headers option
-		for ( i in s.headers ) {
-			jqXHR.setRequestHeader( i, s.headers[ i ] );
-		}
-
-		// Allow custom headers/mimetypes and early abort
-		if ( s.beforeSend &&
-			( s.beforeSend.call( callbackContext, jqXHR, s ) === false || completed ) ) {
-
-			// Abort if not done already and return
-			return jqXHR.abort();
-		}
-
-		// Aborting is no longer a cancellation
-		strAbort = "abort";
-
-		// Install callbacks on deferreds
-		completeDeferred.add( s.complete );
-		jqXHR.done( s.success );
-		jqXHR.fail( s.error );
-
-		// Get transport
-		transport = inspectPrefiltersOrTransports( transports, s, options, jqXHR );
-
-		// If no transport, we auto-abort
-		if ( !transport ) {
-			done( -1, "No Transport" );
-		} else {
-			jqXHR.readyState = 1;
-
-			// Send global event
-			if ( fireGlobals ) {
-				globalEventContext.trigger( "ajaxSend", [ jqXHR, s ] );
-			}
-
-			// If request was aborted inside ajaxSend, stop there
-			if ( completed ) {
-				return jqXHR;
-			}
-
-			// Timeout
-			if ( s.async && s.timeout > 0 ) {
-				timeoutTimer = window.setTimeout( function() {
-					jqXHR.abort( "timeout" );
-				}, s.timeout );
-			}
-
-			try {
-				completed = false;
-				transport.send( requestHeaders, done );
-			} catch ( e ) {
-
-				// Rethrow post-completion exceptions
-				if ( completed ) {
-					throw e;
-				}
-
-				// Propagate others as results
-				done( -1, e );
-			}
-		}
-
-		// Callback for when everything is done
-		function done( status, nativeStatusText, responses, headers ) {
-			var isSuccess, success, error, response, modified,
-				statusText = nativeStatusText;
-
-			// Ignore repeat invocations
-			if ( completed ) {
-				return;
-			}
-
-			completed = true;
-
-			// Clear timeout if it exists
-			if ( timeoutTimer ) {
-				window.clearTimeout( timeoutTimer );
-			}
-
-			// Dereference transport for early garbage collection
-			// (no matter how long the jqXHR object will be used)
-			transport = undefined;
-
-			// Cache response headers
-			responseHeadersString = headers || "";
-
-			// Set readyState
-			jqXHR.readyState = status > 0 ? 4 : 0;
-
-			// Determine if successful
-			isSuccess = status >= 200 && status < 300 || status === 304;
-
-			// Get response data
-			if ( responses ) {
-				response = ajaxHandleResponses( s, jqXHR, responses );
-			}
-
-			// Use a noop converter for missing script but not if jsonp
-			if ( !isSuccess &&
-				jQuery.inArray( "script", s.dataTypes ) > -1 &&
-				jQuery.inArray( "json", s.dataTypes ) < 0 ) {
-				s.converters[ "text script" ] = function() {};
-			}
-
-			// Convert no matter what (that way responseXXX fields are always set)
-			response = ajaxConvert( s, response, jqXHR, isSuccess );
-
-			// If successful, handle type chaining
-			if ( isSuccess ) {
-
-				// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
-				if ( s.ifModified ) {
-					modified = jqXHR.getResponseHeader( "Last-Modified" );
-					if ( modified ) {
-						jQuery.lastModified[ cacheURL ] = modified;
-					}
-					modified = jqXHR.getResponseHeader( "etag" );
-					if ( modified ) {
-						jQuery.etag[ cacheURL ] = modified;
-					}
-				}
-
-				// if no content
-				if ( status === 204 || s.type === "HEAD" ) {
-					statusText = "nocontent";
-
-				// if not modified
-				} else if ( status === 304 ) {
-					statusText = "notmodified";
-
-				// If we have data, let's convert it
-				} else {
-					statusText = response.state;
-					success = response.data;
-					error = response.error;
-					isSuccess = !error;
-				}
-			} else {
-
-				// Extract error from statusText and normalize for non-aborts
-				error = statusText;
-				if ( status || !statusText ) {
-					statusText = "error";
-					if ( status < 0 ) {
-						status = 0;
-					}
-				}
-			}
-
-			// Set data for the fake xhr object
-			jqXHR.status = status;
-			jqXHR.statusText = ( nativeStatusText || statusText ) + "";
-
-			// Success/Error
-			if ( isSuccess ) {
-				deferred.resolveWith( callbackContext, [ success, statusText, jqXHR ] );
-			} else {
-				deferred.rejectWith( callbackContext, [ jqXHR, statusText, error ] );
-			}
-
-			// Status-dependent callbacks
-			jqXHR.statusCode( statusCode );
-			statusCode = undefined;
-
-			if ( fireGlobals ) {
-				globalEventContext.trigger( isSuccess ? "ajaxSuccess" : "ajaxError",
-					[ jqXHR, s, isSuccess ? success : error ] );
-			}
-
-			// Complete
-			completeDeferred.fireWith( callbackContext, [ jqXHR, statusText ] );
-
-			if ( fireGlobals ) {
-				globalEventContext.trigger( "ajaxComplete", [ jqXHR, s ] );
-
-				// Handle the global AJAX counter
-				if ( !( --jQuery.active ) ) {
-					jQuery.event.trigger( "ajaxStop" );
-				}
-			}
-		}
-
-		return jqXHR;
-	},
-
-	getJSON: function( url, data, callback ) {
-		return jQuery.get( url, data, callback, "json" );
-	},
-
-	getScript: function( url, callback ) {
-		return jQuery.get( url, undefined, callback, "script" );
-	}
-} );
-
-jQuery.each( [ "get", "post" ], function( _i, method ) {
-	jQuery[ method ] = function( url, data, callback, type ) {
-
-		// Shift arguments if data argument was omitted
-		if ( isFunction( data ) ) {
-			type = type || callback;
-			callback = data;
-			data = undefined;
-		}
-
-		// The url can be an options object (which then must have .url)
-		return jQuery.ajax( jQuery.extend( {
-			url: url,
-			type: method,
-			dataType: type,
-			data: data,
-			success: callback
-		}, jQuery.isPlainObject( url ) && url ) );
-	};
-} );
-
-jQuery.ajaxPrefilter( function( s ) {
-	var i;
-	for ( i in s.headers ) {
-		if ( i.toLowerCase() === "content-type" ) {
-			s.contentType = s.headers[ i ] || "";
-		}
-	}
-} );
-
-
-jQuery._evalUrl = function( url, options, doc ) {
-	return jQuery.ajax( {
-		url: url,
-
-		// Make this explicit, since user can override this through ajaxSetup (#11264)
-		type: "GET",
-		dataType: "script",
-		cache: true,
-		async: false,
-		global: false,
-
-		// Only evaluate the response if it is successful (gh-4126)
-		// dataFilter is not invoked for failure responses, so using it instead
-		// of the default converter is kludgy but it works.
-		converters: {
-			"text script": function() {}
-		},
-		dataFilter: function( response ) {
-			jQuery.globalEval( response, options, doc );
-		}
-	} );
-};
-
-
-jQuery.fn.extend( {
-	wrapAll: function( html ) {
-		var wrap;
-
-		if ( this[ 0 ] ) {
-			if ( isFunction( html ) ) {
-				html = html.call( this[ 0 ] );
-			}
-
-			// The elements to wrap the target around
-			wrap = jQuery( html, this[ 0 ].ownerDocument ).eq( 0 ).clone( true );
-
-			if ( this[ 0 ].parentNode ) {
-				wrap.insertBefore( this[ 0 ] );
-			}
-
-			wrap.map( function() {
-				var elem = this;
-
-				while ( elem.firstElementChild ) {
-					elem = elem.firstElementChild;
-				}
-
-				return elem;
-			} ).append( this );
-		}
-
-		return this;
-	},
-
-	wrapInner: function( html ) {
-		if ( isFunction( html ) ) {
-			return this.each( function( i ) {
-				jQuery( this ).wrapInner( html.call( this, i ) );
-			} );
-		}
-
-		return this.each( function() {
-			var self = jQuery( this ),
-				contents = self.contents();
-
-			if ( contents.length ) {
-				contents.wrapAll( html );
-
-			} else {
-				self.append( html );
-			}
-		} );
-	},
-
-	wrap: function( html ) {
-		var htmlIsFunction = isFunction( html );
-
-		return this.each( function( i ) {
-			jQuery( this ).wrapAll( htmlIsFunction ? html.call( this, i ) : html );
-		} );
-	},
-
-	unwrap: function( selector ) {
-		this.parent( selector ).not( "body" ).each( function() {
-			jQuery( this ).replaceWith( this.childNodes );
-		} );
-		return this;
-	}
-} );
-
-
-jQuery.expr.pseudos.hidden = function( elem ) {
-	return !jQuery.expr.pseudos.visible( elem );
-};
-jQuery.expr.pseudos.visible = function( elem ) {
-	return !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
-};
-
-
-
-
-jQuery.ajaxSettings.xhr = function() {
-	try {
-		return new window.XMLHttpRequest();
-	} catch ( e ) {}
-};
-
-var xhrSuccessStatus = {
-
-		// File protocol always yields status code 0, assume 200
-		0: 200,
-
-		// Support: IE <=9 only
-		// #1450: sometimes IE returns 1223 when it should be 204
-		1223: 204
-	},
-	xhrSupported = jQuery.ajaxSettings.xhr();
-
-support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
-support.ajax = xhrSupported = !!xhrSupported;
-
-jQuery.ajaxTransport( function( options ) {
-	var callback, errorCallback;
-
-	// Cross domain only allowed if supported through XMLHttpRequest
-	if ( support.cors || xhrSupported && !options.crossDomain ) {
-		return {
-			send: function( headers, complete ) {
-				var i,
-					xhr = options.xhr();
-
-				xhr.open(
-					options.type,
-					options.url,
-					options.async,
-					options.username,
-					options.password
-				);
-
-				// Apply custom fields if provided
-				if ( options.xhrFields ) {
-					for ( i in options.xhrFields ) {
-						xhr[ i ] = options.xhrFields[ i ];
-					}
-				}
-
-				// Override mime type if needed
-				if ( options.mimeType && xhr.overrideMimeType ) {
-					xhr.overrideMimeType( options.mimeType );
-				}
-
-				// X-Requested-With header
-				// For cross-domain requests, seeing as conditions for a preflight are
-				// akin to a jigsaw puzzle, we simply never set it to be sure.
-				// (it can always be set on a per-request basis or even using ajaxSetup)
-				// For same-domain requests, won't change header if already provided.
-				if ( !options.crossDomain && !headers[ "X-Requested-With" ] ) {
-					headers[ "X-Requested-With" ] = "XMLHttpRequest";
-				}
-
-				// Set headers
-				for ( i in headers ) {
-					xhr.setRequestHeader( i, headers[ i ] );
-				}
-
-				// Callback
-				callback = function( type ) {
-					return function() {
-						if ( callback ) {
-							callback = errorCallback = xhr.onload =
-								xhr.onerror = xhr.onabort = xhr.ontimeout =
-									xhr.onreadystatechange = null;
-
-							if ( type === "abort" ) {
-								xhr.abort();
-							} else if ( type === "error" ) {
-
-								// Support: IE <=9 only
-								// On a manual native abort, IE9 throws
-								// errors on any property access that is not readyState
-								if ( typeof xhr.status !== "number" ) {
-									complete( 0, "error" );
-								} else {
-									complete(
-
-										// File: protocol always yields status 0; see #8605, #14207
-										xhr.status,
-										xhr.statusText
-									);
-								}
-							} else {
-								complete(
-									xhrSuccessStatus[ xhr.status ] || xhr.status,
-									xhr.statusText,
-
-									// Support: IE <=9 only
-									// IE9 has no XHR2 but throws on binary (trac-11426)
-									// For XHR2 non-text, let the caller handle it (gh-2498)
-									( xhr.responseType || "text" ) !== "text"  ||
-									typeof xhr.responseText !== "string" ?
-										{ binary: xhr.response } :
-										{ text: xhr.responseText },
-									xhr.getAllResponseHeaders()
-								);
-							}
-						}
-					};
-				};
-
-				// Listen to events
-				xhr.onload = callback();
-				errorCallback = xhr.onerror = xhr.ontimeout = callback( "error" );
-
-				// Support: IE 9 only
-				// Use onreadystatechange to replace onabort
-				// to handle uncaught aborts
-				if ( xhr.onabort !== undefined ) {
-					xhr.onabort = errorCallback;
-				} else {
-					xhr.onreadystatechange = function() {
-
-						// Check readyState before timeout as it changes
-						if ( xhr.readyState === 4 ) {
-
-							// Allow onerror to be called first,
-							// but that will not handle a native abort
-							// Also, save errorCallback to a variable
-							// as xhr.onerror cannot be accessed
-							window.setTimeout( function() {
-								if ( callback ) {
-									errorCallback();
-								}
-							} );
-						}
-					};
-				}
-
-				// Create the abort callback
-				callback = callback( "abort" );
-
-				try {
-
-					// Do send the request (this may raise an exception)
-					xhr.send( options.hasContent && options.data || null );
-				} catch ( e ) {
-
-					// #14683: Only rethrow if this hasn't been notified as an error yet
-					if ( callback ) {
-						throw e;
-					}
-				}
-			},
-
-			abort: function() {
-				if ( callback ) {
-					callback();
-				}
-			}
-		};
-	}
-} );
-
-
-
-
-// Prevent auto-execution of scripts when no explicit dataType was provided (See gh-2432)
-jQuery.ajaxPrefilter( function( s ) {
-	if ( s.crossDomain ) {
-		s.contents.script = false;
-	}
-} );
-
-// Install script dataType
-jQuery.ajaxSetup( {
-	accepts: {
-		script: "text/javascript, application/javascript, " +
-			"application/ecmascript, application/x-ecmascript"
-	},
-	contents: {
-		script: /\b(?:java|ecma)script\b/
-	},
-	converters: {
-		"text script": function( text ) {
-			jQuery.globalEval( text );
-			return text;
-		}
-	}
-} );
-
-// Handle cache's special case and crossDomain
-jQuery.ajaxPrefilter( "script", function( s ) {
-	if ( s.cache === undefined ) {
-		s.cache = false;
-	}
-	if ( s.crossDomain ) {
-		s.type = "GET";
-	}
-} );
-
-// Bind script tag hack transport
-jQuery.ajaxTransport( "script", function( s ) {
-
-	// This transport only deals with cross domain or forced-by-attrs requests
-	if ( s.crossDomain || s.scriptAttrs ) {
-		var script, callback;
-		return {
-			send: function( _, complete ) {
-				script = jQuery( "<script>" )
-					.attr( s.scriptAttrs || {} )
-					.prop( { charset: s.scriptCharset, src: s.url } )
-					.on( "load error", callback = function( evt ) {
-						script.remove();
-						callback = null;
-						if ( evt ) {
-							complete( evt.type === "error" ? 404 : 200, evt.type );
-						}
-					} );
-
-				// Use native DOM manipulation to avoid our domManip AJAX trickery
-				document.head.appendChild( script[ 0 ] );
-			},
-			abort: function() {
-				if ( callback ) {
-					callback();
-				}
-			}
-		};
-	}
-} );
-
-
-
-
-var oldCallbacks = [],
-	rjsonp = /(=)\?(?=&|$)|\?\?/;
-
-// Default jsonp settings
-jQuery.ajaxSetup( {
-	jsonp: "callback",
-	jsonpCallback: function() {
-		var callback = oldCallbacks.pop() || ( jQuery.expando + "_" + ( nonce.guid++ ) );
-		this[ callback ] = true;
-		return callback;
-	}
-} );
-
-// Detect, normalize options and install callbacks for jsonp requests
-jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
-
-	var callbackName, overwritten, responseContainer,
-		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
-			"url" :
-			typeof s.data === "string" &&
-				( s.contentType || "" )
-					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
-				rjsonp.test( s.data ) && "data"
-		);
-
-	// Handle iff the expected data type is "jsonp" or we have a parameter to set
-	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
-
-		// Get callback name, remembering preexisting value associated with it
-		callbackName = s.jsonpCallback = isFunction( s.jsonpCallback ) ?
-			s.jsonpCallback() :
-			s.jsonpCallback;
-
-		// Insert callback into url or form data
-		if ( jsonProp ) {
-			s[ jsonProp ] = s[ jsonProp ].replace( rjsonp, "$1" + callbackName );
-		} else if ( s.jsonp !== false ) {
-			s.url += ( rquery.test( s.url ) ? "&" : "?" ) + s.jsonp + "=" + callbackName;
-		}
-
-		// Use data converter to retrieve json after script execution
-		s.converters[ "script json" ] = function() {
-			if ( !responseContainer ) {
-				jQuery.error( callbackName + " was not called" );
-			}
-			return responseContainer[ 0 ];
-		};
-
-		// Force json dataType
-		s.dataTypes[ 0 ] = "json";
-
-		// Install callback
-		overwritten = window[ callbackName ];
-		window[ callbackName ] = function() {
-			responseContainer = arguments;
-		};
-
-		// Clean-up function (fires after converters)
-		jqXHR.always( function() {
-
-			// If previous value didn't exist - remove it
-			if ( overwritten === undefined ) {
-				jQuery( window ).removeProp( callbackName );
-
-			// Otherwise restore preexisting value
-			} else {
-				window[ callbackName ] = overwritten;
-			}
-
-			// Save back as free
-			if ( s[ callbackName ] ) {
-
-				// Make sure that re-using the options doesn't screw things around
-				s.jsonpCallback = originalSettings.jsonpCallback;
-
-				// Save the callback name for future use
-				oldCallbacks.push( callbackName );
-			}
-
-			// Call if it was a function and we have a response
-			if ( responseContainer && isFunction( overwritten ) ) {
-				overwritten( responseContainer[ 0 ] );
-			}
-
-			responseContainer = overwritten = undefined;
-		} );
-
-		// Delegate to script
-		return "script";
-	}
-} );
-
-
-
-
-// Support: Safari 8 only
-// In Safari 8 documents created via document.implementation.createHTMLDocument
-// collapse sibling forms: the second one becomes a child of the first one.
-// Because of that, this security measure has to be disabled in Safari 8.
-// https://bugs.webkit.org/show_bug.cgi?id=137337
-support.createHTMLDocument = ( function() {
-	var body = document.implementation.createHTMLDocument( "" ).body;
-	body.innerHTML = "<form></form><form></form>";
-	return body.childNodes.length === 2;
-} )();
-
-
-// Argument "data" should be string of html
-// context (optional): If specified, the fragment will be created in this context,
-// defaults to document
-// keepScripts (optional): If true, will include scripts passed in the html string
-jQuery.parseHTML = function( data, context, keepScripts ) {
-	if ( typeof data !== "string" ) {
-		return [];
-	}
-	if ( typeof context === "boolean" ) {
-		keepScripts = context;
-		context = false;
-	}
-
-	var base, parsed, scripts;
-
-	if ( !context ) {
-
-		// Stop scripts or inline event handlers from being executed immediately
-		// by using document.implementation
-		if ( support.createHTMLDocument ) {
-			context = document.implementation.createHTMLDocument( "" );
-
-			// Set the base href for the created document
-			// so any parsed elements with URLs
-			// are based on the document's URL (gh-2965)
-			base = context.createElement( "base" );
-			base.href = document.location.href;
-			context.head.appendChild( base );
-		} else {
-			context = document;
-		}
-	}
-
-	parsed = rsingleTag.exec( data );
-	scripts = !keepScripts && [];
-
-	// Single tag
-	if ( parsed ) {
-		return [ context.createElement( parsed[ 1 ] ) ];
-	}
-
-	parsed = buildFragment( [ data ], context, scripts );
-
-	if ( scripts && scripts.length ) {
-		jQuery( scripts ).remove();
-	}
-
-	return jQuery.merge( [], parsed.childNodes );
-};
-
-
-/**
- * Load a url into a page
- */
-jQuery.fn.load = function( url, params, callback ) {
-	var selector, type, response,
-		self = this,
-		off = url.indexOf( " " );
-
-	if ( off > -1 ) {
-		selector = stripAndCollapse( url.slice( off ) );
-		url = url.slice( 0, off );
-	}
-
-	// If it's a function
-	if ( isFunction( params ) ) {
-
-		// We assume that it's the callback
-		callback = params;
-		params = undefined;
-
-	// Otherwise, build a param string
-	} else if ( params && typeof params === "object" ) {
-		type = "POST";
-	}
-
-	// If we have elements to modify, make the request
-	if ( self.length > 0 ) {
-		jQuery.ajax( {
-			url: url,
-
-			// If "type" variable is undefined, then "GET" method will be used.
-			// Make value of this field explicit since
-			// user can override it through ajaxSetup method
-			type: type || "GET",
-			dataType: "html",
-			data: params
-		} ).done( function( responseText ) {
-
-			// Save response for use in complete callback
-			response = arguments;
-
-			self.html( selector ?
-
-				// If a selector was specified, locate the right elements in a dummy div
-				// Exclude scripts to avoid IE 'Permission Denied' errors
-				jQuery( "<div>" ).append( jQuery.parseHTML( responseText ) ).find( selector ) :
-
-				// Otherwise use the full result
-				responseText );
-
-		// If the request succeeds, this function gets "data", "status", "jqXHR"
-		// but they are ignored because response was set above.
-		// If it fails, this function gets "jqXHR", "status", "error"
-		} ).always( callback && function( jqXHR, status ) {
-			self.each( function() {
-				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
-			} );
-		} );
-	}
-
-	return this;
-};
-
-
-
-
-jQuery.expr.pseudos.animated = function( elem ) {
-	return jQuery.grep( jQuery.timers, function( fn ) {
-		return elem === fn.elem;
-	} ).length;
-};
-
-
-
-
-jQuery.offset = {
-	setOffset: function( elem, options, i ) {
-		var curPosition, curLeft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
-			position = jQuery.css( elem, "position" ),
-			curElem = jQuery( elem ),
-			props = {};
-
-		// Set position first, in-case top/left are set even on static elem
-		if ( position === "static" ) {
-			elem.style.position = "relative";
-		}
-
-		curOffset = curElem.offset();
-		curCSSTop = jQuery.css( elem, "top" );
-		curCSSLeft = jQuery.css( elem, "left" );
-		calculatePosition = ( position === "absolute" || position === "fixed" ) &&
-			( curCSSTop + curCSSLeft ).indexOf( "auto" ) > -1;
-
-		// Need to be able to calculate position if either
-		// top or left is auto and position is either absolute or fixed
-		if ( calculatePosition ) {
-			curPosition = curElem.position();
-			curTop = curPosition.top;
-			curLeft = curPosition.left;
-
-		} else {
-			curTop = parseFloat( curCSSTop ) || 0;
-			curLeft = parseFloat( curCSSLeft ) || 0;
-		}
-
-		if ( isFunction( options ) ) {
-
-			// Use jQuery.extend here to allow modification of coordinates argument (gh-1848)
-			options = options.call( elem, i, jQuery.extend( {}, curOffset ) );
-		}
-
-		if ( options.top != null ) {
-			props.top = ( options.top - curOffset.top ) + curTop;
-		}
-		if ( options.left != null ) {
-			props.left = ( options.left - curOffset.left ) + curLeft;
-		}
-
-		if ( "using" in options ) {
-			options.using.call( elem, props );
-
-		} else {
-			curElem.css( props );
-		}
-	}
-};
-
-jQuery.fn.extend( {
-
-	// offset() relates an element's border box to the document origin
-	offset: function( options ) {
-
-		// Preserve chaining for setter
-		if ( arguments.length ) {
-			return options === undefined ?
-				this :
-				this.each( function( i ) {
-					jQuery.offset.setOffset( this, options, i );
-				} );
-		}
-
-		var rect, win,
-			elem = this[ 0 ];
-
-		if ( !elem ) {
-			return;
-		}
-
-		// Return zeros for disconnected and hidden (display: none) elements (gh-2310)
-		// Support: IE <=11 only
-		// Running getBoundingClientRect on a
-		// disconnected node in IE throws an error
-		if ( !elem.getClientRects().length ) {
-			return { top: 0, left: 0 };
-		}
-
-		// Get document-relative position by adding viewport scroll to viewport-relative gBCR
-		rect = elem.getBoundingClientRect();
-		win = elem.ownerDocument.defaultView;
-		return {
-			top: rect.top + win.pageYOffset,
-			left: rect.left + win.pageXOffset
-		};
-	},
-
-	// position() relates an element's margin box to its offset parent's padding box
-	// This corresponds to the behavior of CSS absolute positioning
-	position: function() {
-		if ( !this[ 0 ] ) {
-			return;
-		}
-
-		var offsetParent, offset, doc,
-			elem = this[ 0 ],
-			parentOffset = { top: 0, left: 0 };
-
-		// position:fixed elements are offset from the viewport, which itself always has zero offset
-		if ( jQuery.css( elem, "position" ) === "fixed" ) {
-
-			// Assume position:fixed implies availability of getBoundingClientRect
-			offset = elem.getBoundingClientRect();
-
-		} else {
-			offset = this.offset();
-
-			// Account for the *real* offset parent, which can be the document or its root element
-			// when a statically positioned element is identified
-			doc = elem.ownerDocument;
-			offsetParent = elem.offsetParent || doc.documentElement;
-			while ( offsetParent &&
-				( offsetParent === doc.body || offsetParent === doc.documentElement ) &&
-				jQuery.css( offsetParent, "position" ) === "static" ) {
-
-				offsetParent = offsetParent.parentNode;
-			}
-			if ( offsetParent && offsetParent !== elem && offsetParent.nodeType === 1 ) {
-
-				// Incorporate borders into its offset, since they are outside its content origin
-				parentOffset = jQuery( offsetParent ).offset();
-				parentOffset.top += jQuery.css( offsetParent, "borderTopWidth", true );
-				parentOffset.left += jQuery.css( offsetParent, "borderLeftWidth", true );
-			}
-		}
-
-		// Subtract parent offsets and element margins
-		return {
-			top: offset.top - parentOffset.top - jQuery.css( elem, "marginTop", true ),
-			left: offset.left - parentOffset.left - jQuery.css( elem, "marginLeft", true )
-		};
-	},
-
-	// This method will return documentElement in the following cases:
-	// 1) For the element inside the iframe without offsetParent, this method will return
-	//    documentElement of the parent window
-	// 2) For the hidden or detached element
-	// 3) For body or html element, i.e. in case of the html node - it will return itself
-	//
-	// but those exceptions were never presented as a real life use-cases
-	// and might be considered as more preferable results.
-	//
-	// This logic, however, is not guaranteed and can change at any point in the future
-	offsetParent: function() {
-		return this.map( function() {
-			var offsetParent = this.offsetParent;
-
-			while ( offsetParent && jQuery.css( offsetParent, "position" ) === "static" ) {
-				offsetParent = offsetParent.offsetParent;
-			}
-
-			return offsetParent || documentElement;
-		} );
-	}
-} );
-
-// Create scrollLeft and scrollTop methods
-jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( method, prop ) {
-	var top = "pageYOffset" === prop;
-
-	jQuery.fn[ method ] = function( val ) {
-		return access( this, function( elem, method, val ) {
-
-			// Coalesce documents and windows
-			var win;
-			if ( isWindow( elem ) ) {
-				win = elem;
-			} else if ( elem.nodeType === 9 ) {
-				win = elem.defaultView;
-			}
-
-			if ( val === undefined ) {
-				return win ? win[ prop ] : elem[ method ];
-			}
-
-			if ( win ) {
-				win.scrollTo(
-					!top ? val : win.pageXOffset,
-					top ? val : win.pageYOffset
-				);
-
-			} else {
-				elem[ method ] = val;
-			}
-		}, method, val, arguments.length );
-	};
-} );
-
-// Support: Safari <=7 - 9.1, Chrome <=37 - 49
-// Add the top/left cssHooks using jQuery.fn.position
-// Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
-// Blink bug: https://bugs.chromium.org/p/chromium/issues/detail?id=589347
-// getComputedStyle returns percent when specified for top/left/bottom/right;
-// rather than make the css module depend on the offset module, just check for it here
-jQuery.each( [ "top", "left" ], function( _i, prop ) {
-	jQuery.cssHooks[ prop ] = addGetHookIf( support.pixelPosition,
-		function( elem, computed ) {
-			if ( computed ) {
-				computed = curCSS( elem, prop );
-
-				// If curCSS returns percentage, fallback to offset
-				return rnumnonpx.test( computed ) ?
-					jQuery( elem ).position()[ prop ] + "px" :
-					computed;
-			}
-		}
-	);
-} );
-
-
-// Create innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
-jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
-	jQuery.each( {
-		padding: "inner" + name,
-		content: type,
-		"": "outer" + name
-	}, function( defaultExtra, funcName ) {
-
-		// Margin is only for outerHeight, outerWidth
-		jQuery.fn[ funcName ] = function( margin, value ) {
-			var chainable = arguments.length && ( defaultExtra || typeof margin !== "boolean" ),
-				extra = defaultExtra || ( margin === true || value === true ? "margin" : "border" );
-
-			return access( this, function( elem, type, value ) {
-				var doc;
-
-				if ( isWindow( elem ) ) {
-
-					// $( window ).outerWidth/Height return w/h including scrollbars (gh-1729)
-					return funcName.indexOf( "outer" ) === 0 ?
-						elem[ "inner" + name ] :
-						elem.document.documentElement[ "client" + name ];
-				}
-
-				// Get document width or height
-				if ( elem.nodeType === 9 ) {
-					doc = elem.documentElement;
-
-					// Either scroll[Width/Height] or offset[Width/Height] or client[Width/Height],
-					// whichever is greatest
-					return Math.max(
-						elem.body[ "scroll" + name ], doc[ "scroll" + name ],
-						elem.body[ "offset" + name ], doc[ "offset" + name ],
-						doc[ "client" + name ]
-					);
-				}
-
-				return value === undefined ?
-
-					// Get width or height on the element, requesting but not forcing parseFloat
-					jQuery.css( elem, type, extra ) :
-
-					// Set width or height on the element
-					jQuery.style( elem, type, value, extra );
-			}, type, chainable ? margin : undefined, chainable );
-		};
-	} );
-} );
-
-
-jQuery.each( [
-	"ajaxStart",
-	"ajaxStop",
-	"ajaxComplete",
-	"ajaxError",
-	"ajaxSuccess",
-	"ajaxSend"
-], function( _i, type ) {
-	jQuery.fn[ type ] = function( fn ) {
-		return this.on( type, fn );
-	};
-} );
-
-
-
-
-jQuery.fn.extend( {
-
-	bind: function( types, data, fn ) {
-		return this.on( types, null, data, fn );
-	},
-	unbind: function( types, fn ) {
-		return this.off( types, null, fn );
-	},
-
-	delegate: function( selector, types, data, fn ) {
-		return this.on( types, selector, data, fn );
-	},
-	undelegate: function( selector, types, fn ) {
-
-		// ( namespace ) or ( selector, types [, fn] )
-		return arguments.length === 1 ?
-			this.off( selector, "**" ) :
-			this.off( types, selector || "**", fn );
-	},
-
-	hover: function( fnOver, fnOut ) {
-		return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
-	}
-} );
-
-jQuery.each(
-	( "blur focus focusin focusout resize scroll click dblclick " +
-	"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
-	"change select submit keydown keypress keyup contextmenu" ).split( " " ),
-	function( _i, name ) {
-
-		// Handle event binding
-		jQuery.fn[ name ] = function( data, fn ) {
-			return arguments.length > 0 ?
-				this.on( name, null, data, fn ) :
-				this.trigger( name );
-		};
-	}
-);
-
-
-
-
-// Support: Android <=4.0 only
-// Make sure we trim BOM and NBSP
-var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-
-// Bind a function to a context, optionally partially applying any
-// arguments.
-// jQuery.proxy is deprecated to promote standards (specifically Function#bind)
-// However, it is not slated for removal any time soon
-jQuery.proxy = function( fn, context ) {
-	var tmp, args, proxy;
-
-	if ( typeof context === "string" ) {
-		tmp = fn[ context ];
-		context = fn;
-		fn = tmp;
-	}
-
-	// Quick check to determine if target is callable, in the spec
-	// this throws a TypeError, but we will just return undefined.
-	if ( !isFunction( fn ) ) {
-		return undefined;
-	}
-
-	// Simulated bind
-	args = slice.call( arguments, 2 );
-	proxy = function() {
-		return fn.apply( context || this, args.concat( slice.call( arguments ) ) );
-	};
-
-	// Set the guid of unique handler to the same of original handler, so it can be removed
-	proxy.guid = fn.guid = fn.guid || jQuery.guid++;
-
-	return proxy;
-};
-
-jQuery.holdReady = function( hold ) {
-	if ( hold ) {
-		jQuery.readyWait++;
-	} else {
-		jQuery.ready( true );
-	}
-};
-jQuery.isArray = Array.isArray;
-jQuery.parseJSON = JSON.parse;
-jQuery.nodeName = nodeName;
-jQuery.isFunction = isFunction;
-jQuery.isWindow = isWindow;
-jQuery.camelCase = camelCase;
-jQuery.type = toType;
-
-jQuery.now = Date.now;
-
-jQuery.isNumeric = function( obj ) {
-
-	// As of jQuery 3.0, isNumeric is limited to
-	// strings and numbers (primitives or objects)
-	// that can be coerced to finite numbers (gh-2662)
-	var type = jQuery.type( obj );
-	return ( type === "number" || type === "string" ) &&
-
-		// parseFloat NaNs numeric-cast false positives ("")
-		// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
-		// subtraction forces infinities to NaN
-		!isNaN( obj - parseFloat( obj ) );
-};
-
-jQuery.trim = function( text ) {
-	return text == null ?
-		"" :
-		( text + "" ).replace( rtrim, "" );
-};
-
-
-
-// Register as a named AMD module, since jQuery can be concatenated with other
-// files that may use define, but not via a proper concatenation script that
-// understands anonymous AMD modules. A named AMD is safest and most robust
-// way to register. Lowercase jquery is used because AMD module names are
-// derived from file names, and jQuery is normally delivered in a lowercase
-// file name. Do this after creating the global so that if an AMD module wants
-// to call noConflict to hide this version of jQuery, it will work.
-
-// Note that for maximum portability, libraries that are not jQuery should
-// declare themselves as anonymous modules, and avoid setting a global if an
-// AMD loader is present. jQuery is a special case. For more information, see
-// https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
-
-if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
-		return jQuery;
-	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-}
-
-
-
-
-var
-
-	// Map over jQuery in case of overwrite
-	_jQuery = window.jQuery,
-
-	// Map over the $ in case of overwrite
-	_$ = window.$;
-
-jQuery.noConflict = function( deep ) {
-	if ( window.$ === jQuery ) {
-		window.$ = _$;
-	}
-
-	if ( deep && window.jQuery === jQuery ) {
-		window.jQuery = _jQuery;
-	}
-
-	return jQuery;
-};
-
-// Expose jQuery and $ identifiers, even in AMD
-// (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
-// and CommonJS for browser emulators (#13566)
-if ( typeof noGlobal === "undefined" ) {
-	window.jQuery = window.$ = jQuery;
-}
-
-
-
-
-return jQuery;
-} );
-
-
-/***/ }),
-
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
   \***************************************/
-/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
  * Lodash <https://lodash.com/>
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
@@ -14426,7 +3473,7 @@ return jQuery;
       freeParseInt = parseInt;
 
   /** Detect free variable `global` from Node.js. */
-  var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+  var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g && __webpack_require__.g.Object === Object && __webpack_require__.g;
 
   /** Detect free variable `self`. */
   var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -14438,7 +3485,7 @@ return jQuery;
   var freeExports =  true && exports && !exports.nodeType && exports;
 
   /** Detect free variable `module`. */
-  var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+  var freeModule = freeExports && "object" == 'object' && module && !module.nodeType && module;
 
   /** Detect the popular CommonJS extension `module.exports`. */
   var moduleExports = freeModule && freeModule.exports === freeExports;
@@ -31193,13 +20240,12 @@ return jQuery;
     !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
       return _;
     }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
   else {}
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -31207,8 +20253,7 @@ return jQuery;
 /*!***********************************************!*\
   !*** ./node_modules/validatorjs/src/async.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 function AsyncResolvers(onFailedOne, onResolvedAll) {
   this.onResolvedAll = onResolvedAll;
@@ -31299,8 +20344,7 @@ module.exports = AsyncResolvers;
 /*!****************************************************!*\
   !*** ./node_modules/validatorjs/src/attributes.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 var replacements = {
 
@@ -31509,8 +20553,7 @@ module.exports = {
 /*!************************************************!*\
   !*** ./node_modules/validatorjs/src/errors.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 var Errors = function() {
   this.errors = {};
@@ -31593,12 +20636,4090 @@ module.exports = Errors;
 
 /***/ }),
 
+/***/ "./node_modules/validatorjs/src/lang.js":
+/*!**********************************************!*\
+  !*** ./node_modules/validatorjs/src/lang.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var Messages = __webpack_require__(/*! ./messages */ "./node_modules/validatorjs/src/messages.js");
+
+__webpack_require__(/*! ./lang/en */ "./node_modules/validatorjs/src/lang/en.js");
+
+var require_method = undefined;
+
+var container = {
+
+  messages: {},
+
+  /**
+   * Set messages for language
+   *
+   * @param {string} lang
+   * @param {object} rawMessages
+   * @return {void}
+   */
+  _set: function(lang, rawMessages) {
+    this.messages[lang] = rawMessages;
+  },
+
+  /**
+   * Set message for given language's rule.
+   *
+   * @param {string} lang
+   * @param {string} attribute
+   * @param {string|object} message
+   * @return {void}
+   */
+  _setRuleMessage: function(lang, attribute, message) {
+    this._load(lang);
+    if (message === undefined) {
+      message = this.messages[lang].def;
+    }
+
+    this.messages[lang][attribute] = message;
+  },
+
+  /**
+   * Load messages (if not already loaded)
+   *
+   * @param  {string} lang
+   * @return {void}
+   */
+  _load: function(lang) {
+    if (!this.messages[lang]) {
+      try {
+        var rawMessages = __webpack_require__("./node_modules/validatorjs/src/lang sync recursive ^\\.\\/.*$")("./" + lang);
+        this._set(lang, rawMessages);
+      } catch (e) {}
+    }
+  },
+
+  /**
+   * Get raw messages for language
+   *
+   * @param  {string} lang
+   * @return {object}
+   */
+  _get: function(lang) {
+    this._load(lang);
+    return this.messages[lang];
+  },
+
+  /**
+   * Make messages for given language
+   *
+   * @param  {string} lang
+   * @return {Messages}
+   */
+  _make: function(lang) {
+    this._load(lang);
+    return new Messages(lang, this.messages[lang]);
+  }
+
+};
+
+module.exports = container;
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ar.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ar.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "الصفة :attribute يجب أن تكون مقبولة",
+  after: "الصفة :attribute يجب أن تكون بعد الصفة :after.",
+  after_or_equal: "الصفة :attribute يجب أن تكون مساوية أو بعد الصفة :after_or_equal.",
+  alpha: "حقل الصفة  :attribute يجب أن تحتوي على أحرف فقط",
+  alpha_dash: "حقل الصفة :attribute مسموح بأن يحتوي على حروف و أرقام و شرطة و شرطة منخفضة",
+  alpha_num: "حقل الصفة :attribute يجب أن يحتوي على أحرف و أرقام",
+  before: "الصفة :attribute يجب أن تكون قبل :before.",
+  before_or_equal: "الصفة :attribute يجب أن تكون مساوية أو قبل الصفة :before_or_equal.",
+  between: "حقل الصفة :attribute يجب أن يكون بين :min و :max.",
+  confirmed: "تأكيد الصفة :attribute غير متطابق.",
+  email: "الصفة :attribute صيغتها غير صحيحة",
+  date: "الصفة :attribute صيغتها ليست تاريخ صحيح",
+  def: "الصفة :attribute تحتوي على أخطاء",
+  digits: "الصفة :attribute يجب أن تكون :digits أرقام.",
+  digits_between: "يجب أن يحتوي :attribute بين :min و :max رقمًا/أرقام .",
+  different: "الصفة :attribute و الصفة :different يجب أن تكونا مختلفتين",
+  in: "الصفة :attribute المختارة، غير صحيحة.",
+  integer: "الصفة :attribute يجب أن تكون عدد صحيح",
+  hex: "حقل الصفة :attribute يجب أن يحتوي على صيغة هكسيديسمل",
+  min: {
+    numeric: "الصفة :attribute يجب أن تكون :min على الأقل",
+    string: "الصفة :attribute يجب أن تكون :min حرف على الأقل."
+  },
+  max: {
+    numeric: "الصفة :attribute لا يمكن أن تكون أكبر من  :max.",
+    string: "الصفة :attribute يجب أن لا تكون أكثر من :max حرف."
+  },
+  not_in: "الصفة :attribute المختارة غير صحيحة.",
+  numeric: "الصفة :attribute يجب أن تكون رقما.",
+  present: "حقل الصفة :attribute يجب أن يكون معرفا ، يمكن أن يكون فارغا.",
+  required: "حقل الصفة :attribute مطلوب.",
+  required_if: "حقل الصفة :attribute مطلوب حين تكون قيمة الحقل :other تساوي :value.",
+  required_unless: "حقل الصفة :attribute مطلوب حين تكون قيم الحقل :other لا تساوي :value.",
+  required_with: "حقل الصفة :attribute مطلوب حين يكون الحقا :field غير فارغ.",
+  required_with_all: "حقل الصفة :attribute مطلوب حين تكون الحقول :fields غير فارغة.",
+  required_without: "حقل الصفة :attribute مطلوب حين يكون الحقل :field فارغا.",
+  required_without_all: "حقل الصفة :attribute مطلوب حين تكون الحقول :fields فارغة.",
+  same: "حقل الصفة :attribute و حقل الصفة :same يجب أن يتطابقا.",
+  size: {
+    numeric: "الصفة :attribute يجب أن تكون :size.",
+    string: "الصفة :attribute يجب أن تكون :size حرفا."
+  },
+  string: "الصفة :attribute يجب أن تكون نص.",
+  url: "الصفة :attribute صياغتها غير صحيحة.",
+  regex: "الصفة :attribute صياغتها غير صحيحة.",
+  attributes: {
+    username: "اسم المستخدم",
+    password: "كلمة المرور",
+    email: "البريد الالكتروني",
+    website: "الموقع الالكتروني",
+    firstname: "الاسم الاول",
+    lastname: "الاسم الاخير",
+    subject: "الموضوع",
+    city: "المدينة",
+    region: "المنطقة",
+    country: "الدولة",
+    street: "الشارع",
+    zipcode: "الرمز البريدي",
+    phone: "رقم الهاتف",
+    mobile: "رقم الجوال"
+  }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/az.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/az.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute qəbul edilməlidir",
+  active_url: ":attribute doğru URL deyil",
+  after: ":attribute :date tarixindən sonra olmalıdır",
+  after_or_equal: ":attribute :date tarixi ilə eyni və ya sonra olmalıdır",
+  alpha: ":attribute yalnız hərflərdən ibarət ola bilər",
+  alpha_dash: ":attribute yalnız hərf, rəqəm və tire simvolundan ibarət ola bilər",
+  alpha_num: ":attribute yalnız hərf və rəqəmlərdən ibarət ola bilər",
+  array: ":attribute massiv formatında olmalıdır",
+  before: ":attribute :date tarixindən əvvəl olmalıdır",
+  before_or_equal: ":attribute :date tarixindən əvvəl və ya bərabər olmalıdır",
+  between: {
+    numeric: ":attribute :min ilə :max arasında olmalıdır",
+    file: ":attribute :min ilə :max KB ölçüsü intervalında olmalıdır",
+    string: ":attribute :min ilə :max simvolu intervalında olmalıdır",
+    array: ":attribute :min ilə :max intervalında hissədən ibarət olmalıdır"
+  },
+  boolean: " :attribute doğru və ya yanlış ola bilər",
+  confirmed: " :attribute doğrulanması yanlışdır",
+  date: " :attribute tarix formatında olmalıdır",
+  date_format: " :attribute :format formatında olmalıdır",
+  different: " :attribute və :other fərqli olmalıdır",
+  digits: " :attribute :digits rəqəmli olmalıdır",
+  digits_between: " :attribute :min ilə :max rəqəmləri intervalında olmalıdır",
+  dimensions: " :attribute doğru şəkil ölçülərində deyil",
+  distinct: " :attribute dublikat qiymətlidir",
+  email: " :attribute doğru email formatında deyil",
+  exists: " seçilmiş :attribute yanlışdır",
+  file: " :attribute fayl formatında olmalıdır",
+  filled: " :attribute qiyməti olmalıdır",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  image: " :attribute şəkil formatında olmalıdır",
+  in: " seçilmiş :attribute yanlışdır",
+  in_array: " :attribute :other qiymətləri arasında olmalıdır",
+  integer: " :attribute tam ədəd olmalıdır",
+  hex: "The :attribute field should have hexadecimal format",
+  ip: " :attribute İP adres formatında olmalıdır",
+  ipv4: " :attribute İPv4 adres formatında olmalıdır",
+  ipv6: " :attribute İPv6 adres formatında olmalıdır",
+  json: " :attribute JSON formatında olmalıdır",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: " :attribute maksiumum :max rəqəmdən ibarət ola bilər",
+    file: " :attribute maksimum :max KB ölçüsündə ola bilər",
+    string: " :attribute maksimum :max simvoldan ibarət ola bilər",
+    array: " :attribute maksimum :max hədd'dən ibarət ola bilər"
+  },
+  mimes: " :attribute :values tipində fayl olmalıdır",
+  mimetypes: " :attribute :values tipində fayl olmalıdır",
+  min: {
+    numeric: " :attribute minimum :min rəqəmdən ibarət ola bilər",
+    file: " :attribute minimum :min KB ölçüsündə ola bilər",
+    string: " :attribute minimum :min simvoldan ibarət ola bilər",
+    array: " :attribute minimum :min hədd'dən ibarət ola bilər"
+  },
+  not_in: " seçilmiş :attribute yanlışdır",
+  numeric: " :attribute rəqəmlərdən ibarət olmalıdır",
+  present: " :attribute iştirak etməlidir",
+  regex: " :attribute formatı yanlışdır",
+  required: " :attribute mütləqdir",
+  required_if: " :attribute (:other :value ikən) mütləqdir",
+  required_unless: " :attribute (:other :values 'ə daxil ikən) mütləqdir",
+  required_with: " :attribute (:values var ikən) mütləqdir",
+  required_with_all: " :attribute (:values var ikən) mütləqdir",
+  required_without: " :attribute (:values yox ikən) mütləqdir",
+  required_without_all: " :attribute (:values yox ikən) mütləqdir",
+  same: " :attribute və :other eyni olmalıdır",
+  size: {
+    numeric: " :attribute :size ölçüsündə olmalıdır",
+    file: " :attribute :size KB ölçüsündə olmalıdır",
+    string: " :attribute :size simvoldan ibarət olmalıdır",
+    array: " :attribute :size hədd'dən ibarət olmalıdır"
+  },
+  string: " :attribute hərf formatında olmalıdır",
+  timezone: " :attribute ərazi formatında olmalıdır",
+  unique: " :attribute artıq iştirak edib",
+  uploaded: " :attribute yüklənməsi mümkün olmadı",
+  url: " :attribute formatı yanlışdır"
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/be.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/be.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Вы павінны прыняць :attribute.",
+  active_url: "Поле :attribute утрымлівае несапраўдны URL.",
+  after: "У полі :attribute павінна быць дата пасля :date.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: "Поле :attribute можа мець толькі літары.",
+  alpha_dash: "Поле :attribute можа мець толькі літары, лічбы і злучок.",
+  alpha_num: "Поле :attribute можа мець толькі літары і лічбы.",
+  array: "Поле :attribute павінна быць масівам.",
+  before: "У полі :attribute павінна быць дата да :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: "Поле :attribute павінна быць паміж :min і :max.",
+    file: "Памер файла ў поле :attribute павінен быць паміж :min і :max кілабайт.",
+    string: "Колькасць сiмвалаў у поле :attribute павінна быць паміж :min і :max.",
+    array: "Колькасць элементаў у поле :attribute павінна быць паміж :min і :max."
+  },
+  boolean: "Поле :attribute павінна мець значэнне лагічнага тыпу.",
+  confirmed: "Поле :attribute не супадае з пацвярджэннем.",
+  date: "Поле :attribute не з'яўляецца датай.",
+  date_format: "Поле :attribute не адпавядае фармату :format.",
+  different: "Палі :attribute і :other павінны адрознівацца.",
+  digits: "Даўжыня лічбавага поля :attribute павінна быць :digits.",
+  digits_between: "Даўжыня лічбавага поля :attribute павінна быць паміж :min і :max.",
+  dimensions: "The :attribute has invalid image dimensions.",
+  distinct: "The :attribute field has a duplicate value.",
+  email: "Поле :attribute павінна быць сапраўдным электронным адрасам.",
+  file: "The :attribute must be a file.",
+  filled: "Поле :attribute абавязкова для запаўнення.",
+  exists: "Выбранае значэнне для :attribute некарэктна.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Поле :attribute павінна быць малюнкам.",
+  in: "Выбранае значэнне для :attribute памылкова.",
+  in_array: "The :attribute field does not exist in :other.",
+  integer: "Поле :attribute павінна быць цэлым лікам.",
+  ip: "Поле :attribute дпавінна быць сапраўдным IP-адрасам.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: "Поле :attribute павінна быць JSON радком.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Поле :attribute не можа быць больш :max.",
+    file: "Памер файла ў поле :attribute не можа быць больш :max кілабайт).",
+    string: "Колькасць сiмвалаў у поле :attribute не можа перавышаць :max.",
+    array: "Колькасць элементаў у поле :attribute не можа перавышаць :max."
+  },
+  mimes: "Поле :attribute павінна быць файлам аднаго з наступных тыпаў: :values.",
+  mimetypes: "Поле :attribute павінна быць файлам аднаго з наступных тыпаў: :values.",
+  min: {
+    numeric: "Поле :attribute павінна быць не менш :min.",
+    file: "Памер файла ў полее :attribute павінен быць не менш :min кілабайт.",
+    string: "Колькасць сiмвалаў у поле :attribute павінна быць не менш :min.",
+    array: "Колькасць элементаў у поле :attribute павінна быць не менш :min."
+  },
+  not_in: "Выбранае значэнне для :attribute памылкова.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Поле :attribute павінна быць лікам.",
+  present: "The :attribute field must be present.",
+  regex: "Поле :attribute мае памылковы фармат.",
+  required: "Поле :attribute абавязкова для запаўнення.",
+  required_if: "Поле :attribute абавязкова для запаўнення, калі :other раўняецца :value.",
+  required_unless: "Поле :attribute абавязкова для запаўнення, калі :other не раўняецца :values.",
+  required_with: "Поле :attribute абавязкова для запаўнення, калі :values ўказана.",
+  required_with_all: "Поле :attribute абавязкова для запаўнення, калі :values ўказана.",
+  required_without: "Поле :attribute абавязкова для запаўнення, калі :values не ўказана.",
+  required_without_all: "Поле :attribute абавязкова для запаўнення, калі ні адно з :values не ўказана.",
+  same: "Значэнне :attribute павінна супадаць з :other.",
+  size: {
+    numeric: "Поле :attribute павінна быць :size.",
+    file: "Размер файла в поле :attribute павінен быць :size кілабайт.",
+    string: "Колькасць сiмвалаў у поле :attribute павінна быць :size.",
+    array: "Колькасць элементаў у поле :attribute павінна быць :size."
+  },
+  string: "Поле :attribute павінна быць радком.",
+  timezone: "Поле :attribute павінна быць сапраўдным гадзінным поясам.",
+  unique: "Такое значэнне поля :attribute ўжо існуе.",
+  uploaded: "The :attribute failed to upload.",
+  url: "Поле :attribute мае памылковы фармат."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/bg.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/bg.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Трябва да приемете :attribute.",
+  active_url: "Полето :attribute не е валиден URL адрес.",
+  after: "Полето :attribute трябва да бъде дата след :date.",
+  after_or_equal: "Полето :attribute трябва да бъде дата след или равна на :date.",
+  alpha: "Полето :attribute трябва да съдържа само букви.",
+  alpha_dash: "Полето :attribute трябва да съдържа само букви, цифри, долна черта и тире.",
+  alpha_num: "Полето :attribute трябва да съдържа само букви и цифри.",
+  array: "Полето :attribute трябва да бъде масив.",
+  before: "Полето :attribute трябва да бъде дата преди :date.",
+  before_or_equal: "Полето :attribute трябва да бъде дата преди или равна на :date.",
+  between: {
+    numeric: "Полето :attribute трябва да бъде между :min и :max.",
+    file: "Полето :attribute трябва да бъде между :min и :max килобайта.",
+    string: "Полето :attribute трябва да бъде между :min и :max знака.",
+    array: "Полето :attribute трябва да има между :min - :max елемента."
+  },
+  boolean: "Полето :attribute трябва да съдържа Да или Не",
+  confirmed: "Полето :attribute не е потвърдено.",
+  date: "Полето :attribute не е валидна дата.",
+  date_format: "Полето :attribute не е във формат :format.",
+  different: "Полетата :attribute и :other трябва да са различни.",
+  digits: "Полето :attribute трябва да има :digits цифри.",
+  digits_between: "Полето :attribute трябва да има между :min и :max цифри.",
+  dimensions: "Невалидни размери за снимка :attribute.",
+  distinct: "Данните в полето :attribute се дублират.",
+  email: "Полето :attribute е в невалиден формат.",
+  exists: "Избранато поле :attribute вече съществува.",
+  file: "Полето :attribute трябва да бъде файл.",
+  filled: "Полето :attribute е задължително.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Полето :attribute трябва да бъде изображение.",
+  in: "Избраното поле :attribute е невалидно.",
+  in_array: "Полето :attribute не съществува в :other.",
+  integer: "Полето :attribute трябва да бъде цяло число.",
+  ip: "Полето :attribute трябва да бъде IP адрес.",
+  ipv4: "Полето :attribute трябва да бъде IPv4 адрес.",
+  ipv6: "Полето :attribute трябва да бъде IPv6 адрес.",
+  json: "Полето :attribute трябва да бъде JSON низ.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Полето :attribute трябва да бъде по-малко от :max.",
+    file: "Полето :attribute трябва да бъде по-малко от :max килобайта.",
+    string: "Полето :attribute трябва да бъде по-малко от :max знака.",
+    array: "Полето :attribute трябва да има по-малко от :max елемента."
+  },
+  mimes: "Полето :attribute трябва да бъде файл от тип: :values.",
+  mimetypes: "Полето :attribute трябва да бъде файл от тип: :values.",
+  min: {
+    numeric: "Полето :attribute трябва да бъде минимум :min.",
+    file: "Полето :attribute трябва да бъде минимум :min килобайта.",
+    string: "Полето :attribute трябва да бъде минимум :min знака.",
+    array: "Полето :attribute трябва има минимум :min елемента."
+  },
+  not_in: "Избраното поле :attribute е невалидно.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Полето :attribute трябва да бъде число.",
+  present: "Полето :attribute трябва да съествува.",
+  regex: "Полето :attribute е в невалиден формат.",
+  required: "Полето :attribute е задължително.",
+  required_if: "Полето :attribute се изисква, когато :other е :value.",
+  required_unless: "Полето :attribute се изисква, освен ако :other не е в :values.",
+  required_with: "Полето :attribute се изисква, когато :values има стойност.",
+  required_with_all: "Полето :attribute е задължително, когато :values имат стойност.",
+  required_without: "Полето :attribute се изисква, когато :values няма стойност.",
+  required_without_all: "Полето :attribute се изисква, когато никое от полетата :values няма стойност.",
+  same: "Полетата :attribute и :other трябва да съвпадат.",
+  size: {
+    numeric: "Полето :attribute трябва да бъде :size.",
+    file: "Полето :attribute трябва да бъде :size килобайта.",
+    string: "Полето :attribute трябва да бъде :size знака.",
+    array: "Полето :attribute трябва да има :size елемента."
+  },
+  string: "Полето :attribute трябва да бъде знаков низ.",
+  timezone: "Полето :attribute трябва да съдържа валидна часова зона.",
+  unique: "Полето :attribute вече съществува.",
+  uploaded: "Неуспешно качване на :attribute.",
+  url: "Полето :attribute е в невалиден формат."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/bs.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/bs.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Polje :attribute mora biti prihvaćeno.",
+  active_url: "Polje :attribute nije validan URL.",
+  after: "Polje :attribute mora biti datum poslije :date.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: "Polje :attribute može sadržati samo slova.",
+  alpha_dash: "Polje :attribute može sadržati samo slova, brojeve i povlake.",
+  alpha_num: "Polje :attribute može sadržati samo slova i brojeve.",
+  attributes: {},
+  array: "Polje :attribute mora biti niz.",
+  before: "Polje :attribute mora biti datum prije :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: "Polje :attribute mora biti izmedju :min - :max.",
+    file: "Fajl :attribute mora biti izmedju :min - :max kilobajta.",
+    string: "Polje :attribute mora biti izmedju :min - :max karaktera.",
+    array: "Polje :attribute mora biti između :min - :max karaktera."
+  },
+  boolean: "Polje :attribute mora biti tačno ili netačno",
+  confirmed: "Potvrda polja :attribute se ne poklapa.",
+  date: "Polje :attribute nema ispravan datum.",
+  date_format: "Polje :attribute nema odgovarajući format :format.",
+  different: "Polja :attribute i :other moraju biti različita.",
+  digits: "Polje :attribute mora da sadži :digits brojeve.",
+  digits_between: "Polje :attribute mora biti između :min i :max broja.",
+  dimensions: "The :attribute has invalid image dimensions.",
+  distinct: "The :attribute field has a duplicate value.",
+  email: "Format polja :attribute mora biti validan email.",
+  exists: "Odabrano polje :attribute nije validno.",
+  file: "The :attribute must be a file.",
+  filled: "Polje :attribute je obavezno.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Polje :attribute mora biti slika.",
+  in: "Odabrano polje :attribute nije validno.",
+  in_array: "The :attribute field does not exist in :other.",
+  integer: "Polje :attribute mora biti broj.",
+  ip: "Polje :attribute mora biti validna IP adresa.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: "The :attribute must be a valid JSON string.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Polje :attribute mora biti manje od :max.",
+    file: "Polje :attribute mora biti manje od :max kilobajta.",
+    string: "Polje :attribute mora sadržati manje od :max karaktera.",
+    array: "Polje :attribute mora sadržati manje od :max karaktera."
+  },
+  mimes: "Polje :attribute mora biti fajl tipa: :values.",
+  mimetypes: "Polje :attribute mora biti fajl tipa: :values.",
+  min: {
+    numeric: "Polje :attribute mora biti najmanje :min.",
+    file: "Fajl :attribute mora biti najmanje :min kilobajta.",
+    string: "Polje :attribute mora sadržati najmanje :min karaktera.",
+    array: "Polje :attribute mora sadržati najmanje :min karaktera."
+  },
+  not_in: "Odabrani element polja :attribute nije validan.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Polje :attribute mora biti broj.",
+  present: "The :attribute field must be present.",
+  regex: "Polje :attribute ima neispravan format.",
+  required: "Polje :attribute je obavezno.",
+  required_if: "Polje :attribute je obavezno kada :other je :value.",
+  required_unless: "The :attribute field is required unless :other is in :values.",
+  required_with: "Polje :attribute je obavezno kada je :values prikazano.",
+  required_with_all: "Polje :attribute je obavezno kada je :values prikazano.",
+  required_without: "Polje :attribute je obavezno kada :values nije prikazano.",
+  required_without_all: "Polje :attribute je obavezno kada nijedno :values nije prikazano.",
+  same: "Polja :attribute i :other se moraju poklapati.",
+  size: {
+    numeric: "Polje :attribute mora biti :size.",
+    file: "Fajl :attribute mora biti :size kilobajta.",
+    string: "Polje :attribute mora biti :size karaktera.",
+    array: "Polje :attribute mora biti :size karaktera."
+  },
+  string: "Polje :attribute mora sadrzavati slova.",
+  timezone: "Polje :attribute mora biti ispravna vremenska zona.",
+  unique: "Polje :attribute već postoji.",
+  uploaded: "The :attribute failed to upload.",
+  url: "Format polja :attribute nije validan."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ca.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ca.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'El camp :attribute pot ser aceptat.',
+  after: 'El camp :attribute pot ser una data posterior a :after.',
+  alpha: 'El camp :attribute només pot contenir lletras.',
+  alpha_dash: 'El camp :attribute només pot contenir lletras, nombres y guions.',
+  alpha_num: 'El camp :attribute només pot contenir lletras y nombres.',
+  attributes: {},
+  between: 'El camp :attribute té que estar entre :min - :max.',
+  confirmed: 'La confirmació de :attribute no coincideix.',
+  different: 'El camp :attribute y :other poden ser diferents.',
+  digits: 'El camp :attribute pot tindre :digits dígitos.',
+  digits_between: 'El camp  :attribute ha de tenir entre :min i :max dígits.',
+  email: 'El camp :attribute no es un correu válido.',
+  'in': 'El camp :attribute es invàlid.',
+  integer: 'El camp :attribute pot ser un nombre enter.',
+  hex: 'El camp :attribute hauria de tenir format hexadecimal',
+  max: {
+    numeric: 'El camp :attribute no pot ser mayor a :max.',
+    string: 'El camp :attribute no pot ser mayor que :max caràcters.'
+  },
+  min: {
+    numeric: 'La mida del camp :attribute pot ser de al menys :min.',
+    string: 'El camp :attribute pot contenir al menys :min caràcters.'
+  },
+  not_in: 'El camp :attribute es invàlid.',
+  numeric: 'El camp :attribute pot ser numéric.',
+  present: 'El camp de :attribute pot estar present (però pot estar buit).',
+  regex: 'El format del camp :attribute es invàlid.',
+  required: 'El camp :attribute es obligatori.',
+  required_if: 'El camp :attribute es obligatori quan :other es :value.',
+  same: 'El camp :attribute y :other poden coincidir.',
+  size: {
+    numeric: 'La mida del camp :attribute pot ser :size.',
+    string: 'El camp :attribute pot contenir :size caràcters.'
+  },
+  url: 'El format de :attribute es invàlid.'
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/cs.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/cs.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute musí být přijat.",
+  active_url: ":attribute není platnou URL adresou.",
+  after: ":attribute musí být datum po :date.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: ":attribute může obsahovat pouze písmena.",
+  alpha_dash:
+    ":attribute může obsahovat pouze písmena, číslice, pomlčky a podtržítka. České znaky (á, é, í, ó, ú, ů, ž, š, č, ř, ď, ť, ň) nejsou podporovány.",
+  alpha_num: ":attribute může obsahovat pouze písmena a číslice.",
+  attributes: {},
+  array: ":attribute musí být pole.",
+  before: ":attribute musí být datum před :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: ":attribute musí být hodnota mezi :min a :max.",
+    file: ":attribute musí být větší než :min a menší než :max Kilobytů.",
+    string: ":attribute musí být delší než :min a kratší než :max znaků.",
+    array: ":attribute musí obsahovat nejméně :min a nesmí obsahovat více než :max prvků."
+  },
+  boolean: ":attribute musí být true nebo false",
+  confirmed: ":attribute nebylo odsouhlaseno.",
+  date: ":attribute musí být platné datum.",
+  date_format: ":attribute není platný formát data podle :format.",
+  different: ":attribute a :other se musí lišit.",
+  digits: ":attribute musí být :digits pozic dlouhé.",
+  digits_between: ":attribute musí být dlouhé nejméně :min a nejvíce :max pozic.",
+  dimensions: ":attribute má neplatné rozměry.",
+  distinct: ":attribute má duplicitní hodnotu.",
+  email: ":attribute není platný formát.",
+  exists: "Zvolená hodnota pro :attribute není platná.",
+  file: ":attribute musí být soubor.",
+  filled: ":attribute musí být vyplněno.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute musí být obrázek.",
+  in: "Zvolená hodnota pro :attribute je neplatná.",
+  in_array: ":attribute není obsažen v :other.",
+  integer: ":attribute musí být celé číslo.",
+  ip: ":attribute musí být platnou IP adresou.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: ":attribute musí být platný JSON řetězec.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: ":attribute musí být nižší než :max.",
+    file: ":attribute musí být menší než :max Kilobytů.",
+    string: ":attribute musí být kratší než :max znaků.",
+    array: ":attribute nesmí obsahovat více než :max prvků."
+  },
+  mimes: ":attribute musí být jeden z následujících datových typů :values.",
+  mimetypes: ":attribute musí být jeden z následujících datových typů :values.",
+  min: {
+    numeric: ":attribute musí být větší než :min.",
+    file: ":attribute musí být větší než :min Kilobytů.",
+    string: ":attribute musí být delší než :min znaků.",
+    array: ":attribute musí obsahovat více než :min prvků."
+  },
+  not_in: "Zvolená hodnota pro :attribute je neplatná.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: ":attribute musí být číslo.",
+  present: ":attribute musí být vyplněno.",
+  regex: ":attribute nemá správný formát.",
+  required: ":attribute musí být vyplněno.",
+  required_if: ":attribute musí být vyplněno pokud :other je :value.",
+  required_unless: ":attribute musí být vyplněno dokud :other je v :value.",
+  required_with: ":attribute musí být vyplněno pokud :field je vyplněno.",
+  required_with_all: ":attribute musí být vyplněno pokud :fields je zvoleno.",
+  required_without: ":attribute musí být vyplněno pokud :field není vyplněno.",
+  required_without_all: ":attribute musí být vyplněno pokud není žádné z :fields zvoleno.",
+  same: ":attribute a :other se musí shodovat.",
+  size: {
+    numeric: ":attribute musí být přesně :size.",
+    file: ":attribute musí mít přesně :size Kilobytů.",
+    string: ":attribute musí být přesně :size znaků dlouhý.",
+    array: ":attribute musí obsahovat právě :size prvků."
+  },
+  string: ":attribute musí být řetězec znaků.",
+  timezone: ":attribute musí být platná časová zóna.",
+  unique: ":attribute musí být unikátní.",
+  uploaded: "Nahrávání :attribute se nezdařilo.",
+  url: "Formát :attribute je neplatný."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/cy.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/cy.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Rhaid derbyn :attribute.",
+  active_url: "Nid yw :attribute yn URL dilys.",
+  after: "Rhaid i :attribute fod yn ddyddiad sydd ar ôl :date.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: "Dim ond llythrennau'n unig gall :attribute gynnwys.",
+  alpha_dash: "Dim ond llythrennau, rhifau a dash yn unig gall :attribute gynnwys.",
+  alpha_num: "Dim ond llythrennau a rhifau yn unig gall :attribute gynnwys.",
+  attributes: {},
+  array: "Rhaid i :attribute fod yn array.",
+  before: "Rhaid i :attribute fod yn ddyddiad sydd cyn :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: "Rhaid i :attribute fod rhwng :min a :max.",
+    file: "Rhaid i :attribute fod rhwng :min a :max kilobytes.",
+    string: "Rhaid i :attribute fod rhwng :min a :max nodyn.",
+    array: "Rhaid i :attribute fod rhwng :min a :max eitem."
+  },
+  boolean: "Rhaid i'r maes :attribute fod yn wir neu gau.",
+  confirmed: "Nid yw'r cadarnhad :attribute yn gyfwerth.",
+  date: "Nid yw :attribute yn ddyddiad dilys.",
+  date_format: "Nid yw :attribute yn y fformat :format.",
+  different: "Rhaid i :attribute a :other fod yn wahanol.",
+  digits: "Rhaid i :attribute fod yn :digits digid.",
+  digits_between: "Rhaid i :attribute fod rhwng :min a :max digid.",
+  dimensions: "The :attribute has invalid image dimensions.",
+  distinct: "The :attribute field has a duplicate value.",
+  email: "Rhaid i :attribute fod yn gyfeiriad ebost dilys.",
+  file: "The :attribute must be a file.",
+  filled: "Rhaid cynnwys :attribute.",
+  exists: "Nid yw :attribute yn ddilys.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Rhaid i :attribute fod yn lun.",
+  in: "Nid yw :attribute yn ddilys.",
+  in_array: "The :attribute field does not exist in :other.",
+  integer: "Rhaid i :attribute fod yn integer.",
+  ip: "Rhaid i :attribute fod yn gyfeiriad IP dilys.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: "The :attribute must be a valid JSON string.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Ni chai :attribute fod yn fwy na :max.",
+    file: "Ni chai :attribute fod yn fwy na :max kilobytes.",
+    string: "Ni chai :attribute fod yn fwy na :max nodyn.",
+    array: "Ni chai :attribute fod yn fwy na :max eitem."
+  },
+  mimes: "Rhaid i :attribute fod yn ffeil o'r math: :values.",
+  mimetypes: "Rhaid i :attribute fod yn ffeil o'r math: :values.",
+  min: {
+    numeric: "Rhaid i :attribute fod o leiaf :min.",
+    file: "Rhaid i :attribute fod o leiaf :min kilobytes.",
+    string: "Rhaid i :attribute fod o leiaf :min nodyn.",
+    array: "Rhaid i :attribute fod o leiaf :min eitem."
+  },
+  not_in: "Nid yw :attribute yn ddilys.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Rhaid i :attribute fod yn rif.",
+  present: "The :attribute field must be present.",
+  regex: "Nid yw fformat :attribute yn ddilys.",
+  required: "Rhaid cynnwys :attribute.",
+  required_if: "Rhaid cynnwys :attribute pan mae :other yn :value.",
+  required_unless: "The :attribute field is required unless :other is in :values.",
+  required_with: "Rhaid cynnwys :attribute pan mae :values yn bresennol.",
+  required_with_all: "Rhaid cynnwys :attribute pan mae :values yn bresennol.",
+  required_without: "Rhaid cynnwys :attribute pan nad oes :values yn bresennol.",
+  required_without_all: "Rhaid cynnwys :attribute pan nad oes :values yn bresennol.",
+  same: "Rhaid i :attribute a :other fod yn gyfwerth.",
+  size: {
+    numeric: "Rhaid i :attribute fod yn :size.",
+    file: "Rhaid i :attribute fod yn :size kilobytes.",
+    string: "Rhaid i :attribute fod yn :size nodyn.",
+    array: "Rhaid i :attribute fod yn :size eitem."
+  },
+  string: "The :attribute must be a string.",
+  timezone: "Rhaid i :attribute fod yn timezone dilys.",
+  unique: "Mae :attribute eisoes yn bodoli.",
+  uploaded: "The :attribute failed to upload.",
+  url: "Nid yw fformat :attribute yn ddilys."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/da.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/da.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute skal accepteres.',
+  after: ':attribute skal være en dato efter :after.',
+  after_or_equal: ':attribute skal være en dato efter eller lig med :after_or_equal.',
+  alpha: ':attribute må kun bestå af bogstaver.',
+  alpha_dash: ':attribute må kun bestå af bogstaver, tal og bindestreger.',
+  alpha_num: ':attribute må kun bestå af bogstaver og tal.',
+  before: ':attribute skal være en dato før :before.',
+  before_or_equal: ':attribute skal være en dato før eller lig med :before_or_equal.',
+  between: ':attribute skal være mellem :min og :max.',
+  confirmed: ':attribute er ikke det samme som bekræftelsesfeltet.',
+  email: ':attribute skal være en gyldig email.',
+  date: ':attribute er ikke en gyldig dato.',
+  def: ':attribute attributen har fejl.',
+  digits: ':attribute skal have :digits cifre.',
+  digits_between: ':attribute skal have mellem :min og :max cifre.',
+  different: ':attribute og :different skal være forskellige.',
+  in: 'Det valgte :attribute er ugyldigt.',
+  integer: ':attribute skal være et heltal.',
+  hex: ':attribute skal have hexadecimalt format',
+  min: {
+    numeric: ':attribute skal være mindst :min.',
+    string: ':attribute skal være mindst :min tegn.'
+  },
+  max: {
+    numeric: ':attribute skal være højest :max.',
+    string: ':attribute skal være højest :max tegn.'
+  },
+  not_in: 'Den valgte :attribute er ugyldig',
+  numeric: ':attribute skal være et tal.',
+  present: ':attribute skal være tilstede.',
+  required: ':attribute skal udfyldes.',
+  required_if: ':attribute skal udfyldes når :other er :value.',
+  required_unless: ':attribute er påkrævet medmindre :other findes i :values.',
+  required_with: ':attribute skal udfyldes når :field er udfyldt.',
+  required_with_all: ':attribute skal udfyldes når :fields er udfyldt.',
+  required_without: ':attribute skal udfyldes når :field ikke er udfyldt.',
+  required_without_all: ':attribute skal udfyldes når ingen af :fields er udfyldt.',
+  same: ':attribute og :same skal være ens.',
+  size: {
+    numeric: ':attribute skal være :size.',
+    string: ':attribute skal være :size tegn lang.'
+  },
+  string: ':attribute skal være en streng.',
+  url: ':attribute formatet er ugyldigt.',
+  regex: ':attribute formatet er ugyldigt.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/de.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/de.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'Das :attribute Feld muss akzeptiert werden.',
+  after: 'Das :attribute muss ein Datum nach dem :after sein.',
+  after_or_equal: 'Das :attribute Datum muss kleiner oder gleich dem :after_or_equal sein.',
+  alpha: 'Das :attribute Feld darf nur aus Buchstaben bestehen.',
+  alpha_dash: 'Das :attribute Feld darf nur aus Buchstaben, Zahlen, Binde- und Unterstrichen bestehen.',
+  alpha_num: 'Das :attribute Feld darf nur aus Buchstaben und Zahlen bestehen.',
+  before: 'Das :attribute muss ein Datum vor dem :before sein.',
+  before_or_equal: 'Das :attribute Datum muss größer oder gleich dem :before_or_equal sein.',
+  between: 'Das :attribute Feld muss zwischen :min und :max liegen.',
+  confirmed: 'Das :attribute Feld stimmt nicht mit der Bestätigung überein.',
+  email: 'Das :attribute Format ist ungültig.',
+  date: 'Das :attribute Feld muss ein gültiges Datum sein.',
+  def: 'Das :attribute Feld hat Fehler.',
+  digits: 'Das :attribute Feld muss :digits Stellen haben.',
+  digits_between: 'Das :attribute Feld muss zwischen :min und :max Stellen haben.',
+  different: 'Die Felder :attribute und :different müssen sich unterscheiden.',
+  in: 'Der gewählte Wert für :attribute ist ungültig.',
+  integer: 'Das :attribute Feld muss eine ganze Zahl sein.',
+  hex: 'Das :attribute Feld sollte hexadezimal sein',
+  min: {
+    numeric: 'Das :attribute Feld muss mindestens :min sein.',
+    string: 'Das :attribute Feld muss mindestens :min Zeichen lang sein.'
+  },
+  max: {
+    numeric: 'Das :attribute Feld darf maximal :max sein.',
+    string: 'Das :attribute Feld darf maximal :max Zeichen haben.'
+  },
+  not_in: 'Der gewählte Wert für :attribute ist ungültig.',
+  numeric: 'Das :attribute Feld muss eine Zahl sein.',
+  present: 'Das Feld :attribute muss vorhanden sein (kann aber leer sein).',
+  required: 'Das :attribute Feld muss ausgefüllt sein.',
+  required_if: 'Das :attribute Feld muss ausgefüllt sein, wenn :other :value ist.',
+  same: 'Die Felder :attribute und :same müssen übereinstimmen.',
+  size: {
+    numeric: 'Das :attribute Feld muss gleich :size sein.',
+    string: 'Das :attribute Feld muss :size Zeichen lang sein.'
+  },
+  string: 'Das :attribute Feld muss ein Satz sein.',
+  url: 'Das Format von :attribute ist ungültig.',
+  regex: 'Das :attribute Format ist ungültig.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/el.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/el.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'Το πεδίο :attribute πρέπει να γίνει αποδεκτό.',
+  after: 'Το πεδίο :attribute πρέπει να είναι μία ημερομηνία μετά από :after.',
+  alpha: 'Το πεδίο :attribute μπορεί να περιέχει μόνο γράμματα.',
+  alpha_dash: 'Το πεδίο :attribute μπορεί να περιέχει μόνο γράμματα, αριθμούς, και παύλες.',
+  alpha_num: 'Το πεδίο :attribute μπορεί να περιέχει μόνο γράμματα και αριθμούς.',
+  between: 'Το πεδίο :attribute πρέπει να είναι μεταξύ :min και :max.',
+  confirmed: 'Η επιβεβαίωση του :attribute δεν ταιριάζει.',
+  email: 'Το πεδίο :attribute πρέπει να είναι μία έγκυρη διεύθυνση email.',
+  date: 'Το πεδίο :attribute δεν είναι έγκυρη ημερομηνία.',
+  def: 'Το πεδίο :attribute περιέχει σφάλματα.',
+  digits: 'Το πεδίο :attribute πρέπει να είναι :digits ψηφία.',
+  digits_between: 'Το πεδίο :attribute πρέπει να είναι μεταξύ :min και :max ψηφία.',
+  different: 'Το πεδίο :attribute  και :different πρέπει να είναι διαφορετικά.',
+  in: 'Το επιλεγμένο :attribute δεν είναι έγκυρο.',
+  integer: 'Το πεδίο :attribute πρέπει να είναι ακέραιος.',
+  hex: 'Το πεδίο :attribute πρέπει να είναι σε δεκαεξαδική μορφή.',
+  min: {
+    numeric: 'Το πεδίο :attribute πρέπει να είναι τουλάχιστον :min.',
+    string: 'Το πεδίο :attribute πρέπει να έχει τουλάχιστον :min χαρακτήρες.'
+  },
+  max: {
+    numeric: 'Το πεδίο :attribute δεν μπορεί να είναι μεγαλύτερο από :max.',
+    string: 'Το πεδίο :attribute δεν μπορεί να έχει περισσότερους από :max χαρακτήρες.'
+  },
+  not_in: 'Το επιλεγμένο :attribute δεν είναι αποδεκτό.',
+  numeric: 'Το πεδίο :attribute πρέπει να είναι αριθμός.',
+  present: 'The :attribute field must be present (but can be empty).',
+  required: 'Το πεδίο :attribute είναι απαραίτητο.',
+  required_if: 'Το πεδίο :attribute είναι απαραίτητο όταν το πεδίο :other είναι :value.',
+  same: 'Τα πεδία :attribute και :same πρέπει να είναι ίδια.',
+  size: {
+    numeric: 'Το πεδίο :attribute πρέπει να είναι :size.',
+    string: 'Το πεδίο :attribute πρέπει να είναι :size χαρακτήρες.'
+  },
+  string: 'Το πεδίο :attribute πρέπει να είναι αλφαριθμητικό.',
+  url: 'Το πεδίο :attribute δεν είναι έγκυρη διεύθυνση URL.',
+  regex: 'Η μορφή του :attribute δεν είναι αποδεκτή.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/en.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/en.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'The :attribute must be accepted.',
+  after: 'The :attribute must be after :after.',
+  after_or_equal: 'The :attribute must be equal or after :after_or_equal.',
+  alpha: 'The :attribute field must contain only alphabetic characters.',
+  alpha_dash: 'The :attribute field may only contain alpha-numeric characters, as well as dashes and underscores.',
+  alpha_num: 'The :attribute field must be alphanumeric.',
+  before: 'The :attribute must be before :before.',
+  before_or_equal: 'The :attribute must be equal or before :before_or_equal.',
+  between: {
+    numeric: 'The :attribute field must be between :min and :max.',
+    string: 'The :attribute field must be between :min and :max characters.',
+  },
+  confirmed: 'The :attribute confirmation does not match.',
+  email: 'The :attribute format is invalid.',
+  date: 'The :attribute is not a valid date format.',
+  def: 'The :attribute attribute has errors.',
+  digits: 'The :attribute must be :digits digits.',
+  digits_between: 'The :attribute field must be between :min and :max digits.',
+  different: 'The :attribute and :different must be different.',
+  in: 'The selected :attribute is invalid.',
+  integer: 'The :attribute must be an integer.',
+  hex: 'The :attribute field should have hexadecimal format',
+  min: {
+    numeric: 'The :attribute must be at least :min.',
+    string: 'The :attribute must be at least :min characters.'
+  },
+  max: {
+    numeric: 'The :attribute may not be greater than :max.',
+    string: 'The :attribute may not be greater than :max characters.'
+  },
+  not_in: 'The selected :attribute is invalid.',
+  numeric: 'The :attribute must be a number.',
+  present: 'The :attribute field must be present (but can be empty).',
+  required: 'The :attribute field is required.',
+  required_if: 'The :attribute field is required when :other is :value.',
+  required_unless: 'The :attribute field is required when :other is not :value.',
+  required_with: 'The :attribute field is required when :field is not empty.',
+  required_with_all: 'The :attribute field is required when :fields are not empty.',
+  required_without: 'The :attribute field is required when :field is empty.',
+  required_without_all: 'The :attribute field is required when :fields are empty.',
+  same: 'The :attribute and :same fields must match.',
+  size: {
+    numeric: 'The :attribute must be :size.',
+    string: 'The :attribute must be :size characters.'
+  },
+  string: 'The :attribute must be a string.',
+  url: 'The :attribute format is invalid.',
+  regex: 'The :attribute format is invalid.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/es.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/es.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'El campo :attribute debe ser aceptado.',
+  after: 'El campo :attribute debe ser una fecha posterior a :after.',
+  alpha: 'El campo :attribute solo debe contener letras.',
+  alpha_dash: 'El campo :attribute solo debe contener letras, números y guiones.',
+  alpha_num: 'El campo :attribute solo debe contener letras y números.',
+  attributes: {},
+  between: 'El campo :attribute tiene que estar entre :min - :max.',
+  confirmed: 'La confirmación de :attribute no coincide.',
+  different: 'El campo :attribute y :other deben ser diferentes.',
+  digits: 'El campo :attribute debe tener :digits dígitos.',
+  digits_between: 'El campo :attribute debe tener entre :min y :max dígitos.',
+  email: 'El campo :attribute no es un correo válido.',
+  in: 'El campo :attribute es inválido.',
+  integer: 'El campo :attribute debe ser un número entero.',
+  hex: 'El campo :attribute debe tener formato hexadecimal.',
+  max: {
+    numeric: 'El campo :attribute no debe ser mayor a :max.',
+    string: 'El campo :attribute no debe ser mayor que :max caracteres.'
+  },
+  min: {
+    numeric: 'El tamaño del campo :attribute debe ser de al menos :min.',
+    string: 'El campo :attribute debe contener al menos :min caracteres.'
+  },
+  not_in: 'El campo :attribute es inválido.',
+  numeric: 'El campo :attribute debe ser numérico.',
+  present: 'El campo de :attribute debe estar presente (pero puede estar vacío).',
+  regex: 'El formato del campo :attribute es inválido.',
+  required: 'El campo :attribute es obligatorio.',
+  required_if: 'El campo :attribute es obligatorio cuando :other es :value.',
+  same: 'El campo :attribute y :other deben coincidir.',
+  size: {
+    numeric: 'El tamaño del campo :attribute debe ser :size.',
+    string: 'El campo :attribute debe contener :size caracteres.'
+  },
+  url: 'El formato de :attribute es inválido.'
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/et.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/et.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute tuleb aktsepteerida.",
+  active_url: ":attribute ei ole kehtiv URL.",
+  after: ":attribute peab olema kuupäev pärast :date.",
+  after_or_equal: ":attribute peab olema kuupäev pärast või samastuma :date.",
+  alpha: ":attribute võib sisaldada vaid tähemärke.",
+  alpha_dash: ":attribute võib sisaldada vaid tähti, numbreid ja kriipse.",
+  alpha_num: ":attribute võib sisaldada vaid tähti ja numbreid.",
+  attributes: {},
+  array: ":attribute peab olema massiiv.",
+  before: ":attribute peab olema kuupäev enne :date.",
+  before_or_equal: ":attribute peab olema kuupäev enne või samastuma :date.",
+  between: {
+    numeric: ":attribute peab olema :min ja :max vahel.",
+    file: ":attribute peab olema :min ja :max kilobaidi vahel.",
+    string: ":attribute peab olema :min ja :max tähemärgi vahel.",
+    array: ":attribute peab olema :min ja :max kirje vahel."
+  },
+  boolean: ":attribute väli peab olema tõene või väär.",
+  confirmed: ":attribute kinnitus ei vasta.",
+  date: ":attribute pole kehtiv kuupäev.",
+  date_format: ":attribute ei vasta formaadile :format.",
+  different: ":attribute ja :other peavad olema erinevad.",
+  digits: ":attribute peab olema :digits numbrit.",
+  digits_between: ":attribute peab olema :min ja :max numbri vahel.",
+  dimensions: ":attribute on valed pildi suurused.",
+  distinct: ":attribute väljal on topeltväärtus.",
+  email: ":attribute peab olema kehtiv e-posti aadress.",
+  exists: "Valitud :attribute on vigane.",
+  file: ":attribute peab olema fail.",
+  filled: ":attribute väli on nõutav.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute peab olema pilt.",
+  in: "Valitud :attribute on vigane.",
+  in_array: ":attribute väli ei eksisteeri :other sees.",
+  integer: ":attribute peab olema täisarv.",
+  ip: ":attribute peab olema kehtiv IP aadress.",
+  ipv4: ":attribute peab olema kehtiv IPv4 aadress.",
+  ipv6: ":attribute peab olema kehtiv IPv6 aadress.",
+  json: ":attribute peab olema kehtiv JSON string.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: ":attribute ei tohi olla suurem kui :max.",
+    file: ":attribute ei tohi olla suurem kui :max kilobaiti.",
+    string: ":attribute ei tohi olla suurem kui :max tähemärki.",
+    array: ":attribute ei tohi sisaldada rohkem kui :max kirjet."
+  },
+  mimes: ":attribute peab olema :values tüüpi.",
+  mimetypes: ":attribute peab olema :values tüüpi.",
+  min: {
+    numeric: ":attribute peab olema vähemalt :min.",
+    file: ":attribute peab olema vähemalt :min kilobaiti.",
+    string: ":attribute peab olema vähemalt :min tähemärki.",
+    array: ":attribute peab olema vähemalt :min kirjet."
+  },
+  not_in: "Valitud :attribute on vigane.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: ":attribute peab olema number.",
+  present: ":attribute väli peab olema esindatud.",
+  regex: ":attribute vorming on vigane.",
+  required: ":attribute väli on nõutud.",
+  required_if: ":attribute väli on nõutud, kui :other on :value.",
+  required_unless: ":attribute väli on nõutud, välja arvatud, kui :other on :values.",
+  required_with: ":attribute väli on nõutud, kui :values on esindatud.",
+  required_with_all: ":attribute väli on nõutud, kui :values on esindatud.",
+  required_without: ":attribute väli on nõutud, kui :values ei ole esindatud.",
+  required_without_all: ":attribute väli on nõutud, kui ükski :values pole esindatud.",
+  same: ":attribute ja :other peavad sobima.",
+  size: {
+    numeric: ":attribute peab olema :size.",
+    file: ":attribute peab olema :size kilobaiti.",
+    string: ":attribute peab olema :size tähemärki.",
+    array: ":attribute peab sisaldama :size kirjet."
+  },
+  string: ":attribute peab olema string.",
+  timezone: ":attribute peab olema kehtiv tsoon.",
+  unique: ":attribute on juba hõivatud.",
+  uploaded: ":attribute ei õnnestunud laadida.",
+  url: ":attribute vorming on vigane."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/eu.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/eu.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute onartua izan behar da.",
+  active_url: ":attribute ez da baliozko URL bat.",
+  after: ":attribute :date osteko data izan behar da.",
+  after_or_equal: ":attribute :date osteko data edo data berdina izan behar da.",
+  alpha: ":attribute hizkiak besterik ezin ditu izan.",
+  alpha_dash: ":attribute hizkiak, zenbakiak eta marrak besterik ezin ditu izan.",
+  alpha_num: ":attribute hizkiak eta zenbakiak besterik ezin ditu izan.",
+  attributes: {},
+  array: ":attribute bilduma izan behar da.",
+  before: ":attribute :date aurreko data izan behar da.",
+  before_or_equal: ":attribute :date aurreko data edo data berdina izan behar da.",
+  between: {
+    numeric: ":attribute :min eta :max artean egon behar da.",
+    file: ":attribute-k :min eta :max kilobyte arteko pisua izan behar du.",
+    string: ":attribute :min eta :max karaktere artean egon behar da.",
+    array: ":attribute-k :min eta :max arteko ale kantitatea euki behar du."
+  },
+  boolean: ":attribute-ren balioa egia edo gezurra izan behar da.",
+  confirmed: ":attribute-ren konfirmazioa ez dator bat.",
+  date: ":attribute ez da baliozko data.",
+  date_format: ":attribute datak ez du :format formatua.",
+  different: ":attribute eta :other ezberdinak izan behar dira.",
+  digits: ":attribute-k :digits digitu euki behar ditu.",
+  digits_between: ":attribute-k :min eta :max arteko digitu kantitatea euki behar du.",
+  dimensions: ":attribute-k ez ditu irudi neurri aproposak.",
+  distinct: ":attribute-k balio bikoiztua dauka.",
+  email: ":attribute-k baliozko posta helbidea euki behar du.",
+  exists: "Hautatutako :attribute baliogabea da.",
+  file: ":attribute fitxategi bat izan behar da.",
+  filled: ":attribute-k balioren bat euki behar du.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute irudi bat izan behar da.",
+  in: "Hautatutako :attribute baliogabea da.",
+  in_array: ":attribute ez da :other-en existizen.",
+  integer: ":attribute zenbaki osoa izan behar da.",
+  ip: ":attribute baliozko IP helbidea izan behar da.",
+  ipv4: ":attribute baliozko IPv4 helbidea izan behar da.",
+  ipv6: ":attribute baliozko IPv6 helbidea izan behar da.",
+  json: ":attribute-k baliozko JSON karaktere-katea euki behar du.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: ":attribute ezin da :max baino handiagoa izan.",
+    file: ":attribute-k ezin du :max kilobyte baino gehiagoko pisua euki.",
+    string: ":attribute-k ezin du :max karaktere baino gehiago euki.",
+    array: ":attribute-k ezin du :max ale baino gehiago euki."
+  },
+  mimes: ":attribute :values motatako fitxategia izan behar da.",
+  mimetypes: ":attribute :values motatako fitxategia izan behar da.",
+  min: {
+    numeric: ":attribute-k gutxienez :min-eko tamaina izan behar du.",
+    file: ":attribute-k gutxienez :min kilobyteko pisua euki behar du.",
+    string: ":attribute-k gutxienez :min karaktere euki behar ditu.",
+    array: ":attribute-k gutxienez :min ale euki behar ditu."
+  },
+  not_in: "Hautatutako :attribute baliogabea da.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: ":attribute zenbaki bat izan behar da.",
+  present: ":attribute bertan egon behar da.",
+  regex: ":attribute-k ez dauka formatu egokirik.",
+  required: ":attribute derrigorrezkoa da.",
+  required_if: ":attribute derrigorrezkoa da :other :value denean.",
+  required_unless: ":attribute derrigorrezkoa da :other :values-en egon ezean.",
+  required_with: ":attribute derrigorrezkoa da :values bertan dagoenean.",
+  required_with_all: ":attribute derrigorrezkoa da :values bertan dagoenean.",
+  required_without: ":attribute derrigorrezkoa da :values bertan ez dagoenean.",
+  required_without_all: ":attribute derrigorrezkoa da :values bertan ez dagoenean.",
+  same: ":attribute eta :other bat etorri behar dira.",
+  size: {
+    numeric: ":attribute-k :size-eko tamaina izan behar du.",
+    file: ":attribute-k :size kilobyteko pisua euki behar du.",
+    string: ":attribute-k :size karaktere euki beha ditu.",
+    array: ":attribute-k :size ale euki behar ditu."
+  },
+  string: ":attribute karaktere-katea izan behar da.",
+  timezone: ":attribute baliozko gunea izan behar da.",
+  unique: ":attribute jadanik erregistratua izan da.",
+  uploaded: ":attribute igotzerakoan huts egin du.",
+  url: ":attribute-k ez dauka formatu egokirik."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/fa.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/fa.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'فیلد :attribute می بایست تایید شود',
+  alpha: 'فیلد :attribute می بایست فقط شامل حروف انگلیسی باشد',
+  alpha_dash: 'فیلد :attribute می بایست فقط شامل حروف انگلیسی و خط تیره و زیرخط باشد',
+  alpha_num: 'فیلد :attribute می بایست فقط شامل حروف و اعداد باشد',
+  between: 'فیلد :attribute می بایست بزرگتر از :min و کوچکتر از :max باشد',
+  confirmed: 'تطبیق فیلد :attribute صحیح نمی باشد',
+  email: 'فرمت ایمیل وارد شده در :attribute صحیح نمی‌باشد',
+  date: 'تاریخ درج شده در فیلد :attribute صحیح نیست',
+  def: 'فیلد :attribute اشکال دارد',
+  digits: 'فیلد :attribute می بایست شامل :digits رقم باشد',
+  digits_between: ':attribute باید بین :min و :max رقم باشد.',
+  different: 'فیلد :attribute می بایست مقداری غیر از :different داشته باشد',
+  in: 'فیلد :attribute انتخاب شده صحیح نمی باشد',
+  integer: 'فیلد :attribute می بایست عددی باشد',
+  hex: 'فیلد :attribute باید در فرمت مبنای ۱۶ باشد',
+  min: {
+    numeric: 'فیلد :attribute می بایست از :min بزرگتر باشد',
+    string: 'فیلد :attribute بایستی حداقل :min کاراکتر طول داشته باشد'
+  },
+  max: {
+    numeric: 'فیلد :attribute می بایست از :max کوچکتر باشد',
+    string: 'فیلد :attribute نباید بیشتر از :max کاراکتر طول داشته باشد'
+  },
+  not_in: 'فیلد :attribute انتخاب شده صحیح نمی باشد',
+  numeric: 'فیلد :attribute می بایست عددی باشد',
+  present: 'The :attribute field must be present (but can be empty).',
+  required: 'فیلد :attribute الزامی است',
+  required_if: 'در صورت دادن :value به :other تکمیل فیلد :attribute الزامی است',
+  same: 'فیلد :attribute می بایست با فیلد :same یکی باشد',
+  size: {
+    numeric: 'فیلد :attribute می بایست :size باشد',
+    string: 'فیلد :attribute می بایست :size کاراکتر طول داشته باشد'
+  },
+  string: 'فیلد :attribute می بایست متنی باشد',
+  url: 'آدرس فیلد :attribute صحیح نمی باشد',
+  regex: 'فرمت آدرس :attribute صحیح نمی باشد',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/fi.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/fi.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute on oltava hyväksytty.',
+  after: ':attribute on oltava :after jälkeen.',
+  after_or_equal: ':attribute täytyy olla sama kuin :after_or_equal tai sen jälkeen.',
+  alpha: ':attribute kenttä saa sisältää ainoastaan kirjaimia.',
+  alpha_dash: ':attribute kenttä saa sisältää ainoastaan kirjaimia tai numeroita, sekä pisteitä ja alaviivoja.',
+  alpha_num: ':attribute kenttä saa sisältää ainoastaan kirjaimia tai numeroita.',
+  before: ':attribute on oltava ennen kuin :before.',
+  before_or_equal: ':attribute on oltava sama tai ennen kuin :before_or_equal.',
+  between: ':attribute on oltava :min ja :max väliltä.',
+  confirmed: ':attribute vahvistus ei täsmää.',
+  email: ':attribute on väärässä muodossa.',
+  date: ':attribute ei ole päivämäärä.',
+  def: ':attribute sisältää virheitä.',
+  digits: ':attribute on oltava :digits numeroa pitkä.',
+  digits_between: 'Kentän :attribute arvon tulee olla :min - :max numeroa.',
+  different: ':attribute ei saa olla yhtä kuin :different.',
+  in: 'Valittu :attribute ei kelpaa.',
+  integer: ':attribute ei ole numero.',
+  hex: ':attribute on oltava heksadesimaali.',
+  min: {
+    numeric: ':attribute on oltava vähintään :min.',
+    string: ':attribute on oltava vähintään :min merkkiä pitkä.'
+  },
+  max: {
+    numeric: ':attribute on oltava enintään :max.',
+    string: ':attribute on oltava enintään :max merkkiä pitkä.'
+  },
+  not_in: 'Valittu :attribute ei kelpaa.',
+  numeric: ':attribute on oltava numero.',
+  present: ':attribute kenttä on oltava (mutta saa olla tyhjä).',
+  required: ':attribute kenttä on pakollinen.',
+  required_if: ':attribute kenttä on pakollinen, jos kenttä :other on :value.',
+  required_unless: ':attribute kenttä on pakollinen, jos kenttä :other ei ole :value.',
+  required_with: ':attribute kenttä on pakollinen, jos kenttä :field ei ole tyhjä.',
+  required_with_all: ':attribute kenttä on pakollinen, jos kentät :fields eivät ole tyhjiä.',
+  required_without: ':attribute kenttä on pakollinen, jos kenttä :field on tyhjä.',
+  required_without_all: ':attribute kenttä on pakollinen, jos kentät :fields ovat tyhjiä.',
+  same: ':attribute ja :same on oltava samat.',
+  size: {
+    numeric: ':attribute on oltava :size.',
+    string: ':attribute on oltava :size merkkiä pitkä.'
+  },
+  string: ':attribute on oltava merkkijono.',
+  url: ':attribute on väärässä muodossa.',
+  regex: ':attribute on väärässä muodossa.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/fr.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/fr.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'Le champ :attribute doit être accepté.',
+  alpha: 'Le champ :attribute ne peut contenir que des caractères alphabétiques.',
+  alpha_dash: 'Le champ :attribute ne peut contenir que des caractères alphanumériques, des tirets et des underscores.',
+  alpha_num: 'Le champ :attribute ne peut contenir que des caractères alphanumériques.',
+  between: 'La longueur du champ :attribute doit être comprise entre :min and :max.',
+  confirmed: 'Le champ :attribute n\'est pas confirmé.',
+  email: 'Le champ :attribute contient un format invalide.',
+  def: 'Le champ :attribute contient un attribut erroné.',
+  digits: 'Le champ :attribute doit être composé de :digits chiffres.',
+  digits_between: 'Le champ :attribute doit contenir entre :min et :max chiffres.',
+  different: 'Les champs :attribute et :different doivent être différents.',
+  in: 'Le champ :attribute est invalide.',
+  integer: 'Le champ :attribute doit être un entier.',
+  hex: 'Le champ :attribute doit être au format hexadécimal.',
+  min: {
+    numeric: 'Le champ :attribute doit être supérieur à :min.',
+    string: 'Le champ :attribute doit contenir plus de :min caractères.'
+  },
+  max: {
+    numeric: 'Le champ :attribute doit être inférieur à :max.',
+    string: 'Le champ :attribute doit contenir moins de :max caractères.'
+  },
+  not_in: 'Le champ :attribute est invalide.',
+  numeric: 'Le champ :attribute doit être un chiffre.',
+  present: 'Le champ :attribute doit être présent (mais peut être vide).',
+  required: 'Le champ :attribute est requis.',
+  required_if: 'Le champ :attribute est requis quand :other est :value.',
+  same: 'Les champs :attribute et :same doivent correspondre.',
+  size: {
+    numeric: 'Le champ :attribute doit être égal à :size.',
+    string: 'Le champ :attribute doit contenir :size caractères.'
+  },
+  url: 'Le format du champ :attribute est invalide.',
+  regex: 'Le format du champ :attribute est invalide.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/hr.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/hr.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Polje :attribute mora biti prihvaćeno.",
+  active_url: "Polje :attribute nije ispravan URL.",
+  after: "Polje :attribute mora biti datum nakon :date.",
+  after_or_equal: "Polje :attribute mora biti datum veći ili jednak :date.",
+  alpha: "Polje :attribute smije sadržavati samo slova.",
+  alpha_dash: "Polje :attribute smije sadržavati samo slova, brojeve i crtice.",
+  alpha_num: "Polje :attribute smije sadržavati samo slova i brojeve.",
+  attributes: {},
+  array: "Polje :attribute mora biti niz.",
+  before: "Polje :attribute mora biti datum prije :date.",
+  before_or_equal: "Polje :attribute mora biti datum manji ili jednak :date.",
+  between: {
+    numeric: "Polje :attribute mora biti između :min - :max.",
+    file: "Polje :attribute mora biti između :min - :max kilobajta.",
+    string: "Polje :attribute mora biti između :min - :max znakova.",
+    array: "Polje :attribute mora imati između :min - :max stavki."
+  },
+  boolean: "Polje :attribute mora biti false ili true.",
+  confirmed: "Potvrda polja :attribute se ne podudara.",
+  date: "Polje :attribute nije ispravan datum.",
+  date_format: "Polje :attribute ne podudara s formatom :format.",
+  different: "Polja :attribute i :other moraju biti različita.",
+  digits: "Polje :attribute mora sadržavati :digits znamenki.",
+  digits_between: "Polje :attribute mora imati između :min i :max znamenki.",
+  dimensions: "Polje :attribute ima neispravne dimenzije slike.",
+  distinct: "Polje :attribute ima dupliciranu vrijednost.",
+  email: "Polje :attribute mora biti ispravna e-mail adresa.",
+  exists: "Odabrano polje :attribute nije ispravno.",
+  file: "Polje :attribute mora biti datoteka.",
+  filled: "Polje :attribute je obavezno.",
+  gt: {
+    numeric: "Polje :attribute mora biti veće od :value.",
+    file: "Polje :attribute mora biti veće od :value kilobajta.",
+    string: "Polje :attribute mora biti veće od :value karaktera.",
+    array: "Polje :attribute mora biti veće od :value stavki."
+  },
+  gte: {
+    numeric: "Polje :attribute mora biti veće ili jednako :value.",
+    file: "Polje :attribute mora biti veće ili jednako :value kilobajta.",
+    string: "Polje :attribute mora biti veće ili jednako :value znakova.",
+    array: "Polje :attribute mora imati :value stavki ili više."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Polje :attribute mora biti slika.",
+  in: "Odabrano polje :attribute nije ispravno.",
+  in_array: "Polje :attribute ne postoji u :other.",
+  integer: "Polje :attribute mora biti broj.",
+  ip: "Polje :attribute mora biti ispravna IP adresa.",
+  ipv4: "Polje :attribute mora biti ispravna IPv4 adresa.",
+  ipv6: "Polje :attribute mora biti ispravna IPv6 adresa.",
+  json: "Polje :attribute mora biti ispravan JSON string.",
+  lt: {
+    numeric: "Polje :attribute mora biti manje od :value.",
+    file: "Polje :attribute mora biti manje od :value kilobajta.",
+    string: "Polje :attribute mora biti manje od :value znakova.",
+    array: "Polje :attribute mora biti manje od :value stavki."
+  },
+  lte: {
+    numeric: "Polje :attribute mora biti manje ili jednako :value.",
+    file: "Polje :attribute mora biti manje ili jednako :value kilobajta.",
+    string: "Polje :attribute mora biti manje ili jednako :value znakova.",
+    array: "Polje :attribute ne smije imati više od :value stavki."
+  },
+  max: {
+    numeric: "Polje :attribute mora biti manje od :max.",
+    file: "Polje :attribute mora biti manje od :max kilobajta.",
+    string: "Polje :attribute mora sadržavati manje od :max znakova.",
+    array: "Polje :attribute ne smije imati više od :max stavki."
+  },
+  mimes: "Polje :attribute mora biti datoteka tipa: :values.",
+  mimetypes: "Polje :attribute mora biti datoteka tipa: :values.",
+  min: {
+    numeric: "Polje :attribute mora biti najmanje :min.",
+    file: "Polje :attribute mora biti najmanje :min kilobajta.",
+    string: "Polje :attribute mora sadržavati najmanje :min znakova.",
+    array: "Polje :attribute mora sadržavati najmanje :min stavki."
+  },
+  not_in: "Odabrano polje :attribute nije ispravno.",
+  not_regex: "Format polja :attribute je neispravan.",
+  numeric: "Polje :attribute mora biti broj.",
+  present: "Polje :attribute mora biti prisutno.",
+  regex: "Polje :attribute se ne podudara s formatom.",
+  required: "Polje :attribute je obavezno.",
+  required_if: "Polje :attribute je obavezno kada polje :other sadrži :value.",
+  required_unless: "Polje :attribute je obavezno osim :other je u :values.",
+  required_with: "Polje :attribute je obavezno kada postoji polje :values.",
+  required_with_all: "Polje :attribute je obavezno kada postje polja :values.",
+  required_without: "Polje :attribute je obavezno kada ne postoji polje :values.",
+  required_without_all: "Polje :attribute je obavezno kada nijedno od polja :values ne postoji.",
+  same: "Polja :attribute i :other se moraju podudarati.",
+  size: {
+    numeric: "Polje :attribute mora biti :size.",
+    file: "Polje :attribute mora biti :size kilobajta.",
+    string: "Polje :attribute mora biti :size znakova.",
+    array: "Polje :attribute mora sadržavati :size stavki."
+  },
+  string: "Polje :attribute mora biti string.",
+  timezone: "Polje :attribute mora biti ispravna vremenska zona.",
+  unique: "Polje :attribute već postoji.",
+  uploaded: "Polje :attribute nije uspešno učitano.",
+  url: "Polje :attribute nije ispravnog formata."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/hu.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/hu.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "A(z) :attribute el kell legyen fogadva!",
+  active_url: "A(z) :attribute nem érvényes url!",
+  after: "A(z) :attribute :date utáni dátum kell, hogy legyen!",
+  after_or_equal: "A(z) :attribute nem lehet korábbi dátum, mint :date!",
+  alpha: "A(z) :attribute kizárólag betűket tartalmazhat!",
+  alpha_dash: "A(z) :attribute kizárólag betűket, számokat és kötőjeleket tartalmazhat!",
+  alpha_num: "A(z) :attribute kizárólag betűket és számokat tartalmazhat!",
+  attributes: {},
+  array: "A(z) :attribute egy tömb kell, hogy legyen!",
+  before: "A(z) :attribute :date előtti dátum kell, hogy legyen!",
+  before_or_equal: "A(z) :attribute nem lehet későbbi dátum, mint :date!",
+  between: {
+    numeric: "A(z) :attribute :min és :max közötti szám kell, hogy legyen!",
+    file: "A(z) :attribute mérete :min és :max kilobájt között kell, hogy legyen!",
+    string: "A(z) :attribute hossza :min és :max karakter között kell, hogy legyen!",
+    array: "A(z) :attribute :min - :max közötti elemet kell, hogy tartalmazzon!"
+  },
+  boolean: "A(z) :attribute mező csak true vagy false értéket kaphat!",
+  confirmed: "A(z) :attribute nem egyezik a megerősítéssel.",
+  date: "A(z) :attribute nem érvényes dátum.",
+  date_format: "A(z) :attribute nem egyezik az alábbi dátum formátummal :format!",
+  different: "A(z) :attribute és :other értékei különbözőek kell, hogy legyenek!",
+  digits: "A(z) :attribute :digits számjegyű kell, hogy legyen!",
+  digits_between: "A(z) :attribute értéke :min és :max közötti számjegy lehet!",
+  dimensions: "A(z) :attribute felbontása nem megfelelő.",
+  distinct: "A(z) :attribute értékének egyedinek kell lennie!",
+  email: "A(z) :attribute nem érvényes email formátum.",
+  exists: "A(z) :attribute már létezik.",
+  file: "A(z) :attribute fájl kell, hogy legyen!",
+  filled: "A(z) :attribute megadása kötelező!",
+  gt: {
+    numeric: "A(z) :attribute nagyobb kell, hogy legyen, mint :value!",
+    file: "A(z) :attribute mérete nagyobb kell, hogy legyen, mint :value kilobájt.",
+    string: "A(z) :attribute hosszabb kell, hogy legyen, mint :value karakter.",
+    array: "A(z) :attribute több, mint :value elemet kell, hogy tartalmazzon."
+  },
+  gte: {
+    numeric: "A(z) :attribute nagyobb vagy egyenlő kell, hogy legyen, mint :value!",
+    file: "A(z) :attribute mérete nem lehet kevesebb, mint :value kilobájt.",
+    string: "A(z) :attribute hossza nem lehet kevesebb, mint :value karakter.",
+    array: "A(z) :attribute legalább :value elemet kell, hogy tartalmazzon."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "A(z) :attribute képfájl kell, hogy legyen!",
+  in: "A kiválasztott :attribute érvénytelen.",
+  in_array: "A(z) :attribute értéke nem található a(z) :other értékek között.",
+  integer: "A(z) :attribute értéke szám kell, hogy legyen!",
+  ip: "A(z) :attribute érvényes IP cím kell, hogy legyen!",
+  ipv4: "A(z) :attribute érvényes IPv4 cím kell, hogy legyen!",
+  ipv6: "A(z) :attribute érvényes IPv6 cím kell, hogy legyen!",
+  json: "A(z) :attribute érvényes JSON szöveg kell, hogy legyen!",
+  lt: {
+    numeric: "A(z) :attribute kisebb kell, hogy legyen, mint :value!",
+    file: "A(z) :attribute mérete kisebb kell, hogy legyen, mint :value kilobájt.",
+    string: "A(z) :attribute rövidebb kell, hogy legyen, mint :value karakter.",
+    array: "A(z) :attribute kevesebb, mint :value elemet kell, hogy tartalmazzon."
+  },
+  lte: {
+    numeric: "A(z) :attribute kisebb vagy egyenlő kell, hogy legyen, mint :value!",
+    file: "A(z) :attribute mérete nem lehet több, mint :value kilobájt.",
+    string: "A(z) :attribute hossza nem lehet több, mint :value karakter.",
+    array: "A(z) :attribute legfeljebb :value elemet kell, hogy tartalmazzon."
+  },
+  max: {
+    numeric: "A(z) :attribute értéke nem lehet nagyobb, mint :max!",
+    file: "A(z) :attribute mérete nem lehet több, mint :max kilobájt.",
+    string: "A(z) :attribute hossza nem lehet több, mint :max karakter.",
+    array: "A(z) :attribute legfeljebb :max elemet kell, hogy tartalmazzon."
+  },
+  mimes: "A(z) :attribute kizárólag az alábbi fájlformátumok egyike lehet: :values.",
+  mimetypes: "A(z) :attribute kizárólag az alábbi fájlformátumok egyike lehet: :values.",
+  min: {
+    numeric: "A(z) :attribute értéke nem lehet kisebb, mint :min!",
+    file: "A(z) :attribute mérete nem lehet kevesebb, mint :min kilobájt.",
+    string: "A(z) :attribute hossza nem lehet kevesebb, mint :min karakter.",
+    array: "A(z) :attribute legalább :min elemet kell, hogy tartalmazzon."
+  },
+  not_in: "A(z) :attribute értéke érvénytelen.",
+  not_regex: "A(z) :attribute formátuma érvénytelen.",
+  numeric: "A(z) :attribute szám kell, hogy legyen!",
+  present: "A(z) :attribute mező nem található!",
+  regex: "A(z) :attribute formátuma érvénytelen.",
+  required: "A(z) :attribute megadása kötelező!",
+  required_if: "A(z) :attribute megadása kötelező, ha a(z) :other értéke :value!",
+  required_unless: "A(z) :attribute megadása kötelező, ha a(z) :other értéke nem :values!",
+  required_with: "A(z) :attribute megadása kötelező, ha a(z) :values érték létezik.",
+  required_with_all: "A(z) :attribute megadása kötelező, ha a(z) :values értékek léteznek.",
+  required_without: "A(z) :attribute megadása kötelező, ha a(z) :values érték nem létezik.",
+  required_without_all: "A(z) :attribute megadása kötelező, ha egyik :values érték sem létezik.",
+  same: "A(z) :attribute és :other mezőknek egyezniük kell!",
+  size: {
+    numeric: "A(z) :attribute értéke :size kell, hogy legyen!",
+    file: "A(z) :attribute mérete :size kilobájt kell, hogy legyen!",
+    string: "A(z) :attribute hossza :size karakter kell, hogy legyen!",
+    array: "A(z) :attribute :size elemet kell tartalmazzon!"
+  },
+  string: "A(z) :attribute szöveg kell, hogy legyen.",
+  timezone: "A(z) :attribute nem létező időzona.",
+  unique: "A(z) :attribute már foglalt.",
+  uploaded: "A(z) :attribute feltöltése sikertelen.",
+  url: "A(z) :attribute érvénytelen link."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/id.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/id.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute harus disetujui.',
+  after: ':attribute harus setelah :after.',
+  after_or_equal: ':attribute harus sama dengan atau setelah :after_or_equal.',
+  alpha: ':attribute hanya boleh berisi huruf.',
+  alpha_dash: ':attribute hanya boleh berisi huruf, - atau _.',
+  alpha_num: ':attribute hanya boleh berisi huruf dan angka.',
+  before: ':attribute harus sebelum :before.',
+  before_or_equal: ':attribute harus sama dengan atau sebelum :before_or_equal.',
+  between: ':attribute harus berisi antara :min dan :max.',
+  confirmed: ':attribute konfirmasi tidak sama.',
+  email: ':attribute harus berupa email.',
+  date: ':attribute format tanggal tidak benar.',
+  def: ':attribute attribute has errors.',
+  digits: ':attribute harus :digits digit.',
+  digits_between: 'Isian :attribute harus antara angka :min dan :max.',
+  different: ':attribute dan :different harus berbeda.',
+  in: ':attribute tidak benar.',
+  integer: ':attribute harus berupa angka.',
+  hex: ':attribute harus berformat heksadesimal',
+  min: {
+    numeric: ':attribute minimal :min.',
+    string: ':attribute minimal :min karakter.'
+  },
+  max: {
+    numeric: ':attribute harus lebih kecil :max.',
+    string: ':attribute maksimal :max karakter.'
+  },
+  not_in: ':attribute tidak benar.',
+  numeric: ':attribute harus berupa angka.',
+  present: ':attribute harus ada (tapi boleh kosong).',
+  required: ':attribute tidak boleh kosong.',
+  required_if: ':attribute harus di isi jika :other berisi :value.',
+  required_unless: ':attribute harus di isi jika :other tidak berisi :value.',
+  required_with: ':attribute harus di isi jika :field tidak kosong.',
+  required_with_all: ':attribute harus di isi jika :fields tidak kosong.',
+  required_without: ':attribute harus di isi jika :field kosong.',
+  required_without_all: ':attribute harus di isi jika :fields kosong.',
+  same: ':attribute dan :same harus sama.',
+  size: {
+    numeric: ':attribute harus berisi :size.',
+    string: ':attribute harus berisi :size karakter.'
+  },
+  string: ':attribute harus berupa string.',
+  url: ':attribute harus berupa format url.',
+  regex: ':attribute format tidak benar.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/it.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/it.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'Il campo :attribute deve essere accettato.',
+  alpha: 'Il campo :attribute deve contenere sono caratteri alfabetici.',
+  alpha_dash: 'Il campo :attribute può contenere solo caratteri alfanumerici oltre a trattini e trattini bassi.',
+  alpha_num: 'Il campo :attribute deve essere alfanumerico.',
+  between: 'Il campo :attribute deve essere compreso tra :min e :max.',
+  confirmed: 'Il campo conferma :attribute non è uguale.',
+  email: 'Il formato dell\'attributo :attribute non è valido.',
+  def: 'Gli attributi del campo :attribute contengono degli errori.',
+  digits: 'Il campo :attribute deve essere di :digits cifre.',
+  digits_between: 'Il campo :attribute deve essere tra :min e :max cifre.',
+  different: 'Il campo :attribute e :different devo essere diversi.',
+  in: 'Il valore del campo :attribute non è valido.',
+  integer: 'Il campo :attribute deve essere un valore intero.',
+  hex: 'Il campo :attribute deve essere in formato esadecimale',
+  min: {
+    numeric: 'Il campo :attribute deve essere maggiore o uguale di :min.',
+    string: 'Il campo :attribute deve essere composto da almeno :min caratteri.'
+  },
+  max: {
+    numeric: 'Il campo :attribute deve essere minore o uguale di :max.',
+    string: 'Il campo :attribute deve essere composto da massimo :max caratteri.'
+  },
+  not_in: 'Il campo :attribute non è valido.',
+  numeric: 'Il campo :attribute deve essere un numero.',
+  present: 'Il campo :attribute deve essere presente (ma può essere vuoto).',
+  required: 'Il campo :attribute è richiesto.',
+  required_if: 'Il campo :attribute è richiesto quando il campo :other è uguale a :value.',
+  same: 'I campi :attribute e :same devono essere uguali.',
+  size: {
+    numeric: 'La dimensione del campo :attribute deve essere uguale a :size.',
+    string: 'Il campo :attribute deve essere di :size caratteri.'
+  },
+  string: 'Il campo :attribute deve essere una stringa.',
+  url: 'Il formato del campo :attribute non è valido.',
+  regex: 'Il formato del campo :attribute non è valido.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ja.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ja.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attributeを確認してください。',
+  after: ':attributeは:afterより後の日付を入力してください。',
+  after_or_equal: ':attributeは:after_or_equal以降の日付を入力してください。',
+  alpha: ':attributeは英字のみで入力してください。',
+  alpha_dash: ':attributeは英字とダッシュと下線のみで入力してください。',
+  alpha_num: ':attributeは英数字のみで入力してください。',
+  before: ':attributeは:beforeより前の日付を入力してください。',
+  before_or_equal: ':attributeは:before_or_equal以前の日付を入力してください。',
+  between: {
+    numeric: ':attributeは:min〜:maxの間で指定してください',
+    string: ':attributeは:min〜:max文字を入力してください'
+  },
+  confirmed: ':attributeは確認が一致しません。',
+  email: ':attributeは正しいメールアドレスを入力してください。',
+  date: ':attributeは正しい日付形式を入力してください',
+  def: ':attributeは検証エラーが含まれています。',
+  digits: ':attributeは:digitsの数字のみで入力してください。',
+  digits_between: ':attributeは、:min桁から:max桁にしてください。',
+  different: ':attributeと:differentは同じであってはなりません。',
+  in: '選択された:attributeは無効です。',
+  integer: ':attributeは整数で入力してください。',
+  hex: ':attributeは16進数で入力してください。',
+  min: {
+    numeric: ':attributeは:min以上で入力してください。',
+    string: ':attributeは:min文字以上で入力してください。'
+  },
+  max: {
+    numeric: ':attributeは:max以下で入力してください。',
+    string: ':attributeは:max文字以下で入力してください。'
+  },
+  not_in: '選択された:attributeは無効です。',
+  numeric: ':attributeは数値で入力してください。',
+  present: ':attributeを入力してください（空欄も可能です）。',
+  required: ':attributeは必須です。',
+  required_if: ':otherは:valueになったら:attributeは必須です。',
+  required_unless: ':otherが:valueでなければ:attributeは必須です。',
+  required_with: ':fieldが空欄でなければ:attributeは必須です。',
+  required_with_all: ':fieldsが空欄でなければ:attributeは必須です。',
+  required_without: ':fieldが空欄なら:attributeは必須です。',
+  required_without_all: ':fieldsが空欄なら:attributeは必須です。',
+  same: ':attributeと:sameは同じでなければなりません。',
+  size: {
+    numeric: ':attributeは:sizeを入力してください。',
+    string: ':attributeは:size文字で入力してください。'
+  },
+  string: ':attributeは文字のみで入力してください。',
+  url: ':attributeは正しいURIを入力してください。',
+  regex: ':attributeの値はパターンにマッチする必要があります。',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ka.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ka.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute უნდა იყოს მონიშნული.",
+  active_url: ":attribute უნდა იყოს URL მისამართი.",
+  after: ":attribute უნდა იყოს :date-ის შემდეგ.",
+  after_or_equal: ":attribute უნდა იყოს :date-ის შემდეგ ან მისი ტოლი.",
+  alpha: ":attribute უნდა შეიცავდეს მხოლოდ ასოებს.",
+  alpha_dash: ":attribute უნდა შეიცავდეს მხოლოდ ასოებს, რიცხვებს და ტირეებს.",
+  alpha_num: ":attribute უნდა შეიცავდეს მხოლოდ ასოებს და რიცხვებს.",
+  attributes: {},
+  array: ":attribute უნდა იყოს მასივი.",
+  before: ":attribute უნდა იყოს :date-მდე.",
+  before_or_equal: ":attribute უნდა იყოს :date-მდე ან მისი ტოლი.",
+  between: {
+    numeric: ":attribute უნდა იყოს :min-სა და :max-ს შორის.",
+    file: ":attribute უნდა იყოს :min-სა და :max კილობაიტს შორის.",
+    string: ":attribute უნდა იყოს :min-სა და :max სიმბოლოს შორის.",
+    array: ":attribute-ის რაოდენობა უნდა იყოს :min-დან :max-მდე."
+  },
+  boolean: ":attribute უნდა იყოს true, false, 0 ან 1.",
+  confirmed: ":attribute არ ემთხვევა დადასტურებას.",
+  date: ":attribute შეიცავს თარიღის არასწორ ფორმატს.",
+  date_format: ":attribute არ ემთხვევა თარიღის ფორმატს: :format.",
+  different: ":attribute და :other არ უნდა ემთხვეოდეს ერთმანეთს.",
+  digits: ":attribute უნდა შედგებოდეს :digits ციფრისგან.",
+  digits_between: ":attribute უნდა შედგებოდეს :min-დან :max ციფრამბდე.",
+  dimensions: ":attribute შეიცავს სურათის არასწორ ზომებს.",
+  distinct: ":attribute უნდა იყოს უნიკალური.",
+  email: ":attribute უნდა იყოს სწორი ელ.ფოსტა.",
+  exists: "ასეთი :attribute არ არსებობს.",
+  file: ":attribute უნდა იყოს ფაილი.",
+  filled: ":attribute აუცილებელია.",
+  gt: {
+    numeric: ":attribute უნდა იყოს :value-ზე მეტი.",
+    file: ":attribute უნდა იყოს :value კილობაიტზე მეტი.",
+    string: ":attribute უნდა შეიცავდეს :value სიმბოლოზე მეტს.",
+    array: ":attribute უნდა შეიცავლდეს :value ელემენტზე მეტს."
+  },
+  gte: {
+    numeric: ":attribute უნდა იყოს მინიმუმ :value.",
+    file: ":attribute უნდა იყოს მინიმუმ :value კილობაიტი.",
+    string: ":attribute უნდა შეიცავდეს მინიმუმ :value სიმბოლოს.",
+    array: ":attribute უნდა შეიცავდეს მინიმუმ :value ელემენტს."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute უნდა იყოს სურათი.",
+  in: "მითითებული :attribute არასწორია.",
+  in_array: ":attribute უნდა არსებობდეს :other-ში.",
+  integer: ":attribute უნდა იყოს მთელი რიცხვი.",
+  ip: ":attribute უნდა იყოს IP მისამართი.",
+  ipv4: ":attribute უნდა იყოს IPv4 მისამართი.",
+  ipv6: ":attribute უნდა იყოს IPv6 მისამართი.",
+  json: ":attribute უნდა იყოს JSON ტიპის.",
+  lt: {
+    numeric: ":attribute უნდა იყოს :value-ზე ნაკლები.",
+    file: ":attribute უნდა იყოს :value კილობაიტზე ნაკლები.",
+    string: ":attribute უნდა შეიცავდეს :value სიმბოლოზე ნაკლებს.",
+    array: ":attribute უნდა შეიცავლდეს :value ელემენტზე ნაკლებს."
+  },
+  lte: {
+    numeric: ":attribute უნდა იყოს მაქსიმუმ :value.",
+    file: ":attribute უნდა იყოს მაქსიმუმ :value კილობაიტი.",
+    string: ":attribute უნდა შეიცავდეს მაქსიმუმ :value სიმბოლოს.",
+    array: ":attribute უნდა შეიცავდეს მაქსიმუმ :value ელემენტს."
+  },
+  max: {
+    numeric: ":attribute არ უნდა აღემატებოდეს :max-ს.",
+    file: ":attribute არ უნდა აღემატებოდეს :max კილობაიტს.",
+    string: ":attribute არ უნდა აღემატებოდეს :max სიმბოლოს.",
+    array: ":attribute-ის რაოდენობა არ უნდა აღემატებოდეს :max-ს."
+  },
+  mimes: ":attribute უნდა იყოს შემდეგი ტიპის: :values.",
+  mimetypes: ":attribute უნდა იყოს შემდეგი ტიპის: :values.",
+  min: {
+    numeric: ":attribute უნდა იყოს მინიმუმ :min.",
+    file: ":attribute უნდა იყოს მინიმუმ :min კილობაიტი.",
+    string: ":attribute უნდა შეიცავდეს მინიმუმ :min სიმბოლოს.",
+    array: ":attribute უნდა იყოს მინიმუმ :min."
+  },
+  not_in: "მითითებული :attribute არასწორია.",
+  not_regex: ":attribute არასწორ ფორმატშია.",
+  numeric: ":attribute უნდა იყოს რიცხვი.",
+  present: ":attribute უნდა არსებობდეს, თუნდაც ცარიელი.",
+  regex: ":attribute არ ემთხვევა ფორმატს.",
+  required: ":attribute აუცილებელია.",
+  required_if: ":attribute აუცილებელია, თუ :other-ის მნიშვნელობა ემთხვევა :value-ს.",
+  required_unless: ":attribute აუცილებელია, თუ :values არ შეიცავს :other-ს.",
+  required_with: ":attribute აუცილებელია, თუ :values მითითებულია.",
+  required_with_all: ":attribute აუცილებელია, თუ :values მითითებულია.",
+  required_without: ":attribute აუცილებელია, თუ :values არ არის მითითებული.",
+  required_without_all: ":attribute აუცილებელია, თუ :values არ არის მითითებული.",
+  same: ":attribute და :other უნდა ემთხვეოდეს ერთმანეთს.",
+  size: {
+    numeric: ":attribute უნდა იყოს :size-ის ტოლი.",
+    file: ":attribute უნდა იყოს :size კილობაიტი.",
+    string: ":attribute უნდა შედგებოდეს :size სიმბოლოსგან.",
+    array: ":attribute უნდა შეიცავდეს :size ელემენტს."
+  },
+  string: ":attribute უნდა იყოს ტექსტი.",
+  timezone: ":attribute უნდა იყოს სასაათო სარტყელი.",
+  unique: "ასეთი :attribute უკვე არსებობს.",
+  uploaded: ":attribute-ის ატვირთვა ვერ მოხერხდა.",
+  url: ":attribute უნდა იყოს URL მისამართი."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ko.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ko.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute을(를) 동의해야 합니다.",
+  active_url: ":attribute은(는) 유효한 URL이 아닙니다.",
+  after: ":attribute은(는) :date 이후 날짜여야 합니다.",
+  after_or_equal: ":attribute은(는) :date 이후 날짜이거나 같은 날짜여야 합니다.",
+  alpha: ":attribute은(는) 문자만 포함할 수 있습니다.",
+  alpha_dash: ":attribute은(는) 문자, 숫자, 대쉬(-)만 포함할 수 있습니다.",
+  alpha_num: ":attribute은(는) 문자와 숫자만 포함할 수 있습니다.",
+  attributes: {},
+  array: ":attribute은(는) 배열이어야 합니다.",
+  before: ":attribute은(는) :date 이전 날짜여야 합니다.",
+  before_or_equal: ":attribute은(는) :date 이전 날짜이거나 같은 날짜여야 합니다.",
+  between: {
+    numeric: ":attribute은(는) :min에서 :max 사이여야 합니다.",
+    file: ":attribute은(는) :min에서 :max 킬로바이트 사이여야 합니다.",
+    string: ":attribute은(는) :min에서 :max 문자 사이여야 합니다.",
+    array: ":attribute은(는) :min에서 :max 개의 항목이 있어야 합니다."
+  },
+  boolean: ":attribute은(는) true 또는 false 이어야 합니다.",
+  confirmed: ":attribute 확인 항목이 일치하지 않습니다.",
+  date: ":attribute은(는) 유효한 날짜가 아닙니다.",
+  date_format: ":attribute이(가) :format 형식과 일치하지 않습니다.",
+  different: ":attribute와(과) :other은(는) 서로 달라야 합니다.",
+  digits: ":attribute은(는) :digits 자리 숫자여야 합니다.",
+  digits_between: ":attribute)은(는) :min에서 :max 자리 사이여야 합니다.",
+  dimensions: ":attribute은(는) 유효하지 않는 이미지 크기입니다.",
+  distinct: ":attribute 필드에 중복된 값이 있습니다.",
+  email: ":attribute은(는) 유효한 이메일 주소여야 합니다.",
+  exists: "선택된 :attribute은(는) 유효하지 않습니다.",
+  file: ":attribute은(는) 파일이어야 합니다.",
+  filled: ":attribute 필드는 값이 있어야 합니다.",
+  gt: {
+    numeric: ":attribute의 값은 :value보다 커야 합니다.",
+    file: ":attribute의 용량은 :value킬로바이트보다 커야 합니다.",
+    string: ":attribute의 길이는 :value보다 길어야 합니다.",
+    array: ":attribute의 항목수는 :value개 보다 많아야 합니다."
+  },
+  gte: {
+    numeric: ":attribute의 값은 :value보다 같거나 커야 합니다.",
+    file: ":attribute의 용량은 :value킬로바이트보다 같거나 커야 합니다.",
+    string: ":attribute의 길이는 :value보다 같거나 길어야 합니다.",
+    array: ":attribute의 항목수는 :value개 보다 같거나 많아야 합니다."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute은(는) 이미지여야 합니다.",
+  in: "선택된 :attribute은(는) 유효하지 않습니다.",
+  in_array: ":attribute 필드는 :other에 존재하지 않습니다.",
+  integer: ":attribute은(는) 정수여야 합니다.",
+  ip: ":attribute은(는) 유효한 IP 주소여야 합니다.",
+  ipv4: ":attribute은(는) 유효한 IPv4 주소여야 합니다.",
+  ipv6: ":attribute은(는) 유효한 IPv6 주소여야 합니다.",
+  json: ":attribute은(는) JSON 문자열이어야 합니다.",
+  lt: {
+    numeric: ":attribute의 값은 :value보다 작아야 합니다.",
+    file: ":attribute의 용량은 :value킬로바이트보다 작아야 합니다.",
+    string: ":attribute의 길이는 :value보다 짧아야 합니다.",
+    array: ":attribute의 항목수는 :value개 보다 작아야 합니다."
+  },
+  lte: {
+    numeric: ":attribute의 값은 :value보다 같거나 작아야 합니다.",
+    file: ":attribute의 용량은 :value킬로바이트보다 같거나 작아야 합니다.",
+    string: ":attribute의 길이는 :value보다 같거나 짧아야 합니다.",
+    array: ":attribute의 항목수는 :value개 보다 같거나 작아야 합니다."
+  },
+  max: {
+    numeric: ":attribute은(는) :max보다 클 수 없습니다.",
+    file: ":attribute은(는) :max킬로바이트보다 클 수 없습니다.",
+    string: ":attribute은(는) :max자보다 클 수 없습니다.",
+    array: ":attribute은(는) :max개보다 많을 수 없습니다."
+  },
+  mimes: ":attribute은(는) 다음의 파일 형식이어야 합니다: :values.",
+  mimetypes: ":attribute은(는) 다음의 파일 형식이어야 합니다: :values.",
+  min: {
+    numeric: ":attribute은(는) 최소한 :min이어야 합니다.",
+    file: ":attribute은(는) 최소한 :min킬로바이트이어야 합니다.",
+    string: ":attribute은(는) 최소한 :min자이어야 합니다.",
+    array: ":attribute은(는) 최소한 :min개의 항목이 있어야 합니다."
+  },
+  not_in: "선택된 :attribute이(가) 유효하지 않습니다.",
+  not_regex: ":attribute의 형식이 올바르지 않습니다.",
+  numeric: ":attribute은(는) 숫자여야 합니다.",
+  present: ":attribute 필드가 있어야 합니다.",
+  regex: ":attribute 형식이 유효하지 않습니다.",
+  required: ":attribute 필드는 필수입니다.",
+  required_if: ":other이(가) :value 일 때 :attribute 필드는 필수입니다.",
+  required_unless: ":other이(가) :value에 없다면 :attribute 필드는 필수입니다.",
+  required_with: ":values이(가) 있는 경우 :attribute 필드는 필수입니다.",
+  required_with_all: ":values이(가) 모두 있는 경우 :attribute 필드는 필수입니다.",
+  required_without: ":values이(가) 없는 경우 :attribute 필드는 필수입니다.",
+  required_without_all: ":values이(가) 모두 없는 경우 :attribute 필드는 필수입니다.",
+  same: ":attribute와(과) :other은(는) 일치해야 합니다.",
+  size: {
+    numeric: ":attribute은(는) :size (이)여야 합니다.",
+    file: ":attribute은(는) :size킬로바이트여야 합니다.",
+    string: ":attribute은(는) :size자여야 합니다.",
+    array: ":attribute은(는) :size개의 항목을 포함해야 합니다."
+  },
+  string: ":attribute은(는) 문자열이어야 합니다.",
+  timezone: ":attribute은(는) 올바른 시간대 이어야 합니다.",
+  unique: ":attribute은(는) 이미 사용 중입니다.",
+  uploaded: ":attribute을(를) 업로드하지 못했습니다.",
+  url: ":attribute 형식은 유효하지 않습니다."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/lt.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/lt.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Laukas :attribute turi būti priimtas.",
+  active_url: "Laukas :attribute nėra galiojantis internetinis adresas.",
+  after: "Lauko :attribute reikšmė turi būti po :date datos.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: "Laukas :attribute gali turėti tik raides.",
+  alpha_dash: "Laukas :attribute gali turėti tik raides, skaičius ir brūkšnelius.",
+  alpha_num: "Laukas :attribute gali turėti tik raides ir skaičius.",
+  attributes: {},
+  array: "Laukas :attribute turi būti masyvas.",
+  before: "Laukas :attribute turi būti data prieš :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: "Lauko :attribute reikšmė turi būti tarp :min ir :max.",
+    file: "Failo dydis lauke :attribute turi būti tarp :min ir :max kilobaitų.",
+    string: "Simbolių skaičius lauke :attribute turi būti tarp :min ir :max.",
+    array: "Elementų skaičius lauke :attribute turi turėti nuo :min iki :max."
+  },
+  boolean: "Lauko reikšmė :attribute turi būti 'taip' arba 'ne'.",
+  confirmed: "Lauko :attribute patvirtinimas nesutampa.",
+  date: "Lauko :attribute reikšmė nėra galiojanti data.",
+  date_format: "Lauko :attribute reikšmė neatitinka formato :format.",
+  different: "Laukų :attribute ir :other reikšmės turi skirtis.",
+  digits: "Laukas :attribute turi būti sudarytas iš :digits skaitmenų.",
+  digits_between: "Laukas :attribute tuti turėti nuo :min iki :max skaitmenų.",
+  dimensions: "Lauke :attribute įkeltas paveiksliukas neatitinka išmatavimų reikalavimo.",
+  distinct: "Laukas :attribute pasikartoja.",
+  email: "Lauko :attribute reikšmė turi būti galiojantis el. pašto adresas.",
+  file: "The :attribute must be a file.",
+  filled: "Laukas :attribute turi būti užpildytas.",
+  exists: "Pasirinkta negaliojanti :attribute reikšmė.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Lauko :attribute reikšmė turi būti paveikslėlis.",
+  in: "Pasirinkta negaliojanti :attribute reikšmė.",
+  in_array: "Laukas :attribute neegzistuoja :other lauke.",
+  integer: "Lauko :attribute reikšmė turi būti sveikasis skaičius.",
+  ip: "Lauko :attribute reikšmė turi būti galiojantis IP adresas.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: "Lauko :attribute reikšmė turi būti JSON tekstas.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Lauko :attribute reikšmė negali būti didesnė nei :max.",
+    file: "Failo dydis lauke :attribute reikšmė negali būti didesnė nei :max kilobaitų.",
+    string: "Simbolių kiekis lauke :attribute reikšmė negali būti didesnė nei :max simbolių.",
+    array: "Elementų kiekis lauke :attribute negali turėti daugiau nei :max elementų."
+  },
+  mimes: "Lauko reikšmė :attribute turi būti failas vieno iš sekančių tipų: :values.",
+  mimetypes: "Lauko reikšmė :attribute turi būti failas vieno iš sekančių tipų: :values.",
+  min: {
+    numeric: "Lauko :attribute reikšmė turi būti ne mažesnė nei :min.",
+    file: "Failo dydis lauke :attribute turi būti ne mažesnis nei :min kilobaitų.",
+    string: "Simbolių kiekis lauke :attribute turi būti ne mažiau nei :min.",
+    array: "Elementų kiekis lauke :attribute turi būti ne mažiau nei :min."
+  },
+  not_in: "Pasirinkta negaliojanti reikšmė :attribute.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Lauko :attribute reikšmė turi būti skaičius.",
+  present: "Laukas :attribute turi egzistuoti.",
+  regex: "Negaliojantis lauko :attribute formatas.",
+  required: "Privaloma užpildyti lauką :attribute.",
+  required_if: "Privaloma užpildyti lauką :attribute kai :other yra :value.",
+  required_unless: "Laukas :attribute yra privalomas, nebent :other yra tarp :values reikšmių.",
+  required_with: "Privaloma užpildyti lauką :attribute kai pateikta :values.",
+  required_with_all: "Privaloma užpildyti lauką :attribute kai pateikta :values.",
+  required_without: "Privaloma užpildyti lauką :attribute kai nepateikta :values.",
+  required_without_all: "Privaloma užpildyti lauką :attribute kai nepateikta nei viena iš reikšmių :values.",
+  same: "Laukai :attribute ir :other turi sutapti.",
+  size: {
+    numeric: "Lauko :attribute reikšmė turi būti :size.",
+    file: "Failo dydis lauke :attribute turi būti :size kilobaitai.",
+    string: "Simbolių skaičius lauke :attribute turi būti :size.",
+    array: "Elementų kiekis lauke :attribute turi būti :size."
+  },
+  string: "Laukas :attribute turi būti tekstinis.",
+  timezone: "Lauko :attribute reikšmė turi būti galiojanti laiko zona.",
+  unique: "Tokia :attribute reikšmė jau pasirinkta.",
+  uploaded: "The :attribute failed to upload.",
+  url: "Negaliojantis lauko :attribute formatas."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/lv.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/lv.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: " :attribute ir jābūt pieņemtam.",
+  active_url: " :attribute ir ar nederīgu linku.",
+  after: " :attribute ir jābūt ar datumu pēc :datums.",
+  after_or_equal: " :attribute ir jābūt ar datumu pēc vai vienādu ar :datums.",
+  alpha: " :attribute var saturēt tikai burtus.",
+  alpha_dash: " :attribute var saturēt tikai burtus, nummurus un atstarpes.",
+  alpha_num: " :attribute var tikai saturēt burtus un nummurus.",
+  attributes: {},
+  array: " :attribute ir jābūt sakārtotam.",
+  before: " :attribute ir jābūt ar datumu pirms :datums.",
+  before_or_equal: " :attribute ir jābūt ar datumu pirms vai vienādu ar :datums.",
+  between: {
+    numeric: " :attribute jābūt starp :min un :max.",
+    file: " :attribute jābūt starp :min un :max kilobaiti.",
+    string: " :attribute jābūt no :min līdz :max zīmēm.",
+    array: " :attribute jābūt no :min līdz :max vienībām."
+  },
+  boolean: " :attribute laiciņam jābūt atbilstošam vai neatbilstošam.",
+  confirmed: " :attribute apstiprinājums neatbilst.",
+  date: " :attribute nav derīgs.",
+  date_format: " :attribute neatbilst formātam :format.",
+  different: " :attribute un :other ir jābūt citiem.",
+  digits: " :attribute ir jābūt :digits ciparam.",
+  digits_between: " :attribute ir jābūt :min un :max ciparam.",
+  dimensions: " :attribute ir nederīgs attēla izmērs.",
+  distinct: " :attribute laikam ir dubulta vērtība.",
+  email: " :attribute derīgam e-pastam.",
+  exists: "Izvēlētais :attribute ir nederīgs.",
+  file: " :attribute jābūt failam.",
+  filled: ":attribute lauks ir nepieciešams.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: " :attribute jābūt attēlam.",
+  in: "Izvēlētais :attribute ir nederīgs.",
+  in_array: " :attribute laiks neeksistē :cits.",
+  integer: " :attribute ir jabūt skaitim.",
+  ip: " :attribute jābūt derīgai IP adresei.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: " :attribute jābūt derīgai JSON virknei.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: " :attribute nedrīkst pārsniegt :max.",
+    file: " :attribute nedrīkst pārsniegt :max kilobaiti.",
+    string: " :attribute nedrīkst pārsniegt :max zīmes.",
+    array: " :attribute nedrīkst pārsniegt :max vienības."
+  },
+  mimes: " :attribute jābūt faila tipam: :values",
+  mimetypes: " :attribute jābūt faile tipam: :values.",
+  min: {
+    numeric: " :attribute jābūt vismaz :min.",
+    file: " :attribute jābūt vismaz :min kilobaiti.",
+    string: " :attribute jābūt vismaz :min zīmes.",
+    array: " :attribute jāsatur vismaz :min vienības."
+  },
+  not_in: " izvēlieties :attribute ir nederīgs.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: " :attribute jābūt skaitlim.",
+  present: " :attribute laikums ir nepieciešams.",
+  regex: " :attribute formāts ir nederīgs.",
+  required: " :attribute laukums ir nepieciešams.",
+  required_if: " :attribute laukums ir nepieciešams, ja vien :other ir :values.",
+  required_unless: " :attribute laukums ir nepieciešams, ja vien :other ir :values.",
+  required_with: " :attribute laukums ir nepieciešams, kad :values ir pieejama.",
+  required_with_all: " :attribute laukums ir nepieciešams, kad :values ir pieejama.",
+  required_without: " :attribute laukums ir nepieciešams, kad :values nav pieejama.",
+  required_without_all: " :attribute laukums ir nepieciešams, kad neviena no :values nav pieejama.",
+  same: " :attribute un :citiem ir jāsakrīt.",
+  size: {
+    numeric: " :attribute jābūt :size.",
+    file: " :attribute jābūt :size kilobaiti.",
+    string: " :attribute jābūt :size zīmes.",
+    array: " :attribute jāsatur :size vienības."
+  },
+  string: " :attribute jābūt virknē.",
+  timezone: " :attribute jābūt derīgā zonā.",
+  unique: " :attribute jau ir aizņemts.",
+  uploaded: " :attribute netika augšuplādēts.",
+  url: " :attribute formāts ir nederīgs."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/mk.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/mk.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Полето :attribute мора да биде прифатено.",
+  active_url: "Полето :attribute не е валиден URL.",
+  after: "Полето :attribute мора да биде датум после :date.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: "Полето :attribute може да содржи само букви.",
+  alpha_dash: "Полето :attribute може да содржи само букви, цифри, долна црта и тире.",
+  alpha_num: "Полето :attribute може да содржи само букви и цифри.",
+  attributes: {},
+  array: "Полето :attribute мора да биде низа.",
+  before: "Полето :attribute мора да биде датум пред :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: "Полето :attribute мора да биде помеѓу :min и :max.",
+    file: "Полето :attribute мора да биде помеѓу :min и :max килобајти.",
+    string: "Полето :attribute мора да биде помеѓу :min и :max карактери.",
+    array: "Полето :attribute мора да има помеѓу :min - :max карактери."
+  },
+  boolean: "The :attribute field must be true or false",
+  confirmed: "Полето :attribute не е потврдено.",
+  date: "Полето :attribute не е валиден датум.",
+  date_format: "Полето :attribute не е во формат :format.",
+  different: "Полињата :attribute и :other треба да се различни.",
+  digits: "Полето :attribute треба да има :digits цифри.",
+  digits_between: "Полето :attribute треба да има помеѓу :min и :max цифри.",
+  dimensions: "The :attribute has invalid image dimensions.",
+  distinct: "The :attribute field has a duplicate value.",
+  email: "Полето :attribute не е во валиден формат.",
+  exists: "Избранато поле :attribute веќе постои.",
+  file: "The :attribute must be a file.",
+  filled: "Полето :attribute е задолжително.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Полето :attribute мора да биде слика.",
+  in: "Избраното поле :attribute е невалидно.",
+  in_array: "The :attribute field does not exist in :other.",
+  integer: "Полето :attribute мора да биде цел број.",
+  ip: "Полето :attribute мора да биде IP адреса.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: "The :attribute must be a valid JSON string.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Полето :attribute мора да биде помало од :max.",
+    file: "Полето :attribute мора да биде помало од :max килобајти.",
+    string: "Полето :attribute мора да има помалку од :max карактери.",
+    array: "Полето :attribute не може да има повеќе од :max карактери."
+  },
+  mimes: "Полето :attribute мора да биде фајл од типот: :values.",
+  mimetypes: "Полето :attribute мора да биде фајл од типот: :values.",
+  min: {
+    numeric: "Полето :attribute мора да биде минимум :min.",
+    file: "Полето :attribute мора да биде минимум :min килобајти.",
+    string: "Полето :attribute мора да има минимум :min карактери.",
+    array: "Полето :attribute мора да има минимум :min карактери."
+  },
+  not_in: "Избраното поле :attribute е невалидно.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Полето :attribute мора да биде број.",
+  present: "The :attribute field must be present.",
+  regex: "Полето :attribute е во невалиден формат.",
+  required: "Полето :attribute е задолжително.",
+  required_if: "Полето :attribute е задолжително, кога :other е :value.",
+  required_unless: "The :attribute field is required unless :other is in :values.",
+  required_with: "Полето :attribute е задолжително, кога е внесено :values.",
+  required_with_all: "The :attribute field is required when :values is present.",
+  required_without: "Полето :attribute е задолжително, кога не е внесено :values.",
+  required_without_all: "The :attribute field is required when none of :values are present.",
+  same: "Полињата :attribute и :other треба да совпаѓаат.",
+  size: {
+    numeric: "Полето :attribute мора да биде :size.",
+    file: "Полето :attribute мора да биде :size килобајти.",
+    string: "Полето :attribute мора да има :size карактери.",
+    array: "Полето :attribute мора да има :size карактери."
+  },
+  string: "The :attribute must be a string.",
+  timezone: "The :attribute must be a valid zone.",
+  unique: "Полето :attribute веќе постои.",
+  uploaded: "The :attribute failed to upload.",
+  url: "Полето :attribute не е во валиден формат."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/mn.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/mn.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":Attribute баталсан байх шаардлагатай.",
+  active_url: ":Attribute талбарт зөв URL хаяг оруулна уу.",
+  after: ":Attribute талбарт :date-с хойш огноо оруулна уу.",
+  after_or_equal: ":Attribute талбарт :date эсвэл түүнээс хойш огноо оруулна уу.",
+  alpha: ":Attribute талбарт латин үсэг оруулна уу.",
+  alpha_dash: ":Attribute талбарт латин үсэг, тоо болон зураас оруулах боломжтой.",
+  alpha_num: ":Attribute талбарт латин үсэг болон тоо оруулах боломжтой.",
+  attributes: {},
+  array: ":Attribute талбар массив байх шаардлагатай.",
+  before: ":Attribute талбарт :date-с өмнөх огноо оруулна уу.",
+  before_or_equal: ":attribute талбарт :date эсвэл түүнээс өмнөх огноо оруулна уу.",
+  between: {
+    numeric: ":Attribute талбарт :min-:max хооронд тоо оруулна уу.",
+    file: ":Attribute талбарт :min-:max килобайт хэмжээтэй файл оруулна уу.",
+    string: ":Attribute талбарт :min-:max урттай текст оруулна уу.",
+    array: ":Attribute массивт :min-:max элемэнт байх шаардлагатай."
+  },
+  boolean: ":Attribute талбарын утга үнэн эсвэл худал байх шаардлагатай.",
+  confirmed: ":Attribute талбарын баталагажуулалт тохирохгүй байна.",
+  date: ":Attribute талбарт оруулсан огноо буруу байна.",
+  date_format: ":Attribute талбарт :format хэлбэртэй огноо оруулна уу.",
+  different: ":Attribute талбарт :other -с өөр утга оруулах шаардлагатай.",
+  digits: ":Attribute талбарт дараах цифрүүдээс оруулах боломжтой. :digits.",
+  digits_between: ":Attribute талбарт :min-:max хоорондох цифр оруулах боломжтой.",
+  dimensions: ":Attribute талбарийн зургийн хэмжээс буруу байна.",
+  distinct: ":Attribute талбарт ялгаатай утга оруулах шаардлагатай.",
+  email: ":Attribute талбарт зөв и-мэйл хаяг оруулах шаардлагатай.",
+  exists: "Сонгогдсон :attribute буруу байна.",
+  file: ":Attribute талбарт файл оруулах шаардлагатай.",
+  filled: ":Attribute талбар шаардлагатай.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":Attribute талбарт зураг оруулна уу.",
+  in: "Сонгогдсон :attribute буруу байна.",
+  in_array: ":Attribute талбарт оруулсан утга :other -д байхгүй байна.",
+  integer: ":Attribute талбарт бүхэл тоо оруулах шаардлагатай.",
+  ip: ":Attribute талбарт зөв IP хаяг оруулах шаардлагатай.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: ":Attribute талбарт зөв JSON тэмдэгт мөр оруулах шаардлагатай.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: ":Attribute талбарт :max буюу түүнээс бага утга оруулна уу.",
+    file: ":Attribute талбарт :max килобайтаас бага хэмжээтэй файл оруулна уу.",
+    string: ":Attribute талбарт :max-с бага урттай текст оруулна уу.",
+    array: ":Attribute талбарт хамгийн ихдээ :max элемэнт оруулах боломжтой."
+  },
+  mimes: ":Attribute талбарт дараах төрлийн файл оруулах боломжтой: :values.",
+  mimetypes: ":Attribute талбарт дараах төрлийн файл оруулах боломжтой: :values.",
+  min: {
+    numeric: ":Attribute талбарт :min буюу түүнээс их тоо оруулна уу.",
+    file: ":Attribute талбарт :min килобайтаас их хэмжээтэй файл оруулна уу.",
+    string: ":Attribute талбарт :min буюу түүнээс их үсэг бүхий текст оруулна уу.",
+    array: ":Attribute талбарт хамгийн багадаа :min элемэнт оруулах боломжтой."
+  },
+  not_in: "Буруу :attribute сонгогдсон байна.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: ":Attribute талбарт тоон утга оруулна уу.",
+  present: ":Attribute талбар байх шаардлагатай.",
+  regex: ":Attribute талбарт оруулсан утга буруу байна.",
+  required: ":Attribute талбар шаардлагатай.",
+  required_if: "Хэрэв :other :value бол :attribute табларт утга оруулах шаардлагатай.",
+  required_unless: ":other :values дотор байхгүй бол :attribute талбарт утга оруулах шаардлагатай.",
+  required_with: ":values утгуудийн аль нэг байвал :attribute талбар шаардлагатай.",
+  required_with_all: ":values утгууд байвал :attribute талбар шаардлагатай.",
+  required_without: "The :attribute field is required when :values is not present.",
+  required_without_all: "The :attribute field is required when none of :values are present.",
+  same: "The :attribute and :other must match.",
+  size: {
+    numeric: ":Attribute :size хэмжээтэй байх шаардлагатай.",
+    file: ":Attribute :size килобайт хэмжээтэй байх шаардлагатай.",
+    string: ":Attribute :size тэмдэгтийн урттай байх шаардлагатай.",
+    array: ":Attribute :size элемэнттэй байх шаардлагатай."
+  },
+  string: ":Attribute талбарт текст оруулна уу.",
+  timezone: ":Attribute талбарт зөв цагийн бүс оруулна уу.",
+  unique: "Оруулсан :attribute аль хэдий нь бүртгэгдсэн байна.",
+  uploaded: ":Attribute талбарт оруулсан файлыг хуулхад алдаа гарлаа.",
+  url: ":Attribute зөв url хаяг оруулна уу."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ms.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ms.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute mesti diterima pakai.",
+  active_url: ":attribute bukan URL yang sah.",
+  after: ":attribute mesti tarikh selepas :date.",
+  after_or_equal: ":attribute mesti tarikh selepas atau sama dengan :date.",
+  alpha: ":attribute hanya boleh mengandungi huruf.",
+  alpha_dash: ":attribute boleh mengandungi huruf, nombor, dan sengkang.",
+  alpha_num: ":attribute boleh mengandungi huruf dan nombor.",
+  attributes: {},
+  array: ":attribute mesti jujukan.",
+  before: ":attribute mesti tarikh sebelum :date.",
+  before_or_equal: ":attribute mesti tarikh sebelum atau sama dengan :date.",
+  between: {
+    numeric: ":attribute mesti mengandungi antara :min dan :max.",
+    file: ":attribute mesti mengandungi antara :min dan :max kilobait.",
+    string: ":attribute mesti mengandungi antara :min dan :max aksara.",
+    array: ":attribute mesti mengandungi antara :min dan :max perkara."
+  },
+  boolean: ":attribute mesti benar atau salah.",
+  confirmed: ":attribute pengesahan yang tidak sepadan.",
+  date: ":attribute bukan tarikh yang sah.",
+  date_format: ":attribute tidak mengikut format :format.",
+  different: ":attribute dan :other mesti berlainan.",
+  dimensions: ":attribute tidak sah",
+  digits: ":attribute mesti :digits.",
+  digits_between: ":attribute mesti mengandungi antara :min dan :max digits.",
+  distinct: ":attribute adalah nilai yang berulang",
+  email: ":attribute tidak sah.",
+  exists: ":attribute tidak sah.",
+  file: ":attribute mesti fail yang sah.",
+  filled: ":attribute diperlukan.",
+  gt: {
+    numeric: ":attribute mesti melebihi :value.",
+    file: ":attribute mesti melebihi :value kilobait.",
+    string: ":attribute mesti melebihi :value aksara.",
+    array: ":attribute mesti mengandungi lebih daripada :value perkara."
+  },
+  gte: {
+    numeric: ":attribute mesti melebihi atau bersamaan :value.",
+    file: ":attribute mesti melebihi atau bersamaan :value kilobait.",
+    string: ":attribute mesti melebihi atau bersamaan :value aksara.",
+    array: ":attribute mesti mengandungi :value perkara atau lebih."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute mesti imej.",
+  in: ":attribute tidak sah.",
+  in_array: ":attribute tidak wujud dalam :other.",
+  integer: ":attribute mesti integer.",
+  ip: ":attribute mesti alamat IP yang sah.",
+  ipv4: ":attribute mesti alamat IPv4 yang sah.",
+  ipv6: ":attribute mesti alamat IPv6 yang sah",
+  json: ":attribute mesti JSON yang sah.",
+  lt: {
+    numeric: ":attribute mesti kurang daripada :value.",
+    file: ":attribute mesti kurang daripada :value kilobait.",
+    string: ":attribute mesti kurang daripada :value aksara.",
+    array: ":attribute mesti mengandungi kurang daripada :value perkara."
+  },
+  lte: {
+    numeric: ":attribute mesti kurang daripada atau bersamaan dengan :value.",
+    file: ":attribute mesti kurang daripada atau bersamaan dengan :value kilobait.",
+    string: ":attribute mesti kurang daripada atau bersamaan dengan :value aksara.",
+    array: ":attribute mesti mengandungi kurang daripada atau bersamaan dengan :value perkara."
+  },
+  max: {
+    numeric: "Jumlah :attribute mesti tidak melebihi :max.",
+    file: "Jumlah :attribute mesti tidak melebihi :max kilobait.",
+    string: "Jumlah :attribute mesti tidak melebihi :max aksara.",
+    array: "Jumlah :attribute mesti tidak melebihi :max perkara."
+  },
+  mimes: ":attribute mesti fail type: :values.",
+  mimetypes: ":attribute mesti fail type: :values.",
+  min: {
+    numeric: "Jumlah :attribute mesti sekurang-kurangnya :min.",
+    file: "Jumlah :attribute mesti sekurang-kurangnya :min kilobait.",
+    string: "Jumlah :attribute mesti sekurang-kurangnya :min aksara.",
+    array: "Jumlah :attribute mesti sekurang-kurangnya :min perkara."
+  },
+  not_in: ":attribute tidak sah.",
+  not_regex: "Format :attribute adalah tidak sah.",
+  numeric: ":attribute mesti nombor.",
+  present: ":attribute mesti wujud.",
+  regex: "Format :attribute tidak sah.",
+  required: "Ruangan :attribute diperlukan.",
+  required_if: "Ruangan :attribute diperlukan bila :other sama dengan :value.",
+  required_unless: "Ruangan :attribute diperlukan sekiranya :other ada dalam :values.",
+  required_with: "Ruangan :attribute diperlukan bila :values wujud.",
+  required_with_all: "Ruangan :attribute diperlukan bila :values wujud.",
+  required_without: "Ruangan :attribute diperlukan bila :values tidak wujud.",
+  required_without_all: "Ruangan :attribute diperlukan bila kesemua :values wujud.",
+  same: "Ruangan :attribute dan :other mesti sepadan.",
+  size: {
+    numeric: "Saiz :attribute mesti :size.",
+    file: "Saiz :attribute mesti :size kilobait.",
+    string: "Saiz :attribute mesti :size aksara.",
+    array: "Saiz :attribute mesti mengandungi :size perkara."
+  },
+  string: ":attribute mesti aksara.",
+  timezone: ":attribute mesti zon masa yang sah.",
+  unique: ":attribute telah wujud.",
+  uploaded: ":attribute gagal dimuat naik.",
+  url: ":attribute format tidak sah."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/nb_NO.js":
+/*!****************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/nb_NO.js ***!
+  \****************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute må være akseptert.',
+  alpha: ':attribute feltet kan kun inneholde alfabetiske tegn.',
+  alpha_dash: ':attribute feltet kan kun inneholde alfanumeriske tegn, i tillegg til bindestreker og understreker.',
+  alpha_num: ':attribute feltet må være alfanumerisk.',
+  between: ':attribute feltet må være mellom :min og :max.',
+  confirmed: ':attribute feltet stemmer ikke overens med bekreftelsen.',
+  email: ':attribute formatet er ugyldig.',
+  date: ':attribute er et ugyldig datoformat.',
+  def: ':attribute attributtet har feil.',
+  digits: ':attribute må være på :digits siffer.',
+  digits_between: ':attribute må være mellom :min og :max siffer.',
+  different: ':attribute og :different må være forskjellige.',
+  in: 'Den oppgitte verdien for :attribute er ugyldig.',
+  integer: ':attribute må være et heltall.',
+  hex: 'The :attribute should have hexadecimal format',
+  min: {
+    numeric: ':attribute må minst være :min.',
+    string: ':attribute må være på minst :min tegn.'
+  },
+  max: {
+    numeric: ':attribute kan ikke være større enn :max.',
+    string: ':attribute kan maks ha :max tegn.'
+  },
+  not_in: 'Den oppgitte verdien for :attribute er ugyldig.',
+  numeric: ':attribute må være et tall.',
+  present: 'The :attribute field must be present (but can be empty).',
+  required: ':attribute feltet er påkrevd.',
+  required_if: ':attribute er påkrevd når :other er :value.',
+  same: ':attribute og :same må være like.',
+  size: {
+    numeric: ':attribute må ha størrelsen :size.',
+    string: ':attribute må ha :size tegn.'
+  },
+  string: ':attribute må være tekst.',
+  url: ':attribute formatet er ugyldig.',
+  regex: ':attribute formatet er ugyldig.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/nl.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/nl.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'Het :attribute veld moet geaccepteerd worden.',
+  after: ':attribute moet een datum na :after zijn.',
+  after_or_equal: 'De :attribute datum moet op of na :after_or_equal zijn.',
+  alpha: 'Het :attribute veld mag alleen maar letters bevatten.',
+  alpha_dash: 'Het :attribute veld mag alleen maar letters, cijfers en (liggende) streepjes bevatten.',
+  alpha_num: 'Het :attribute veld mag alleen maar letters en cijfers bevatten.',
+  before: ':attribute moet vòòr :before zijn.',
+  before_or_equal: ':attribute moet vòòr of op :before_or_equal zijn.',
+  between: 'Het :attribute veld moet tussen :min en :max liggen.',
+  confirmed: 'Het :attribute veld komt niet met de bevestiging overeen.',
+  email: 'Het :attribute formaat is ongeldig.',
+  date: 'Het :attribute veld moet een geldige datum zijn.',
+  def: 'Het :attribute veld bevat fouten.',
+  digits: 'Het :attribute veld moet :digits cijfers hebben.',
+  digits_between: ':attribute moet bestaan uit minimaal :min en maximaal :max cijfers.',
+  different: 'Het :attribute en :different veld moeten verschillend zijn.',
+  in: 'De gekozen waarde voor :attribute is ongeldig.',
+  integer: 'Het :attribute veld moet een geheel getal zijn.',
+  hex: 'Het :attribute veld moet hexadecimaal zijn',
+  min: {
+    numeric: 'Het :attribute veld moet minstens :min zijn.',
+    string: 'Het :attribute veld moet minstens :min karakters bevatten.'
+  },
+  max: {
+    numeric: 'Het :attribute veld mag maximaal :max zijn.',
+    string: 'Het :attribute veld mag niet meer dan :max karakters bevatten.'
+  },
+  not_in: 'De gekozen waarde voor :attribute is ongeldig.',
+  numeric: 'Het :attribute veld moet een getal zijn.',
+  present: 'Het :attribute veld moet aanwezig zijn (maar mag leeg zijn).',
+  required: 'Het :attribute veld moet ingevuld zijn.',
+  required_if: 'Het :attribute veld moet ingevuld zijn, wanneer :other :value is.',
+  required_unless: 'Het :attribute veld moet ingevuld zijn, wanneer :other niet :value is.',
+  required_with: 'Het :attribute veld moet ingevuld zijn, wanneer :field niet leeg is.',
+  required_with_all: 'Het :attribute veld moet ingevuld zijn, wanneer :fields niet leeg zijn.',
+  required_without: 'Het :attribute veld moet ingevuld zijn, wanneer :field leeg is.',
+  required_without_all: 'Het :attribute veld moet ingevuld zijn, wanneer :fields leeg zijn.',
+  same: 'De :attribute en :same velden moeten overeenkomen.',
+  size: {
+    numeric: 'Het :attribute veld moet :size zijn.',
+    string: 'Het :attribute veld moet :size karakters bevatten.'
+  },
+  string: 'Het :attribute veld moet een woord of zin zijn.',
+  url: 'Het :attribute veld heeft een ongeldig formaat.',
+  regex: 'Het :attribute veld heeft een ongeldig formaat.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/pl.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/pl.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'Pole :attribute musi być zaakceptowane.',
+  alpha: 'Pole :attribute może zawierać tylko litery.',
+  alpha_dash: 'Pole :attribute moze zawierać tylko litery, myślnik i podrkeślenie.',
+  alpha_num: 'Pole :attribute moze zawierac tylko znaki alfanumeryczne.',
+  between: 'Pole :attribute musi mieć długość od :min do :max.',
+  confirmed: 'Pole :attribute nie spełnia warunku potwierdzenia.',
+  email: 'Pole :attribute ma niepoprawny format adresu email.',
+  date: 'Pole :attribute musi mieć poprawny format daty.',
+  def: 'Pole :attribute zawiera błędy.',
+  digits: 'Pole :attribute może zawierać tylko cyfry ze zbioru :digits.',
+  digits_between: 'Pole :attribute musi mieć od :min do :max cyfr.',
+  different: 'Pola :attribute i :different muszą się różnić.',
+  in: 'Pole :attribute musi należeć do zbioru :in.',
+  integer: 'Pole :attribute musi być liczbą całkowitą.',
+  hex: 'The :attribute should have hexadecimal format',
+  min: {
+    numeric: 'Pole :attribute musi być równe conajmniej :min.',
+    string: 'Pole :attribute musi zawierać conajmniej :min znaków.'
+  },
+  max: {
+    numeric: 'Pole :attribute nie moze być większe :max.',
+    string: 'Pole :attribute nie moze być dłuższe niż :max znaków.'
+  },
+  not_in: 'Pole :attribute nie może należeć do zbioru :not_in.',
+  numeric: 'Pole :attribute musi być liczbą.',
+  present: 'Polu :attribute musi być obecny (ale może być pusta).',
+  required: 'Pole :attribute jest wymagane.',
+  required_if: 'Pole :attribute jest wymagane jeśli pole :other jest równe :value.',
+  same: 'Pola :attribute i :same muszą być takie same.',
+  size: {
+    numeric: 'Pole :attribute musi być równe :size.',
+    string: 'Pole :attribute musi zawierać :size znaków.'
+  },
+  string: 'Pole :attribute musi być ciągiem znaków.',
+  url: 'Pole :attribute musi być poprawnym adresem URL.',
+  regex: 'Pole :attribute nie spełnia warunku.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/pt.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/pt.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "O campo :attribute deverá ser aceite.",
+  active_url: "O campo :attribute não contém um URL válido.",
+  after: "O campo :attribute deverá conter uma data posterior a :date.",
+  after_or_equal: "O campo :attribute deverá conter uma data posterior ou igual a :date.",
+  alpha: "O campo :attribute deverá conter apenas letras.",
+  alpha_dash: "O campo :attribute deverá conter apenas letras, números e traços.",
+  alpha_num: "O campo :attribute deverá conter apenas letras e números .",
+  attributes: {},
+  array: "O campo :attribute deverá conter uma coleção de elementos.",
+  before: "O campo :attribute deverá conter uma data anterior a :date.",
+  before_or_equal: "O Campo :attribute deverá conter uma data anterior ou igual a :date.",
+  between: {
+    numeric: "O campo :attribute deverá ter um valor entre :min - :max.",
+    file: "O campo :attribute deverá ter um tamanho entre :min - :max kilobytes.",
+    string: "O campo :attribute deverá conter entre :min - :max caracteres.",
+    array: "O campo :attribute deverá conter entre :min - :max elementos."
+  },
+  boolean: "O campo :attribute deverá conter o valor verdadeiro ou falso.",
+  confirmed: "A confirmação para o campo :attribute não coincide.",
+  date: "O campo :attribute não contém uma data válida.",
+  date_format: "A data indicada para o campo :attribute não respeita o formato :format.",
+  different: "Os campos :attribute e :other deverão conter valores diferentes.",
+  digits: "O campo :attribute deverá conter :digits caracteres.",
+  digits_between: "O campo :attribute deverá conter entre :min a :max caracteres.",
+  dimensions: "O campo :attribute deverá conter uma dimensão de imagem válida.",
+  distinct: "O campo :attribute contém um valor duplicado.",
+  email: "O campo :attribute não contém um endereço de correio eletrónico válido.",
+  exists: "O valor selecionado para o campo :attribute é inválido.",
+  file: "O campo :attribute deverá conter um ficheiro.",
+  filled: "É obrigatória a indicação de um valor para o campo :attribute.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "O campo :attribute deverá conter uma imagem.",
+  in: "O campo :attribute não contém um valor válido.",
+  in_array: "O campo :attribute não existe em :other.",
+  integer: "O campo :attribute deverá conter um número inteiro.",
+  ip: "O campo :attribute deverá conter um IP válido.",
+  ipv4: "O campo :attribute deverá conter um IPv4 válido.",
+  ipv6: "O campo :attribute deverá conter um IPv6 válido.",
+  json: "O campo :attribute deverá conter um texto JSON válido.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "O campo :attribute não deverá conter um valor superior a :max.",
+    file: "O campo :attribute não deverá ter um tamanho superior a :max kilobytes.",
+    string: "O campo :attribute não deverá conter mais de :max caracteres.",
+    array: "O campo :attribute não deverá conter mais de :max elementos."
+  },
+  mimes: "O campo :attribute deverá conter um ficheiro do tipo: :values.",
+  mimetypes: "O campo :attribute deverá conter um ficheiro do tipo: :values.",
+  min: {
+    numeric: "O campo :attribute deverá ter um valor superior ou igual a :min.",
+    file: "O campo :attribute deverá ter no mínimo :min kilobytes.",
+    string: "O campo :attribute deverá conter no mínimo :min caracteres.",
+    array: "O campo :attribute deverá conter no mínimo :min elementos."
+  },
+  not_in: "O campo :attribute contém um valor inválido.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "O campo :attribute deverá conter um valor numérico.",
+  present: "O campo :attribute deverá estar presente.",
+  regex: "O formato do valor para o campo :attribute é inválido.",
+  required: "É obrigatória a indicação de um valor para o campo :attribute.",
+  required_if:
+    "É obrigatória a indicação de um valor para o campo :attribute quando o valor do campo :other é igual a :value.",
+  required_unless:
+    "É obrigatória a indicação de um valor para o campo :attribute a menos que :other esteja presente em :values.",
+  required_with: "É obrigatória a indicação de um valor para o campo :attribute quando :values está presente.",
+  required_with_all:
+    "É obrigatória a indicação de um valor para o campo :attribute quando um dos :values está presente.",
+  required_without: "É obrigatória a indicação de um valor para o campo :attribute quando :values não está presente.",
+  required_without_all:
+    "É obrigatória a indicação de um valor para o campo :attribute quando nenhum dos :values está presente.",
+  same: "Os campos :attribute e :other deverão conter valores iguais.",
+  size: {
+    numeric: "O campo :attribute deverá conter o valor :size.",
+    file: "O campo :attribute deverá ter o tamanho de :size kilobytes.",
+    string: "O campo :attribute deverá conter :size caracteres.",
+    array: "O campo :attribute deverá conter :size elementos."
+  },
+  string: "O campo :attribute deverá conter texto.",
+  timezone: "O campo :attribute deverá ter um fuso horário válido.",
+  unique: "O valor indicado para o campo :attribute já se encontra registado.",
+  uploaded: "O upload do ficheiro :attribute falhou.",
+  url: "O formato do URL indicado para o campo :attribute é inválido."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/pt_BR.js":
+/*!****************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/pt_BR.js ***!
+  \****************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "O campo :attribute deve ser aceito.",
+  active_url: "O campo :attribute deve conter uma URL válida.",
+  after: "O campo :attribute deve conter uma data posterior a :date.",
+  after_or_equal: "O campo :attribute deve conter uma data superior ou igual a :date.",
+  alpha: "O campo :attribute deve conter apenas letras.",
+  alpha_dash: "O campo :attribute deve conter apenas letras, números e traços.",
+  alpha_num: "O campo :attribute deve conter apenas letras e números .",
+  array: "O campo :attribute deve conter um array.",
+  before: "O campo :attribute deve conter uma data anterior a :date.",
+  before_or_equal: "O campo :attribute deve conter uma data inferior ou igual a :date.",
+  between: {
+    numeric: "O campo :attribute deve conter um número entre :min e :max.",
+    file: "O campo :attribute deve conter um arquivo de :min a :max kilobytes.",
+    string: "O campo :attribute deve conter entre :min a :max caracteres.",
+    array: "O campo :attribute deve conter de :min a :max itens."
+  },
+  boolean: "O campo :attribute deve conter o valor verdadeiro ou falso.",
+  confirmed: "A confirmação para o campo :attribute não coincide.",
+  date: "O campo :attribute não contém uma data válida.",
+  date_format: "A data informada para o campo :attribute não respeita o formato :format.",
+  different: "Os campos :attribute e :other devem conter valores diferentes.",
+  digits: "O campo :attribute deve conter :digits dígitos.",
+  digits_between: "O campo :attribute deve conter entre :min a :max dígitos.",
+  dimensions: "O valor informado para o campo :attribute não é uma dimensão de imagem válida.",
+  distinct: "O campo :attribute contém um valor duplicado.",
+  email: "O campo :attribute não contém um endereço de email válido.",
+  exists: "O valor selecionado para o campo :attribute é inválido.",
+  file: "O campo :attribute deve conter um arquivo.",
+  filled: "O campo :attribute é obrigatório.",
+  gt: {
+    numeric: "O campo :attribute deve ser maior que :value.",
+    file: "O arquivo :attribute deve ser maior que :value kilobytes.",
+    string: "O campo :attribute deve ser maior que :value caracteres.",
+    array: "O campo :attribute deve ter mais que :value itens."
+  },
+  gte: {
+    numeric: "O campo :attribute deve ser maior ou igual a :value.",
+    file: "O arquivo :attribute deve ser maior ou igual a :value kilobytes.",
+    string: "O campo :attribute deve ser maior ou igual a :value caracteres.",
+    array: "O campo :attribute deve ter :value itens ou mais."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "O campo :attribute deve conter uma imagem.",
+  in: "O campo :attribute não contém um valor válido.",
+  in_array: "O campo :attribute não existe em :other.",
+  integer: "O campo :attribute deve conter um número inteiro.",
+  ip: "O campo :attribute deve conter um IP válido.",
+  ipv4: "O campo :attribute deve conter um IPv4 válido.",
+  ipv6: "O campo :attribute deve conter um IPv6 válido.",
+  json: "O campo :attribute deve conter uma string JSON válida.",
+  lt: {
+    numeric: "O campo :attribute deve ser menor que :value.",
+    file: "O arquivo :attribute ser menor que :value kilobytes.",
+    string: "O campo :attribute deve ser menor que :value caracteres.",
+    array: "O campo :attribute deve ter menos que :value itens."
+  },
+  lte: {
+    numeric: "O campo :attribute deve ser menor ou igual a :value.",
+    file: "O arquivo :attribute ser menor ou igual a :value kilobytes.",
+    string: "O campo :attribute deve ser menor ou igual a :value caracteres.",
+    array: "O campo :attribute não deve ter mais que :value itens."
+  },
+  max: {
+    numeric: "O campo :attribute não pode conter um valor superior a :max.",
+    file: "O campo :attribute não pode conter um arquivo com mais de :max kilobytes.",
+    string: "O campo :attribute não pode conter mais de :max caracteres.",
+    array: "O campo :attribute deve conter no máximo :max itens."
+  },
+  mimes: "O campo :attribute deve conter um arquivo do tipo: :values.",
+  mimetypes: "O campo :attribute deve conter um arquivo do tipo: :values.",
+  min: {
+    numeric: "O campo :attribute deve conter um número superior ou igual a :min.",
+    file: "O campo :attribute deve conter um arquivo com no mínimo :min kilobytes.",
+    string: "O campo :attribute deve conter no mínimo :min caracteres.",
+    array: "O campo :attribute deve conter no mínimo :min itens."
+  },
+  not_in: "O campo :attribute contém um valor inválido.",
+  not_regex: "O formato do valor :attribute é inválido.",
+  numeric: "O campo :attribute deve conter um valor numérico.",
+  present: "O campo :attribute deve estar presente.",
+  regex: "O formato do valor informado no campo :attribute é inválido.",
+  required: "O campo :attribute é obrigatório.",
+  required_if: "O campo :attribute é obrigatório quando o valor do campo :other é igual a :value.",
+  required_unless: "O campo :attribute é obrigatório a menos que :other esteja presente em :values.",
+  required_with: "O campo :attribute é obrigatório quando :values está presente.",
+  required_with_all: "O campo :attribute é obrigatório quando um dos :values está presente.",
+  required_without: "O campo :attribute é obrigatório quando :values não está presente.",
+  required_without_all: "O campo :attribute é obrigatório quando nenhum dos :values está presente.",
+  same: "Os campos :attribute e :other devem conter valores iguais.",
+  size: {
+    numeric: "O campo :attribute deve conter o número :size.",
+    file: "O campo :attribute deve conter um arquivo com o tamanho de :size kilobytes.",
+    string: "O campo :attribute deve conter :size caracteres.",
+    array: "O campo :attribute deve conter :size itens."
+  },
+  string: "O campo :attribute deve ser uma string.",
+  timezone: "O campo :attribute deve conter um fuso horário válido.",
+  unique: "O valor informado para o campo :attribute já está em uso.",
+  uploaded: "Falha no Upload do arquivo :attribute.",
+  url: "O formato da URL informada para o campo :attribute é inválido."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ro.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ro.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute trebuie acceptat.',
+  after: ':attribute trebuie să fie după :after.',
+  after_or_equal: ':attribute trebuie să fie egal sau după :after_or_equal.',
+  alpha: 'Câmpul :attribute rebuie să conțină numai caractere alfabetice.',
+  alpha_dash: 'Câmpul:attribute poate conține numai caractere alfanumerice, precum și liniuțe și subliniere.',
+  alpha_num: 'Câmpul :attribute trebuie să fie alfanumeric.',
+  before: ':attribute trebuie să fie înainte :before.',
+  before_or_equal: ':attribute trebuie să fie egal sau înainte :before_or_equal.',
+  between: ':attribute trebuie să fie între :min și :max.',
+  confirmed: 'Confirmarea :attribute nu se potrivește.',
+  email: 'Formatul :attribute nu este valid.',
+  date: ':attribute nu este un format de dată valid.',
+  def: 'Atributul :attribute are erori.',
+  digits: ':attribute trebuie să aibă  :digits cifre.',
+  digits_between: 'Câmpul :attribute trebuie să aibă între :min și :max cifre.',
+  different: ':attribute și :different trebuie sa fie diferite.',
+  in: 'Atributul selectat :attribute nu este valid.',
+  integer: ':attribute trebuie să fie un număr întreg.',
+  hex: 'Câmpul :attribute trebuie să aibă format hexazecimal.',
+  min: {
+    numeric: ':attribute trebuie să fie mai mare de :min.',
+    string: ':attribute trebuie să contină cel puțin :min caractere.'
+  },
+  max: {
+    numeric: ':attribute nu trebuie să fie mai mare de :max.',
+    string: ':attribute poate să contină maxim :max caractere.'
+  },
+  not_in: ':attribute selectat nu este valid.',
+  numeric: ':attribute trebuie sa fie un număr.',
+  present: ':attribute trebuie sa fie prezent(dar poate fi gol).',
+  required: ' Câmpul :attribute este obligatoriu.',
+  required_if: 'Câmpul :attribute este obligatoriu cănd :other este :value.',
+  required_unless: 'Câmpul :attribute este obligatoriu cănd :other nu este :value.',
+  required_with: 'Câmpul :attribute este obligatoriu cănd :field este completat.',
+  required_with_all: 'Câmpul :attribute este obligatoriu cănd :fields sunt completate.',
+  required_without: 'Câmpul :attribute este obligatoriu cănd :field nu este completat.',
+  required_without_all: 'Câmpul :attribute este obligatoriu cănd :fields nu sunt completate.',
+  same: 'Câmpurile :attribute și :same trebuie să fie egale.',
+  size: {
+    numeric: ':attribute trebuie să fie :size.',
+    string: ':attribute trebuie să contina :size caractere.'
+  },
+  string: ':attribute trebuie să fie un contina doar caractere alfabetice.',
+  url: 'Formatul :attribute nu este valid.',
+  regex: 'Formatul :attribute nu este valid.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ru.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ru.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: 'Вы должны принять :attribute.',
+  alpha: 'Поле :attribute может содержать только буквы.',
+  alpha_dash: 'Поле :attribute может содержать только буквы, цифры, дефисы и символы подчёркивания.',
+  alpha_num: 'Поле :attribute может содержать только буквы и цифры.',
+  between: 'Поле :attribute должно быть между :min и :max.',
+  confirmed: 'Поле :attribute не совпадает с подтверждением.',
+  email: 'Поле :attribute должно быть действительным электронным адресом.',
+  def: 'Поле :attribute содержит ошибки.',
+  digits: 'Длина цифрового поля :attribute должна быть :digits.',
+  digits_between: 'Длинна цифрового поля :attribute должна быть от :min до :max знаков.',
+  different: 'Поля :attribute и :different должны различаться.',
+  in: 'Выбранное значение для :attribute ошибочно.',
+  integer: 'Поле :attribute должно быть целым числом.',
+  hex: 'Поле :attribute должно иметь шестнадцатеричный формат',
+  min: {
+    numeric: 'Значение поля :attribute должно быть больше или равно :min.',
+    string: 'Количество символов в поле :attribute должно быть не менее :min.'
+  },
+  max: {
+    numeric: 'Значение поля :attribute должно быть меньше или равно :max.',
+    string: 'Количество символов в поле :attribute не может превышать :max.'
+  },
+  not_in: 'Выбранное значение для :attribute ошибочно.',
+  numeric: 'Поле :attribute должно быть числом.',
+  present: 'Поле :attribute должно присутствовать (но может быть пустым).',
+  required: 'Поле :attribute обязательно для заполнения.',
+  required_if: 'Поле :attribute требуется когда значения поля :other равно :value.',
+  same: 'Значение :attribute должно совпадать с :same.',
+  size: {
+    numeric: 'Значение поля :attribute должно быть равным :size.',
+    string: 'Количество символов в поле :attribute должно быть равно :size.'
+  },
+  url: 'Поле :attribute должно содержать валидный URL.',
+  regex: 'Неверный формат поля :attribute.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/se.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/se.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute måste vara accepterat.',
+  after: ':attribute måste vara efter :after.',
+  after_or_equal: ':attribute måste vara samtidigt eller efter :after_or_equal.',
+  alpha: ':attribute får bara bestå av bokstäver.',
+  alpha_dash: ':attribute får bara bestå av alfanumeriska tecken, bindestreck och understreck.',
+  alpha_num: ':attribute får bara bestå av alfanumeriska tecken',
+  before: ':attribute måste vara före :before.',
+  before_or_equal: ':attribute måste vara samtidigt eller före :before_or_equal.',
+  between: ':attribute måste vara mellan :min och :max.',
+  confirmed: ':attribute stämmer inte överens med bekräftelsefältet.',
+  email: 'Felaktigt format för :attribute.',
+  date: ':attribute är inte ett giltigt datum.',
+  def: 'Attributet :attribute innehåller fel.',
+  digits: ':attribute ska innehålla :digits siffror.',
+  different: ':attribute och :different måste vara olika.',
+  in: 'Det valda :attribute är ogiltigt.',
+  integer: ':attribute måste vara ett heltal.',
+  hex: ':attribute måste vara i hexadecimalt format',
+  min: {
+    numeric: ':attribute måste vara minst :min.',
+    string: ':attribute måste vara minst :min tecken.'
+  },
+  max: {
+    numeric: ':attribute får inte vara högre än :max.',
+    string: ':attribute får inte innehålla fler än :max tecken.'
+  },
+  not_in: 'Det valda attributet :attribute är ogiltigt',
+  numeric: ':attribute måste vara en siffra.',
+  present: ':attribute måste vara tillgängligt.',
+  required: ':attribute måste vara ifyllt.',
+  required_if: ':attribute måste vara ifyllt när :other är :value.',
+  required_unless: ':attribute måste vara ifyllt när :other inte är :value.',
+  required_with: ':attribute måste vara ifyllt när :field är ifyllt.',
+  required_with_all: ':attribute måste vara ifyllt när :fields är ifyllda.',
+  required_without: ':attribute måste vara ifyllt när :field inte är ifyllt.',
+  required_without_all: ':attribute måste vara ifyllt när ingen av :fields är ifyllda.',
+  same: ':attribute och :same måste matcha.',
+  size: {
+    numeric: ':attribute måste vara :size.',
+    string: ':attribute måste vara :size tecken lång.'
+  },
+  string: ':attribute måste vara en sträng.',
+  url: ':attribute formatet är ogiltigt.',
+  regex: ':attribute formatet är ogiltigt.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/sl.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/sl.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute mora biti sprejet.",
+  active_url: ":attribute ni pravilen.",
+  after: ":attribute mora biti za datumom :date.",
+  after_or_equal: ":attribute mora biti za ali enak :date.",
+  alpha: ":attribute lahko vsebuje samo črke.",
+  alpha_dash: ":attribute lahko vsebuje samo črke, številke in črtice.",
+  alpha_num: ":attribute lahko vsebuje samo črke in številke.",
+  attributes: {},
+  array: ":attribute mora biti polje.",
+  before: ":attribute mora biti pred datumom :date.",
+  before_or_equal: ":attribute mora biti pred ali enak :date.",
+  between: {
+    numeric: ":attribute mora biti med :min in :max.",
+    file: ":attribute mora biti med :min in :max kilobajti.",
+    string: ":attribute mora biti med :min in :max znaki.",
+    array: ":attribute mora imeti med :min in :max elementov."
+  },
+  boolean: ":attribute polje mora biti 1 ali 0",
+  confirmed: ":attribute potrditev se ne ujema.",
+  date: ":attribute ni veljaven datum.",
+  date_format: ":attribute se ne ujema z obliko :format.",
+  different: ":attribute in :other mora biti drugačen.",
+  digits: ":attribute mora imeti :digits cifer.",
+  digits_between: ":attribute mora biti med :min in :max ciframi.",
+  dimensions: ":attribute ima napačne dimenzije slike.",
+  distinct: ":attribute je duplikat.",
+  email: ":attribute mora biti veljaven e-poštni naslov.",
+  exists: "izbran :attribute je neveljaven.",
+  file: ":attribute mora biti datoteka.",
+  filled: ":attribute mora biti izpolnjen.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute mora biti slika.",
+  in: "izbran :attribute je neveljaven.",
+  in_array: ":attribute ne obstaja v :other.",
+  integer: ":attribute mora biti število.",
+  ip: ":attribute mora biti veljaven IP naslov.",
+  ipv4: ":attribute mora biti veljaven IPv4 naslov.",
+  ipv6: ":attribute mora biti veljaven IPv6 naslov.",
+  json: ":attribute mora biti veljaven JSON tekst.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: ":attribute ne sme biti večje od :max.",
+    file: ":attribute ne sme biti večje :max kilobajtov.",
+    string: ":attribute ne sme biti večje :max znakov.",
+    array: ":attribute ne smejo imeti več kot :max elementov."
+  },
+  mimes: ":attribute mora biti datoteka tipa: :values.",
+  mimetypes: ":attribute mora biti datoteka tipa: :values.",
+  min: {
+    numeric: ":attribute mora biti vsaj dolžine :min.",
+    file: ":attribute mora imeti vsaj :min kilobajtov.",
+    string: ":attribute mora imeti vsaj :min znakov.",
+    array: ":attribute mora imeti vsaj :min elementov."
+  },
+  not_in: "izbran :attribute je neveljaven.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: ":attribute mora biti število.",
+  present: "Polje :attribute mora biti prisotno.",
+  regex: "Format polja :attribute je neveljaven.",
+  required: "Polje :attribute je obvezno.",
+  required_if: "Polje :attribute je obvezno, če je :other enak :value.",
+  required_unless: "Polje :attribute je obvezno, razen če je :other v :values.",
+  required_with: "Polje :attribute je obvezno, če je :values prisoten.",
+  required_with_all: "Polje :attribute je obvezno, če so :values prisoten.",
+  required_without: "Polje :attribute je obvezno, če :values ni prisoten.",
+  required_without_all: "Polje :attribute je obvezno, če :values niso prisotni.",
+  same: "Polje :attribute in :other se morata ujemati.",
+  size: {
+    numeric: ":attribute mora biti :size.",
+    file: ":attribute mora biti :size kilobajtov.",
+    string: ":attribute mora biti :size znakov.",
+    array: ":attribute mora vsebovati :size elementov."
+  },
+  string: ":attribute mora biti tekst.",
+  timezone: ":attribute mora biti časovna cona.",
+  unique: ":attribute je že zaseden.",
+  uploaded: "Nalaganje :attribute ni uspelo.",
+  url: ":attribute format je neveljaven."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/sq.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/sq.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute duhet të pranohet.",
+  active_url: ":attribute nuk është adresë e saktë.",
+  after: ":attribute duhet të jetë datë pas :date.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: ":attribute mund të përmbajë vetëm shkronja.",
+  alpha_dash: ":attribute mund të përmbajë vetëm shkronja, numra, dhe viza.",
+  alpha_num: ":attribute mund të përmbajë vetëm shkronja dhe numra.",
+  attributes: {},
+  array: ":attribute duhet të jetë një bashkësi (array).",
+  before: ":attribute duhet të jetë datë para :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: ":attribute duhet të jetë midis :min - :max.",
+    file: ":attribute duhet të jetë midis :min - :max kilobajtëve.",
+    string: ":attribute duhet të jetë midis :min - :max karaktereve.",
+    array: ":attribute duhet të jetë midis :min - :max elementëve."
+  },
+  boolean: "Fusha :attribute duhet të jetë e vërtetë ose e gabuar",
+  confirmed: ":attribute konfirmimi nuk përputhet.",
+  date: ":attribute nuk është një datë e saktë.",
+  date_format: ":attribute nuk i përshtatet formatit :format.",
+  different: ":attribute dhe :other duhet të jenë të ndryshme.",
+  digits: ":attribute duhet të jetë :digits shifra.",
+  digits_between: ":attribute duhet të jetë midis :min dhe :max shifra.",
+  dimensions: "The :attribute has invalid image dimensions.",
+  distinct: "The :attribute field has a duplicate value.",
+  email: ":attribute formati është i pasaktë.",
+  exists: ":attribute përzgjedhur është i/e pasaktë.",
+  file: "The :attribute must be a file.",
+  filled: "Fusha :attribute është e kërkuar.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute duhet të jetë imazh.",
+  in: ":attribute përzgjedhur është i/e pasaktë.",
+  in_array: "The :attribute field does not exist in :other.",
+  integer: ":attribute duhet të jetë numër i plotë.",
+  ip: ":attribute duhet të jetë një IP adresë e saktë.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: "The :attribute must be a valid JSON string.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: ":attribute nuk mund të jetë më tepër se :max.",
+    file: ":attribute nuk mund të jetë më tepër se :max kilobajtë.",
+    string: ":attribute nuk mund të jetë më tepër se :max karaktere.",
+    array: ":attribute nuk mund të ketë më tepër se :max elemente."
+  },
+  mimes: ":attribute duhet të jetë një dokument i tipit: :values.",
+  mimetypes: ":attribute duhet të jetë një dokument i tipit: :values.",
+  min: {
+    numeric: ":attribute nuk mund të jetë më pak se :min.",
+    file: ":attribute nuk mund të jetë më pak se :min kilobajtë.",
+    string: ":attribute nuk mund të jetë më pak se :min karaktere.",
+    array: ":attribute nuk mund të ketë më pak se :min elemente."
+  },
+  not_in: ":attribute përzgjedhur është i/e pasaktë.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: ":attribute duhet të jetë një numër.",
+  present: "The :attribute field must be present.",
+  regex: "Formati i :attribute është i pasaktë.",
+  required: "Fusha :attribute është e kërkuar.",
+  required_if: "Fusha :attribute është e kërkuar kur :other është :value.",
+  required_unless: "The :attribute field is required unless :other is in :values.",
+  required_with: "Fusha :attribute është e kërkuar kur :values ekziston.",
+  required_with_all: "Fusha :attribute është e kërkuar kur :values ekziston.",
+  required_without: "Fusha :attribute është e kërkuar kur :values nuk ekziston.",
+  required_without_all: "Fusha :attribute është e kërkuar kur nuk ekziston asnjë nga :values.",
+  same: ":attribute dhe :other duhet të përputhen.",
+  size: {
+    numeric: ":attribute duhet të jetë :size.",
+    file: ":attribute duhet të jetë :size kilobajtë.",
+    string: ":attribute duhet të jetë :size karaktere.",
+    array: ":attribute duhet të ketë :size elemente."
+  },
+  string: ":attribute duhet të jetë varg.",
+  timezone: ":attribute duhet të jetë zonë e saktë.",
+  unique: ":attribute është marrë tashmë.",
+  uploaded: "The :attribute failed to upload.",
+  url: "Formati i :attribute është i pasaktë."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/sr.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/sr.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Polje :attribute mora biti prihvaćeno.",
+  active_url: "Polje :attribute nije validan URL.",
+  after: "Polje :attribute mora biti datum posle :date.",
+  after_or_equal: "The :attribute must be a date after or equal to :date.",
+  alpha: "Polje :attribute može sadržati samo slova.",
+  alpha_dash: "Polje :attribute može sadržati samo slova, brojeve i povlake.",
+  alpha_num: "Polje :attribute može sadržati samo slova i brojeve.",
+  attributes: {},
+  array: "Polje :attribute mora sadržati nekih niz stavki.",
+  before: "Polje :attribute mora biti datum pre :date.",
+  before_or_equal: "The :attribute must be a date before or equal to :date.",
+  between: {
+    numeric: "Polje :attribute mora biti između :min - :max.",
+    file: "Fajl :attribute mora biti između :min - :max kilobajta.",
+    string: "Polje :attribute mora biti između :min - :max karaktera.",
+    array: "Polje :attribute mora biti između :min - :max stavki."
+  },
+  boolean: "Polje :attribute mora biti tačno ili netačno",
+  confirmed: "Potvrda polja :attribute se ne poklapa.",
+  date: "Polje :attribute nije važeći datum.",
+  date_format: "Polje :attribute ne odgovora prema formatu :format.",
+  different: "Polja :attribute i :other moraju biti različita.",
+  digits: "Polje :attribute mora sadržati :digits šifri.",
+  digits_between: "Polje :attribute mora biti izemđu :min i :max šifri.",
+  dimensions: "The :attribute has invalid image dimensions.",
+  distinct: "The :attribute field has a duplicate value.",
+  email: "Format polja :attribute nije validan.",
+  exists: "Odabrano polje :attribute nije validno.",
+  file: "The :attribute must be a file.",
+  filled: "Polje :attribute je obavezno.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Polje :attribute mora biti slika.",
+  in: "Odabrano polje :attribute nije validno.",
+  in_array: "The :attribute field does not exist in :other.",
+  integer: "Polje :attribute mora biti broj.",
+  ip: "Polje :attribute mora biti validna IP adresa.",
+  ipv4: "The :attribute must be a valid IPv4 address.",
+  ipv6: "The :attribute must be a valid IPv6 address.",
+  json: "The :attribute must be a valid JSON string.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Polje :attribute mora biti manje od :max.",
+    file: "Polje :attribute mora biti manje od :max kilobajta.",
+    string: "Polje :attribute mora sadržati manje od :max karaktera.",
+    array: "Polje :attribute ne smije da image više od :max stavki."
+  },
+  mimes: "Polje :attribute mora biti fajl tipa: :values.",
+  mimetypes: "Polje :attribute mora biti fajl tipa: :values.",
+  min: {
+    numeric: "Polje :attribute mora biti najmanje :min.",
+    file: "Fajl :attribute mora biti najmanje :min kilobajta.",
+    string: "Polje :attribute mora sadržati najmanje :min karaktera.",
+    array: "Polje :attribute mora sadrzati najmanje :min stavku."
+  },
+  not_in: "Odabrani element polja :attribute nije validan.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Polje :attribute mora biti broj.",
+  present: "The :attribute field must be present.",
+  regex: "Format polja :attribute nije validan.",
+  required: "Polje :attribute je obavezno.",
+  required_if: "Polje :attribute je potrebno kada polje :other sadrži :value.",
+  required_unless: "The :attribute field is required unless :other is in :values.",
+  required_with: "Polje :attribute je potrebno kada polje :values je prisutan.",
+  required_with_all: "Polje :attribute je obavezno kada je :values prikazano.",
+  required_without: "Polje :attribute je potrebno kada polje :values nije prisutan.",
+  required_without_all: "Polje :attribute je potrebno kada nijedan od sledeći polja :values nisu prisutni.",
+  same: "Polja :attribute i :other se moraju poklapati.",
+  size: {
+    numeric: "Polje :attribute mora biti :size.",
+    file: "Fajl :attribute mora biti :size kilobajta.",
+    string: "Polje :attribute mora biti :size karaktera.",
+    array: "Polje :attribute mora sadržati :size stavki."
+  },
+  string: "Polje :attribute mora sadržati slova.",
+  timezone: "Polje :attribute mora biti ispravna vremenska zona.",
+  unique: "Polje :attribute već postoji.",
+  uploaded: "The :attribute failed to upload.",
+  url: "Format polja :attribute ne važi."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/sv.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/sv.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ":attribute måste accepteras.",
+  active_url: ":attribute är inte en giltig webbadress.",
+  after: ":attribute måste vara ett datum efter den :date.",
+  after_or_equal: ":attribute måste vara ett datum senare eller samma dag som :date.",
+  alpha: ":attribute får endast innehålla bokstäver.",
+  alpha_dash: ":attribute får endast innehålla bokstäver, siffror och bindestreck.",
+  alpha_num: ":attribute får endast innehålla bokstäver och siffror.",
+  array: ":attribute måste vara en array.",
+  before: ":attribute måste vara ett datum innan den :date.",
+  before_or_equal: ":attribute måste vara ett datum före eller samma dag som :date.",
+  between: {
+    numeric: ":attribute måste vara en siffra mellan :min och :max.",
+    file: ":attribute måste vara mellan :min till :max kilobyte stor.",
+    string: ":attribute måste innehålla :min till :max tecken.",
+    array: ":attribute måste innehålla mellan :min - :max objekt."
+  },
+  boolean: ":attribute måste vara sant eller falskt.",
+  confirmed: ":attribute bekräftelsen matchar inte.",
+  date: ":attribute är inte ett giltigt datum.",
+  date_format: ":attribute matchar inte formatet :format.",
+  different: ":attribute och :other får inte vara lika.",
+  digits: ":attribute måste vara :digits tecken.",
+  digits_between: ":attribute måste vara mellan :min och :max tecken.",
+  dimensions: ":attribute har felaktiga bilddimensioner.",
+  distinct: ":attribute innehåller fler än en repetition av samma element.",
+  email: ":attribute måste innehålla en korrekt e-postadress.",
+  exists: ":attribute är ogiltigt.",
+  file: ":attribute måste vara en fil.",
+  filled: ":attribute är obligatoriskt.",
+  gt: {
+    numeric: ":attribute måste vara större än :value.",
+    file: ":attribute måste vara större än :value kilobyte stor.",
+    string: ":attribute måste vara längre än :value tecken.",
+    array: ":attribute måste innehålla fler än :value objekt."
+  },
+  gte: {
+    numeric: ":attribute måste vara lika med eller större än :value.",
+    file: ":attribute måste vara lika med eller större än :value kilobyte stor.",
+    string: ":attribute måste vara lika med eller längre än :value tecken.",
+    array: ":attribute måste innehålla lika många eller fler än :value objekt."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: ":attribute måste vara en bild.",
+  in: ":attribute är ogiltigt.",
+  in_array: ":attribute finns inte i :other.",
+  integer: ":attribute måste vara en siffra.",
+  ip: ":attribute måste vara en giltig IP-adress.",
+  ipv4: ":attribute måste vara en giltig IPv4-adress.",
+  ipv6: ":attribute måste vara en giltig IPv6-adress.",
+  json: ":attribute måste vara en giltig JSON-sträng.",
+  lt: {
+    numeric: ":attribute måste vara mindre än :value.",
+    file: ":attribute måste vara mindre än :value kilobyte stor.",
+    string: ":attribute måste vara kortare än :value tecken.",
+    array: ":attribute måste innehålla färre än :value objekt."
+  },
+  lte: {
+    numeric: ":attribute måste vara lika med eller mindre än :value.",
+    file: ":attribute måste vara lika med eller mindre än :value kilobyte stor.",
+    string: ":attribute måste vara lika med eller kortare än :value tecken.",
+    array: ":attribute måste innehålla lika många eller färre än :value objekt."
+  },
+  max: {
+    numeric: ":attribute får inte vara större än :max.",
+    file: ":attribute får max vara :max kilobyte stor.",
+    string: ":attribute får max innehålla :max tecken.",
+    array: ":attribute får inte innehålla mer än :max objekt."
+  },
+  mimes: ":attribute måste vara en fil av typen: :values.",
+  mimetypes: ":attribute måste vara en fil av typen: :values.",
+  min: {
+    numeric: ":attribute måste vara större än :min.",
+    file: ":attribute måste vara minst :min kilobyte stor.",
+    string: ":attribute måste innehålla minst :min tecken.",
+    array: ":attribute måste innehålla minst :min objekt."
+  },
+  not_in: ":attribute är ogiltigt.",
+  not_regex: "Formatet för :attribute är ogiltigt.",
+  numeric: ":attribute måste vara en siffra.",
+  present: ":attribute måste finnas med.",
+  regex: ":attribute har ogiltigt format.",
+  required: ":attribute är obligatoriskt.",
+  required_if: ":attribute är obligatoriskt när :other är :value.",
+  required_unless: ":attribute är obligatoriskt när inte :other finns bland :values.",
+  required_with: ":attribute är obligatoriskt när :values är ifyllt.",
+  required_with_all: ":attribute är obligatoriskt när :values är ifyllt.",
+  required_without: ":attribute är obligatoriskt när :values ej är ifyllt.",
+  required_without_all: ":attribute är obligatoriskt när ingen av :values är ifyllt.",
+  same: ":attribute och :other måste vara lika.",
+  size: {
+    numeric: ":attribute måste vara :size.",
+    file: ":attribute får endast vara :size kilobyte stor.",
+    string: ":attribute måste innehålla :size tecken.",
+    array: ":attribute måste innehålla :size objekt."
+  },
+  string: ":attribute måste vara en sträng.",
+  timezone: ":attribute måste vara en giltig tidszon.",
+  unique: ":attribute används redan.",
+  uploaded: ":attribute kunde inte laddas upp.",
+  url: ":attribute har ett ogiltigt format."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/tr.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/tr.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute kabul edilmeli.',
+  after: ':attribute alanı :after alanından sonra olmalıdır.',
+  after_or_equal: ':attribute alanı :after_or_equal alanına eşit veya sonra olmalıdır.',
+  alpha: ':attribute alanı sadece harflerden oluşabilir.',
+  alpha_dash: ':attribute alanı sadece alfa-nümerik, tire ve alt çizgi karakterlerden oluşabilir.',
+  alpha_num: ':attribute alanı alfa-nümerik olmalıdır.',
+  before: ':attribute alanı :before alanından önce olmalıdır.',
+  before_or_equal: ':attribute alanı :before_or_equal alanına eşit veya önce olmalıdır.',
+  between: ':attribute alanı :min ile :max arasında olabilir.',
+  confirmed: ':attribute uyuşmuyor.',
+  email: ':attribute formatı geçersiz.',
+  date: ':attribute geöerli bir tarih alanı değil.',
+  def: ':attribute hatalar içeriyor.',
+  digits: ':attribute sadece rakamlardan oluşabilir.',
+  digits_between: ':attribute :min ile :max arasında rakam olmalıdır.',
+  different: ':attribute ve :different farklı olmalı.',
+  in: 'Seçilen :attribute geçerli değil.',
+  integer: ':attribute tam sayı olmalı.',
+  hex: ':attribute onaltılık formatta olmalı.',
+  min: {
+    numeric: ':attribute en az :min olmalı.',
+    string: ':attribute en az :min karakter uzunluğunda olmalı.'
+  },
+  max: {
+    numeric: ':attribute en çok :max olabilir.',
+    string: ':attribute uzunluğu en çok :max karakter uzunluğunda olabilir.'
+  },
+  not_in: 'Seçilen :attribute geçerli değil.',
+  numeric: ':attribute sayı olmalı.',
+  present: ':attribute alanı bulunmalıdır (ancak boş olabilir).',
+  required: ':attribute alanı gerekli.',
+  required_if: ':attribute alanı :other alanı :value olduğunda gerekli.',
+  required_unless: ':attribute alanı :other alanı :value değilse gereklidir.',
+  required_with: ':attribute alanı :field boş değilse gereklidir.',
+  required_with_all: ':attribute alanı :fields alanları boş değilse gereklidir.',
+  required_without: ':attribute alanı :field alanı boşsa gereklidir.',
+  required_without_all: ':attribute alanı :fields alanları boşsa gereklidir.',
+  same: ':attribute ve :same aynı olmalı.',
+  size: {
+    numeric: ':attribute :size olmalı.',
+    string: ':attribute :size karakter uzunluğunda olmalı.'
+  },
+  string: ':attribute alfa-numerik olmalı.',
+  url: ':attribute formatı geçersiz.',
+  regex: ':attribute formatı geçersiz.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/ua.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ua.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute повиннен бути прийнятий.',
+  alpha: 'Поле :attribute може складатись тільки з літер.',
+  alpha_dash: 'Поле :attribute може складатись тільки з літер, чисел, дефісів та символів підкреслення.',
+  alpha_num: 'Поле :attribute може складатись тільки з літер та чисел.',
+  between: 'Значення поля :attribute повинно знаходитись між :min і :max.',
+  confirmed: 'Поле :attribute не співпадає з підтвердженням.',
+  email: 'Значення поля :attribute повинно бути існуючою електронною адресою.',
+  def: 'Поле :attribute містить помилки.',
+  digits: 'Довжина числового поля :attribute повинна бути :digits.',
+  digits_between: 'Довжина цифрового поля :attribute повинна бути від :min до :max.',
+  different: 'Поля :attribute і :different повинні відрізнятись.',
+  in: 'Обране значення для :attribute помилкове.',
+  integer: 'Значення поля :attribute повинно бути цілим числом.',
+  hex: 'Значення поля :attribute повинно бути шістнадцяткового формату',
+  min: {
+    numeric: 'Значення поля :attribute повинно бути більшим або рівним :min.',
+    string: 'Кількість символів в полі :attribute повинна бути не менше :min.'
+  },
+  max: {
+    numeric: 'Значення поля :attribute повинно бути менше або рівне :max.',
+    string: 'Кількість символів в полі :attribute не може превищувати :max.'
+  },
+  not_in: 'Обране значення для :attribute помилкове.',
+  numeric: 'Значення поля :attribute повинно бути числом.',
+  present: 'Поле :attribute повинно бути присутнім (але може бути пустим).',
+  required: 'Поле :attribute обов\'язкове для заповнення.',
+  required_if: 'Поле :attribute потрібне у випадку коли значення поля :other рівне :value.',
+  same: 'Значеня поля :attribute повинно співпадати з :same.',
+  size: {
+    numeric: 'Значення поля :attribute повинно бути рівним :size.',
+    string: 'Кількість символів в полі :attribute повинна бути рівною :size.'
+  },
+  url: 'Поле :attribute повинне містити валідний URL.',
+  regex: 'Неправильний формат значення :attribute.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/uk.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/uk.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: "Ви повинні прийняти :attribute.",
+  active_url: "Поле :attribute не є правильним URL.",
+  after: "Поле :attribute має містити дату не раніше :date.",
+  after_or_equal: "Поле :attribute має містити дату не раніше або дорівнюватися :date.",
+  alpha: "Поле :attribute має містити лише літери.",
+  alpha_dash: "Поле :attribute має містити лише літери, цифри та підкреслення.",
+  alpha_num: "Поле :attribute має містити лише літери та цифри.",
+  attributes: {},
+  array: "Поле :attribute має бути масивом.",
+  before: "Поле :attribute має містити дату не пізніше :date.",
+  before_or_equal: "Поле :attribute має містити дату не пізніше або дорівнюватися :date.",
+  between: {
+    numeric: "Поле :attribute має бути між :min та :max.",
+    file: "Розмір файлу в полі :attribute має бути не менше :min та не більше :max кілобайт.",
+    string: "Текст в полі :attribute має бути не менше :min та не більше :max символів.",
+    array: "Поле :attribute має містити від :min до :max елементів."
+  },
+  boolean: "Поле :attribute повинне містити логічний тип.",
+  confirmed: "Поле :attribute не збігається з підтвердженням.",
+  date: "Поле :attribute не є датою.",
+  date_format: "Поле :attribute не відповідає формату :format.",
+  different: "Поля :attribute та :other повинні бути різними.",
+  digits: "Довжина цифрового поля :attribute повинна дорівнювати :digits.",
+  digits_between: "Довжина цифрового поля :attribute повинна бути від :min до :max.",
+  dimensions: "Поле :attribute містіть неприпустимі розміри зображення.",
+  distinct: "Поле :attribute містить значення, яке дублюється.",
+  email: "Поле :attribute повинне містити коректну електронну адресу.",
+  file: "Поле :attribute має містити файл.",
+  filled: "Поле :attribute є обов'язковим для заповнення.",
+  exists: "Вибране для :attribute значення не коректне.",
+  gt: {
+    numeric: "The :attribute must be greater than :value.",
+    file: "The :attribute must be greater than :value kilobytes.",
+    string: "The :attribute must be greater than :value characters.",
+    array: "The :attribute must have more than :value items."
+  },
+  gte: {
+    numeric: "The :attribute must be greater than or equal :value.",
+    file: "The :attribute must be greater than or equal :value kilobytes.",
+    string: "The :attribute must be greater than or equal :value characters.",
+    array: "The :attribute must have :value items or more."
+  },
+  hex: "The :attribute field should have hexadecimal format",
+  image: "Поле :attribute має містити зображення.",
+  in: "Вибране для :attribute значення не коректне.",
+  in_array: "Значення поля :attribute не міститься в :other.",
+  integer: "Поле :attribute має містити ціле число.",
+  ip: "Поле :attribute має містити IP адресу.",
+  ipv4: "Поле :attribute має містити IPv4 адресу.",
+  ipv6: "Поле :attribute має містити IPv6 адресу.",
+  json: "Дані поля :attribute мають бути в форматі JSON.",
+  lt: {
+    numeric: "The :attribute must be less than :value.",
+    file: "The :attribute must be less than :value kilobytes.",
+    string: "The :attribute must be less than :value characters.",
+    array: "The :attribute must have less than :value items."
+  },
+  lte: {
+    numeric: "The :attribute must be less than or equal :value.",
+    file: "The :attribute must be less than or equal :value kilobytes.",
+    string: "The :attribute must be less than or equal :value characters.",
+    array: "The :attribute must not have more than :value items."
+  },
+  max: {
+    numeric: "Поле :attribute має бути не більше :max.",
+    file: "Файл в полі :attribute має бути не більше :max кілобайт.",
+    string: "Текст в полі :attribute повинен мати довжину не більшу за :max.",
+    array: "Поле :attribute повинне містити не більше :max елементів."
+  },
+  mimes: "Поле :attribute повинне містити файл одного з типів: :values.",
+  mimetypes: "Поле :attribute повинне містити файл одного з типів: :values.",
+  min: {
+    numeric: "Поле :attribute повинне бути не менше :min.",
+    file: "Розмір файлу в полі :attribute має бути не меншим :min кілобайт.",
+    string: "Текст в полі :attribute повинен містити не менше :min символів.",
+    array: "Поле :attribute повинне містити не менше :min елементів."
+  },
+  not_in: "Вибране для :attribute значення не коректне.",
+  not_regex: "The :attribute format is invalid.",
+  numeric: "Поле :attribute повинно містити число.",
+  present: "Поле :attribute повинне бути присутнє.",
+  regex: "Поле :attribute має хибний формат.",
+  required: "Поле :attribute є обов'язковим для заповнення.",
+  required_if: "Поле :attribute є обов'язковим для заповнення, коли :other є рівним :value.",
+  required_unless: "Поле :attribute є обов'язковим для заповнення, коли :other відрізняється від :values",
+  required_with: "Поле :attribute є обов'язковим для заповнення, коли :values вказано.",
+  required_with_all: "Поле :attribute є обов'язковим для заповнення, коли :values вказано.",
+  required_without: "Поле :attribute є обов'язковим для заповнення, коли :values не вказано.",
+  required_without_all: "Поле :attribute є обов'язковим для заповнення, коли :values не вказано.",
+  same: "Поля :attribute та :other мають співпадати.",
+  size: {
+    numeric: "Поле :attribute має бути довжини :size.",
+    file: "Файл в полі :attribute має бути розміром :size кілобайт.",
+    string: "Текст в полі :attribute повинен містити :size символів.",
+    array: "Поле :attribute повинне містити :size елементів."
+  },
+  string: "Поле :attribute повинне містити текст.",
+  timezone: "Поле :attribute повинне містити коректну часову зону.",
+  unique: "Таке значення поля :attribute вже існує.",
+  uploaded: "Завантаження поля :attribute не вдалося.",
+  url: "Формат поля :attribute неправильний."
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/vi.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/vi.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute phải được chấp nhận.',
+  alpha: 'Trường :attribute phải là ký tự',
+  alpha_dash: ':attribute chỉ chấp nhận ký tự chữ cái, số, dấu gạch chéo và gạch dưới.',
+  alpha_num: ':attribute phải là ký tự chữ cái hoặc chữ số.',
+  between: ':attribute phải nằm trong khoảng :min và :max.',
+  confirmed: ':attribute xác nhận không trùng khớp.',
+  email: ':attribute không phải là email.',
+  date: ':attribute không phải là ngày hợp lệ',
+  def: 'Thuộc tính :attribute có lỗi.',
+  digits: ':attribute phải là số và có chiều dài bằng :digits.',
+  digits_between: 'Độ dài của trường :attribute phải nằm trong khoảng :min and :max chữ số.',
+  different: 'Giá trị của hai trường :attribute và :different phải khác nhau.',
+  in: 'Giá trị được chọn của :attribute không hợp lệ.',
+  integer: ':attribute phải là số nguyên.',
+  hex: 'The :attribute should have hexadecimal format',
+  min: {
+    numeric: ':attribute phải lớn hơn hoặc bằng :min.',
+    string: ':attribute phải có ít nhất :min ký tự.'
+  },
+  max: {
+    numeric: ':attribute phải nhỏ hơn hoặc bằng :max.',
+    string: ':attribute phải có ít hơn :max ký tự.'
+  },
+  not_in: 'Giá trị được chọn của trường :attribute không hợp lệ.',
+  numeric: ':attribute phải là số.',
+  present: 'Trường :attribute phải có mặt (nhưng có thể để trống).',
+  required: ':attribute bắt buộc nhập.',
+  required_if: ':attribute là bắt buộc khi :other có giá trị :value.',
+  same: 'Giá trị của :attribute và :same phải như nhau.',
+  size: {
+    numeric: ':attribute phải có chiều dài của bằng :size.',
+    string: 'Số ký tự của :attribute phải là :size ký tự.'
+  },
+  string: ':attribute không phải là một chuỗi',
+  url: ':attribute không phải là một Url hợp lệ.',
+  regex: ':attribute không đúng định dạng',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/zh.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/zh.js ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute必须是可接受的.',
+  alpha: ':attribute只能包含字母.',
+  alpha_dash: ':attribute只能包含字母,连字符和下划线.',
+  alpha_num: ':attribute只能包含字母和数字.',
+  between: ':attribute的(大小,长度等)只能在:min和:max之间.',
+  confirmed: ':attribute确认不一致.',
+  email: ':attribute格式不正确.',
+  date: ':attribute日期格式错误.',
+  def: ':attribute属性错误.',
+  digits: ':attribute必须是:digits位小数.',
+  digits_between: ':attribute 必须是介于 :min 和 :max 位的数字。',
+  different: ':attribute和:different必须不同.',
+  in: '选择的:attribute无效',
+  integer: ':attribute必须是一个整数.',
+  hex: 'The :attribute should have hexadecimal format',
+  min: {
+    numeric: ':attribute不能小于:min.',
+    string: ':attribute长度不能小于:min.'
+  },
+  max: {
+    numeric: ':attribute不能大于:max.',
+    string: ':attribute长度不能大于:max.'
+  },
+  not_in: '所选的:attribute无效.',
+  numeric: ':attribute必须是一个数字.',
+  present: 'The :attribute field must be present (but can be empty).',
+  required: ':attribute不能为空.',
+  required_if: '当:other是:value时,:attribute不能为空.',
+  same: ':attribute和:same必须一致.',
+  size: {
+    numeric: ':attribute必须等于:size.',
+    string: ':attribute的长度必须等于:size.'
+  },
+  string: ':attribute必须是一个字符串.',
+  url: ':attribute格式不正确.',
+  regex: ':attribute格式不正确.',
+  attributes: {}
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/validatorjs/src/lang/zh_TW.js":
+/*!****************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/zh_TW.js ***!
+  \****************************************************/
+/***/ ((module) => {
+
+module.exports = {
+  accepted: ':attribute必須接受。',
+  alpha: ':attribute只能包含字母。',
+  alpha_dash: ':attribute只能包含字母，連字符和下划線。',
+  alpha_num: ':attribute只能包含字母和數字。',
+  between: ':attribute的值只能在:min和:max之間。',
+  confirmed: ':attribute與確認輸入不一致。',
+  email: ':attribute的格式錯誤。',
+  date: ':attribute的日期格式錯誤。',
+  def: ':attribute屬性錯誤。',
+  digits: ':attribute必須是:digits位小數。',
+  digits_between: ':attribute 必須介於 :min 至 :max 位數字。',
+  different: ':attribute和:different必須不同。',
+  in: '選擇的:attribute無效',
+  integer: ':attribute必須是一個整數。',
+  hex: ':attribute 必須是十六進位格式',
+  min: {
+    numeric: ':attribute不能小於:min。',
+    string: ':attribute的長度不能小於:min.'
+  },
+  max: {
+    numeric: ':attribute不能大於:max。',
+    string: ':attribute的長度不能大於:max.'
+  },
+  not_in: '所選的:attribute無效。',
+  numeric: ':attribute必須是一個數字。',
+  present: ':attribute 一定要有值 (可以是空值)。',
+  required: ':attribute不能空白。',
+  required_if: '當:other是:value時,:attribute不能空白。',
+  same: ':attribute和:same必須一致。',
+  size: {
+    numeric: ':attribute必須等於:size。',
+    string: ':attribute的長度必須等於:size.'
+  },
+  string: ':attribute必須是一個字串。',
+  url: ':attribute格式不正確。',
+  regex: ':attribute格式不正確。',
+  attributes: {}
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/validatorjs/src/lang sync recursive ^\\.\\/.*$":
-/*!*********************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang sync ^\.\/.*$ ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*!**********************************************************!*\
+  !*** ./node_modules/validatorjs/src/lang/ sync ^\.\/.*$ ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
 	"./ar": "./node_modules/validatorjs/src/lang/ar.js",
@@ -31721,4140 +24842,11 @@ webpackContext.id = "./node_modules/validatorjs/src/lang sync recursive ^\\.\\/.
 
 /***/ }),
 
-/***/ "./node_modules/validatorjs/src/lang.js":
-/*!**********************************************!*\
-  !*** ./node_modules/validatorjs/src/lang.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var require;var Messages = __webpack_require__(/*! ./messages */ "./node_modules/validatorjs/src/messages.js");
-
-__webpack_require__(/*! ./lang/en */ "./node_modules/validatorjs/src/lang/en.js");
-
-var require_method = require;
-
-var container = {
-
-  messages: {},
-
-  /**
-   * Set messages for language
-   *
-   * @param {string} lang
-   * @param {object} rawMessages
-   * @return {void}
-   */
-  _set: function(lang, rawMessages) {
-    this.messages[lang] = rawMessages;
-  },
-
-  /**
-   * Set message for given language's rule.
-   *
-   * @param {string} lang
-   * @param {string} attribute
-   * @param {string|object} message
-   * @return {void}
-   */
-  _setRuleMessage: function(lang, attribute, message) {
-    this._load(lang);
-    if (message === undefined) {
-      message = this.messages[lang].def;
-    }
-
-    this.messages[lang][attribute] = message;
-  },
-
-  /**
-   * Load messages (if not already loaded)
-   *
-   * @param  {string} lang
-   * @return {void}
-   */
-  _load: function(lang) {
-    if (!this.messages[lang]) {
-      try {
-        var rawMessages = __webpack_require__("./node_modules/validatorjs/src/lang sync recursive ^\\.\\/.*$")("./" + lang);
-        this._set(lang, rawMessages);
-      } catch (e) {}
-    }
-  },
-
-  /**
-   * Get raw messages for language
-   *
-   * @param  {string} lang
-   * @return {object}
-   */
-  _get: function(lang) {
-    this._load(lang);
-    return this.messages[lang];
-  },
-
-  /**
-   * Make messages for given language
-   *
-   * @param  {string} lang
-   * @return {Messages}
-   */
-  _make: function(lang) {
-    this._load(lang);
-    return new Messages(lang, this.messages[lang]);
-  }
-
-};
-
-module.exports = container;
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ar.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ar.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "الصفة :attribute يجب أن تكون مقبولة",
-  after: "الصفة :attribute يجب أن تكون بعد الصفة :after.",
-  after_or_equal: "الصفة :attribute يجب أن تكون مساوية أو بعد الصفة :after_or_equal.",
-  alpha: "حقل الصفة  :attribute يجب أن تحتوي على أحرف فقط",
-  alpha_dash: "حقل الصفة :attribute مسموح بأن يحتوي على حروف و أرقام و شرطة و شرطة منخفضة",
-  alpha_num: "حقل الصفة :attribute يجب أن يحتوي على أحرف و أرقام",
-  before: "الصفة :attribute يجب أن تكون قبل :before.",
-  before_or_equal: "الصفة :attribute يجب أن تكون مساوية أو قبل الصفة :before_or_equal.",
-  between: "حقل الصفة :attribute يجب أن يكون بين :min و :max.",
-  confirmed: "تأكيد الصفة :attribute غير متطابق.",
-  email: "الصفة :attribute صيغتها غير صحيحة",
-  date: "الصفة :attribute صيغتها ليست تاريخ صحيح",
-  def: "الصفة :attribute تحتوي على أخطاء",
-  digits: "الصفة :attribute يجب أن تكون :digits أرقام.",
-  digits_between: "يجب أن يحتوي :attribute بين :min و :max رقمًا/أرقام .",
-  different: "الصفة :attribute و الصفة :different يجب أن تكونا مختلفتين",
-  in: "الصفة :attribute المختارة، غير صحيحة.",
-  integer: "الصفة :attribute يجب أن تكون عدد صحيح",
-  hex: "حقل الصفة :attribute يجب أن يحتوي على صيغة هكسيديسمل",
-  min: {
-    numeric: "الصفة :attribute يجب أن تكون :min على الأقل",
-    string: "الصفة :attribute يجب أن تكون :min حرف على الأقل."
-  },
-  max: {
-    numeric: "الصفة :attribute لا يمكن أن تكون أكبر من  :max.",
-    string: "الصفة :attribute يجب أن لا تكون أكثر من :max حرف."
-  },
-  not_in: "الصفة :attribute المختارة غير صحيحة.",
-  numeric: "الصفة :attribute يجب أن تكون رقما.",
-  present: "حقل الصفة :attribute يجب أن يكون معرفا ، يمكن أن يكون فارغا.",
-  required: "حقل الصفة :attribute مطلوب.",
-  required_if: "حقل الصفة :attribute مطلوب حين تكون قيمة الحقل :other تساوي :value.",
-  required_unless: "حقل الصفة :attribute مطلوب حين تكون قيم الحقل :other لا تساوي :value.",
-  required_with: "حقل الصفة :attribute مطلوب حين يكون الحقا :field غير فارغ.",
-  required_with_all: "حقل الصفة :attribute مطلوب حين تكون الحقول :fields غير فارغة.",
-  required_without: "حقل الصفة :attribute مطلوب حين يكون الحقل :field فارغا.",
-  required_without_all: "حقل الصفة :attribute مطلوب حين تكون الحقول :fields فارغة.",
-  same: "حقل الصفة :attribute و حقل الصفة :same يجب أن يتطابقا.",
-  size: {
-    numeric: "الصفة :attribute يجب أن تكون :size.",
-    string: "الصفة :attribute يجب أن تكون :size حرفا."
-  },
-  string: "الصفة :attribute يجب أن تكون نص.",
-  url: "الصفة :attribute صياغتها غير صحيحة.",
-  regex: "الصفة :attribute صياغتها غير صحيحة.",
-  attributes: {
-    username: "اسم المستخدم",
-    password: "كلمة المرور",
-    email: "البريد الالكتروني",
-    website: "الموقع الالكتروني",
-    firstname: "الاسم الاول",
-    lastname: "الاسم الاخير",
-    subject: "الموضوع",
-    city: "المدينة",
-    region: "المنطقة",
-    country: "الدولة",
-    street: "الشارع",
-    zipcode: "الرمز البريدي",
-    phone: "رقم الهاتف",
-    mobile: "رقم الجوال"
-  }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/az.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/az.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute qəbul edilməlidir",
-  active_url: ":attribute doğru URL deyil",
-  after: ":attribute :date tarixindən sonra olmalıdır",
-  after_or_equal: ":attribute :date tarixi ilə eyni və ya sonra olmalıdır",
-  alpha: ":attribute yalnız hərflərdən ibarət ola bilər",
-  alpha_dash: ":attribute yalnız hərf, rəqəm və tire simvolundan ibarət ola bilər",
-  alpha_num: ":attribute yalnız hərf və rəqəmlərdən ibarət ola bilər",
-  array: ":attribute massiv formatında olmalıdır",
-  before: ":attribute :date tarixindən əvvəl olmalıdır",
-  before_or_equal: ":attribute :date tarixindən əvvəl və ya bərabər olmalıdır",
-  between: {
-    numeric: ":attribute :min ilə :max arasında olmalıdır",
-    file: ":attribute :min ilə :max KB ölçüsü intervalında olmalıdır",
-    string: ":attribute :min ilə :max simvolu intervalında olmalıdır",
-    array: ":attribute :min ilə :max intervalında hissədən ibarət olmalıdır"
-  },
-  boolean: " :attribute doğru və ya yanlış ola bilər",
-  confirmed: " :attribute doğrulanması yanlışdır",
-  date: " :attribute tarix formatında olmalıdır",
-  date_format: " :attribute :format formatında olmalıdır",
-  different: " :attribute və :other fərqli olmalıdır",
-  digits: " :attribute :digits rəqəmli olmalıdır",
-  digits_between: " :attribute :min ilə :max rəqəmləri intervalında olmalıdır",
-  dimensions: " :attribute doğru şəkil ölçülərində deyil",
-  distinct: " :attribute dublikat qiymətlidir",
-  email: " :attribute doğru email formatında deyil",
-  exists: " seçilmiş :attribute yanlışdır",
-  file: " :attribute fayl formatında olmalıdır",
-  filled: " :attribute qiyməti olmalıdır",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  image: " :attribute şəkil formatında olmalıdır",
-  in: " seçilmiş :attribute yanlışdır",
-  in_array: " :attribute :other qiymətləri arasında olmalıdır",
-  integer: " :attribute tam ədəd olmalıdır",
-  hex: "The :attribute field should have hexadecimal format",
-  ip: " :attribute İP adres formatında olmalıdır",
-  ipv4: " :attribute İPv4 adres formatında olmalıdır",
-  ipv6: " :attribute İPv6 adres formatında olmalıdır",
-  json: " :attribute JSON formatında olmalıdır",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: " :attribute maksiumum :max rəqəmdən ibarət ola bilər",
-    file: " :attribute maksimum :max KB ölçüsündə ola bilər",
-    string: " :attribute maksimum :max simvoldan ibarət ola bilər",
-    array: " :attribute maksimum :max hədd'dən ibarət ola bilər"
-  },
-  mimes: " :attribute :values tipində fayl olmalıdır",
-  mimetypes: " :attribute :values tipində fayl olmalıdır",
-  min: {
-    numeric: " :attribute minimum :min rəqəmdən ibarət ola bilər",
-    file: " :attribute minimum :min KB ölçüsündə ola bilər",
-    string: " :attribute minimum :min simvoldan ibarət ola bilər",
-    array: " :attribute minimum :min hədd'dən ibarət ola bilər"
-  },
-  not_in: " seçilmiş :attribute yanlışdır",
-  numeric: " :attribute rəqəmlərdən ibarət olmalıdır",
-  present: " :attribute iştirak etməlidir",
-  regex: " :attribute formatı yanlışdır",
-  required: " :attribute mütləqdir",
-  required_if: " :attribute (:other :value ikən) mütləqdir",
-  required_unless: " :attribute (:other :values 'ə daxil ikən) mütləqdir",
-  required_with: " :attribute (:values var ikən) mütləqdir",
-  required_with_all: " :attribute (:values var ikən) mütləqdir",
-  required_without: " :attribute (:values yox ikən) mütləqdir",
-  required_without_all: " :attribute (:values yox ikən) mütləqdir",
-  same: " :attribute və :other eyni olmalıdır",
-  size: {
-    numeric: " :attribute :size ölçüsündə olmalıdır",
-    file: " :attribute :size KB ölçüsündə olmalıdır",
-    string: " :attribute :size simvoldan ibarət olmalıdır",
-    array: " :attribute :size hədd'dən ibarət olmalıdır"
-  },
-  string: " :attribute hərf formatında olmalıdır",
-  timezone: " :attribute ərazi formatında olmalıdır",
-  unique: " :attribute artıq iştirak edib",
-  uploaded: " :attribute yüklənməsi mümkün olmadı",
-  url: " :attribute formatı yanlışdır"
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/be.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/be.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Вы павінны прыняць :attribute.",
-  active_url: "Поле :attribute утрымлівае несапраўдны URL.",
-  after: "У полі :attribute павінна быць дата пасля :date.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: "Поле :attribute можа мець толькі літары.",
-  alpha_dash: "Поле :attribute можа мець толькі літары, лічбы і злучок.",
-  alpha_num: "Поле :attribute можа мець толькі літары і лічбы.",
-  array: "Поле :attribute павінна быць масівам.",
-  before: "У полі :attribute павінна быць дата да :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: "Поле :attribute павінна быць паміж :min і :max.",
-    file: "Памер файла ў поле :attribute павінен быць паміж :min і :max кілабайт.",
-    string: "Колькасць сiмвалаў у поле :attribute павінна быць паміж :min і :max.",
-    array: "Колькасць элементаў у поле :attribute павінна быць паміж :min і :max."
-  },
-  boolean: "Поле :attribute павінна мець значэнне лагічнага тыпу.",
-  confirmed: "Поле :attribute не супадае з пацвярджэннем.",
-  date: "Поле :attribute не з'яўляецца датай.",
-  date_format: "Поле :attribute не адпавядае фармату :format.",
-  different: "Палі :attribute і :other павінны адрознівацца.",
-  digits: "Даўжыня лічбавага поля :attribute павінна быць :digits.",
-  digits_between: "Даўжыня лічбавага поля :attribute павінна быць паміж :min і :max.",
-  dimensions: "The :attribute has invalid image dimensions.",
-  distinct: "The :attribute field has a duplicate value.",
-  email: "Поле :attribute павінна быць сапраўдным электронным адрасам.",
-  file: "The :attribute must be a file.",
-  filled: "Поле :attribute абавязкова для запаўнення.",
-  exists: "Выбранае значэнне для :attribute некарэктна.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Поле :attribute павінна быць малюнкам.",
-  in: "Выбранае значэнне для :attribute памылкова.",
-  in_array: "The :attribute field does not exist in :other.",
-  integer: "Поле :attribute павінна быць цэлым лікам.",
-  ip: "Поле :attribute дпавінна быць сапраўдным IP-адрасам.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: "Поле :attribute павінна быць JSON радком.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Поле :attribute не можа быць больш :max.",
-    file: "Памер файла ў поле :attribute не можа быць больш :max кілабайт).",
-    string: "Колькасць сiмвалаў у поле :attribute не можа перавышаць :max.",
-    array: "Колькасць элементаў у поле :attribute не можа перавышаць :max."
-  },
-  mimes: "Поле :attribute павінна быць файлам аднаго з наступных тыпаў: :values.",
-  mimetypes: "Поле :attribute павінна быць файлам аднаго з наступных тыпаў: :values.",
-  min: {
-    numeric: "Поле :attribute павінна быць не менш :min.",
-    file: "Памер файла ў полее :attribute павінен быць не менш :min кілабайт.",
-    string: "Колькасць сiмвалаў у поле :attribute павінна быць не менш :min.",
-    array: "Колькасць элементаў у поле :attribute павінна быць не менш :min."
-  },
-  not_in: "Выбранае значэнне для :attribute памылкова.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Поле :attribute павінна быць лікам.",
-  present: "The :attribute field must be present.",
-  regex: "Поле :attribute мае памылковы фармат.",
-  required: "Поле :attribute абавязкова для запаўнення.",
-  required_if: "Поле :attribute абавязкова для запаўнення, калі :other раўняецца :value.",
-  required_unless: "Поле :attribute абавязкова для запаўнення, калі :other не раўняецца :values.",
-  required_with: "Поле :attribute абавязкова для запаўнення, калі :values ўказана.",
-  required_with_all: "Поле :attribute абавязкова для запаўнення, калі :values ўказана.",
-  required_without: "Поле :attribute абавязкова для запаўнення, калі :values не ўказана.",
-  required_without_all: "Поле :attribute абавязкова для запаўнення, калі ні адно з :values не ўказана.",
-  same: "Значэнне :attribute павінна супадаць з :other.",
-  size: {
-    numeric: "Поле :attribute павінна быць :size.",
-    file: "Размер файла в поле :attribute павінен быць :size кілабайт.",
-    string: "Колькасць сiмвалаў у поле :attribute павінна быць :size.",
-    array: "Колькасць элементаў у поле :attribute павінна быць :size."
-  },
-  string: "Поле :attribute павінна быць радком.",
-  timezone: "Поле :attribute павінна быць сапраўдным гадзінным поясам.",
-  unique: "Такое значэнне поля :attribute ўжо існуе.",
-  uploaded: "The :attribute failed to upload.",
-  url: "Поле :attribute мае памылковы фармат."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/bg.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/bg.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Трябва да приемете :attribute.",
-  active_url: "Полето :attribute не е валиден URL адрес.",
-  after: "Полето :attribute трябва да бъде дата след :date.",
-  after_or_equal: "Полето :attribute трябва да бъде дата след или равна на :date.",
-  alpha: "Полето :attribute трябва да съдържа само букви.",
-  alpha_dash: "Полето :attribute трябва да съдържа само букви, цифри, долна черта и тире.",
-  alpha_num: "Полето :attribute трябва да съдържа само букви и цифри.",
-  array: "Полето :attribute трябва да бъде масив.",
-  before: "Полето :attribute трябва да бъде дата преди :date.",
-  before_or_equal: "Полето :attribute трябва да бъде дата преди или равна на :date.",
-  between: {
-    numeric: "Полето :attribute трябва да бъде между :min и :max.",
-    file: "Полето :attribute трябва да бъде между :min и :max килобайта.",
-    string: "Полето :attribute трябва да бъде между :min и :max знака.",
-    array: "Полето :attribute трябва да има между :min - :max елемента."
-  },
-  boolean: "Полето :attribute трябва да съдържа Да или Не",
-  confirmed: "Полето :attribute не е потвърдено.",
-  date: "Полето :attribute не е валидна дата.",
-  date_format: "Полето :attribute не е във формат :format.",
-  different: "Полетата :attribute и :other трябва да са различни.",
-  digits: "Полето :attribute трябва да има :digits цифри.",
-  digits_between: "Полето :attribute трябва да има между :min и :max цифри.",
-  dimensions: "Невалидни размери за снимка :attribute.",
-  distinct: "Данните в полето :attribute се дублират.",
-  email: "Полето :attribute е в невалиден формат.",
-  exists: "Избранато поле :attribute вече съществува.",
-  file: "Полето :attribute трябва да бъде файл.",
-  filled: "Полето :attribute е задължително.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Полето :attribute трябва да бъде изображение.",
-  in: "Избраното поле :attribute е невалидно.",
-  in_array: "Полето :attribute не съществува в :other.",
-  integer: "Полето :attribute трябва да бъде цяло число.",
-  ip: "Полето :attribute трябва да бъде IP адрес.",
-  ipv4: "Полето :attribute трябва да бъде IPv4 адрес.",
-  ipv6: "Полето :attribute трябва да бъде IPv6 адрес.",
-  json: "Полето :attribute трябва да бъде JSON низ.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Полето :attribute трябва да бъде по-малко от :max.",
-    file: "Полето :attribute трябва да бъде по-малко от :max килобайта.",
-    string: "Полето :attribute трябва да бъде по-малко от :max знака.",
-    array: "Полето :attribute трябва да има по-малко от :max елемента."
-  },
-  mimes: "Полето :attribute трябва да бъде файл от тип: :values.",
-  mimetypes: "Полето :attribute трябва да бъде файл от тип: :values.",
-  min: {
-    numeric: "Полето :attribute трябва да бъде минимум :min.",
-    file: "Полето :attribute трябва да бъде минимум :min килобайта.",
-    string: "Полето :attribute трябва да бъде минимум :min знака.",
-    array: "Полето :attribute трябва има минимум :min елемента."
-  },
-  not_in: "Избраното поле :attribute е невалидно.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Полето :attribute трябва да бъде число.",
-  present: "Полето :attribute трябва да съествува.",
-  regex: "Полето :attribute е в невалиден формат.",
-  required: "Полето :attribute е задължително.",
-  required_if: "Полето :attribute се изисква, когато :other е :value.",
-  required_unless: "Полето :attribute се изисква, освен ако :other не е в :values.",
-  required_with: "Полето :attribute се изисква, когато :values има стойност.",
-  required_with_all: "Полето :attribute е задължително, когато :values имат стойност.",
-  required_without: "Полето :attribute се изисква, когато :values няма стойност.",
-  required_without_all: "Полето :attribute се изисква, когато никое от полетата :values няма стойност.",
-  same: "Полетата :attribute и :other трябва да съвпадат.",
-  size: {
-    numeric: "Полето :attribute трябва да бъде :size.",
-    file: "Полето :attribute трябва да бъде :size килобайта.",
-    string: "Полето :attribute трябва да бъде :size знака.",
-    array: "Полето :attribute трябва да има :size елемента."
-  },
-  string: "Полето :attribute трябва да бъде знаков низ.",
-  timezone: "Полето :attribute трябва да съдържа валидна часова зона.",
-  unique: "Полето :attribute вече съществува.",
-  uploaded: "Неуспешно качване на :attribute.",
-  url: "Полето :attribute е в невалиден формат."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/bs.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/bs.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Polje :attribute mora biti prihvaćeno.",
-  active_url: "Polje :attribute nije validan URL.",
-  after: "Polje :attribute mora biti datum poslije :date.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: "Polje :attribute može sadržati samo slova.",
-  alpha_dash: "Polje :attribute može sadržati samo slova, brojeve i povlake.",
-  alpha_num: "Polje :attribute može sadržati samo slova i brojeve.",
-  attributes: {},
-  array: "Polje :attribute mora biti niz.",
-  before: "Polje :attribute mora biti datum prije :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: "Polje :attribute mora biti izmedju :min - :max.",
-    file: "Fajl :attribute mora biti izmedju :min - :max kilobajta.",
-    string: "Polje :attribute mora biti izmedju :min - :max karaktera.",
-    array: "Polje :attribute mora biti između :min - :max karaktera."
-  },
-  boolean: "Polje :attribute mora biti tačno ili netačno",
-  confirmed: "Potvrda polja :attribute se ne poklapa.",
-  date: "Polje :attribute nema ispravan datum.",
-  date_format: "Polje :attribute nema odgovarajući format :format.",
-  different: "Polja :attribute i :other moraju biti različita.",
-  digits: "Polje :attribute mora da sadži :digits brojeve.",
-  digits_between: "Polje :attribute mora biti između :min i :max broja.",
-  dimensions: "The :attribute has invalid image dimensions.",
-  distinct: "The :attribute field has a duplicate value.",
-  email: "Format polja :attribute mora biti validan email.",
-  exists: "Odabrano polje :attribute nije validno.",
-  file: "The :attribute must be a file.",
-  filled: "Polje :attribute je obavezno.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Polje :attribute mora biti slika.",
-  in: "Odabrano polje :attribute nije validno.",
-  in_array: "The :attribute field does not exist in :other.",
-  integer: "Polje :attribute mora biti broj.",
-  ip: "Polje :attribute mora biti validna IP adresa.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: "The :attribute must be a valid JSON string.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Polje :attribute mora biti manje od :max.",
-    file: "Polje :attribute mora biti manje od :max kilobajta.",
-    string: "Polje :attribute mora sadržati manje od :max karaktera.",
-    array: "Polje :attribute mora sadržati manje od :max karaktera."
-  },
-  mimes: "Polje :attribute mora biti fajl tipa: :values.",
-  mimetypes: "Polje :attribute mora biti fajl tipa: :values.",
-  min: {
-    numeric: "Polje :attribute mora biti najmanje :min.",
-    file: "Fajl :attribute mora biti najmanje :min kilobajta.",
-    string: "Polje :attribute mora sadržati najmanje :min karaktera.",
-    array: "Polje :attribute mora sadržati najmanje :min karaktera."
-  },
-  not_in: "Odabrani element polja :attribute nije validan.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Polje :attribute mora biti broj.",
-  present: "The :attribute field must be present.",
-  regex: "Polje :attribute ima neispravan format.",
-  required: "Polje :attribute je obavezno.",
-  required_if: "Polje :attribute je obavezno kada :other je :value.",
-  required_unless: "The :attribute field is required unless :other is in :values.",
-  required_with: "Polje :attribute je obavezno kada je :values prikazano.",
-  required_with_all: "Polje :attribute je obavezno kada je :values prikazano.",
-  required_without: "Polje :attribute je obavezno kada :values nije prikazano.",
-  required_without_all: "Polje :attribute je obavezno kada nijedno :values nije prikazano.",
-  same: "Polja :attribute i :other se moraju poklapati.",
-  size: {
-    numeric: "Polje :attribute mora biti :size.",
-    file: "Fajl :attribute mora biti :size kilobajta.",
-    string: "Polje :attribute mora biti :size karaktera.",
-    array: "Polje :attribute mora biti :size karaktera."
-  },
-  string: "Polje :attribute mora sadrzavati slova.",
-  timezone: "Polje :attribute mora biti ispravna vremenska zona.",
-  unique: "Polje :attribute već postoji.",
-  uploaded: "The :attribute failed to upload.",
-  url: "Format polja :attribute nije validan."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ca.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ca.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'El camp :attribute pot ser aceptat.',
-  after: 'El camp :attribute pot ser una data posterior a :after.',
-  alpha: 'El camp :attribute només pot contenir lletras.',
-  alpha_dash: 'El camp :attribute només pot contenir lletras, nombres y guions.',
-  alpha_num: 'El camp :attribute només pot contenir lletras y nombres.',
-  attributes: {},
-  between: 'El camp :attribute té que estar entre :min - :max.',
-  confirmed: 'La confirmació de :attribute no coincideix.',
-  different: 'El camp :attribute y :other poden ser diferents.',
-  digits: 'El camp :attribute pot tindre :digits dígitos.',
-  digits_between: 'El camp  :attribute ha de tenir entre :min i :max dígits.',
-  email: 'El camp :attribute no es un correu válido.',
-  'in': 'El camp :attribute es invàlid.',
-  integer: 'El camp :attribute pot ser un nombre enter.',
-  hex: 'El camp :attribute hauria de tenir format hexadecimal',
-  max: {
-    numeric: 'El camp :attribute no pot ser mayor a :max.',
-    string: 'El camp :attribute no pot ser mayor que :max caràcters.'
-  },
-  min: {
-    numeric: 'La mida del camp :attribute pot ser de al menys :min.',
-    string: 'El camp :attribute pot contenir al menys :min caràcters.'
-  },
-  not_in: 'El camp :attribute es invàlid.',
-  numeric: 'El camp :attribute pot ser numéric.',
-  present: 'El camp de :attribute pot estar present (però pot estar buit).',
-  regex: 'El format del camp :attribute es invàlid.',
-  required: 'El camp :attribute es obligatori.',
-  required_if: 'El camp :attribute es obligatori quan :other es :value.',
-  same: 'El camp :attribute y :other poden coincidir.',
-  size: {
-    numeric: 'La mida del camp :attribute pot ser :size.',
-    string: 'El camp :attribute pot contenir :size caràcters.'
-  },
-  url: 'El format de :attribute es invàlid.'
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/cs.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/cs.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute musí být přijat.",
-  active_url: ":attribute není platnou URL adresou.",
-  after: ":attribute musí být datum po :date.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: ":attribute může obsahovat pouze písmena.",
-  alpha_dash:
-    ":attribute může obsahovat pouze písmena, číslice, pomlčky a podtržítka. České znaky (á, é, í, ó, ú, ů, ž, š, č, ř, ď, ť, ň) nejsou podporovány.",
-  alpha_num: ":attribute může obsahovat pouze písmena a číslice.",
-  attributes: {},
-  array: ":attribute musí být pole.",
-  before: ":attribute musí být datum před :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: ":attribute musí být hodnota mezi :min a :max.",
-    file: ":attribute musí být větší než :min a menší než :max Kilobytů.",
-    string: ":attribute musí být delší než :min a kratší než :max znaků.",
-    array: ":attribute musí obsahovat nejméně :min a nesmí obsahovat více než :max prvků."
-  },
-  boolean: ":attribute musí být true nebo false",
-  confirmed: ":attribute nebylo odsouhlaseno.",
-  date: ":attribute musí být platné datum.",
-  date_format: ":attribute není platný formát data podle :format.",
-  different: ":attribute a :other se musí lišit.",
-  digits: ":attribute musí být :digits pozic dlouhé.",
-  digits_between: ":attribute musí být dlouhé nejméně :min a nejvíce :max pozic.",
-  dimensions: ":attribute má neplatné rozměry.",
-  distinct: ":attribute má duplicitní hodnotu.",
-  email: ":attribute není platný formát.",
-  exists: "Zvolená hodnota pro :attribute není platná.",
-  file: ":attribute musí být soubor.",
-  filled: ":attribute musí být vyplněno.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute musí být obrázek.",
-  in: "Zvolená hodnota pro :attribute je neplatná.",
-  in_array: ":attribute není obsažen v :other.",
-  integer: ":attribute musí být celé číslo.",
-  ip: ":attribute musí být platnou IP adresou.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: ":attribute musí být platný JSON řetězec.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: ":attribute musí být nižší než :max.",
-    file: ":attribute musí být menší než :max Kilobytů.",
-    string: ":attribute musí být kratší než :max znaků.",
-    array: ":attribute nesmí obsahovat více než :max prvků."
-  },
-  mimes: ":attribute musí být jeden z následujících datových typů :values.",
-  mimetypes: ":attribute musí být jeden z následujících datových typů :values.",
-  min: {
-    numeric: ":attribute musí být větší než :min.",
-    file: ":attribute musí být větší než :min Kilobytů.",
-    string: ":attribute musí být delší než :min znaků.",
-    array: ":attribute musí obsahovat více než :min prvků."
-  },
-  not_in: "Zvolená hodnota pro :attribute je neplatná.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: ":attribute musí být číslo.",
-  present: ":attribute musí být vyplněno.",
-  regex: ":attribute nemá správný formát.",
-  required: ":attribute musí být vyplněno.",
-  required_if: ":attribute musí být vyplněno pokud :other je :value.",
-  required_unless: ":attribute musí být vyplněno dokud :other je v :value.",
-  required_with: ":attribute musí být vyplněno pokud :field je vyplněno.",
-  required_with_all: ":attribute musí být vyplněno pokud :fields je zvoleno.",
-  required_without: ":attribute musí být vyplněno pokud :field není vyplněno.",
-  required_without_all: ":attribute musí být vyplněno pokud není žádné z :fields zvoleno.",
-  same: ":attribute a :other se musí shodovat.",
-  size: {
-    numeric: ":attribute musí být přesně :size.",
-    file: ":attribute musí mít přesně :size Kilobytů.",
-    string: ":attribute musí být přesně :size znaků dlouhý.",
-    array: ":attribute musí obsahovat právě :size prvků."
-  },
-  string: ":attribute musí být řetězec znaků.",
-  timezone: ":attribute musí být platná časová zóna.",
-  unique: ":attribute musí být unikátní.",
-  uploaded: "Nahrávání :attribute se nezdařilo.",
-  url: "Formát :attribute je neplatný."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/cy.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/cy.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Rhaid derbyn :attribute.",
-  active_url: "Nid yw :attribute yn URL dilys.",
-  after: "Rhaid i :attribute fod yn ddyddiad sydd ar ôl :date.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: "Dim ond llythrennau'n unig gall :attribute gynnwys.",
-  alpha_dash: "Dim ond llythrennau, rhifau a dash yn unig gall :attribute gynnwys.",
-  alpha_num: "Dim ond llythrennau a rhifau yn unig gall :attribute gynnwys.",
-  attributes: {},
-  array: "Rhaid i :attribute fod yn array.",
-  before: "Rhaid i :attribute fod yn ddyddiad sydd cyn :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: "Rhaid i :attribute fod rhwng :min a :max.",
-    file: "Rhaid i :attribute fod rhwng :min a :max kilobytes.",
-    string: "Rhaid i :attribute fod rhwng :min a :max nodyn.",
-    array: "Rhaid i :attribute fod rhwng :min a :max eitem."
-  },
-  boolean: "Rhaid i'r maes :attribute fod yn wir neu gau.",
-  confirmed: "Nid yw'r cadarnhad :attribute yn gyfwerth.",
-  date: "Nid yw :attribute yn ddyddiad dilys.",
-  date_format: "Nid yw :attribute yn y fformat :format.",
-  different: "Rhaid i :attribute a :other fod yn wahanol.",
-  digits: "Rhaid i :attribute fod yn :digits digid.",
-  digits_between: "Rhaid i :attribute fod rhwng :min a :max digid.",
-  dimensions: "The :attribute has invalid image dimensions.",
-  distinct: "The :attribute field has a duplicate value.",
-  email: "Rhaid i :attribute fod yn gyfeiriad ebost dilys.",
-  file: "The :attribute must be a file.",
-  filled: "Rhaid cynnwys :attribute.",
-  exists: "Nid yw :attribute yn ddilys.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Rhaid i :attribute fod yn lun.",
-  in: "Nid yw :attribute yn ddilys.",
-  in_array: "The :attribute field does not exist in :other.",
-  integer: "Rhaid i :attribute fod yn integer.",
-  ip: "Rhaid i :attribute fod yn gyfeiriad IP dilys.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: "The :attribute must be a valid JSON string.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Ni chai :attribute fod yn fwy na :max.",
-    file: "Ni chai :attribute fod yn fwy na :max kilobytes.",
-    string: "Ni chai :attribute fod yn fwy na :max nodyn.",
-    array: "Ni chai :attribute fod yn fwy na :max eitem."
-  },
-  mimes: "Rhaid i :attribute fod yn ffeil o'r math: :values.",
-  mimetypes: "Rhaid i :attribute fod yn ffeil o'r math: :values.",
-  min: {
-    numeric: "Rhaid i :attribute fod o leiaf :min.",
-    file: "Rhaid i :attribute fod o leiaf :min kilobytes.",
-    string: "Rhaid i :attribute fod o leiaf :min nodyn.",
-    array: "Rhaid i :attribute fod o leiaf :min eitem."
-  },
-  not_in: "Nid yw :attribute yn ddilys.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Rhaid i :attribute fod yn rif.",
-  present: "The :attribute field must be present.",
-  regex: "Nid yw fformat :attribute yn ddilys.",
-  required: "Rhaid cynnwys :attribute.",
-  required_if: "Rhaid cynnwys :attribute pan mae :other yn :value.",
-  required_unless: "The :attribute field is required unless :other is in :values.",
-  required_with: "Rhaid cynnwys :attribute pan mae :values yn bresennol.",
-  required_with_all: "Rhaid cynnwys :attribute pan mae :values yn bresennol.",
-  required_without: "Rhaid cynnwys :attribute pan nad oes :values yn bresennol.",
-  required_without_all: "Rhaid cynnwys :attribute pan nad oes :values yn bresennol.",
-  same: "Rhaid i :attribute a :other fod yn gyfwerth.",
-  size: {
-    numeric: "Rhaid i :attribute fod yn :size.",
-    file: "Rhaid i :attribute fod yn :size kilobytes.",
-    string: "Rhaid i :attribute fod yn :size nodyn.",
-    array: "Rhaid i :attribute fod yn :size eitem."
-  },
-  string: "The :attribute must be a string.",
-  timezone: "Rhaid i :attribute fod yn timezone dilys.",
-  unique: "Mae :attribute eisoes yn bodoli.",
-  uploaded: "The :attribute failed to upload.",
-  url: "Nid yw fformat :attribute yn ddilys."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/da.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/da.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute skal accepteres.',
-  after: ':attribute skal være en dato efter :after.',
-  after_or_equal: ':attribute skal være en dato efter eller lig med :after_or_equal.',
-  alpha: ':attribute må kun bestå af bogstaver.',
-  alpha_dash: ':attribute må kun bestå af bogstaver, tal og bindestreger.',
-  alpha_num: ':attribute må kun bestå af bogstaver og tal.',
-  before: ':attribute skal være en dato før :before.',
-  before_or_equal: ':attribute skal være en dato før eller lig med :before_or_equal.',
-  between: ':attribute skal være mellem :min og :max.',
-  confirmed: ':attribute er ikke det samme som bekræftelsesfeltet.',
-  email: ':attribute skal være en gyldig email.',
-  date: ':attribute er ikke en gyldig dato.',
-  def: ':attribute attributen har fejl.',
-  digits: ':attribute skal have :digits cifre.',
-  digits_between: ':attribute skal have mellem :min og :max cifre.',
-  different: ':attribute og :different skal være forskellige.',
-  in: 'Det valgte :attribute er ugyldigt.',
-  integer: ':attribute skal være et heltal.',
-  hex: ':attribute skal have hexadecimalt format',
-  min: {
-    numeric: ':attribute skal være mindst :min.',
-    string: ':attribute skal være mindst :min tegn.'
-  },
-  max: {
-    numeric: ':attribute skal være højest :max.',
-    string: ':attribute skal være højest :max tegn.'
-  },
-  not_in: 'Den valgte :attribute er ugyldig',
-  numeric: ':attribute skal være et tal.',
-  present: ':attribute skal være tilstede.',
-  required: ':attribute skal udfyldes.',
-  required_if: ':attribute skal udfyldes når :other er :value.',
-  required_unless: ':attribute er påkrævet medmindre :other findes i :values.',
-  required_with: ':attribute skal udfyldes når :field er udfyldt.',
-  required_with_all: ':attribute skal udfyldes når :fields er udfyldt.',
-  required_without: ':attribute skal udfyldes når :field ikke er udfyldt.',
-  required_without_all: ':attribute skal udfyldes når ingen af :fields er udfyldt.',
-  same: ':attribute og :same skal være ens.',
-  size: {
-    numeric: ':attribute skal være :size.',
-    string: ':attribute skal være :size tegn lang.'
-  },
-  string: ':attribute skal være en streng.',
-  url: ':attribute formatet er ugyldigt.',
-  regex: ':attribute formatet er ugyldigt.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/de.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/de.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'Das :attribute Feld muss akzeptiert werden.',
-  after: 'Das :attribute muss ein Datum nach dem :after sein.',
-  after_or_equal: 'Das :attribute Datum muss kleiner oder gleich dem :after_or_equal sein.',
-  alpha: 'Das :attribute Feld darf nur aus Buchstaben bestehen.',
-  alpha_dash: 'Das :attribute Feld darf nur aus Buchstaben, Zahlen, Binde- und Unterstrichen bestehen.',
-  alpha_num: 'Das :attribute Feld darf nur aus Buchstaben und Zahlen bestehen.',
-  before: 'Das :attribute muss ein Datum vor dem :before sein.',
-  before_or_equal: 'Das :attribute Datum muss größer oder gleich dem :before_or_equal sein.',
-  between: 'Das :attribute Feld muss zwischen :min und :max liegen.',
-  confirmed: 'Das :attribute Feld stimmt nicht mit der Bestätigung überein.',
-  email: 'Das :attribute Format ist ungültig.',
-  date: 'Das :attribute Feld muss ein gültiges Datum sein.',
-  def: 'Das :attribute Feld hat Fehler.',
-  digits: 'Das :attribute Feld muss :digits Stellen haben.',
-  digits_between: 'Das :attribute Feld muss zwischen :min und :max Stellen haben.',
-  different: 'Die Felder :attribute und :different müssen sich unterscheiden.',
-  in: 'Der gewählte Wert für :attribute ist ungültig.',
-  integer: 'Das :attribute Feld muss eine ganze Zahl sein.',
-  hex: 'Das :attribute Feld sollte hexadezimal sein',
-  min: {
-    numeric: 'Das :attribute Feld muss mindestens :min sein.',
-    string: 'Das :attribute Feld muss mindestens :min Zeichen lang sein.'
-  },
-  max: {
-    numeric: 'Das :attribute Feld darf maximal :max sein.',
-    string: 'Das :attribute Feld darf maximal :max Zeichen haben.'
-  },
-  not_in: 'Der gewählte Wert für :attribute ist ungültig.',
-  numeric: 'Das :attribute Feld muss eine Zahl sein.',
-  present: 'Das Feld :attribute muss vorhanden sein (kann aber leer sein).',
-  required: 'Das :attribute Feld muss ausgefüllt sein.',
-  required_if: 'Das :attribute Feld muss ausgefüllt sein, wenn :other :value ist.',
-  same: 'Die Felder :attribute und :same müssen übereinstimmen.',
-  size: {
-    numeric: 'Das :attribute Feld muss gleich :size sein.',
-    string: 'Das :attribute Feld muss :size Zeichen lang sein.'
-  },
-  string: 'Das :attribute Feld muss ein Satz sein.',
-  url: 'Das Format von :attribute ist ungültig.',
-  regex: 'Das :attribute Format ist ungültig.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/el.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/el.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'Το πεδίο :attribute πρέπει να γίνει αποδεκτό.',
-  after: 'Το πεδίο :attribute πρέπει να είναι μία ημερομηνία μετά από :after.',
-  alpha: 'Το πεδίο :attribute μπορεί να περιέχει μόνο γράμματα.',
-  alpha_dash: 'Το πεδίο :attribute μπορεί να περιέχει μόνο γράμματα, αριθμούς, και παύλες.',
-  alpha_num: 'Το πεδίο :attribute μπορεί να περιέχει μόνο γράμματα και αριθμούς.',
-  between: 'Το πεδίο :attribute πρέπει να είναι μεταξύ :min και :max.',
-  confirmed: 'Η επιβεβαίωση του :attribute δεν ταιριάζει.',
-  email: 'Το πεδίο :attribute πρέπει να είναι μία έγκυρη διεύθυνση email.',
-  date: 'Το πεδίο :attribute δεν είναι έγκυρη ημερομηνία.',
-  def: 'Το πεδίο :attribute περιέχει σφάλματα.',
-  digits: 'Το πεδίο :attribute πρέπει να είναι :digits ψηφία.',
-  digits_between: 'Το πεδίο :attribute πρέπει να είναι μεταξύ :min και :max ψηφία.',
-  different: 'Το πεδίο :attribute  και :different πρέπει να είναι διαφορετικά.',
-  in: 'Το επιλεγμένο :attribute δεν είναι έγκυρο.',
-  integer: 'Το πεδίο :attribute πρέπει να είναι ακέραιος.',
-  hex: 'Το πεδίο :attribute πρέπει να είναι σε δεκαεξαδική μορφή.',
-  min: {
-    numeric: 'Το πεδίο :attribute πρέπει να είναι τουλάχιστον :min.',
-    string: 'Το πεδίο :attribute πρέπει να έχει τουλάχιστον :min χαρακτήρες.'
-  },
-  max: {
-    numeric: 'Το πεδίο :attribute δεν μπορεί να είναι μεγαλύτερο από :max.',
-    string: 'Το πεδίο :attribute δεν μπορεί να έχει περισσότερους από :max χαρακτήρες.'
-  },
-  not_in: 'Το επιλεγμένο :attribute δεν είναι αποδεκτό.',
-  numeric: 'Το πεδίο :attribute πρέπει να είναι αριθμός.',
-  present: 'The :attribute field must be present (but can be empty).',
-  required: 'Το πεδίο :attribute είναι απαραίτητο.',
-  required_if: 'Το πεδίο :attribute είναι απαραίτητο όταν το πεδίο :other είναι :value.',
-  same: 'Τα πεδία :attribute και :same πρέπει να είναι ίδια.',
-  size: {
-    numeric: 'Το πεδίο :attribute πρέπει να είναι :size.',
-    string: 'Το πεδίο :attribute πρέπει να είναι :size χαρακτήρες.'
-  },
-  string: 'Το πεδίο :attribute πρέπει να είναι αλφαριθμητικό.',
-  url: 'Το πεδίο :attribute δεν είναι έγκυρη διεύθυνση URL.',
-  regex: 'Η μορφή του :attribute δεν είναι αποδεκτή.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/en.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/en.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'The :attribute must be accepted.',
-  after: 'The :attribute must be after :after.',
-  after_or_equal: 'The :attribute must be equal or after :after_or_equal.',
-  alpha: 'The :attribute field must contain only alphabetic characters.',
-  alpha_dash: 'The :attribute field may only contain alpha-numeric characters, as well as dashes and underscores.',
-  alpha_num: 'The :attribute field must be alphanumeric.',
-  before: 'The :attribute must be before :before.',
-  before_or_equal: 'The :attribute must be equal or before :before_or_equal.',
-  between: {
-    numeric: 'The :attribute field must be between :min and :max.',
-    string: 'The :attribute field must be between :min and :max characters.',
-  },
-  confirmed: 'The :attribute confirmation does not match.',
-  email: 'The :attribute format is invalid.',
-  date: 'The :attribute is not a valid date format.',
-  def: 'The :attribute attribute has errors.',
-  digits: 'The :attribute must be :digits digits.',
-  digits_between: 'The :attribute field must be between :min and :max digits.',
-  different: 'The :attribute and :different must be different.',
-  in: 'The selected :attribute is invalid.',
-  integer: 'The :attribute must be an integer.',
-  hex: 'The :attribute field should have hexadecimal format',
-  min: {
-    numeric: 'The :attribute must be at least :min.',
-    string: 'The :attribute must be at least :min characters.'
-  },
-  max: {
-    numeric: 'The :attribute may not be greater than :max.',
-    string: 'The :attribute may not be greater than :max characters.'
-  },
-  not_in: 'The selected :attribute is invalid.',
-  numeric: 'The :attribute must be a number.',
-  present: 'The :attribute field must be present (but can be empty).',
-  required: 'The :attribute field is required.',
-  required_if: 'The :attribute field is required when :other is :value.',
-  required_unless: 'The :attribute field is required when :other is not :value.',
-  required_with: 'The :attribute field is required when :field is not empty.',
-  required_with_all: 'The :attribute field is required when :fields are not empty.',
-  required_without: 'The :attribute field is required when :field is empty.',
-  required_without_all: 'The :attribute field is required when :fields are empty.',
-  same: 'The :attribute and :same fields must match.',
-  size: {
-    numeric: 'The :attribute must be :size.',
-    string: 'The :attribute must be :size characters.'
-  },
-  string: 'The :attribute must be a string.',
-  url: 'The :attribute format is invalid.',
-  regex: 'The :attribute format is invalid.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/es.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/es.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'El campo :attribute debe ser aceptado.',
-  after: 'El campo :attribute debe ser una fecha posterior a :after.',
-  alpha: 'El campo :attribute solo debe contener letras.',
-  alpha_dash: 'El campo :attribute solo debe contener letras, números y guiones.',
-  alpha_num: 'El campo :attribute solo debe contener letras y números.',
-  attributes: {},
-  between: 'El campo :attribute tiene que estar entre :min - :max.',
-  confirmed: 'La confirmación de :attribute no coincide.',
-  different: 'El campo :attribute y :other deben ser diferentes.',
-  digits: 'El campo :attribute debe tener :digits dígitos.',
-  digits_between: 'El campo :attribute debe tener entre :min y :max dígitos.',
-  email: 'El campo :attribute no es un correo válido.',
-  in: 'El campo :attribute es inválido.',
-  integer: 'El campo :attribute debe ser un número entero.',
-  hex: 'El campo :attribute debe tener formato hexadecimal.',
-  max: {
-    numeric: 'El campo :attribute no debe ser mayor a :max.',
-    string: 'El campo :attribute no debe ser mayor que :max caracteres.'
-  },
-  min: {
-    numeric: 'El tamaño del campo :attribute debe ser de al menos :min.',
-    string: 'El campo :attribute debe contener al menos :min caracteres.'
-  },
-  not_in: 'El campo :attribute es inválido.',
-  numeric: 'El campo :attribute debe ser numérico.',
-  present: 'El campo de :attribute debe estar presente (pero puede estar vacío).',
-  regex: 'El formato del campo :attribute es inválido.',
-  required: 'El campo :attribute es obligatorio.',
-  required_if: 'El campo :attribute es obligatorio cuando :other es :value.',
-  same: 'El campo :attribute y :other deben coincidir.',
-  size: {
-    numeric: 'El tamaño del campo :attribute debe ser :size.',
-    string: 'El campo :attribute debe contener :size caracteres.'
-  },
-  url: 'El formato de :attribute es inválido.'
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/et.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/et.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute tuleb aktsepteerida.",
-  active_url: ":attribute ei ole kehtiv URL.",
-  after: ":attribute peab olema kuupäev pärast :date.",
-  after_or_equal: ":attribute peab olema kuupäev pärast või samastuma :date.",
-  alpha: ":attribute võib sisaldada vaid tähemärke.",
-  alpha_dash: ":attribute võib sisaldada vaid tähti, numbreid ja kriipse.",
-  alpha_num: ":attribute võib sisaldada vaid tähti ja numbreid.",
-  attributes: {},
-  array: ":attribute peab olema massiiv.",
-  before: ":attribute peab olema kuupäev enne :date.",
-  before_or_equal: ":attribute peab olema kuupäev enne või samastuma :date.",
-  between: {
-    numeric: ":attribute peab olema :min ja :max vahel.",
-    file: ":attribute peab olema :min ja :max kilobaidi vahel.",
-    string: ":attribute peab olema :min ja :max tähemärgi vahel.",
-    array: ":attribute peab olema :min ja :max kirje vahel."
-  },
-  boolean: ":attribute väli peab olema tõene või väär.",
-  confirmed: ":attribute kinnitus ei vasta.",
-  date: ":attribute pole kehtiv kuupäev.",
-  date_format: ":attribute ei vasta formaadile :format.",
-  different: ":attribute ja :other peavad olema erinevad.",
-  digits: ":attribute peab olema :digits numbrit.",
-  digits_between: ":attribute peab olema :min ja :max numbri vahel.",
-  dimensions: ":attribute on valed pildi suurused.",
-  distinct: ":attribute väljal on topeltväärtus.",
-  email: ":attribute peab olema kehtiv e-posti aadress.",
-  exists: "Valitud :attribute on vigane.",
-  file: ":attribute peab olema fail.",
-  filled: ":attribute väli on nõutav.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute peab olema pilt.",
-  in: "Valitud :attribute on vigane.",
-  in_array: ":attribute väli ei eksisteeri :other sees.",
-  integer: ":attribute peab olema täisarv.",
-  ip: ":attribute peab olema kehtiv IP aadress.",
-  ipv4: ":attribute peab olema kehtiv IPv4 aadress.",
-  ipv6: ":attribute peab olema kehtiv IPv6 aadress.",
-  json: ":attribute peab olema kehtiv JSON string.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: ":attribute ei tohi olla suurem kui :max.",
-    file: ":attribute ei tohi olla suurem kui :max kilobaiti.",
-    string: ":attribute ei tohi olla suurem kui :max tähemärki.",
-    array: ":attribute ei tohi sisaldada rohkem kui :max kirjet."
-  },
-  mimes: ":attribute peab olema :values tüüpi.",
-  mimetypes: ":attribute peab olema :values tüüpi.",
-  min: {
-    numeric: ":attribute peab olema vähemalt :min.",
-    file: ":attribute peab olema vähemalt :min kilobaiti.",
-    string: ":attribute peab olema vähemalt :min tähemärki.",
-    array: ":attribute peab olema vähemalt :min kirjet."
-  },
-  not_in: "Valitud :attribute on vigane.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: ":attribute peab olema number.",
-  present: ":attribute väli peab olema esindatud.",
-  regex: ":attribute vorming on vigane.",
-  required: ":attribute väli on nõutud.",
-  required_if: ":attribute väli on nõutud, kui :other on :value.",
-  required_unless: ":attribute väli on nõutud, välja arvatud, kui :other on :values.",
-  required_with: ":attribute väli on nõutud, kui :values on esindatud.",
-  required_with_all: ":attribute väli on nõutud, kui :values on esindatud.",
-  required_without: ":attribute väli on nõutud, kui :values ei ole esindatud.",
-  required_without_all: ":attribute väli on nõutud, kui ükski :values pole esindatud.",
-  same: ":attribute ja :other peavad sobima.",
-  size: {
-    numeric: ":attribute peab olema :size.",
-    file: ":attribute peab olema :size kilobaiti.",
-    string: ":attribute peab olema :size tähemärki.",
-    array: ":attribute peab sisaldama :size kirjet."
-  },
-  string: ":attribute peab olema string.",
-  timezone: ":attribute peab olema kehtiv tsoon.",
-  unique: ":attribute on juba hõivatud.",
-  uploaded: ":attribute ei õnnestunud laadida.",
-  url: ":attribute vorming on vigane."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/eu.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/eu.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute onartua izan behar da.",
-  active_url: ":attribute ez da baliozko URL bat.",
-  after: ":attribute :date osteko data izan behar da.",
-  after_or_equal: ":attribute :date osteko data edo data berdina izan behar da.",
-  alpha: ":attribute hizkiak besterik ezin ditu izan.",
-  alpha_dash: ":attribute hizkiak, zenbakiak eta marrak besterik ezin ditu izan.",
-  alpha_num: ":attribute hizkiak eta zenbakiak besterik ezin ditu izan.",
-  attributes: {},
-  array: ":attribute bilduma izan behar da.",
-  before: ":attribute :date aurreko data izan behar da.",
-  before_or_equal: ":attribute :date aurreko data edo data berdina izan behar da.",
-  between: {
-    numeric: ":attribute :min eta :max artean egon behar da.",
-    file: ":attribute-k :min eta :max kilobyte arteko pisua izan behar du.",
-    string: ":attribute :min eta :max karaktere artean egon behar da.",
-    array: ":attribute-k :min eta :max arteko ale kantitatea euki behar du."
-  },
-  boolean: ":attribute-ren balioa egia edo gezurra izan behar da.",
-  confirmed: ":attribute-ren konfirmazioa ez dator bat.",
-  date: ":attribute ez da baliozko data.",
-  date_format: ":attribute datak ez du :format formatua.",
-  different: ":attribute eta :other ezberdinak izan behar dira.",
-  digits: ":attribute-k :digits digitu euki behar ditu.",
-  digits_between: ":attribute-k :min eta :max arteko digitu kantitatea euki behar du.",
-  dimensions: ":attribute-k ez ditu irudi neurri aproposak.",
-  distinct: ":attribute-k balio bikoiztua dauka.",
-  email: ":attribute-k baliozko posta helbidea euki behar du.",
-  exists: "Hautatutako :attribute baliogabea da.",
-  file: ":attribute fitxategi bat izan behar da.",
-  filled: ":attribute-k balioren bat euki behar du.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute irudi bat izan behar da.",
-  in: "Hautatutako :attribute baliogabea da.",
-  in_array: ":attribute ez da :other-en existizen.",
-  integer: ":attribute zenbaki osoa izan behar da.",
-  ip: ":attribute baliozko IP helbidea izan behar da.",
-  ipv4: ":attribute baliozko IPv4 helbidea izan behar da.",
-  ipv6: ":attribute baliozko IPv6 helbidea izan behar da.",
-  json: ":attribute-k baliozko JSON karaktere-katea euki behar du.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: ":attribute ezin da :max baino handiagoa izan.",
-    file: ":attribute-k ezin du :max kilobyte baino gehiagoko pisua euki.",
-    string: ":attribute-k ezin du :max karaktere baino gehiago euki.",
-    array: ":attribute-k ezin du :max ale baino gehiago euki."
-  },
-  mimes: ":attribute :values motatako fitxategia izan behar da.",
-  mimetypes: ":attribute :values motatako fitxategia izan behar da.",
-  min: {
-    numeric: ":attribute-k gutxienez :min-eko tamaina izan behar du.",
-    file: ":attribute-k gutxienez :min kilobyteko pisua euki behar du.",
-    string: ":attribute-k gutxienez :min karaktere euki behar ditu.",
-    array: ":attribute-k gutxienez :min ale euki behar ditu."
-  },
-  not_in: "Hautatutako :attribute baliogabea da.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: ":attribute zenbaki bat izan behar da.",
-  present: ":attribute bertan egon behar da.",
-  regex: ":attribute-k ez dauka formatu egokirik.",
-  required: ":attribute derrigorrezkoa da.",
-  required_if: ":attribute derrigorrezkoa da :other :value denean.",
-  required_unless: ":attribute derrigorrezkoa da :other :values-en egon ezean.",
-  required_with: ":attribute derrigorrezkoa da :values bertan dagoenean.",
-  required_with_all: ":attribute derrigorrezkoa da :values bertan dagoenean.",
-  required_without: ":attribute derrigorrezkoa da :values bertan ez dagoenean.",
-  required_without_all: ":attribute derrigorrezkoa da :values bertan ez dagoenean.",
-  same: ":attribute eta :other bat etorri behar dira.",
-  size: {
-    numeric: ":attribute-k :size-eko tamaina izan behar du.",
-    file: ":attribute-k :size kilobyteko pisua euki behar du.",
-    string: ":attribute-k :size karaktere euki beha ditu.",
-    array: ":attribute-k :size ale euki behar ditu."
-  },
-  string: ":attribute karaktere-katea izan behar da.",
-  timezone: ":attribute baliozko gunea izan behar da.",
-  unique: ":attribute jadanik erregistratua izan da.",
-  uploaded: ":attribute igotzerakoan huts egin du.",
-  url: ":attribute-k ez dauka formatu egokirik."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/fa.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/fa.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'فیلد :attribute می بایست تایید شود',
-  alpha: 'فیلد :attribute می بایست فقط شامل حروف انگلیسی باشد',
-  alpha_dash: 'فیلد :attribute می بایست فقط شامل حروف انگلیسی و خط تیره و زیرخط باشد',
-  alpha_num: 'فیلد :attribute می بایست فقط شامل حروف و اعداد باشد',
-  between: 'فیلد :attribute می بایست بزرگتر از :min و کوچکتر از :max باشد',
-  confirmed: 'تطبیق فیلد :attribute صحیح نمی باشد',
-  email: 'فرمت ایمیل وارد شده در :attribute صحیح نمی‌باشد',
-  date: 'تاریخ درج شده در فیلد :attribute صحیح نیست',
-  def: 'فیلد :attribute اشکال دارد',
-  digits: 'فیلد :attribute می بایست شامل :digits رقم باشد',
-  digits_between: ':attribute باید بین :min و :max رقم باشد.',
-  different: 'فیلد :attribute می بایست مقداری غیر از :different داشته باشد',
-  in: 'فیلد :attribute انتخاب شده صحیح نمی باشد',
-  integer: 'فیلد :attribute می بایست عددی باشد',
-  hex: 'فیلد :attribute باید در فرمت مبنای ۱۶ باشد',
-  min: {
-    numeric: 'فیلد :attribute می بایست از :min بزرگتر باشد',
-    string: 'فیلد :attribute بایستی حداقل :min کاراکتر طول داشته باشد'
-  },
-  max: {
-    numeric: 'فیلد :attribute می بایست از :max کوچکتر باشد',
-    string: 'فیلد :attribute نباید بیشتر از :max کاراکتر طول داشته باشد'
-  },
-  not_in: 'فیلد :attribute انتخاب شده صحیح نمی باشد',
-  numeric: 'فیلد :attribute می بایست عددی باشد',
-  present: 'The :attribute field must be present (but can be empty).',
-  required: 'فیلد :attribute الزامی است',
-  required_if: 'در صورت دادن :value به :other تکمیل فیلد :attribute الزامی است',
-  same: 'فیلد :attribute می بایست با فیلد :same یکی باشد',
-  size: {
-    numeric: 'فیلد :attribute می بایست :size باشد',
-    string: 'فیلد :attribute می بایست :size کاراکتر طول داشته باشد'
-  },
-  string: 'فیلد :attribute می بایست متنی باشد',
-  url: 'آدرس فیلد :attribute صحیح نمی باشد',
-  regex: 'فرمت آدرس :attribute صحیح نمی باشد',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/fi.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/fi.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute on oltava hyväksytty.',
-  after: ':attribute on oltava :after jälkeen.',
-  after_or_equal: ':attribute täytyy olla sama kuin :after_or_equal tai sen jälkeen.',
-  alpha: ':attribute kenttä saa sisältää ainoastaan kirjaimia.',
-  alpha_dash: ':attribute kenttä saa sisältää ainoastaan kirjaimia tai numeroita, sekä pisteitä ja alaviivoja.',
-  alpha_num: ':attribute kenttä saa sisältää ainoastaan kirjaimia tai numeroita.',
-  before: ':attribute on oltava ennen kuin :before.',
-  before_or_equal: ':attribute on oltava sama tai ennen kuin :before_or_equal.',
-  between: ':attribute on oltava :min ja :max väliltä.',
-  confirmed: ':attribute vahvistus ei täsmää.',
-  email: ':attribute on väärässä muodossa.',
-  date: ':attribute ei ole päivämäärä.',
-  def: ':attribute sisältää virheitä.',
-  digits: ':attribute on oltava :digits numeroa pitkä.',
-  digits_between: 'Kentän :attribute arvon tulee olla :min - :max numeroa.',
-  different: ':attribute ei saa olla yhtä kuin :different.',
-  in: 'Valittu :attribute ei kelpaa.',
-  integer: ':attribute ei ole numero.',
-  hex: ':attribute on oltava heksadesimaali.',
-  min: {
-    numeric: ':attribute on oltava vähintään :min.',
-    string: ':attribute on oltava vähintään :min merkkiä pitkä.'
-  },
-  max: {
-    numeric: ':attribute on oltava enintään :max.',
-    string: ':attribute on oltava enintään :max merkkiä pitkä.'
-  },
-  not_in: 'Valittu :attribute ei kelpaa.',
-  numeric: ':attribute on oltava numero.',
-  present: ':attribute kenttä on oltava (mutta saa olla tyhjä).',
-  required: ':attribute kenttä on pakollinen.',
-  required_if: ':attribute kenttä on pakollinen, jos kenttä :other on :value.',
-  required_unless: ':attribute kenttä on pakollinen, jos kenttä :other ei ole :value.',
-  required_with: ':attribute kenttä on pakollinen, jos kenttä :field ei ole tyhjä.',
-  required_with_all: ':attribute kenttä on pakollinen, jos kentät :fields eivät ole tyhjiä.',
-  required_without: ':attribute kenttä on pakollinen, jos kenttä :field on tyhjä.',
-  required_without_all: ':attribute kenttä on pakollinen, jos kentät :fields ovat tyhjiä.',
-  same: ':attribute ja :same on oltava samat.',
-  size: {
-    numeric: ':attribute on oltava :size.',
-    string: ':attribute on oltava :size merkkiä pitkä.'
-  },
-  string: ':attribute on oltava merkkijono.',
-  url: ':attribute on väärässä muodossa.',
-  regex: ':attribute on väärässä muodossa.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/fr.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/fr.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'Le champ :attribute doit être accepté.',
-  alpha: 'Le champ :attribute ne peut contenir que des caractères alphabétiques.',
-  alpha_dash: 'Le champ :attribute ne peut contenir que des caractères alphanumériques, des tirets et des underscores.',
-  alpha_num: 'Le champ :attribute ne peut contenir que des caractères alphanumériques.',
-  between: 'La longueur du champ :attribute doit être comprise entre :min and :max.',
-  confirmed: 'Le champ :attribute n\'est pas confirmé.',
-  email: 'Le champ :attribute contient un format invalide.',
-  def: 'Le champ :attribute contient un attribut erroné.',
-  digits: 'Le champ :attribute doit être composé de :digits chiffres.',
-  digits_between: 'Le champ :attribute doit contenir entre :min et :max chiffres.',
-  different: 'Les champs :attribute et :different doivent être différents.',
-  in: 'Le champ :attribute est invalide.',
-  integer: 'Le champ :attribute doit être un entier.',
-  hex: 'Le champ :attribute doit être au format hexadécimal.',
-  min: {
-    numeric: 'Le champ :attribute doit être supérieur à :min.',
-    string: 'Le champ :attribute doit contenir plus de :min caractères.'
-  },
-  max: {
-    numeric: 'Le champ :attribute doit être inférieur à :max.',
-    string: 'Le champ :attribute doit contenir moins de :max caractères.'
-  },
-  not_in: 'Le champ :attribute est invalide.',
-  numeric: 'Le champ :attribute doit être un chiffre.',
-  present: 'Le champ :attribute doit être présent (mais peut être vide).',
-  required: 'Le champ :attribute est requis.',
-  required_if: 'Le champ :attribute est requis quand :other est :value.',
-  same: 'Les champs :attribute et :same doivent correspondre.',
-  size: {
-    numeric: 'Le champ :attribute doit être égal à :size.',
-    string: 'Le champ :attribute doit contenir :size caractères.'
-  },
-  url: 'Le format du champ :attribute est invalide.',
-  regex: 'Le format du champ :attribute est invalide.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/hr.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/hr.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Polje :attribute mora biti prihvaćeno.",
-  active_url: "Polje :attribute nije ispravan URL.",
-  after: "Polje :attribute mora biti datum nakon :date.",
-  after_or_equal: "Polje :attribute mora biti datum veći ili jednak :date.",
-  alpha: "Polje :attribute smije sadržavati samo slova.",
-  alpha_dash: "Polje :attribute smije sadržavati samo slova, brojeve i crtice.",
-  alpha_num: "Polje :attribute smije sadržavati samo slova i brojeve.",
-  attributes: {},
-  array: "Polje :attribute mora biti niz.",
-  before: "Polje :attribute mora biti datum prije :date.",
-  before_or_equal: "Polje :attribute mora biti datum manji ili jednak :date.",
-  between: {
-    numeric: "Polje :attribute mora biti između :min - :max.",
-    file: "Polje :attribute mora biti između :min - :max kilobajta.",
-    string: "Polje :attribute mora biti između :min - :max znakova.",
-    array: "Polje :attribute mora imati između :min - :max stavki."
-  },
-  boolean: "Polje :attribute mora biti false ili true.",
-  confirmed: "Potvrda polja :attribute se ne podudara.",
-  date: "Polje :attribute nije ispravan datum.",
-  date_format: "Polje :attribute ne podudara s formatom :format.",
-  different: "Polja :attribute i :other moraju biti različita.",
-  digits: "Polje :attribute mora sadržavati :digits znamenki.",
-  digits_between: "Polje :attribute mora imati između :min i :max znamenki.",
-  dimensions: "Polje :attribute ima neispravne dimenzije slike.",
-  distinct: "Polje :attribute ima dupliciranu vrijednost.",
-  email: "Polje :attribute mora biti ispravna e-mail adresa.",
-  exists: "Odabrano polje :attribute nije ispravno.",
-  file: "Polje :attribute mora biti datoteka.",
-  filled: "Polje :attribute je obavezno.",
-  gt: {
-    numeric: "Polje :attribute mora biti veće od :value.",
-    file: "Polje :attribute mora biti veće od :value kilobajta.",
-    string: "Polje :attribute mora biti veće od :value karaktera.",
-    array: "Polje :attribute mora biti veće od :value stavki."
-  },
-  gte: {
-    numeric: "Polje :attribute mora biti veće ili jednako :value.",
-    file: "Polje :attribute mora biti veće ili jednako :value kilobajta.",
-    string: "Polje :attribute mora biti veće ili jednako :value znakova.",
-    array: "Polje :attribute mora imati :value stavki ili više."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Polje :attribute mora biti slika.",
-  in: "Odabrano polje :attribute nije ispravno.",
-  in_array: "Polje :attribute ne postoji u :other.",
-  integer: "Polje :attribute mora biti broj.",
-  ip: "Polje :attribute mora biti ispravna IP adresa.",
-  ipv4: "Polje :attribute mora biti ispravna IPv4 adresa.",
-  ipv6: "Polje :attribute mora biti ispravna IPv6 adresa.",
-  json: "Polje :attribute mora biti ispravan JSON string.",
-  lt: {
-    numeric: "Polje :attribute mora biti manje od :value.",
-    file: "Polje :attribute mora biti manje od :value kilobajta.",
-    string: "Polje :attribute mora biti manje od :value znakova.",
-    array: "Polje :attribute mora biti manje od :value stavki."
-  },
-  lte: {
-    numeric: "Polje :attribute mora biti manje ili jednako :value.",
-    file: "Polje :attribute mora biti manje ili jednako :value kilobajta.",
-    string: "Polje :attribute mora biti manje ili jednako :value znakova.",
-    array: "Polje :attribute ne smije imati više od :value stavki."
-  },
-  max: {
-    numeric: "Polje :attribute mora biti manje od :max.",
-    file: "Polje :attribute mora biti manje od :max kilobajta.",
-    string: "Polje :attribute mora sadržavati manje od :max znakova.",
-    array: "Polje :attribute ne smije imati više od :max stavki."
-  },
-  mimes: "Polje :attribute mora biti datoteka tipa: :values.",
-  mimetypes: "Polje :attribute mora biti datoteka tipa: :values.",
-  min: {
-    numeric: "Polje :attribute mora biti najmanje :min.",
-    file: "Polje :attribute mora biti najmanje :min kilobajta.",
-    string: "Polje :attribute mora sadržavati najmanje :min znakova.",
-    array: "Polje :attribute mora sadržavati najmanje :min stavki."
-  },
-  not_in: "Odabrano polje :attribute nije ispravno.",
-  not_regex: "Format polja :attribute je neispravan.",
-  numeric: "Polje :attribute mora biti broj.",
-  present: "Polje :attribute mora biti prisutno.",
-  regex: "Polje :attribute se ne podudara s formatom.",
-  required: "Polje :attribute je obavezno.",
-  required_if: "Polje :attribute je obavezno kada polje :other sadrži :value.",
-  required_unless: "Polje :attribute je obavezno osim :other je u :values.",
-  required_with: "Polje :attribute je obavezno kada postoji polje :values.",
-  required_with_all: "Polje :attribute je obavezno kada postje polja :values.",
-  required_without: "Polje :attribute je obavezno kada ne postoji polje :values.",
-  required_without_all: "Polje :attribute je obavezno kada nijedno od polja :values ne postoji.",
-  same: "Polja :attribute i :other se moraju podudarati.",
-  size: {
-    numeric: "Polje :attribute mora biti :size.",
-    file: "Polje :attribute mora biti :size kilobajta.",
-    string: "Polje :attribute mora biti :size znakova.",
-    array: "Polje :attribute mora sadržavati :size stavki."
-  },
-  string: "Polje :attribute mora biti string.",
-  timezone: "Polje :attribute mora biti ispravna vremenska zona.",
-  unique: "Polje :attribute već postoji.",
-  uploaded: "Polje :attribute nije uspešno učitano.",
-  url: "Polje :attribute nije ispravnog formata."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/hu.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/hu.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "A(z) :attribute el kell legyen fogadva!",
-  active_url: "A(z) :attribute nem érvényes url!",
-  after: "A(z) :attribute :date utáni dátum kell, hogy legyen!",
-  after_or_equal: "A(z) :attribute nem lehet korábbi dátum, mint :date!",
-  alpha: "A(z) :attribute kizárólag betűket tartalmazhat!",
-  alpha_dash: "A(z) :attribute kizárólag betűket, számokat és kötőjeleket tartalmazhat!",
-  alpha_num: "A(z) :attribute kizárólag betűket és számokat tartalmazhat!",
-  attributes: {},
-  array: "A(z) :attribute egy tömb kell, hogy legyen!",
-  before: "A(z) :attribute :date előtti dátum kell, hogy legyen!",
-  before_or_equal: "A(z) :attribute nem lehet későbbi dátum, mint :date!",
-  between: {
-    numeric: "A(z) :attribute :min és :max közötti szám kell, hogy legyen!",
-    file: "A(z) :attribute mérete :min és :max kilobájt között kell, hogy legyen!",
-    string: "A(z) :attribute hossza :min és :max karakter között kell, hogy legyen!",
-    array: "A(z) :attribute :min - :max közötti elemet kell, hogy tartalmazzon!"
-  },
-  boolean: "A(z) :attribute mező csak true vagy false értéket kaphat!",
-  confirmed: "A(z) :attribute nem egyezik a megerősítéssel.",
-  date: "A(z) :attribute nem érvényes dátum.",
-  date_format: "A(z) :attribute nem egyezik az alábbi dátum formátummal :format!",
-  different: "A(z) :attribute és :other értékei különbözőek kell, hogy legyenek!",
-  digits: "A(z) :attribute :digits számjegyű kell, hogy legyen!",
-  digits_between: "A(z) :attribute értéke :min és :max közötti számjegy lehet!",
-  dimensions: "A(z) :attribute felbontása nem megfelelő.",
-  distinct: "A(z) :attribute értékének egyedinek kell lennie!",
-  email: "A(z) :attribute nem érvényes email formátum.",
-  exists: "A(z) :attribute már létezik.",
-  file: "A(z) :attribute fájl kell, hogy legyen!",
-  filled: "A(z) :attribute megadása kötelező!",
-  gt: {
-    numeric: "A(z) :attribute nagyobb kell, hogy legyen, mint :value!",
-    file: "A(z) :attribute mérete nagyobb kell, hogy legyen, mint :value kilobájt.",
-    string: "A(z) :attribute hosszabb kell, hogy legyen, mint :value karakter.",
-    array: "A(z) :attribute több, mint :value elemet kell, hogy tartalmazzon."
-  },
-  gte: {
-    numeric: "A(z) :attribute nagyobb vagy egyenlő kell, hogy legyen, mint :value!",
-    file: "A(z) :attribute mérete nem lehet kevesebb, mint :value kilobájt.",
-    string: "A(z) :attribute hossza nem lehet kevesebb, mint :value karakter.",
-    array: "A(z) :attribute legalább :value elemet kell, hogy tartalmazzon."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "A(z) :attribute képfájl kell, hogy legyen!",
-  in: "A kiválasztott :attribute érvénytelen.",
-  in_array: "A(z) :attribute értéke nem található a(z) :other értékek között.",
-  integer: "A(z) :attribute értéke szám kell, hogy legyen!",
-  ip: "A(z) :attribute érvényes IP cím kell, hogy legyen!",
-  ipv4: "A(z) :attribute érvényes IPv4 cím kell, hogy legyen!",
-  ipv6: "A(z) :attribute érvényes IPv6 cím kell, hogy legyen!",
-  json: "A(z) :attribute érvényes JSON szöveg kell, hogy legyen!",
-  lt: {
-    numeric: "A(z) :attribute kisebb kell, hogy legyen, mint :value!",
-    file: "A(z) :attribute mérete kisebb kell, hogy legyen, mint :value kilobájt.",
-    string: "A(z) :attribute rövidebb kell, hogy legyen, mint :value karakter.",
-    array: "A(z) :attribute kevesebb, mint :value elemet kell, hogy tartalmazzon."
-  },
-  lte: {
-    numeric: "A(z) :attribute kisebb vagy egyenlő kell, hogy legyen, mint :value!",
-    file: "A(z) :attribute mérete nem lehet több, mint :value kilobájt.",
-    string: "A(z) :attribute hossza nem lehet több, mint :value karakter.",
-    array: "A(z) :attribute legfeljebb :value elemet kell, hogy tartalmazzon."
-  },
-  max: {
-    numeric: "A(z) :attribute értéke nem lehet nagyobb, mint :max!",
-    file: "A(z) :attribute mérete nem lehet több, mint :max kilobájt.",
-    string: "A(z) :attribute hossza nem lehet több, mint :max karakter.",
-    array: "A(z) :attribute legfeljebb :max elemet kell, hogy tartalmazzon."
-  },
-  mimes: "A(z) :attribute kizárólag az alábbi fájlformátumok egyike lehet: :values.",
-  mimetypes: "A(z) :attribute kizárólag az alábbi fájlformátumok egyike lehet: :values.",
-  min: {
-    numeric: "A(z) :attribute értéke nem lehet kisebb, mint :min!",
-    file: "A(z) :attribute mérete nem lehet kevesebb, mint :min kilobájt.",
-    string: "A(z) :attribute hossza nem lehet kevesebb, mint :min karakter.",
-    array: "A(z) :attribute legalább :min elemet kell, hogy tartalmazzon."
-  },
-  not_in: "A(z) :attribute értéke érvénytelen.",
-  not_regex: "A(z) :attribute formátuma érvénytelen.",
-  numeric: "A(z) :attribute szám kell, hogy legyen!",
-  present: "A(z) :attribute mező nem található!",
-  regex: "A(z) :attribute formátuma érvénytelen.",
-  required: "A(z) :attribute megadása kötelező!",
-  required_if: "A(z) :attribute megadása kötelező, ha a(z) :other értéke :value!",
-  required_unless: "A(z) :attribute megadása kötelező, ha a(z) :other értéke nem :values!",
-  required_with: "A(z) :attribute megadása kötelező, ha a(z) :values érték létezik.",
-  required_with_all: "A(z) :attribute megadása kötelező, ha a(z) :values értékek léteznek.",
-  required_without: "A(z) :attribute megadása kötelező, ha a(z) :values érték nem létezik.",
-  required_without_all: "A(z) :attribute megadása kötelező, ha egyik :values érték sem létezik.",
-  same: "A(z) :attribute és :other mezőknek egyezniük kell!",
-  size: {
-    numeric: "A(z) :attribute értéke :size kell, hogy legyen!",
-    file: "A(z) :attribute mérete :size kilobájt kell, hogy legyen!",
-    string: "A(z) :attribute hossza :size karakter kell, hogy legyen!",
-    array: "A(z) :attribute :size elemet kell tartalmazzon!"
-  },
-  string: "A(z) :attribute szöveg kell, hogy legyen.",
-  timezone: "A(z) :attribute nem létező időzona.",
-  unique: "A(z) :attribute már foglalt.",
-  uploaded: "A(z) :attribute feltöltése sikertelen.",
-  url: "A(z) :attribute érvénytelen link."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/id.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/id.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute harus disetujui.',
-  after: ':attribute harus setelah :after.',
-  after_or_equal: ':attribute harus sama dengan atau setelah :after_or_equal.',
-  alpha: ':attribute hanya boleh berisi huruf.',
-  alpha_dash: ':attribute hanya boleh berisi huruf, - atau _.',
-  alpha_num: ':attribute hanya boleh berisi huruf dan angka.',
-  before: ':attribute harus sebelum :before.',
-  before_or_equal: ':attribute harus sama dengan atau sebelum :before_or_equal.',
-  between: ':attribute harus berisi antara :min dan :max.',
-  confirmed: ':attribute konfirmasi tidak sama.',
-  email: ':attribute harus berupa email.',
-  date: ':attribute format tanggal tidak benar.',
-  def: ':attribute attribute has errors.',
-  digits: ':attribute harus :digits digit.',
-  digits_between: 'Isian :attribute harus antara angka :min dan :max.',
-  different: ':attribute dan :different harus berbeda.',
-  in: ':attribute tidak benar.',
-  integer: ':attribute harus berupa angka.',
-  hex: ':attribute harus berformat heksadesimal',
-  min: {
-    numeric: ':attribute minimal :min.',
-    string: ':attribute minimal :min karakter.'
-  },
-  max: {
-    numeric: ':attribute harus lebih kecil :max.',
-    string: ':attribute maksimal :max karakter.'
-  },
-  not_in: ':attribute tidak benar.',
-  numeric: ':attribute harus berupa angka.',
-  present: ':attribute harus ada (tapi boleh kosong).',
-  required: ':attribute tidak boleh kosong.',
-  required_if: ':attribute harus di isi jika :other berisi :value.',
-  required_unless: ':attribute harus di isi jika :other tidak berisi :value.',
-  required_with: ':attribute harus di isi jika :field tidak kosong.',
-  required_with_all: ':attribute harus di isi jika :fields tidak kosong.',
-  required_without: ':attribute harus di isi jika :field kosong.',
-  required_without_all: ':attribute harus di isi jika :fields kosong.',
-  same: ':attribute dan :same harus sama.',
-  size: {
-    numeric: ':attribute harus berisi :size.',
-    string: ':attribute harus berisi :size karakter.'
-  },
-  string: ':attribute harus berupa string.',
-  url: ':attribute harus berupa format url.',
-  regex: ':attribute format tidak benar.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/it.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/it.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'Il campo :attribute deve essere accettato.',
-  alpha: 'Il campo :attribute deve contenere sono caratteri alfabetici.',
-  alpha_dash: 'Il campo :attribute può contenere solo caratteri alfanumerici oltre a trattini e trattini bassi.',
-  alpha_num: 'Il campo :attribute deve essere alfanumerico.',
-  between: 'Il campo :attribute deve essere compreso tra :min e :max.',
-  confirmed: 'Il campo conferma :attribute non è uguale.',
-  email: 'Il formato dell\'attributo :attribute non è valido.',
-  def: 'Gli attributi del campo :attribute contengono degli errori.',
-  digits: 'Il campo :attribute deve essere di :digits cifre.',
-  digits_between: 'Il campo :attribute deve essere tra :min e :max cifre.',
-  different: 'Il campo :attribute e :different devo essere diversi.',
-  in: 'Il valore del campo :attribute non è valido.',
-  integer: 'Il campo :attribute deve essere un valore intero.',
-  hex: 'Il campo :attribute deve essere in formato esadecimale',
-  min: {
-    numeric: 'Il campo :attribute deve essere maggiore o uguale di :min.',
-    string: 'Il campo :attribute deve essere composto da almeno :min caratteri.'
-  },
-  max: {
-    numeric: 'Il campo :attribute deve essere minore o uguale di :max.',
-    string: 'Il campo :attribute deve essere composto da massimo :max caratteri.'
-  },
-  not_in: 'Il campo :attribute non è valido.',
-  numeric: 'Il campo :attribute deve essere un numero.',
-  present: 'Il campo :attribute deve essere presente (ma può essere vuoto).',
-  required: 'Il campo :attribute è richiesto.',
-  required_if: 'Il campo :attribute è richiesto quando il campo :other è uguale a :value.',
-  same: 'I campi :attribute e :same devono essere uguali.',
-  size: {
-    numeric: 'La dimensione del campo :attribute deve essere uguale a :size.',
-    string: 'Il campo :attribute deve essere di :size caratteri.'
-  },
-  string: 'Il campo :attribute deve essere una stringa.',
-  url: 'Il formato del campo :attribute non è valido.',
-  regex: 'Il formato del campo :attribute non è valido.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ja.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ja.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attributeを確認してください。',
-  after: ':attributeは:afterより後の日付を入力してください。',
-  after_or_equal: ':attributeは:after_or_equal以降の日付を入力してください。',
-  alpha: ':attributeは英字のみで入力してください。',
-  alpha_dash: ':attributeは英字とダッシュと下線のみで入力してください。',
-  alpha_num: ':attributeは英数字のみで入力してください。',
-  before: ':attributeは:beforeより前の日付を入力してください。',
-  before_or_equal: ':attributeは:before_or_equal以前の日付を入力してください。',
-  between: {
-    numeric: ':attributeは:min〜:maxの間で指定してください',
-    string: ':attributeは:min〜:max文字を入力してください'
-  },
-  confirmed: ':attributeは確認が一致しません。',
-  email: ':attributeは正しいメールアドレスを入力してください。',
-  date: ':attributeは正しい日付形式を入力してください',
-  def: ':attributeは検証エラーが含まれています。',
-  digits: ':attributeは:digitsの数字のみで入力してください。',
-  digits_between: ':attributeは、:min桁から:max桁にしてください。',
-  different: ':attributeと:differentは同じであってはなりません。',
-  in: '選択された:attributeは無効です。',
-  integer: ':attributeは整数で入力してください。',
-  hex: ':attributeは16進数で入力してください。',
-  min: {
-    numeric: ':attributeは:min以上で入力してください。',
-    string: ':attributeは:min文字以上で入力してください。'
-  },
-  max: {
-    numeric: ':attributeは:max以下で入力してください。',
-    string: ':attributeは:max文字以下で入力してください。'
-  },
-  not_in: '選択された:attributeは無効です。',
-  numeric: ':attributeは数値で入力してください。',
-  present: ':attributeを入力してください（空欄も可能です）。',
-  required: ':attributeは必須です。',
-  required_if: ':otherは:valueになったら:attributeは必須です。',
-  required_unless: ':otherが:valueでなければ:attributeは必須です。',
-  required_with: ':fieldが空欄でなければ:attributeは必須です。',
-  required_with_all: ':fieldsが空欄でなければ:attributeは必須です。',
-  required_without: ':fieldが空欄なら:attributeは必須です。',
-  required_without_all: ':fieldsが空欄なら:attributeは必須です。',
-  same: ':attributeと:sameは同じでなければなりません。',
-  size: {
-    numeric: ':attributeは:sizeを入力してください。',
-    string: ':attributeは:size文字で入力してください。'
-  },
-  string: ':attributeは文字のみで入力してください。',
-  url: ':attributeは正しいURIを入力してください。',
-  regex: ':attributeの値はパターンにマッチする必要があります。',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ka.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ka.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute უნდა იყოს მონიშნული.",
-  active_url: ":attribute უნდა იყოს URL მისამართი.",
-  after: ":attribute უნდა იყოს :date-ის შემდეგ.",
-  after_or_equal: ":attribute უნდა იყოს :date-ის შემდეგ ან მისი ტოლი.",
-  alpha: ":attribute უნდა შეიცავდეს მხოლოდ ასოებს.",
-  alpha_dash: ":attribute უნდა შეიცავდეს მხოლოდ ასოებს, რიცხვებს და ტირეებს.",
-  alpha_num: ":attribute უნდა შეიცავდეს მხოლოდ ასოებს და რიცხვებს.",
-  attributes: {},
-  array: ":attribute უნდა იყოს მასივი.",
-  before: ":attribute უნდა იყოს :date-მდე.",
-  before_or_equal: ":attribute უნდა იყოს :date-მდე ან მისი ტოლი.",
-  between: {
-    numeric: ":attribute უნდა იყოს :min-სა და :max-ს შორის.",
-    file: ":attribute უნდა იყოს :min-სა და :max კილობაიტს შორის.",
-    string: ":attribute უნდა იყოს :min-სა და :max სიმბოლოს შორის.",
-    array: ":attribute-ის რაოდენობა უნდა იყოს :min-დან :max-მდე."
-  },
-  boolean: ":attribute უნდა იყოს true, false, 0 ან 1.",
-  confirmed: ":attribute არ ემთხვევა დადასტურებას.",
-  date: ":attribute შეიცავს თარიღის არასწორ ფორმატს.",
-  date_format: ":attribute არ ემთხვევა თარიღის ფორმატს: :format.",
-  different: ":attribute და :other არ უნდა ემთხვეოდეს ერთმანეთს.",
-  digits: ":attribute უნდა შედგებოდეს :digits ციფრისგან.",
-  digits_between: ":attribute უნდა შედგებოდეს :min-დან :max ციფრამბდე.",
-  dimensions: ":attribute შეიცავს სურათის არასწორ ზომებს.",
-  distinct: ":attribute უნდა იყოს უნიკალური.",
-  email: ":attribute უნდა იყოს სწორი ელ.ფოსტა.",
-  exists: "ასეთი :attribute არ არსებობს.",
-  file: ":attribute უნდა იყოს ფაილი.",
-  filled: ":attribute აუცილებელია.",
-  gt: {
-    numeric: ":attribute უნდა იყოს :value-ზე მეტი.",
-    file: ":attribute უნდა იყოს :value კილობაიტზე მეტი.",
-    string: ":attribute უნდა შეიცავდეს :value სიმბოლოზე მეტს.",
-    array: ":attribute უნდა შეიცავლდეს :value ელემენტზე მეტს."
-  },
-  gte: {
-    numeric: ":attribute უნდა იყოს მინიმუმ :value.",
-    file: ":attribute უნდა იყოს მინიმუმ :value კილობაიტი.",
-    string: ":attribute უნდა შეიცავდეს მინიმუმ :value სიმბოლოს.",
-    array: ":attribute უნდა შეიცავდეს მინიმუმ :value ელემენტს."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute უნდა იყოს სურათი.",
-  in: "მითითებული :attribute არასწორია.",
-  in_array: ":attribute უნდა არსებობდეს :other-ში.",
-  integer: ":attribute უნდა იყოს მთელი რიცხვი.",
-  ip: ":attribute უნდა იყოს IP მისამართი.",
-  ipv4: ":attribute უნდა იყოს IPv4 მისამართი.",
-  ipv6: ":attribute უნდა იყოს IPv6 მისამართი.",
-  json: ":attribute უნდა იყოს JSON ტიპის.",
-  lt: {
-    numeric: ":attribute უნდა იყოს :value-ზე ნაკლები.",
-    file: ":attribute უნდა იყოს :value კილობაიტზე ნაკლები.",
-    string: ":attribute უნდა შეიცავდეს :value სიმბოლოზე ნაკლებს.",
-    array: ":attribute უნდა შეიცავლდეს :value ელემენტზე ნაკლებს."
-  },
-  lte: {
-    numeric: ":attribute უნდა იყოს მაქსიმუმ :value.",
-    file: ":attribute უნდა იყოს მაქსიმუმ :value კილობაიტი.",
-    string: ":attribute უნდა შეიცავდეს მაქსიმუმ :value სიმბოლოს.",
-    array: ":attribute უნდა შეიცავდეს მაქსიმუმ :value ელემენტს."
-  },
-  max: {
-    numeric: ":attribute არ უნდა აღემატებოდეს :max-ს.",
-    file: ":attribute არ უნდა აღემატებოდეს :max კილობაიტს.",
-    string: ":attribute არ უნდა აღემატებოდეს :max სიმბოლოს.",
-    array: ":attribute-ის რაოდენობა არ უნდა აღემატებოდეს :max-ს."
-  },
-  mimes: ":attribute უნდა იყოს შემდეგი ტიპის: :values.",
-  mimetypes: ":attribute უნდა იყოს შემდეგი ტიპის: :values.",
-  min: {
-    numeric: ":attribute უნდა იყოს მინიმუმ :min.",
-    file: ":attribute უნდა იყოს მინიმუმ :min კილობაიტი.",
-    string: ":attribute უნდა შეიცავდეს მინიმუმ :min სიმბოლოს.",
-    array: ":attribute უნდა იყოს მინიმუმ :min."
-  },
-  not_in: "მითითებული :attribute არასწორია.",
-  not_regex: ":attribute არასწორ ფორმატშია.",
-  numeric: ":attribute უნდა იყოს რიცხვი.",
-  present: ":attribute უნდა არსებობდეს, თუნდაც ცარიელი.",
-  regex: ":attribute არ ემთხვევა ფორმატს.",
-  required: ":attribute აუცილებელია.",
-  required_if: ":attribute აუცილებელია, თუ :other-ის მნიშვნელობა ემთხვევა :value-ს.",
-  required_unless: ":attribute აუცილებელია, თუ :values არ შეიცავს :other-ს.",
-  required_with: ":attribute აუცილებელია, თუ :values მითითებულია.",
-  required_with_all: ":attribute აუცილებელია, თუ :values მითითებულია.",
-  required_without: ":attribute აუცილებელია, თუ :values არ არის მითითებული.",
-  required_without_all: ":attribute აუცილებელია, თუ :values არ არის მითითებული.",
-  same: ":attribute და :other უნდა ემთხვეოდეს ერთმანეთს.",
-  size: {
-    numeric: ":attribute უნდა იყოს :size-ის ტოლი.",
-    file: ":attribute უნდა იყოს :size კილობაიტი.",
-    string: ":attribute უნდა შედგებოდეს :size სიმბოლოსგან.",
-    array: ":attribute უნდა შეიცავდეს :size ელემენტს."
-  },
-  string: ":attribute უნდა იყოს ტექსტი.",
-  timezone: ":attribute უნდა იყოს სასაათო სარტყელი.",
-  unique: "ასეთი :attribute უკვე არსებობს.",
-  uploaded: ":attribute-ის ატვირთვა ვერ მოხერხდა.",
-  url: ":attribute უნდა იყოს URL მისამართი."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ko.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ko.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute을(를) 동의해야 합니다.",
-  active_url: ":attribute은(는) 유효한 URL이 아닙니다.",
-  after: ":attribute은(는) :date 이후 날짜여야 합니다.",
-  after_or_equal: ":attribute은(는) :date 이후 날짜이거나 같은 날짜여야 합니다.",
-  alpha: ":attribute은(는) 문자만 포함할 수 있습니다.",
-  alpha_dash: ":attribute은(는) 문자, 숫자, 대쉬(-)만 포함할 수 있습니다.",
-  alpha_num: ":attribute은(는) 문자와 숫자만 포함할 수 있습니다.",
-  attributes: {},
-  array: ":attribute은(는) 배열이어야 합니다.",
-  before: ":attribute은(는) :date 이전 날짜여야 합니다.",
-  before_or_equal: ":attribute은(는) :date 이전 날짜이거나 같은 날짜여야 합니다.",
-  between: {
-    numeric: ":attribute은(는) :min에서 :max 사이여야 합니다.",
-    file: ":attribute은(는) :min에서 :max 킬로바이트 사이여야 합니다.",
-    string: ":attribute은(는) :min에서 :max 문자 사이여야 합니다.",
-    array: ":attribute은(는) :min에서 :max 개의 항목이 있어야 합니다."
-  },
-  boolean: ":attribute은(는) true 또는 false 이어야 합니다.",
-  confirmed: ":attribute 확인 항목이 일치하지 않습니다.",
-  date: ":attribute은(는) 유효한 날짜가 아닙니다.",
-  date_format: ":attribute이(가) :format 형식과 일치하지 않습니다.",
-  different: ":attribute와(과) :other은(는) 서로 달라야 합니다.",
-  digits: ":attribute은(는) :digits 자리 숫자여야 합니다.",
-  digits_between: ":attribute)은(는) :min에서 :max 자리 사이여야 합니다.",
-  dimensions: ":attribute은(는) 유효하지 않는 이미지 크기입니다.",
-  distinct: ":attribute 필드에 중복된 값이 있습니다.",
-  email: ":attribute은(는) 유효한 이메일 주소여야 합니다.",
-  exists: "선택된 :attribute은(는) 유효하지 않습니다.",
-  file: ":attribute은(는) 파일이어야 합니다.",
-  filled: ":attribute 필드는 값이 있어야 합니다.",
-  gt: {
-    numeric: ":attribute의 값은 :value보다 커야 합니다.",
-    file: ":attribute의 용량은 :value킬로바이트보다 커야 합니다.",
-    string: ":attribute의 길이는 :value보다 길어야 합니다.",
-    array: ":attribute의 항목수는 :value개 보다 많아야 합니다."
-  },
-  gte: {
-    numeric: ":attribute의 값은 :value보다 같거나 커야 합니다.",
-    file: ":attribute의 용량은 :value킬로바이트보다 같거나 커야 합니다.",
-    string: ":attribute의 길이는 :value보다 같거나 길어야 합니다.",
-    array: ":attribute의 항목수는 :value개 보다 같거나 많아야 합니다."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute은(는) 이미지여야 합니다.",
-  in: "선택된 :attribute은(는) 유효하지 않습니다.",
-  in_array: ":attribute 필드는 :other에 존재하지 않습니다.",
-  integer: ":attribute은(는) 정수여야 합니다.",
-  ip: ":attribute은(는) 유효한 IP 주소여야 합니다.",
-  ipv4: ":attribute은(는) 유효한 IPv4 주소여야 합니다.",
-  ipv6: ":attribute은(는) 유효한 IPv6 주소여야 합니다.",
-  json: ":attribute은(는) JSON 문자열이어야 합니다.",
-  lt: {
-    numeric: ":attribute의 값은 :value보다 작아야 합니다.",
-    file: ":attribute의 용량은 :value킬로바이트보다 작아야 합니다.",
-    string: ":attribute의 길이는 :value보다 짧아야 합니다.",
-    array: ":attribute의 항목수는 :value개 보다 작아야 합니다."
-  },
-  lte: {
-    numeric: ":attribute의 값은 :value보다 같거나 작아야 합니다.",
-    file: ":attribute의 용량은 :value킬로바이트보다 같거나 작아야 합니다.",
-    string: ":attribute의 길이는 :value보다 같거나 짧아야 합니다.",
-    array: ":attribute의 항목수는 :value개 보다 같거나 작아야 합니다."
-  },
-  max: {
-    numeric: ":attribute은(는) :max보다 클 수 없습니다.",
-    file: ":attribute은(는) :max킬로바이트보다 클 수 없습니다.",
-    string: ":attribute은(는) :max자보다 클 수 없습니다.",
-    array: ":attribute은(는) :max개보다 많을 수 없습니다."
-  },
-  mimes: ":attribute은(는) 다음의 파일 형식이어야 합니다: :values.",
-  mimetypes: ":attribute은(는) 다음의 파일 형식이어야 합니다: :values.",
-  min: {
-    numeric: ":attribute은(는) 최소한 :min이어야 합니다.",
-    file: ":attribute은(는) 최소한 :min킬로바이트이어야 합니다.",
-    string: ":attribute은(는) 최소한 :min자이어야 합니다.",
-    array: ":attribute은(는) 최소한 :min개의 항목이 있어야 합니다."
-  },
-  not_in: "선택된 :attribute이(가) 유효하지 않습니다.",
-  not_regex: ":attribute의 형식이 올바르지 않습니다.",
-  numeric: ":attribute은(는) 숫자여야 합니다.",
-  present: ":attribute 필드가 있어야 합니다.",
-  regex: ":attribute 형식이 유효하지 않습니다.",
-  required: ":attribute 필드는 필수입니다.",
-  required_if: ":other이(가) :value 일 때 :attribute 필드는 필수입니다.",
-  required_unless: ":other이(가) :value에 없다면 :attribute 필드는 필수입니다.",
-  required_with: ":values이(가) 있는 경우 :attribute 필드는 필수입니다.",
-  required_with_all: ":values이(가) 모두 있는 경우 :attribute 필드는 필수입니다.",
-  required_without: ":values이(가) 없는 경우 :attribute 필드는 필수입니다.",
-  required_without_all: ":values이(가) 모두 없는 경우 :attribute 필드는 필수입니다.",
-  same: ":attribute와(과) :other은(는) 일치해야 합니다.",
-  size: {
-    numeric: ":attribute은(는) :size (이)여야 합니다.",
-    file: ":attribute은(는) :size킬로바이트여야 합니다.",
-    string: ":attribute은(는) :size자여야 합니다.",
-    array: ":attribute은(는) :size개의 항목을 포함해야 합니다."
-  },
-  string: ":attribute은(는) 문자열이어야 합니다.",
-  timezone: ":attribute은(는) 올바른 시간대 이어야 합니다.",
-  unique: ":attribute은(는) 이미 사용 중입니다.",
-  uploaded: ":attribute을(를) 업로드하지 못했습니다.",
-  url: ":attribute 형식은 유효하지 않습니다."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/lt.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/lt.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Laukas :attribute turi būti priimtas.",
-  active_url: "Laukas :attribute nėra galiojantis internetinis adresas.",
-  after: "Lauko :attribute reikšmė turi būti po :date datos.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: "Laukas :attribute gali turėti tik raides.",
-  alpha_dash: "Laukas :attribute gali turėti tik raides, skaičius ir brūkšnelius.",
-  alpha_num: "Laukas :attribute gali turėti tik raides ir skaičius.",
-  attributes: {},
-  array: "Laukas :attribute turi būti masyvas.",
-  before: "Laukas :attribute turi būti data prieš :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: "Lauko :attribute reikšmė turi būti tarp :min ir :max.",
-    file: "Failo dydis lauke :attribute turi būti tarp :min ir :max kilobaitų.",
-    string: "Simbolių skaičius lauke :attribute turi būti tarp :min ir :max.",
-    array: "Elementų skaičius lauke :attribute turi turėti nuo :min iki :max."
-  },
-  boolean: "Lauko reikšmė :attribute turi būti 'taip' arba 'ne'.",
-  confirmed: "Lauko :attribute patvirtinimas nesutampa.",
-  date: "Lauko :attribute reikšmė nėra galiojanti data.",
-  date_format: "Lauko :attribute reikšmė neatitinka formato :format.",
-  different: "Laukų :attribute ir :other reikšmės turi skirtis.",
-  digits: "Laukas :attribute turi būti sudarytas iš :digits skaitmenų.",
-  digits_between: "Laukas :attribute tuti turėti nuo :min iki :max skaitmenų.",
-  dimensions: "Lauke :attribute įkeltas paveiksliukas neatitinka išmatavimų reikalavimo.",
-  distinct: "Laukas :attribute pasikartoja.",
-  email: "Lauko :attribute reikšmė turi būti galiojantis el. pašto adresas.",
-  file: "The :attribute must be a file.",
-  filled: "Laukas :attribute turi būti užpildytas.",
-  exists: "Pasirinkta negaliojanti :attribute reikšmė.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Lauko :attribute reikšmė turi būti paveikslėlis.",
-  in: "Pasirinkta negaliojanti :attribute reikšmė.",
-  in_array: "Laukas :attribute neegzistuoja :other lauke.",
-  integer: "Lauko :attribute reikšmė turi būti sveikasis skaičius.",
-  ip: "Lauko :attribute reikšmė turi būti galiojantis IP adresas.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: "Lauko :attribute reikšmė turi būti JSON tekstas.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Lauko :attribute reikšmė negali būti didesnė nei :max.",
-    file: "Failo dydis lauke :attribute reikšmė negali būti didesnė nei :max kilobaitų.",
-    string: "Simbolių kiekis lauke :attribute reikšmė negali būti didesnė nei :max simbolių.",
-    array: "Elementų kiekis lauke :attribute negali turėti daugiau nei :max elementų."
-  },
-  mimes: "Lauko reikšmė :attribute turi būti failas vieno iš sekančių tipų: :values.",
-  mimetypes: "Lauko reikšmė :attribute turi būti failas vieno iš sekančių tipų: :values.",
-  min: {
-    numeric: "Lauko :attribute reikšmė turi būti ne mažesnė nei :min.",
-    file: "Failo dydis lauke :attribute turi būti ne mažesnis nei :min kilobaitų.",
-    string: "Simbolių kiekis lauke :attribute turi būti ne mažiau nei :min.",
-    array: "Elementų kiekis lauke :attribute turi būti ne mažiau nei :min."
-  },
-  not_in: "Pasirinkta negaliojanti reikšmė :attribute.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Lauko :attribute reikšmė turi būti skaičius.",
-  present: "Laukas :attribute turi egzistuoti.",
-  regex: "Negaliojantis lauko :attribute formatas.",
-  required: "Privaloma užpildyti lauką :attribute.",
-  required_if: "Privaloma užpildyti lauką :attribute kai :other yra :value.",
-  required_unless: "Laukas :attribute yra privalomas, nebent :other yra tarp :values reikšmių.",
-  required_with: "Privaloma užpildyti lauką :attribute kai pateikta :values.",
-  required_with_all: "Privaloma užpildyti lauką :attribute kai pateikta :values.",
-  required_without: "Privaloma užpildyti lauką :attribute kai nepateikta :values.",
-  required_without_all: "Privaloma užpildyti lauką :attribute kai nepateikta nei viena iš reikšmių :values.",
-  same: "Laukai :attribute ir :other turi sutapti.",
-  size: {
-    numeric: "Lauko :attribute reikšmė turi būti :size.",
-    file: "Failo dydis lauke :attribute turi būti :size kilobaitai.",
-    string: "Simbolių skaičius lauke :attribute turi būti :size.",
-    array: "Elementų kiekis lauke :attribute turi būti :size."
-  },
-  string: "Laukas :attribute turi būti tekstinis.",
-  timezone: "Lauko :attribute reikšmė turi būti galiojanti laiko zona.",
-  unique: "Tokia :attribute reikšmė jau pasirinkta.",
-  uploaded: "The :attribute failed to upload.",
-  url: "Negaliojantis lauko :attribute formatas."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/lv.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/lv.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: " :attribute ir jābūt pieņemtam.",
-  active_url: " :attribute ir ar nederīgu linku.",
-  after: " :attribute ir jābūt ar datumu pēc :datums.",
-  after_or_equal: " :attribute ir jābūt ar datumu pēc vai vienādu ar :datums.",
-  alpha: " :attribute var saturēt tikai burtus.",
-  alpha_dash: " :attribute var saturēt tikai burtus, nummurus un atstarpes.",
-  alpha_num: " :attribute var tikai saturēt burtus un nummurus.",
-  attributes: {},
-  array: " :attribute ir jābūt sakārtotam.",
-  before: " :attribute ir jābūt ar datumu pirms :datums.",
-  before_or_equal: " :attribute ir jābūt ar datumu pirms vai vienādu ar :datums.",
-  between: {
-    numeric: " :attribute jābūt starp :min un :max.",
-    file: " :attribute jābūt starp :min un :max kilobaiti.",
-    string: " :attribute jābūt no :min līdz :max zīmēm.",
-    array: " :attribute jābūt no :min līdz :max vienībām."
-  },
-  boolean: " :attribute laiciņam jābūt atbilstošam vai neatbilstošam.",
-  confirmed: " :attribute apstiprinājums neatbilst.",
-  date: " :attribute nav derīgs.",
-  date_format: " :attribute neatbilst formātam :format.",
-  different: " :attribute un :other ir jābūt citiem.",
-  digits: " :attribute ir jābūt :digits ciparam.",
-  digits_between: " :attribute ir jābūt :min un :max ciparam.",
-  dimensions: " :attribute ir nederīgs attēla izmērs.",
-  distinct: " :attribute laikam ir dubulta vērtība.",
-  email: " :attribute derīgam e-pastam.",
-  exists: "Izvēlētais :attribute ir nederīgs.",
-  file: " :attribute jābūt failam.",
-  filled: ":attribute lauks ir nepieciešams.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: " :attribute jābūt attēlam.",
-  in: "Izvēlētais :attribute ir nederīgs.",
-  in_array: " :attribute laiks neeksistē :cits.",
-  integer: " :attribute ir jabūt skaitim.",
-  ip: " :attribute jābūt derīgai IP adresei.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: " :attribute jābūt derīgai JSON virknei.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: " :attribute nedrīkst pārsniegt :max.",
-    file: " :attribute nedrīkst pārsniegt :max kilobaiti.",
-    string: " :attribute nedrīkst pārsniegt :max zīmes.",
-    array: " :attribute nedrīkst pārsniegt :max vienības."
-  },
-  mimes: " :attribute jābūt faila tipam: :values",
-  mimetypes: " :attribute jābūt faile tipam: :values.",
-  min: {
-    numeric: " :attribute jābūt vismaz :min.",
-    file: " :attribute jābūt vismaz :min kilobaiti.",
-    string: " :attribute jābūt vismaz :min zīmes.",
-    array: " :attribute jāsatur vismaz :min vienības."
-  },
-  not_in: " izvēlieties :attribute ir nederīgs.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: " :attribute jābūt skaitlim.",
-  present: " :attribute laikums ir nepieciešams.",
-  regex: " :attribute formāts ir nederīgs.",
-  required: " :attribute laukums ir nepieciešams.",
-  required_if: " :attribute laukums ir nepieciešams, ja vien :other ir :values.",
-  required_unless: " :attribute laukums ir nepieciešams, ja vien :other ir :values.",
-  required_with: " :attribute laukums ir nepieciešams, kad :values ir pieejama.",
-  required_with_all: " :attribute laukums ir nepieciešams, kad :values ir pieejama.",
-  required_without: " :attribute laukums ir nepieciešams, kad :values nav pieejama.",
-  required_without_all: " :attribute laukums ir nepieciešams, kad neviena no :values nav pieejama.",
-  same: " :attribute un :citiem ir jāsakrīt.",
-  size: {
-    numeric: " :attribute jābūt :size.",
-    file: " :attribute jābūt :size kilobaiti.",
-    string: " :attribute jābūt :size zīmes.",
-    array: " :attribute jāsatur :size vienības."
-  },
-  string: " :attribute jābūt virknē.",
-  timezone: " :attribute jābūt derīgā zonā.",
-  unique: " :attribute jau ir aizņemts.",
-  uploaded: " :attribute netika augšuplādēts.",
-  url: " :attribute formāts ir nederīgs."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/mk.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/mk.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Полето :attribute мора да биде прифатено.",
-  active_url: "Полето :attribute не е валиден URL.",
-  after: "Полето :attribute мора да биде датум после :date.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: "Полето :attribute може да содржи само букви.",
-  alpha_dash: "Полето :attribute може да содржи само букви, цифри, долна црта и тире.",
-  alpha_num: "Полето :attribute може да содржи само букви и цифри.",
-  attributes: {},
-  array: "Полето :attribute мора да биде низа.",
-  before: "Полето :attribute мора да биде датум пред :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: "Полето :attribute мора да биде помеѓу :min и :max.",
-    file: "Полето :attribute мора да биде помеѓу :min и :max килобајти.",
-    string: "Полето :attribute мора да биде помеѓу :min и :max карактери.",
-    array: "Полето :attribute мора да има помеѓу :min - :max карактери."
-  },
-  boolean: "The :attribute field must be true or false",
-  confirmed: "Полето :attribute не е потврдено.",
-  date: "Полето :attribute не е валиден датум.",
-  date_format: "Полето :attribute не е во формат :format.",
-  different: "Полињата :attribute и :other треба да се различни.",
-  digits: "Полето :attribute треба да има :digits цифри.",
-  digits_between: "Полето :attribute треба да има помеѓу :min и :max цифри.",
-  dimensions: "The :attribute has invalid image dimensions.",
-  distinct: "The :attribute field has a duplicate value.",
-  email: "Полето :attribute не е во валиден формат.",
-  exists: "Избранато поле :attribute веќе постои.",
-  file: "The :attribute must be a file.",
-  filled: "Полето :attribute е задолжително.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Полето :attribute мора да биде слика.",
-  in: "Избраното поле :attribute е невалидно.",
-  in_array: "The :attribute field does not exist in :other.",
-  integer: "Полето :attribute мора да биде цел број.",
-  ip: "Полето :attribute мора да биде IP адреса.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: "The :attribute must be a valid JSON string.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Полето :attribute мора да биде помало од :max.",
-    file: "Полето :attribute мора да биде помало од :max килобајти.",
-    string: "Полето :attribute мора да има помалку од :max карактери.",
-    array: "Полето :attribute не може да има повеќе од :max карактери."
-  },
-  mimes: "Полето :attribute мора да биде фајл од типот: :values.",
-  mimetypes: "Полето :attribute мора да биде фајл од типот: :values.",
-  min: {
-    numeric: "Полето :attribute мора да биде минимум :min.",
-    file: "Полето :attribute мора да биде минимум :min килобајти.",
-    string: "Полето :attribute мора да има минимум :min карактери.",
-    array: "Полето :attribute мора да има минимум :min карактери."
-  },
-  not_in: "Избраното поле :attribute е невалидно.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Полето :attribute мора да биде број.",
-  present: "The :attribute field must be present.",
-  regex: "Полето :attribute е во невалиден формат.",
-  required: "Полето :attribute е задолжително.",
-  required_if: "Полето :attribute е задолжително, кога :other е :value.",
-  required_unless: "The :attribute field is required unless :other is in :values.",
-  required_with: "Полето :attribute е задолжително, кога е внесено :values.",
-  required_with_all: "The :attribute field is required when :values is present.",
-  required_without: "Полето :attribute е задолжително, кога не е внесено :values.",
-  required_without_all: "The :attribute field is required when none of :values are present.",
-  same: "Полињата :attribute и :other треба да совпаѓаат.",
-  size: {
-    numeric: "Полето :attribute мора да биде :size.",
-    file: "Полето :attribute мора да биде :size килобајти.",
-    string: "Полето :attribute мора да има :size карактери.",
-    array: "Полето :attribute мора да има :size карактери."
-  },
-  string: "The :attribute must be a string.",
-  timezone: "The :attribute must be a valid zone.",
-  unique: "Полето :attribute веќе постои.",
-  uploaded: "The :attribute failed to upload.",
-  url: "Полето :attribute не е во валиден формат."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/mn.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/mn.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":Attribute баталсан байх шаардлагатай.",
-  active_url: ":Attribute талбарт зөв URL хаяг оруулна уу.",
-  after: ":Attribute талбарт :date-с хойш огноо оруулна уу.",
-  after_or_equal: ":Attribute талбарт :date эсвэл түүнээс хойш огноо оруулна уу.",
-  alpha: ":Attribute талбарт латин үсэг оруулна уу.",
-  alpha_dash: ":Attribute талбарт латин үсэг, тоо болон зураас оруулах боломжтой.",
-  alpha_num: ":Attribute талбарт латин үсэг болон тоо оруулах боломжтой.",
-  attributes: {},
-  array: ":Attribute талбар массив байх шаардлагатай.",
-  before: ":Attribute талбарт :date-с өмнөх огноо оруулна уу.",
-  before_or_equal: ":attribute талбарт :date эсвэл түүнээс өмнөх огноо оруулна уу.",
-  between: {
-    numeric: ":Attribute талбарт :min-:max хооронд тоо оруулна уу.",
-    file: ":Attribute талбарт :min-:max килобайт хэмжээтэй файл оруулна уу.",
-    string: ":Attribute талбарт :min-:max урттай текст оруулна уу.",
-    array: ":Attribute массивт :min-:max элемэнт байх шаардлагатай."
-  },
-  boolean: ":Attribute талбарын утга үнэн эсвэл худал байх шаардлагатай.",
-  confirmed: ":Attribute талбарын баталагажуулалт тохирохгүй байна.",
-  date: ":Attribute талбарт оруулсан огноо буруу байна.",
-  date_format: ":Attribute талбарт :format хэлбэртэй огноо оруулна уу.",
-  different: ":Attribute талбарт :other -с өөр утга оруулах шаардлагатай.",
-  digits: ":Attribute талбарт дараах цифрүүдээс оруулах боломжтой. :digits.",
-  digits_between: ":Attribute талбарт :min-:max хоорондох цифр оруулах боломжтой.",
-  dimensions: ":Attribute талбарийн зургийн хэмжээс буруу байна.",
-  distinct: ":Attribute талбарт ялгаатай утга оруулах шаардлагатай.",
-  email: ":Attribute талбарт зөв и-мэйл хаяг оруулах шаардлагатай.",
-  exists: "Сонгогдсон :attribute буруу байна.",
-  file: ":Attribute талбарт файл оруулах шаардлагатай.",
-  filled: ":Attribute талбар шаардлагатай.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":Attribute талбарт зураг оруулна уу.",
-  in: "Сонгогдсон :attribute буруу байна.",
-  in_array: ":Attribute талбарт оруулсан утга :other -д байхгүй байна.",
-  integer: ":Attribute талбарт бүхэл тоо оруулах шаардлагатай.",
-  ip: ":Attribute талбарт зөв IP хаяг оруулах шаардлагатай.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: ":Attribute талбарт зөв JSON тэмдэгт мөр оруулах шаардлагатай.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: ":Attribute талбарт :max буюу түүнээс бага утга оруулна уу.",
-    file: ":Attribute талбарт :max килобайтаас бага хэмжээтэй файл оруулна уу.",
-    string: ":Attribute талбарт :max-с бага урттай текст оруулна уу.",
-    array: ":Attribute талбарт хамгийн ихдээ :max элемэнт оруулах боломжтой."
-  },
-  mimes: ":Attribute талбарт дараах төрлийн файл оруулах боломжтой: :values.",
-  mimetypes: ":Attribute талбарт дараах төрлийн файл оруулах боломжтой: :values.",
-  min: {
-    numeric: ":Attribute талбарт :min буюу түүнээс их тоо оруулна уу.",
-    file: ":Attribute талбарт :min килобайтаас их хэмжээтэй файл оруулна уу.",
-    string: ":Attribute талбарт :min буюу түүнээс их үсэг бүхий текст оруулна уу.",
-    array: ":Attribute талбарт хамгийн багадаа :min элемэнт оруулах боломжтой."
-  },
-  not_in: "Буруу :attribute сонгогдсон байна.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: ":Attribute талбарт тоон утга оруулна уу.",
-  present: ":Attribute талбар байх шаардлагатай.",
-  regex: ":Attribute талбарт оруулсан утга буруу байна.",
-  required: ":Attribute талбар шаардлагатай.",
-  required_if: "Хэрэв :other :value бол :attribute табларт утга оруулах шаардлагатай.",
-  required_unless: ":other :values дотор байхгүй бол :attribute талбарт утга оруулах шаардлагатай.",
-  required_with: ":values утгуудийн аль нэг байвал :attribute талбар шаардлагатай.",
-  required_with_all: ":values утгууд байвал :attribute талбар шаардлагатай.",
-  required_without: "The :attribute field is required when :values is not present.",
-  required_without_all: "The :attribute field is required when none of :values are present.",
-  same: "The :attribute and :other must match.",
-  size: {
-    numeric: ":Attribute :size хэмжээтэй байх шаардлагатай.",
-    file: ":Attribute :size килобайт хэмжээтэй байх шаардлагатай.",
-    string: ":Attribute :size тэмдэгтийн урттай байх шаардлагатай.",
-    array: ":Attribute :size элемэнттэй байх шаардлагатай."
-  },
-  string: ":Attribute талбарт текст оруулна уу.",
-  timezone: ":Attribute талбарт зөв цагийн бүс оруулна уу.",
-  unique: "Оруулсан :attribute аль хэдий нь бүртгэгдсэн байна.",
-  uploaded: ":Attribute талбарт оруулсан файлыг хуулхад алдаа гарлаа.",
-  url: ":Attribute зөв url хаяг оруулна уу."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ms.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ms.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute mesti diterima pakai.",
-  active_url: ":attribute bukan URL yang sah.",
-  after: ":attribute mesti tarikh selepas :date.",
-  after_or_equal: ":attribute mesti tarikh selepas atau sama dengan :date.",
-  alpha: ":attribute hanya boleh mengandungi huruf.",
-  alpha_dash: ":attribute boleh mengandungi huruf, nombor, dan sengkang.",
-  alpha_num: ":attribute boleh mengandungi huruf dan nombor.",
-  attributes: {},
-  array: ":attribute mesti jujukan.",
-  before: ":attribute mesti tarikh sebelum :date.",
-  before_or_equal: ":attribute mesti tarikh sebelum atau sama dengan :date.",
-  between: {
-    numeric: ":attribute mesti mengandungi antara :min dan :max.",
-    file: ":attribute mesti mengandungi antara :min dan :max kilobait.",
-    string: ":attribute mesti mengandungi antara :min dan :max aksara.",
-    array: ":attribute mesti mengandungi antara :min dan :max perkara."
-  },
-  boolean: ":attribute mesti benar atau salah.",
-  confirmed: ":attribute pengesahan yang tidak sepadan.",
-  date: ":attribute bukan tarikh yang sah.",
-  date_format: ":attribute tidak mengikut format :format.",
-  different: ":attribute dan :other mesti berlainan.",
-  dimensions: ":attribute tidak sah",
-  digits: ":attribute mesti :digits.",
-  digits_between: ":attribute mesti mengandungi antara :min dan :max digits.",
-  distinct: ":attribute adalah nilai yang berulang",
-  email: ":attribute tidak sah.",
-  exists: ":attribute tidak sah.",
-  file: ":attribute mesti fail yang sah.",
-  filled: ":attribute diperlukan.",
-  gt: {
-    numeric: ":attribute mesti melebihi :value.",
-    file: ":attribute mesti melebihi :value kilobait.",
-    string: ":attribute mesti melebihi :value aksara.",
-    array: ":attribute mesti mengandungi lebih daripada :value perkara."
-  },
-  gte: {
-    numeric: ":attribute mesti melebihi atau bersamaan :value.",
-    file: ":attribute mesti melebihi atau bersamaan :value kilobait.",
-    string: ":attribute mesti melebihi atau bersamaan :value aksara.",
-    array: ":attribute mesti mengandungi :value perkara atau lebih."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute mesti imej.",
-  in: ":attribute tidak sah.",
-  in_array: ":attribute tidak wujud dalam :other.",
-  integer: ":attribute mesti integer.",
-  ip: ":attribute mesti alamat IP yang sah.",
-  ipv4: ":attribute mesti alamat IPv4 yang sah.",
-  ipv6: ":attribute mesti alamat IPv6 yang sah",
-  json: ":attribute mesti JSON yang sah.",
-  lt: {
-    numeric: ":attribute mesti kurang daripada :value.",
-    file: ":attribute mesti kurang daripada :value kilobait.",
-    string: ":attribute mesti kurang daripada :value aksara.",
-    array: ":attribute mesti mengandungi kurang daripada :value perkara."
-  },
-  lte: {
-    numeric: ":attribute mesti kurang daripada atau bersamaan dengan :value.",
-    file: ":attribute mesti kurang daripada atau bersamaan dengan :value kilobait.",
-    string: ":attribute mesti kurang daripada atau bersamaan dengan :value aksara.",
-    array: ":attribute mesti mengandungi kurang daripada atau bersamaan dengan :value perkara."
-  },
-  max: {
-    numeric: "Jumlah :attribute mesti tidak melebihi :max.",
-    file: "Jumlah :attribute mesti tidak melebihi :max kilobait.",
-    string: "Jumlah :attribute mesti tidak melebihi :max aksara.",
-    array: "Jumlah :attribute mesti tidak melebihi :max perkara."
-  },
-  mimes: ":attribute mesti fail type: :values.",
-  mimetypes: ":attribute mesti fail type: :values.",
-  min: {
-    numeric: "Jumlah :attribute mesti sekurang-kurangnya :min.",
-    file: "Jumlah :attribute mesti sekurang-kurangnya :min kilobait.",
-    string: "Jumlah :attribute mesti sekurang-kurangnya :min aksara.",
-    array: "Jumlah :attribute mesti sekurang-kurangnya :min perkara."
-  },
-  not_in: ":attribute tidak sah.",
-  not_regex: "Format :attribute adalah tidak sah.",
-  numeric: ":attribute mesti nombor.",
-  present: ":attribute mesti wujud.",
-  regex: "Format :attribute tidak sah.",
-  required: "Ruangan :attribute diperlukan.",
-  required_if: "Ruangan :attribute diperlukan bila :other sama dengan :value.",
-  required_unless: "Ruangan :attribute diperlukan sekiranya :other ada dalam :values.",
-  required_with: "Ruangan :attribute diperlukan bila :values wujud.",
-  required_with_all: "Ruangan :attribute diperlukan bila :values wujud.",
-  required_without: "Ruangan :attribute diperlukan bila :values tidak wujud.",
-  required_without_all: "Ruangan :attribute diperlukan bila kesemua :values wujud.",
-  same: "Ruangan :attribute dan :other mesti sepadan.",
-  size: {
-    numeric: "Saiz :attribute mesti :size.",
-    file: "Saiz :attribute mesti :size kilobait.",
-    string: "Saiz :attribute mesti :size aksara.",
-    array: "Saiz :attribute mesti mengandungi :size perkara."
-  },
-  string: ":attribute mesti aksara.",
-  timezone: ":attribute mesti zon masa yang sah.",
-  unique: ":attribute telah wujud.",
-  uploaded: ":attribute gagal dimuat naik.",
-  url: ":attribute format tidak sah."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/nb_NO.js":
-/*!****************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/nb_NO.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute må være akseptert.',
-  alpha: ':attribute feltet kan kun inneholde alfabetiske tegn.',
-  alpha_dash: ':attribute feltet kan kun inneholde alfanumeriske tegn, i tillegg til bindestreker og understreker.',
-  alpha_num: ':attribute feltet må være alfanumerisk.',
-  between: ':attribute feltet må være mellom :min og :max.',
-  confirmed: ':attribute feltet stemmer ikke overens med bekreftelsen.',
-  email: ':attribute formatet er ugyldig.',
-  date: ':attribute er et ugyldig datoformat.',
-  def: ':attribute attributtet har feil.',
-  digits: ':attribute må være på :digits siffer.',
-  digits_between: ':attribute må være mellom :min og :max siffer.',
-  different: ':attribute og :different må være forskjellige.',
-  in: 'Den oppgitte verdien for :attribute er ugyldig.',
-  integer: ':attribute må være et heltall.',
-  hex: 'The :attribute should have hexadecimal format',
-  min: {
-    numeric: ':attribute må minst være :min.',
-    string: ':attribute må være på minst :min tegn.'
-  },
-  max: {
-    numeric: ':attribute kan ikke være større enn :max.',
-    string: ':attribute kan maks ha :max tegn.'
-  },
-  not_in: 'Den oppgitte verdien for :attribute er ugyldig.',
-  numeric: ':attribute må være et tall.',
-  present: 'The :attribute field must be present (but can be empty).',
-  required: ':attribute feltet er påkrevd.',
-  required_if: ':attribute er påkrevd når :other er :value.',
-  same: ':attribute og :same må være like.',
-  size: {
-    numeric: ':attribute må ha størrelsen :size.',
-    string: ':attribute må ha :size tegn.'
-  },
-  string: ':attribute må være tekst.',
-  url: ':attribute formatet er ugyldig.',
-  regex: ':attribute formatet er ugyldig.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/nl.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/nl.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'Het :attribute veld moet geaccepteerd worden.',
-  after: ':attribute moet een datum na :after zijn.',
-  after_or_equal: 'De :attribute datum moet op of na :after_or_equal zijn.',
-  alpha: 'Het :attribute veld mag alleen maar letters bevatten.',
-  alpha_dash: 'Het :attribute veld mag alleen maar letters, cijfers en (liggende) streepjes bevatten.',
-  alpha_num: 'Het :attribute veld mag alleen maar letters en cijfers bevatten.',
-  before: ':attribute moet vòòr :before zijn.',
-  before_or_equal: ':attribute moet vòòr of op :before_or_equal zijn.',
-  between: 'Het :attribute veld moet tussen :min en :max liggen.',
-  confirmed: 'Het :attribute veld komt niet met de bevestiging overeen.',
-  email: 'Het :attribute formaat is ongeldig.',
-  date: 'Het :attribute veld moet een geldige datum zijn.',
-  def: 'Het :attribute veld bevat fouten.',
-  digits: 'Het :attribute veld moet :digits cijfers hebben.',
-  digits_between: ':attribute moet bestaan uit minimaal :min en maximaal :max cijfers.',
-  different: 'Het :attribute en :different veld moeten verschillend zijn.',
-  in: 'De gekozen waarde voor :attribute is ongeldig.',
-  integer: 'Het :attribute veld moet een geheel getal zijn.',
-  hex: 'Het :attribute veld moet hexadecimaal zijn',
-  min: {
-    numeric: 'Het :attribute veld moet minstens :min zijn.',
-    string: 'Het :attribute veld moet minstens :min karakters bevatten.'
-  },
-  max: {
-    numeric: 'Het :attribute veld mag maximaal :max zijn.',
-    string: 'Het :attribute veld mag niet meer dan :max karakters bevatten.'
-  },
-  not_in: 'De gekozen waarde voor :attribute is ongeldig.',
-  numeric: 'Het :attribute veld moet een getal zijn.',
-  present: 'Het :attribute veld moet aanwezig zijn (maar mag leeg zijn).',
-  required: 'Het :attribute veld moet ingevuld zijn.',
-  required_if: 'Het :attribute veld moet ingevuld zijn, wanneer :other :value is.',
-  required_unless: 'Het :attribute veld moet ingevuld zijn, wanneer :other niet :value is.',
-  required_with: 'Het :attribute veld moet ingevuld zijn, wanneer :field niet leeg is.',
-  required_with_all: 'Het :attribute veld moet ingevuld zijn, wanneer :fields niet leeg zijn.',
-  required_without: 'Het :attribute veld moet ingevuld zijn, wanneer :field leeg is.',
-  required_without_all: 'Het :attribute veld moet ingevuld zijn, wanneer :fields leeg zijn.',
-  same: 'De :attribute en :same velden moeten overeenkomen.',
-  size: {
-    numeric: 'Het :attribute veld moet :size zijn.',
-    string: 'Het :attribute veld moet :size karakters bevatten.'
-  },
-  string: 'Het :attribute veld moet een woord of zin zijn.',
-  url: 'Het :attribute veld heeft een ongeldig formaat.',
-  regex: 'Het :attribute veld heeft een ongeldig formaat.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/pl.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/pl.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'Pole :attribute musi być zaakceptowane.',
-  alpha: 'Pole :attribute może zawierać tylko litery.',
-  alpha_dash: 'Pole :attribute moze zawierać tylko litery, myślnik i podrkeślenie.',
-  alpha_num: 'Pole :attribute moze zawierac tylko znaki alfanumeryczne.',
-  between: 'Pole :attribute musi mieć długość od :min do :max.',
-  confirmed: 'Pole :attribute nie spełnia warunku potwierdzenia.',
-  email: 'Pole :attribute ma niepoprawny format adresu email.',
-  date: 'Pole :attribute musi mieć poprawny format daty.',
-  def: 'Pole :attribute zawiera błędy.',
-  digits: 'Pole :attribute może zawierać tylko cyfry ze zbioru :digits.',
-  digits_between: 'Pole :attribute musi mieć od :min do :max cyfr.',
-  different: 'Pola :attribute i :different muszą się różnić.',
-  in: 'Pole :attribute musi należeć do zbioru :in.',
-  integer: 'Pole :attribute musi być liczbą całkowitą.',
-  hex: 'The :attribute should have hexadecimal format',
-  min: {
-    numeric: 'Pole :attribute musi być równe conajmniej :min.',
-    string: 'Pole :attribute musi zawierać conajmniej :min znaków.'
-  },
-  max: {
-    numeric: 'Pole :attribute nie moze być większe :max.',
-    string: 'Pole :attribute nie moze być dłuższe niż :max znaków.'
-  },
-  not_in: 'Pole :attribute nie może należeć do zbioru :not_in.',
-  numeric: 'Pole :attribute musi być liczbą.',
-  present: 'Polu :attribute musi być obecny (ale może być pusta).',
-  required: 'Pole :attribute jest wymagane.',
-  required_if: 'Pole :attribute jest wymagane jeśli pole :other jest równe :value.',
-  same: 'Pola :attribute i :same muszą być takie same.',
-  size: {
-    numeric: 'Pole :attribute musi być równe :size.',
-    string: 'Pole :attribute musi zawierać :size znaków.'
-  },
-  string: 'Pole :attribute musi być ciągiem znaków.',
-  url: 'Pole :attribute musi być poprawnym adresem URL.',
-  regex: 'Pole :attribute nie spełnia warunku.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/pt.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/pt.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "O campo :attribute deverá ser aceite.",
-  active_url: "O campo :attribute não contém um URL válido.",
-  after: "O campo :attribute deverá conter uma data posterior a :date.",
-  after_or_equal: "O campo :attribute deverá conter uma data posterior ou igual a :date.",
-  alpha: "O campo :attribute deverá conter apenas letras.",
-  alpha_dash: "O campo :attribute deverá conter apenas letras, números e traços.",
-  alpha_num: "O campo :attribute deverá conter apenas letras e números .",
-  attributes: {},
-  array: "O campo :attribute deverá conter uma coleção de elementos.",
-  before: "O campo :attribute deverá conter uma data anterior a :date.",
-  before_or_equal: "O Campo :attribute deverá conter uma data anterior ou igual a :date.",
-  between: {
-    numeric: "O campo :attribute deverá ter um valor entre :min - :max.",
-    file: "O campo :attribute deverá ter um tamanho entre :min - :max kilobytes.",
-    string: "O campo :attribute deverá conter entre :min - :max caracteres.",
-    array: "O campo :attribute deverá conter entre :min - :max elementos."
-  },
-  boolean: "O campo :attribute deverá conter o valor verdadeiro ou falso.",
-  confirmed: "A confirmação para o campo :attribute não coincide.",
-  date: "O campo :attribute não contém uma data válida.",
-  date_format: "A data indicada para o campo :attribute não respeita o formato :format.",
-  different: "Os campos :attribute e :other deverão conter valores diferentes.",
-  digits: "O campo :attribute deverá conter :digits caracteres.",
-  digits_between: "O campo :attribute deverá conter entre :min a :max caracteres.",
-  dimensions: "O campo :attribute deverá conter uma dimensão de imagem válida.",
-  distinct: "O campo :attribute contém um valor duplicado.",
-  email: "O campo :attribute não contém um endereço de correio eletrónico válido.",
-  exists: "O valor selecionado para o campo :attribute é inválido.",
-  file: "O campo :attribute deverá conter um ficheiro.",
-  filled: "É obrigatória a indicação de um valor para o campo :attribute.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "O campo :attribute deverá conter uma imagem.",
-  in: "O campo :attribute não contém um valor válido.",
-  in_array: "O campo :attribute não existe em :other.",
-  integer: "O campo :attribute deverá conter um número inteiro.",
-  ip: "O campo :attribute deverá conter um IP válido.",
-  ipv4: "O campo :attribute deverá conter um IPv4 válido.",
-  ipv6: "O campo :attribute deverá conter um IPv6 válido.",
-  json: "O campo :attribute deverá conter um texto JSON válido.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "O campo :attribute não deverá conter um valor superior a :max.",
-    file: "O campo :attribute não deverá ter um tamanho superior a :max kilobytes.",
-    string: "O campo :attribute não deverá conter mais de :max caracteres.",
-    array: "O campo :attribute não deverá conter mais de :max elementos."
-  },
-  mimes: "O campo :attribute deverá conter um ficheiro do tipo: :values.",
-  mimetypes: "O campo :attribute deverá conter um ficheiro do tipo: :values.",
-  min: {
-    numeric: "O campo :attribute deverá ter um valor superior ou igual a :min.",
-    file: "O campo :attribute deverá ter no mínimo :min kilobytes.",
-    string: "O campo :attribute deverá conter no mínimo :min caracteres.",
-    array: "O campo :attribute deverá conter no mínimo :min elementos."
-  },
-  not_in: "O campo :attribute contém um valor inválido.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "O campo :attribute deverá conter um valor numérico.",
-  present: "O campo :attribute deverá estar presente.",
-  regex: "O formato do valor para o campo :attribute é inválido.",
-  required: "É obrigatória a indicação de um valor para o campo :attribute.",
-  required_if:
-    "É obrigatória a indicação de um valor para o campo :attribute quando o valor do campo :other é igual a :value.",
-  required_unless:
-    "É obrigatória a indicação de um valor para o campo :attribute a menos que :other esteja presente em :values.",
-  required_with: "É obrigatória a indicação de um valor para o campo :attribute quando :values está presente.",
-  required_with_all:
-    "É obrigatória a indicação de um valor para o campo :attribute quando um dos :values está presente.",
-  required_without: "É obrigatória a indicação de um valor para o campo :attribute quando :values não está presente.",
-  required_without_all:
-    "É obrigatória a indicação de um valor para o campo :attribute quando nenhum dos :values está presente.",
-  same: "Os campos :attribute e :other deverão conter valores iguais.",
-  size: {
-    numeric: "O campo :attribute deverá conter o valor :size.",
-    file: "O campo :attribute deverá ter o tamanho de :size kilobytes.",
-    string: "O campo :attribute deverá conter :size caracteres.",
-    array: "O campo :attribute deverá conter :size elementos."
-  },
-  string: "O campo :attribute deverá conter texto.",
-  timezone: "O campo :attribute deverá ter um fuso horário válido.",
-  unique: "O valor indicado para o campo :attribute já se encontra registado.",
-  uploaded: "O upload do ficheiro :attribute falhou.",
-  url: "O formato do URL indicado para o campo :attribute é inválido."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/pt_BR.js":
-/*!****************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/pt_BR.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "O campo :attribute deve ser aceito.",
-  active_url: "O campo :attribute deve conter uma URL válida.",
-  after: "O campo :attribute deve conter uma data posterior a :date.",
-  after_or_equal: "O campo :attribute deve conter uma data superior ou igual a :date.",
-  alpha: "O campo :attribute deve conter apenas letras.",
-  alpha_dash: "O campo :attribute deve conter apenas letras, números e traços.",
-  alpha_num: "O campo :attribute deve conter apenas letras e números .",
-  array: "O campo :attribute deve conter um array.",
-  before: "O campo :attribute deve conter uma data anterior a :date.",
-  before_or_equal: "O campo :attribute deve conter uma data inferior ou igual a :date.",
-  between: {
-    numeric: "O campo :attribute deve conter um número entre :min e :max.",
-    file: "O campo :attribute deve conter um arquivo de :min a :max kilobytes.",
-    string: "O campo :attribute deve conter entre :min a :max caracteres.",
-    array: "O campo :attribute deve conter de :min a :max itens."
-  },
-  boolean: "O campo :attribute deve conter o valor verdadeiro ou falso.",
-  confirmed: "A confirmação para o campo :attribute não coincide.",
-  date: "O campo :attribute não contém uma data válida.",
-  date_format: "A data informada para o campo :attribute não respeita o formato :format.",
-  different: "Os campos :attribute e :other devem conter valores diferentes.",
-  digits: "O campo :attribute deve conter :digits dígitos.",
-  digits_between: "O campo :attribute deve conter entre :min a :max dígitos.",
-  dimensions: "O valor informado para o campo :attribute não é uma dimensão de imagem válida.",
-  distinct: "O campo :attribute contém um valor duplicado.",
-  email: "O campo :attribute não contém um endereço de email válido.",
-  exists: "O valor selecionado para o campo :attribute é inválido.",
-  file: "O campo :attribute deve conter um arquivo.",
-  filled: "O campo :attribute é obrigatório.",
-  gt: {
-    numeric: "O campo :attribute deve ser maior que :value.",
-    file: "O arquivo :attribute deve ser maior que :value kilobytes.",
-    string: "O campo :attribute deve ser maior que :value caracteres.",
-    array: "O campo :attribute deve ter mais que :value itens."
-  },
-  gte: {
-    numeric: "O campo :attribute deve ser maior ou igual a :value.",
-    file: "O arquivo :attribute deve ser maior ou igual a :value kilobytes.",
-    string: "O campo :attribute deve ser maior ou igual a :value caracteres.",
-    array: "O campo :attribute deve ter :value itens ou mais."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "O campo :attribute deve conter uma imagem.",
-  in: "O campo :attribute não contém um valor válido.",
-  in_array: "O campo :attribute não existe em :other.",
-  integer: "O campo :attribute deve conter um número inteiro.",
-  ip: "O campo :attribute deve conter um IP válido.",
-  ipv4: "O campo :attribute deve conter um IPv4 válido.",
-  ipv6: "O campo :attribute deve conter um IPv6 válido.",
-  json: "O campo :attribute deve conter uma string JSON válida.",
-  lt: {
-    numeric: "O campo :attribute deve ser menor que :value.",
-    file: "O arquivo :attribute ser menor que :value kilobytes.",
-    string: "O campo :attribute deve ser menor que :value caracteres.",
-    array: "O campo :attribute deve ter menos que :value itens."
-  },
-  lte: {
-    numeric: "O campo :attribute deve ser menor ou igual a :value.",
-    file: "O arquivo :attribute ser menor ou igual a :value kilobytes.",
-    string: "O campo :attribute deve ser menor ou igual a :value caracteres.",
-    array: "O campo :attribute não deve ter mais que :value itens."
-  },
-  max: {
-    numeric: "O campo :attribute não pode conter um valor superior a :max.",
-    file: "O campo :attribute não pode conter um arquivo com mais de :max kilobytes.",
-    string: "O campo :attribute não pode conter mais de :max caracteres.",
-    array: "O campo :attribute deve conter no máximo :max itens."
-  },
-  mimes: "O campo :attribute deve conter um arquivo do tipo: :values.",
-  mimetypes: "O campo :attribute deve conter um arquivo do tipo: :values.",
-  min: {
-    numeric: "O campo :attribute deve conter um número superior ou igual a :min.",
-    file: "O campo :attribute deve conter um arquivo com no mínimo :min kilobytes.",
-    string: "O campo :attribute deve conter no mínimo :min caracteres.",
-    array: "O campo :attribute deve conter no mínimo :min itens."
-  },
-  not_in: "O campo :attribute contém um valor inválido.",
-  not_regex: "O formato do valor :attribute é inválido.",
-  numeric: "O campo :attribute deve conter um valor numérico.",
-  present: "O campo :attribute deve estar presente.",
-  regex: "O formato do valor informado no campo :attribute é inválido.",
-  required: "O campo :attribute é obrigatório.",
-  required_if: "O campo :attribute é obrigatório quando o valor do campo :other é igual a :value.",
-  required_unless: "O campo :attribute é obrigatório a menos que :other esteja presente em :values.",
-  required_with: "O campo :attribute é obrigatório quando :values está presente.",
-  required_with_all: "O campo :attribute é obrigatório quando um dos :values está presente.",
-  required_without: "O campo :attribute é obrigatório quando :values não está presente.",
-  required_without_all: "O campo :attribute é obrigatório quando nenhum dos :values está presente.",
-  same: "Os campos :attribute e :other devem conter valores iguais.",
-  size: {
-    numeric: "O campo :attribute deve conter o número :size.",
-    file: "O campo :attribute deve conter um arquivo com o tamanho de :size kilobytes.",
-    string: "O campo :attribute deve conter :size caracteres.",
-    array: "O campo :attribute deve conter :size itens."
-  },
-  string: "O campo :attribute deve ser uma string.",
-  timezone: "O campo :attribute deve conter um fuso horário válido.",
-  unique: "O valor informado para o campo :attribute já está em uso.",
-  uploaded: "Falha no Upload do arquivo :attribute.",
-  url: "O formato da URL informada para o campo :attribute é inválido."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ro.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ro.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute trebuie acceptat.',
-  after: ':attribute trebuie să fie după :after.',
-  after_or_equal: ':attribute trebuie să fie egal sau după :after_or_equal.',
-  alpha: 'Câmpul :attribute rebuie să conțină numai caractere alfabetice.',
-  alpha_dash: 'Câmpul:attribute poate conține numai caractere alfanumerice, precum și liniuțe și subliniere.',
-  alpha_num: 'Câmpul :attribute trebuie să fie alfanumeric.',
-  before: ':attribute trebuie să fie înainte :before.',
-  before_or_equal: ':attribute trebuie să fie egal sau înainte :before_or_equal.',
-  between: ':attribute trebuie să fie între :min și :max.',
-  confirmed: 'Confirmarea :attribute nu se potrivește.',
-  email: 'Formatul :attribute nu este valid.',
-  date: ':attribute nu este un format de dată valid.',
-  def: 'Atributul :attribute are erori.',
-  digits: ':attribute trebuie să aibă  :digits cifre.',
-  digits_between: 'Câmpul :attribute trebuie să aibă între :min și :max cifre.',
-  different: ':attribute și :different trebuie sa fie diferite.',
-  in: 'Atributul selectat :attribute nu este valid.',
-  integer: ':attribute trebuie să fie un număr întreg.',
-  hex: 'Câmpul :attribute trebuie să aibă format hexazecimal.',
-  min: {
-    numeric: ':attribute trebuie să fie mai mare de :min.',
-    string: ':attribute trebuie să contină cel puțin :min caractere.'
-  },
-  max: {
-    numeric: ':attribute nu trebuie să fie mai mare de :max.',
-    string: ':attribute poate să contină maxim :max caractere.'
-  },
-  not_in: ':attribute selectat nu este valid.',
-  numeric: ':attribute trebuie sa fie un număr.',
-  present: ':attribute trebuie sa fie prezent(dar poate fi gol).',
-  required: ' Câmpul :attribute este obligatoriu.',
-  required_if: 'Câmpul :attribute este obligatoriu cănd :other este :value.',
-  required_unless: 'Câmpul :attribute este obligatoriu cănd :other nu este :value.',
-  required_with: 'Câmpul :attribute este obligatoriu cănd :field este completat.',
-  required_with_all: 'Câmpul :attribute este obligatoriu cănd :fields sunt completate.',
-  required_without: 'Câmpul :attribute este obligatoriu cănd :field nu este completat.',
-  required_without_all: 'Câmpul :attribute este obligatoriu cănd :fields nu sunt completate.',
-  same: 'Câmpurile :attribute și :same trebuie să fie egale.',
-  size: {
-    numeric: ':attribute trebuie să fie :size.',
-    string: ':attribute trebuie să contina :size caractere.'
-  },
-  string: ':attribute trebuie să fie un contina doar caractere alfabetice.',
-  url: 'Formatul :attribute nu este valid.',
-  regex: 'Formatul :attribute nu este valid.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ru.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ru.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: 'Вы должны принять :attribute.',
-  alpha: 'Поле :attribute может содержать только буквы.',
-  alpha_dash: 'Поле :attribute может содержать только буквы, цифры, дефисы и символы подчёркивания.',
-  alpha_num: 'Поле :attribute может содержать только буквы и цифры.',
-  between: 'Поле :attribute должно быть между :min и :max.',
-  confirmed: 'Поле :attribute не совпадает с подтверждением.',
-  email: 'Поле :attribute должно быть действительным электронным адресом.',
-  def: 'Поле :attribute содержит ошибки.',
-  digits: 'Длина цифрового поля :attribute должна быть :digits.',
-  digits_between: 'Длинна цифрового поля :attribute должна быть от :min до :max знаков.',
-  different: 'Поля :attribute и :different должны различаться.',
-  in: 'Выбранное значение для :attribute ошибочно.',
-  integer: 'Поле :attribute должно быть целым числом.',
-  hex: 'Поле :attribute должно иметь шестнадцатеричный формат',
-  min: {
-    numeric: 'Значение поля :attribute должно быть больше или равно :min.',
-    string: 'Количество символов в поле :attribute должно быть не менее :min.'
-  },
-  max: {
-    numeric: 'Значение поля :attribute должно быть меньше или равно :max.',
-    string: 'Количество символов в поле :attribute не может превышать :max.'
-  },
-  not_in: 'Выбранное значение для :attribute ошибочно.',
-  numeric: 'Поле :attribute должно быть числом.',
-  present: 'Поле :attribute должно присутствовать (но может быть пустым).',
-  required: 'Поле :attribute обязательно для заполнения.',
-  required_if: 'Поле :attribute требуется когда значения поля :other равно :value.',
-  same: 'Значение :attribute должно совпадать с :same.',
-  size: {
-    numeric: 'Значение поля :attribute должно быть равным :size.',
-    string: 'Количество символов в поле :attribute должно быть равно :size.'
-  },
-  url: 'Поле :attribute должно содержать валидный URL.',
-  regex: 'Неверный формат поля :attribute.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/se.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/se.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute måste vara accepterat.',
-  after: ':attribute måste vara efter :after.',
-  after_or_equal: ':attribute måste vara samtidigt eller efter :after_or_equal.',
-  alpha: ':attribute får bara bestå av bokstäver.',
-  alpha_dash: ':attribute får bara bestå av alfanumeriska tecken, bindestreck och understreck.',
-  alpha_num: ':attribute får bara bestå av alfanumeriska tecken',
-  before: ':attribute måste vara före :before.',
-  before_or_equal: ':attribute måste vara samtidigt eller före :before_or_equal.',
-  between: ':attribute måste vara mellan :min och :max.',
-  confirmed: ':attribute stämmer inte överens med bekräftelsefältet.',
-  email: 'Felaktigt format för :attribute.',
-  date: ':attribute är inte ett giltigt datum.',
-  def: 'Attributet :attribute innehåller fel.',
-  digits: ':attribute ska innehålla :digits siffror.',
-  different: ':attribute och :different måste vara olika.',
-  in: 'Det valda :attribute är ogiltigt.',
-  integer: ':attribute måste vara ett heltal.',
-  hex: ':attribute måste vara i hexadecimalt format',
-  min: {
-    numeric: ':attribute måste vara minst :min.',
-    string: ':attribute måste vara minst :min tecken.'
-  },
-  max: {
-    numeric: ':attribute får inte vara högre än :max.',
-    string: ':attribute får inte innehålla fler än :max tecken.'
-  },
-  not_in: 'Det valda attributet :attribute är ogiltigt',
-  numeric: ':attribute måste vara en siffra.',
-  present: ':attribute måste vara tillgängligt.',
-  required: ':attribute måste vara ifyllt.',
-  required_if: ':attribute måste vara ifyllt när :other är :value.',
-  required_unless: ':attribute måste vara ifyllt när :other inte är :value.',
-  required_with: ':attribute måste vara ifyllt när :field är ifyllt.',
-  required_with_all: ':attribute måste vara ifyllt när :fields är ifyllda.',
-  required_without: ':attribute måste vara ifyllt när :field inte är ifyllt.',
-  required_without_all: ':attribute måste vara ifyllt när ingen av :fields är ifyllda.',
-  same: ':attribute och :same måste matcha.',
-  size: {
-    numeric: ':attribute måste vara :size.',
-    string: ':attribute måste vara :size tecken lång.'
-  },
-  string: ':attribute måste vara en sträng.',
-  url: ':attribute formatet är ogiltigt.',
-  regex: ':attribute formatet är ogiltigt.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/sl.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/sl.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute mora biti sprejet.",
-  active_url: ":attribute ni pravilen.",
-  after: ":attribute mora biti za datumom :date.",
-  after_or_equal: ":attribute mora biti za ali enak :date.",
-  alpha: ":attribute lahko vsebuje samo črke.",
-  alpha_dash: ":attribute lahko vsebuje samo črke, številke in črtice.",
-  alpha_num: ":attribute lahko vsebuje samo črke in številke.",
-  attributes: {},
-  array: ":attribute mora biti polje.",
-  before: ":attribute mora biti pred datumom :date.",
-  before_or_equal: ":attribute mora biti pred ali enak :date.",
-  between: {
-    numeric: ":attribute mora biti med :min in :max.",
-    file: ":attribute mora biti med :min in :max kilobajti.",
-    string: ":attribute mora biti med :min in :max znaki.",
-    array: ":attribute mora imeti med :min in :max elementov."
-  },
-  boolean: ":attribute polje mora biti 1 ali 0",
-  confirmed: ":attribute potrditev se ne ujema.",
-  date: ":attribute ni veljaven datum.",
-  date_format: ":attribute se ne ujema z obliko :format.",
-  different: ":attribute in :other mora biti drugačen.",
-  digits: ":attribute mora imeti :digits cifer.",
-  digits_between: ":attribute mora biti med :min in :max ciframi.",
-  dimensions: ":attribute ima napačne dimenzije slike.",
-  distinct: ":attribute je duplikat.",
-  email: ":attribute mora biti veljaven e-poštni naslov.",
-  exists: "izbran :attribute je neveljaven.",
-  file: ":attribute mora biti datoteka.",
-  filled: ":attribute mora biti izpolnjen.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute mora biti slika.",
-  in: "izbran :attribute je neveljaven.",
-  in_array: ":attribute ne obstaja v :other.",
-  integer: ":attribute mora biti število.",
-  ip: ":attribute mora biti veljaven IP naslov.",
-  ipv4: ":attribute mora biti veljaven IPv4 naslov.",
-  ipv6: ":attribute mora biti veljaven IPv6 naslov.",
-  json: ":attribute mora biti veljaven JSON tekst.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: ":attribute ne sme biti večje od :max.",
-    file: ":attribute ne sme biti večje :max kilobajtov.",
-    string: ":attribute ne sme biti večje :max znakov.",
-    array: ":attribute ne smejo imeti več kot :max elementov."
-  },
-  mimes: ":attribute mora biti datoteka tipa: :values.",
-  mimetypes: ":attribute mora biti datoteka tipa: :values.",
-  min: {
-    numeric: ":attribute mora biti vsaj dolžine :min.",
-    file: ":attribute mora imeti vsaj :min kilobajtov.",
-    string: ":attribute mora imeti vsaj :min znakov.",
-    array: ":attribute mora imeti vsaj :min elementov."
-  },
-  not_in: "izbran :attribute je neveljaven.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: ":attribute mora biti število.",
-  present: "Polje :attribute mora biti prisotno.",
-  regex: "Format polja :attribute je neveljaven.",
-  required: "Polje :attribute je obvezno.",
-  required_if: "Polje :attribute je obvezno, če je :other enak :value.",
-  required_unless: "Polje :attribute je obvezno, razen če je :other v :values.",
-  required_with: "Polje :attribute je obvezno, če je :values prisoten.",
-  required_with_all: "Polje :attribute je obvezno, če so :values prisoten.",
-  required_without: "Polje :attribute je obvezno, če :values ni prisoten.",
-  required_without_all: "Polje :attribute je obvezno, če :values niso prisotni.",
-  same: "Polje :attribute in :other se morata ujemati.",
-  size: {
-    numeric: ":attribute mora biti :size.",
-    file: ":attribute mora biti :size kilobajtov.",
-    string: ":attribute mora biti :size znakov.",
-    array: ":attribute mora vsebovati :size elementov."
-  },
-  string: ":attribute mora biti tekst.",
-  timezone: ":attribute mora biti časovna cona.",
-  unique: ":attribute je že zaseden.",
-  uploaded: "Nalaganje :attribute ni uspelo.",
-  url: ":attribute format je neveljaven."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/sq.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/sq.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute duhet të pranohet.",
-  active_url: ":attribute nuk është adresë e saktë.",
-  after: ":attribute duhet të jetë datë pas :date.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: ":attribute mund të përmbajë vetëm shkronja.",
-  alpha_dash: ":attribute mund të përmbajë vetëm shkronja, numra, dhe viza.",
-  alpha_num: ":attribute mund të përmbajë vetëm shkronja dhe numra.",
-  attributes: {},
-  array: ":attribute duhet të jetë një bashkësi (array).",
-  before: ":attribute duhet të jetë datë para :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: ":attribute duhet të jetë midis :min - :max.",
-    file: ":attribute duhet të jetë midis :min - :max kilobajtëve.",
-    string: ":attribute duhet të jetë midis :min - :max karaktereve.",
-    array: ":attribute duhet të jetë midis :min - :max elementëve."
-  },
-  boolean: "Fusha :attribute duhet të jetë e vërtetë ose e gabuar",
-  confirmed: ":attribute konfirmimi nuk përputhet.",
-  date: ":attribute nuk është një datë e saktë.",
-  date_format: ":attribute nuk i përshtatet formatit :format.",
-  different: ":attribute dhe :other duhet të jenë të ndryshme.",
-  digits: ":attribute duhet të jetë :digits shifra.",
-  digits_between: ":attribute duhet të jetë midis :min dhe :max shifra.",
-  dimensions: "The :attribute has invalid image dimensions.",
-  distinct: "The :attribute field has a duplicate value.",
-  email: ":attribute formati është i pasaktë.",
-  exists: ":attribute përzgjedhur është i/e pasaktë.",
-  file: "The :attribute must be a file.",
-  filled: "Fusha :attribute është e kërkuar.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute duhet të jetë imazh.",
-  in: ":attribute përzgjedhur është i/e pasaktë.",
-  in_array: "The :attribute field does not exist in :other.",
-  integer: ":attribute duhet të jetë numër i plotë.",
-  ip: ":attribute duhet të jetë një IP adresë e saktë.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: "The :attribute must be a valid JSON string.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: ":attribute nuk mund të jetë më tepër se :max.",
-    file: ":attribute nuk mund të jetë më tepër se :max kilobajtë.",
-    string: ":attribute nuk mund të jetë më tepër se :max karaktere.",
-    array: ":attribute nuk mund të ketë më tepër se :max elemente."
-  },
-  mimes: ":attribute duhet të jetë një dokument i tipit: :values.",
-  mimetypes: ":attribute duhet të jetë një dokument i tipit: :values.",
-  min: {
-    numeric: ":attribute nuk mund të jetë më pak se :min.",
-    file: ":attribute nuk mund të jetë më pak se :min kilobajtë.",
-    string: ":attribute nuk mund të jetë më pak se :min karaktere.",
-    array: ":attribute nuk mund të ketë më pak se :min elemente."
-  },
-  not_in: ":attribute përzgjedhur është i/e pasaktë.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: ":attribute duhet të jetë një numër.",
-  present: "The :attribute field must be present.",
-  regex: "Formati i :attribute është i pasaktë.",
-  required: "Fusha :attribute është e kërkuar.",
-  required_if: "Fusha :attribute është e kërkuar kur :other është :value.",
-  required_unless: "The :attribute field is required unless :other is in :values.",
-  required_with: "Fusha :attribute është e kërkuar kur :values ekziston.",
-  required_with_all: "Fusha :attribute është e kërkuar kur :values ekziston.",
-  required_without: "Fusha :attribute është e kërkuar kur :values nuk ekziston.",
-  required_without_all: "Fusha :attribute është e kërkuar kur nuk ekziston asnjë nga :values.",
-  same: ":attribute dhe :other duhet të përputhen.",
-  size: {
-    numeric: ":attribute duhet të jetë :size.",
-    file: ":attribute duhet të jetë :size kilobajtë.",
-    string: ":attribute duhet të jetë :size karaktere.",
-    array: ":attribute duhet të ketë :size elemente."
-  },
-  string: ":attribute duhet të jetë varg.",
-  timezone: ":attribute duhet të jetë zonë e saktë.",
-  unique: ":attribute është marrë tashmë.",
-  uploaded: "The :attribute failed to upload.",
-  url: "Formati i :attribute është i pasaktë."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/sr.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/sr.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Polje :attribute mora biti prihvaćeno.",
-  active_url: "Polje :attribute nije validan URL.",
-  after: "Polje :attribute mora biti datum posle :date.",
-  after_or_equal: "The :attribute must be a date after or equal to :date.",
-  alpha: "Polje :attribute može sadržati samo slova.",
-  alpha_dash: "Polje :attribute može sadržati samo slova, brojeve i povlake.",
-  alpha_num: "Polje :attribute može sadržati samo slova i brojeve.",
-  attributes: {},
-  array: "Polje :attribute mora sadržati nekih niz stavki.",
-  before: "Polje :attribute mora biti datum pre :date.",
-  before_or_equal: "The :attribute must be a date before or equal to :date.",
-  between: {
-    numeric: "Polje :attribute mora biti između :min - :max.",
-    file: "Fajl :attribute mora biti između :min - :max kilobajta.",
-    string: "Polje :attribute mora biti između :min - :max karaktera.",
-    array: "Polje :attribute mora biti između :min - :max stavki."
-  },
-  boolean: "Polje :attribute mora biti tačno ili netačno",
-  confirmed: "Potvrda polja :attribute se ne poklapa.",
-  date: "Polje :attribute nije važeći datum.",
-  date_format: "Polje :attribute ne odgovora prema formatu :format.",
-  different: "Polja :attribute i :other moraju biti različita.",
-  digits: "Polje :attribute mora sadržati :digits šifri.",
-  digits_between: "Polje :attribute mora biti izemđu :min i :max šifri.",
-  dimensions: "The :attribute has invalid image dimensions.",
-  distinct: "The :attribute field has a duplicate value.",
-  email: "Format polja :attribute nije validan.",
-  exists: "Odabrano polje :attribute nije validno.",
-  file: "The :attribute must be a file.",
-  filled: "Polje :attribute je obavezno.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Polje :attribute mora biti slika.",
-  in: "Odabrano polje :attribute nije validno.",
-  in_array: "The :attribute field does not exist in :other.",
-  integer: "Polje :attribute mora biti broj.",
-  ip: "Polje :attribute mora biti validna IP adresa.",
-  ipv4: "The :attribute must be a valid IPv4 address.",
-  ipv6: "The :attribute must be a valid IPv6 address.",
-  json: "The :attribute must be a valid JSON string.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Polje :attribute mora biti manje od :max.",
-    file: "Polje :attribute mora biti manje od :max kilobajta.",
-    string: "Polje :attribute mora sadržati manje od :max karaktera.",
-    array: "Polje :attribute ne smije da image više od :max stavki."
-  },
-  mimes: "Polje :attribute mora biti fajl tipa: :values.",
-  mimetypes: "Polje :attribute mora biti fajl tipa: :values.",
-  min: {
-    numeric: "Polje :attribute mora biti najmanje :min.",
-    file: "Fajl :attribute mora biti najmanje :min kilobajta.",
-    string: "Polje :attribute mora sadržati najmanje :min karaktera.",
-    array: "Polje :attribute mora sadrzati najmanje :min stavku."
-  },
-  not_in: "Odabrani element polja :attribute nije validan.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Polje :attribute mora biti broj.",
-  present: "The :attribute field must be present.",
-  regex: "Format polja :attribute nije validan.",
-  required: "Polje :attribute je obavezno.",
-  required_if: "Polje :attribute je potrebno kada polje :other sadrži :value.",
-  required_unless: "The :attribute field is required unless :other is in :values.",
-  required_with: "Polje :attribute je potrebno kada polje :values je prisutan.",
-  required_with_all: "Polje :attribute je obavezno kada je :values prikazano.",
-  required_without: "Polje :attribute je potrebno kada polje :values nije prisutan.",
-  required_without_all: "Polje :attribute je potrebno kada nijedan od sledeći polja :values nisu prisutni.",
-  same: "Polja :attribute i :other se moraju poklapati.",
-  size: {
-    numeric: "Polje :attribute mora biti :size.",
-    file: "Fajl :attribute mora biti :size kilobajta.",
-    string: "Polje :attribute mora biti :size karaktera.",
-    array: "Polje :attribute mora sadržati :size stavki."
-  },
-  string: "Polje :attribute mora sadržati slova.",
-  timezone: "Polje :attribute mora biti ispravna vremenska zona.",
-  unique: "Polje :attribute već postoji.",
-  uploaded: "The :attribute failed to upload.",
-  url: "Format polja :attribute ne važi."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/sv.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/sv.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ":attribute måste accepteras.",
-  active_url: ":attribute är inte en giltig webbadress.",
-  after: ":attribute måste vara ett datum efter den :date.",
-  after_or_equal: ":attribute måste vara ett datum senare eller samma dag som :date.",
-  alpha: ":attribute får endast innehålla bokstäver.",
-  alpha_dash: ":attribute får endast innehålla bokstäver, siffror och bindestreck.",
-  alpha_num: ":attribute får endast innehålla bokstäver och siffror.",
-  array: ":attribute måste vara en array.",
-  before: ":attribute måste vara ett datum innan den :date.",
-  before_or_equal: ":attribute måste vara ett datum före eller samma dag som :date.",
-  between: {
-    numeric: ":attribute måste vara en siffra mellan :min och :max.",
-    file: ":attribute måste vara mellan :min till :max kilobyte stor.",
-    string: ":attribute måste innehålla :min till :max tecken.",
-    array: ":attribute måste innehålla mellan :min - :max objekt."
-  },
-  boolean: ":attribute måste vara sant eller falskt.",
-  confirmed: ":attribute bekräftelsen matchar inte.",
-  date: ":attribute är inte ett giltigt datum.",
-  date_format: ":attribute matchar inte formatet :format.",
-  different: ":attribute och :other får inte vara lika.",
-  digits: ":attribute måste vara :digits tecken.",
-  digits_between: ":attribute måste vara mellan :min och :max tecken.",
-  dimensions: ":attribute har felaktiga bilddimensioner.",
-  distinct: ":attribute innehåller fler än en repetition av samma element.",
-  email: ":attribute måste innehålla en korrekt e-postadress.",
-  exists: ":attribute är ogiltigt.",
-  file: ":attribute måste vara en fil.",
-  filled: ":attribute är obligatoriskt.",
-  gt: {
-    numeric: ":attribute måste vara större än :value.",
-    file: ":attribute måste vara större än :value kilobyte stor.",
-    string: ":attribute måste vara längre än :value tecken.",
-    array: ":attribute måste innehålla fler än :value objekt."
-  },
-  gte: {
-    numeric: ":attribute måste vara lika med eller större än :value.",
-    file: ":attribute måste vara lika med eller större än :value kilobyte stor.",
-    string: ":attribute måste vara lika med eller längre än :value tecken.",
-    array: ":attribute måste innehålla lika många eller fler än :value objekt."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: ":attribute måste vara en bild.",
-  in: ":attribute är ogiltigt.",
-  in_array: ":attribute finns inte i :other.",
-  integer: ":attribute måste vara en siffra.",
-  ip: ":attribute måste vara en giltig IP-adress.",
-  ipv4: ":attribute måste vara en giltig IPv4-adress.",
-  ipv6: ":attribute måste vara en giltig IPv6-adress.",
-  json: ":attribute måste vara en giltig JSON-sträng.",
-  lt: {
-    numeric: ":attribute måste vara mindre än :value.",
-    file: ":attribute måste vara mindre än :value kilobyte stor.",
-    string: ":attribute måste vara kortare än :value tecken.",
-    array: ":attribute måste innehålla färre än :value objekt."
-  },
-  lte: {
-    numeric: ":attribute måste vara lika med eller mindre än :value.",
-    file: ":attribute måste vara lika med eller mindre än :value kilobyte stor.",
-    string: ":attribute måste vara lika med eller kortare än :value tecken.",
-    array: ":attribute måste innehålla lika många eller färre än :value objekt."
-  },
-  max: {
-    numeric: ":attribute får inte vara större än :max.",
-    file: ":attribute får max vara :max kilobyte stor.",
-    string: ":attribute får max innehålla :max tecken.",
-    array: ":attribute får inte innehålla mer än :max objekt."
-  },
-  mimes: ":attribute måste vara en fil av typen: :values.",
-  mimetypes: ":attribute måste vara en fil av typen: :values.",
-  min: {
-    numeric: ":attribute måste vara större än :min.",
-    file: ":attribute måste vara minst :min kilobyte stor.",
-    string: ":attribute måste innehålla minst :min tecken.",
-    array: ":attribute måste innehålla minst :min objekt."
-  },
-  not_in: ":attribute är ogiltigt.",
-  not_regex: "Formatet för :attribute är ogiltigt.",
-  numeric: ":attribute måste vara en siffra.",
-  present: ":attribute måste finnas med.",
-  regex: ":attribute har ogiltigt format.",
-  required: ":attribute är obligatoriskt.",
-  required_if: ":attribute är obligatoriskt när :other är :value.",
-  required_unless: ":attribute är obligatoriskt när inte :other finns bland :values.",
-  required_with: ":attribute är obligatoriskt när :values är ifyllt.",
-  required_with_all: ":attribute är obligatoriskt när :values är ifyllt.",
-  required_without: ":attribute är obligatoriskt när :values ej är ifyllt.",
-  required_without_all: ":attribute är obligatoriskt när ingen av :values är ifyllt.",
-  same: ":attribute och :other måste vara lika.",
-  size: {
-    numeric: ":attribute måste vara :size.",
-    file: ":attribute får endast vara :size kilobyte stor.",
-    string: ":attribute måste innehålla :size tecken.",
-    array: ":attribute måste innehålla :size objekt."
-  },
-  string: ":attribute måste vara en sträng.",
-  timezone: ":attribute måste vara en giltig tidszon.",
-  unique: ":attribute används redan.",
-  uploaded: ":attribute kunde inte laddas upp.",
-  url: ":attribute har ett ogiltigt format."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/tr.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/tr.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute kabul edilmeli.',
-  after: ':attribute alanı :after alanından sonra olmalıdır.',
-  after_or_equal: ':attribute alanı :after_or_equal alanına eşit veya sonra olmalıdır.',
-  alpha: ':attribute alanı sadece harflerden oluşabilir.',
-  alpha_dash: ':attribute alanı sadece alfa-nümerik, tire ve alt çizgi karakterlerden oluşabilir.',
-  alpha_num: ':attribute alanı alfa-nümerik olmalıdır.',
-  before: ':attribute alanı :before alanından önce olmalıdır.',
-  before_or_equal: ':attribute alanı :before_or_equal alanına eşit veya önce olmalıdır.',
-  between: ':attribute alanı :min ile :max arasında olabilir.',
-  confirmed: ':attribute uyuşmuyor.',
-  email: ':attribute formatı geçersiz.',
-  date: ':attribute geöerli bir tarih alanı değil.',
-  def: ':attribute hatalar içeriyor.',
-  digits: ':attribute sadece rakamlardan oluşabilir.',
-  digits_between: ':attribute :min ile :max arasında rakam olmalıdır.',
-  different: ':attribute ve :different farklı olmalı.',
-  in: 'Seçilen :attribute geçerli değil.',
-  integer: ':attribute tam sayı olmalı.',
-  hex: ':attribute onaltılık formatta olmalı.',
-  min: {
-    numeric: ':attribute en az :min olmalı.',
-    string: ':attribute en az :min karakter uzunluğunda olmalı.'
-  },
-  max: {
-    numeric: ':attribute en çok :max olabilir.',
-    string: ':attribute uzunluğu en çok :max karakter uzunluğunda olabilir.'
-  },
-  not_in: 'Seçilen :attribute geçerli değil.',
-  numeric: ':attribute sayı olmalı.',
-  present: ':attribute alanı bulunmalıdır (ancak boş olabilir).',
-  required: ':attribute alanı gerekli.',
-  required_if: ':attribute alanı :other alanı :value olduğunda gerekli.',
-  required_unless: ':attribute alanı :other alanı :value değilse gereklidir.',
-  required_with: ':attribute alanı :field boş değilse gereklidir.',
-  required_with_all: ':attribute alanı :fields alanları boş değilse gereklidir.',
-  required_without: ':attribute alanı :field alanı boşsa gereklidir.',
-  required_without_all: ':attribute alanı :fields alanları boşsa gereklidir.',
-  same: ':attribute ve :same aynı olmalı.',
-  size: {
-    numeric: ':attribute :size olmalı.',
-    string: ':attribute :size karakter uzunluğunda olmalı.'
-  },
-  string: ':attribute alfa-numerik olmalı.',
-  url: ':attribute formatı geçersiz.',
-  regex: ':attribute formatı geçersiz.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/ua.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/ua.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute повиннен бути прийнятий.',
-  alpha: 'Поле :attribute може складатись тільки з літер.',
-  alpha_dash: 'Поле :attribute може складатись тільки з літер, чисел, дефісів та символів підкреслення.',
-  alpha_num: 'Поле :attribute може складатись тільки з літер та чисел.',
-  between: 'Значення поля :attribute повинно знаходитись між :min і :max.',
-  confirmed: 'Поле :attribute не співпадає з підтвердженням.',
-  email: 'Значення поля :attribute повинно бути існуючою електронною адресою.',
-  def: 'Поле :attribute містить помилки.',
-  digits: 'Довжина числового поля :attribute повинна бути :digits.',
-  digits_between: 'Довжина цифрового поля :attribute повинна бути від :min до :max.',
-  different: 'Поля :attribute і :different повинні відрізнятись.',
-  in: 'Обране значення для :attribute помилкове.',
-  integer: 'Значення поля :attribute повинно бути цілим числом.',
-  hex: 'Значення поля :attribute повинно бути шістнадцяткового формату',
-  min: {
-    numeric: 'Значення поля :attribute повинно бути більшим або рівним :min.',
-    string: 'Кількість символів в полі :attribute повинна бути не менше :min.'
-  },
-  max: {
-    numeric: 'Значення поля :attribute повинно бути менше або рівне :max.',
-    string: 'Кількість символів в полі :attribute не може превищувати :max.'
-  },
-  not_in: 'Обране значення для :attribute помилкове.',
-  numeric: 'Значення поля :attribute повинно бути числом.',
-  present: 'Поле :attribute повинно бути присутнім (але може бути пустим).',
-  required: 'Поле :attribute обов\'язкове для заповнення.',
-  required_if: 'Поле :attribute потрібне у випадку коли значення поля :other рівне :value.',
-  same: 'Значеня поля :attribute повинно співпадати з :same.',
-  size: {
-    numeric: 'Значення поля :attribute повинно бути рівним :size.',
-    string: 'Кількість символів в полі :attribute повинна бути рівною :size.'
-  },
-  url: 'Поле :attribute повинне містити валідний URL.',
-  regex: 'Неправильний формат значення :attribute.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/uk.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/uk.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: "Ви повинні прийняти :attribute.",
-  active_url: "Поле :attribute не є правильним URL.",
-  after: "Поле :attribute має містити дату не раніше :date.",
-  after_or_equal: "Поле :attribute має містити дату не раніше або дорівнюватися :date.",
-  alpha: "Поле :attribute має містити лише літери.",
-  alpha_dash: "Поле :attribute має містити лише літери, цифри та підкреслення.",
-  alpha_num: "Поле :attribute має містити лише літери та цифри.",
-  attributes: {},
-  array: "Поле :attribute має бути масивом.",
-  before: "Поле :attribute має містити дату не пізніше :date.",
-  before_or_equal: "Поле :attribute має містити дату не пізніше або дорівнюватися :date.",
-  between: {
-    numeric: "Поле :attribute має бути між :min та :max.",
-    file: "Розмір файлу в полі :attribute має бути не менше :min та не більше :max кілобайт.",
-    string: "Текст в полі :attribute має бути не менше :min та не більше :max символів.",
-    array: "Поле :attribute має містити від :min до :max елементів."
-  },
-  boolean: "Поле :attribute повинне містити логічний тип.",
-  confirmed: "Поле :attribute не збігається з підтвердженням.",
-  date: "Поле :attribute не є датою.",
-  date_format: "Поле :attribute не відповідає формату :format.",
-  different: "Поля :attribute та :other повинні бути різними.",
-  digits: "Довжина цифрового поля :attribute повинна дорівнювати :digits.",
-  digits_between: "Довжина цифрового поля :attribute повинна бути від :min до :max.",
-  dimensions: "Поле :attribute містіть неприпустимі розміри зображення.",
-  distinct: "Поле :attribute містить значення, яке дублюється.",
-  email: "Поле :attribute повинне містити коректну електронну адресу.",
-  file: "Поле :attribute має містити файл.",
-  filled: "Поле :attribute є обов'язковим для заповнення.",
-  exists: "Вибране для :attribute значення не коректне.",
-  gt: {
-    numeric: "The :attribute must be greater than :value.",
-    file: "The :attribute must be greater than :value kilobytes.",
-    string: "The :attribute must be greater than :value characters.",
-    array: "The :attribute must have more than :value items."
-  },
-  gte: {
-    numeric: "The :attribute must be greater than or equal :value.",
-    file: "The :attribute must be greater than or equal :value kilobytes.",
-    string: "The :attribute must be greater than or equal :value characters.",
-    array: "The :attribute must have :value items or more."
-  },
-  hex: "The :attribute field should have hexadecimal format",
-  image: "Поле :attribute має містити зображення.",
-  in: "Вибране для :attribute значення не коректне.",
-  in_array: "Значення поля :attribute не міститься в :other.",
-  integer: "Поле :attribute має містити ціле число.",
-  ip: "Поле :attribute має містити IP адресу.",
-  ipv4: "Поле :attribute має містити IPv4 адресу.",
-  ipv6: "Поле :attribute має містити IPv6 адресу.",
-  json: "Дані поля :attribute мають бути в форматі JSON.",
-  lt: {
-    numeric: "The :attribute must be less than :value.",
-    file: "The :attribute must be less than :value kilobytes.",
-    string: "The :attribute must be less than :value characters.",
-    array: "The :attribute must have less than :value items."
-  },
-  lte: {
-    numeric: "The :attribute must be less than or equal :value.",
-    file: "The :attribute must be less than or equal :value kilobytes.",
-    string: "The :attribute must be less than or equal :value characters.",
-    array: "The :attribute must not have more than :value items."
-  },
-  max: {
-    numeric: "Поле :attribute має бути не більше :max.",
-    file: "Файл в полі :attribute має бути не більше :max кілобайт.",
-    string: "Текст в полі :attribute повинен мати довжину не більшу за :max.",
-    array: "Поле :attribute повинне містити не більше :max елементів."
-  },
-  mimes: "Поле :attribute повинне містити файл одного з типів: :values.",
-  mimetypes: "Поле :attribute повинне містити файл одного з типів: :values.",
-  min: {
-    numeric: "Поле :attribute повинне бути не менше :min.",
-    file: "Розмір файлу в полі :attribute має бути не меншим :min кілобайт.",
-    string: "Текст в полі :attribute повинен містити не менше :min символів.",
-    array: "Поле :attribute повинне містити не менше :min елементів."
-  },
-  not_in: "Вибране для :attribute значення не коректне.",
-  not_regex: "The :attribute format is invalid.",
-  numeric: "Поле :attribute повинно містити число.",
-  present: "Поле :attribute повинне бути присутнє.",
-  regex: "Поле :attribute має хибний формат.",
-  required: "Поле :attribute є обов'язковим для заповнення.",
-  required_if: "Поле :attribute є обов'язковим для заповнення, коли :other є рівним :value.",
-  required_unless: "Поле :attribute є обов'язковим для заповнення, коли :other відрізняється від :values",
-  required_with: "Поле :attribute є обов'язковим для заповнення, коли :values вказано.",
-  required_with_all: "Поле :attribute є обов'язковим для заповнення, коли :values вказано.",
-  required_without: "Поле :attribute є обов'язковим для заповнення, коли :values не вказано.",
-  required_without_all: "Поле :attribute є обов'язковим для заповнення, коли :values не вказано.",
-  same: "Поля :attribute та :other мають співпадати.",
-  size: {
-    numeric: "Поле :attribute має бути довжини :size.",
-    file: "Файл в полі :attribute має бути розміром :size кілобайт.",
-    string: "Текст в полі :attribute повинен містити :size символів.",
-    array: "Поле :attribute повинне містити :size елементів."
-  },
-  string: "Поле :attribute повинне містити текст.",
-  timezone: "Поле :attribute повинне містити коректну часову зону.",
-  unique: "Таке значення поля :attribute вже існує.",
-  uploaded: "Завантаження поля :attribute не вдалося.",
-  url: "Формат поля :attribute неправильний."
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/vi.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/vi.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute phải được chấp nhận.',
-  alpha: 'Trường :attribute phải là ký tự',
-  alpha_dash: ':attribute chỉ chấp nhận ký tự chữ cái, số, dấu gạch chéo và gạch dưới.',
-  alpha_num: ':attribute phải là ký tự chữ cái hoặc chữ số.',
-  between: ':attribute phải nằm trong khoảng :min và :max.',
-  confirmed: ':attribute xác nhận không trùng khớp.',
-  email: ':attribute không phải là email.',
-  date: ':attribute không phải là ngày hợp lệ',
-  def: 'Thuộc tính :attribute có lỗi.',
-  digits: ':attribute phải là số và có chiều dài bằng :digits.',
-  digits_between: 'Độ dài của trường :attribute phải nằm trong khoảng :min and :max chữ số.',
-  different: 'Giá trị của hai trường :attribute và :different phải khác nhau.',
-  in: 'Giá trị được chọn của :attribute không hợp lệ.',
-  integer: ':attribute phải là số nguyên.',
-  hex: 'The :attribute should have hexadecimal format',
-  min: {
-    numeric: ':attribute phải lớn hơn hoặc bằng :min.',
-    string: ':attribute phải có ít nhất :min ký tự.'
-  },
-  max: {
-    numeric: ':attribute phải nhỏ hơn hoặc bằng :max.',
-    string: ':attribute phải có ít hơn :max ký tự.'
-  },
-  not_in: 'Giá trị được chọn của trường :attribute không hợp lệ.',
-  numeric: ':attribute phải là số.',
-  present: 'Trường :attribute phải có mặt (nhưng có thể để trống).',
-  required: ':attribute bắt buộc nhập.',
-  required_if: ':attribute là bắt buộc khi :other có giá trị :value.',
-  same: 'Giá trị của :attribute và :same phải như nhau.',
-  size: {
-    numeric: ':attribute phải có chiều dài của bằng :size.',
-    string: 'Số ký tự của :attribute phải là :size ký tự.'
-  },
-  string: ':attribute không phải là một chuỗi',
-  url: ':attribute không phải là một Url hợp lệ.',
-  regex: ':attribute không đúng định dạng',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/zh.js":
-/*!*************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/zh.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute必须是可接受的.',
-  alpha: ':attribute只能包含字母.',
-  alpha_dash: ':attribute只能包含字母,连字符和下划线.',
-  alpha_num: ':attribute只能包含字母和数字.',
-  between: ':attribute的(大小,长度等)只能在:min和:max之间.',
-  confirmed: ':attribute确认不一致.',
-  email: ':attribute格式不正确.',
-  date: ':attribute日期格式错误.',
-  def: ':attribute属性错误.',
-  digits: ':attribute必须是:digits位小数.',
-  digits_between: ':attribute 必须是介于 :min 和 :max 位的数字。',
-  different: ':attribute和:different必须不同.',
-  in: '选择的:attribute无效',
-  integer: ':attribute必须是一个整数.',
-  hex: 'The :attribute should have hexadecimal format',
-  min: {
-    numeric: ':attribute不能小于:min.',
-    string: ':attribute长度不能小于:min.'
-  },
-  max: {
-    numeric: ':attribute不能大于:max.',
-    string: ':attribute长度不能大于:max.'
-  },
-  not_in: '所选的:attribute无效.',
-  numeric: ':attribute必须是一个数字.',
-  present: 'The :attribute field must be present (but can be empty).',
-  required: ':attribute不能为空.',
-  required_if: '当:other是:value时,:attribute不能为空.',
-  same: ':attribute和:same必须一致.',
-  size: {
-    numeric: ':attribute必须等于:size.',
-    string: ':attribute的长度必须等于:size.'
-  },
-  string: ':attribute必须是一个字符串.',
-  url: ':attribute格式不正确.',
-  regex: ':attribute格式不正确.',
-  attributes: {}
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/validatorjs/src/lang/zh_TW.js":
-/*!****************************************************!*\
-  !*** ./node_modules/validatorjs/src/lang/zh_TW.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {
-  accepted: ':attribute必須接受。',
-  alpha: ':attribute只能包含字母。',
-  alpha_dash: ':attribute只能包含字母，連字符和下划線。',
-  alpha_num: ':attribute只能包含字母和數字。',
-  between: ':attribute的值只能在:min和:max之間。',
-  confirmed: ':attribute與確認輸入不一致。',
-  email: ':attribute的格式錯誤。',
-  date: ':attribute的日期格式錯誤。',
-  def: ':attribute屬性錯誤。',
-  digits: ':attribute必須是:digits位小數。',
-  digits_between: ':attribute 必須介於 :min 至 :max 位數字。',
-  different: ':attribute和:different必須不同。',
-  in: '選擇的:attribute無效',
-  integer: ':attribute必須是一個整數。',
-  hex: ':attribute 必須是十六進位格式',
-  min: {
-    numeric: ':attribute不能小於:min。',
-    string: ':attribute的長度不能小於:min.'
-  },
-  max: {
-    numeric: ':attribute不能大於:max。',
-    string: ':attribute的長度不能大於:max.'
-  },
-  not_in: '所選的:attribute無效。',
-  numeric: ':attribute必須是一個數字。',
-  present: ':attribute 一定要有值 (可以是空值)。',
-  required: ':attribute不能空白。',
-  required_if: '當:other是:value時,:attribute不能空白。',
-  same: ':attribute和:same必須一致。',
-  size: {
-    numeric: ':attribute必須等於:size。',
-    string: ':attribute的長度必須等於:size.'
-  },
-  string: ':attribute必須是一個字串。',
-  url: ':attribute格式不正確。',
-  regex: ':attribute格式不正確。',
-  attributes: {}
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/validatorjs/src/messages.js":
 /*!**************************************************!*\
   !*** ./node_modules/validatorjs/src/messages.js ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var Attributes = __webpack_require__(/*! ./attributes */ "./node_modules/validatorjs/src/attributes.js");
 
@@ -36016,8 +25008,7 @@ module.exports = Messages;
 /*!***********************************************!*\
   !*** ./node_modules/validatorjs/src/rules.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 
 // https://docs.microsoft.com/en-us/office/troubleshoot/excel/determine-a-leap-year
@@ -36891,8 +25882,7 @@ module.exports = manager;
 /*!***************************************************!*\
   !*** ./node_modules/validatorjs/src/validator.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var Rules = __webpack_require__(/*! ./rules */ "./node_modules/validatorjs/src/rules.js");
 var Lang = __webpack_require__(/*! ./lang */ "./node_modules/validatorjs/src/lang.js");
@@ -37558,98 +26548,122 @@ Validator.registerMissedRuleValidator = function(fn, message) {
 module.exports = Validator;
 
 
-/***/ }),
+/***/ })
 
-/***/ "./node_modules/webpack/buildin/global.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ "./node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-
-/***/ "./resources/js/script.js":
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
 /*!********************************!*\
   !*** ./resources/js/script.js ***!
   \********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @themesberg/tailwind-datepicker/js/Datepicker */ "./node_modules/@themesberg/tailwind-datepicker/js/Datepicker.js");
+/* harmony import */ var _themesberg_tailwind_datepicker_Datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @themesberg/tailwind-datepicker/Datepicker */ "./node_modules/@themesberg/tailwind-datepicker/js/Datepicker.js");
 /* harmony import */ var validatorjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! validatorjs */ "./node_modules/validatorjs/src/validator.js");
 /* harmony import */ var validatorjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(validatorjs__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
-
 
 
  // Set validator language
 
-validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a.useLang('id'); // Register datepicker
+validatorjs__WEBPACK_IMPORTED_MODULE_1___default().useLang('id'); // Register datepicker
 
 var registerDatePicker = function registerDatePicker(targetElement) {
   var datepickerEl1 = targetElement.find('#tanggal_lahir')[0];
-  new _themesberg_tailwind_datepicker_js_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl1, {});
+  new _themesberg_tailwind_datepicker_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl1, {});
 };
 
 registerDatePicker($('#studentForm1')); // Next register steps
@@ -37725,7 +26739,7 @@ var typingValidation = function typingValidation(targetElement, rulesParam, erro
     var fieldName = $(field).attr('name'); // set field name as a key in data variable
 
     data[fieldName] = '';
-    $("input[name=".concat(fieldName, "], select[name=").concat(fieldName, "], textarea[name=").concat(fieldName, "]")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default.a.debounce(function (e) {
+    $("input[name=".concat(fieldName, "], select[name=").concat(fieldName, "], textarea[name=").concat(fieldName, "]")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default().debounce(function (e) {
       var fieldValue = $(e.target).val();
       var fieldName = $(field).attr('name');
 
@@ -37736,7 +26750,7 @@ var typingValidation = function typingValidation(targetElement, rulesParam, erro
 
       data[fieldName] = fieldValue;
 
-      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(rulesParam)) {
+      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(rulesParam)) {
         var filterRules = [];
         var listFields = $("".concat(targetElement, " .wrap-form")).find('input, textarea, select');
 
@@ -37745,14 +26759,14 @@ var typingValidation = function typingValidation(targetElement, rulesParam, erro
           filterRules.push(nameField);
         }
 
-        rules = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.pick(rulesParam, filterRules);
+        rules = lodash__WEBPACK_IMPORTED_MODULE_2___default().pick(rulesParam, filterRules);
       }
 
-      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(errorMessage)) {
+      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(errorMessage)) {
         error_message = errorMessage;
       }
 
-      var validation = new validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a(data, rules, error_message);
+      var validation = new (validatorjs__WEBPACK_IMPORTED_MODULE_1___default())(data, rules, error_message);
       validation.passes(); // true
 
       validation.fails(); // false
@@ -37931,7 +26945,7 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
       data['bukti_pembayaran'] = paymentSlipValue;
     }
 
-    if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(rulesParam)) {
+    if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(rulesParam)) {
       var filterRules = [];
       var listFields = $("".concat(targetElement, " .wrap-form")).find('input, textarea, select');
 
@@ -37940,14 +26954,14 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
         filterRules.push(nameField);
       }
 
-      rules = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.pick(rulesParam, filterRules);
+      rules = lodash__WEBPACK_IMPORTED_MODULE_2___default().pick(rulesParam, filterRules);
     }
 
-    if (!lodash__WEBPACK_IMPORTED_MODULE_2___default.a.isEmpty(errorMessage)) {
+    if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(errorMessage)) {
       error_message = errorMessage;
     }
 
-    var validation = new validatorjs__WEBPACK_IMPORTED_MODULE_1___default.a(data, rules, error_message);
+    var validation = new (validatorjs__WEBPACK_IMPORTED_MODULE_1___default())(data, rules, error_message);
     validation.checkAsync(); // remove error text
 
     for (var key in validation.input) {
@@ -38068,18 +27082,56 @@ submitValidation('#payment', {
   "required.nominal": "Nominal wajib diisi"
 });
 
-/***/ }),
+var getRegencies = function getRegencies() {
+  $('select[name=provinsi]').on('change', function (e) {
+    var provinceId = $(e.target).val();
 
-/***/ 1:
-/*!**************************************!*\
-  !*** multi ./resources/js/script.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+    if (provinceId) {
+      $.ajax({
+        url: "/province/".concat(provinceId, "/regencies/"),
+        type: 'GET',
+        dataType: 'json',
+        success: function success(res) {
+          $('select[name="kota"]').empty().append('<option disabled selected="selected">Pilih Kabupaten/Kota</option>');
+          $.each(res.data, function (key, value) {
+            $('select[name="kota"]').append("<option value=\"".concat(value.id, "\">").concat(value.name, "</option>"));
+          });
+        }
+      });
+    }
+  });
+};
 
-module.exports = __webpack_require__(/*! F:\dev\rumahkreatifkhansa\resources\js\script.js */"./resources/js/script.js");
+getRegencies();
 
+var getDistricts = function getDistricts() {
+  $('select[name=provinsi]').on('change', function (e) {
+    var provinceId = $(e.target).val();
 
-/***/ })
+    if (provinceId) {
+      $('select[name=kota]').on('change', function (e) {
+        var regencyId = $(e.target).val();
 
-/******/ });
+        if (regencyId) {
+          $.ajax({
+            url: "/province/".concat(provinceId, "/regencies/").concat(regencyId, "/districts"),
+            type: 'GET',
+            dataType: 'json',
+            success: function success(res) {
+              $('select[name="kecamatan"]').empty().append('<option disabled selected="selected">Pilih Kecamatan/Desa</option>');
+              $.each(res.data, function (key, value) {
+                $('select[name="kecamatan"]').append("<option value=\"".concat(value.id, "\">").concat(value.name, "</option>"));
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+};
+
+getDistricts();
+})();
+
+/******/ })()
+;

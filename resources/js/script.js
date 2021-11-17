@@ -1,7 +1,6 @@
-import Datepicker from '@themesberg/tailwind-datepicker/js/Datepicker';
+import Datepicker from '@themesberg/tailwind-datepicker/Datepicker';
 import Validator from 'validatorjs';
-import _, { forEach } from 'lodash';
-import { each } from 'jquery';
+import _ from 'lodash';
 
 // Set validator language
 Validator.useLang('id')
@@ -439,3 +438,48 @@ submitValidation('#payment', {
     "required.nama_bank": "Nama bank wajib diisi",
     "required.nominal": "Nominal wajib diisi"
 });
+
+let getRegencies = () => {
+    $('select[name=provinsi]').on('change', (e) => {
+        let provinceId = $(e.target).val()
+        if (provinceId) {
+            $.ajax({
+                url: `/province/${provinceId}/regencies/`,
+                type: 'GET',
+                dataType: 'json',
+                success:function(res){
+                    $('select[name="kota"]').empty().append('<option disabled selected="selected">Pilih Kabupaten/Kota</option>');
+                    $.each(res.data, function(key, value){
+                        $('select[name="kota"]').append(`<option value="${value.id}">${value.name}</option>`);
+                    });
+                }
+            });
+        }
+    })
+}
+getRegencies()
+
+let getDistricts = () => {
+    $('select[name=provinsi]').on('change', (e) => {
+        let provinceId = $(e.target).val()
+        if (provinceId) {
+            $('select[name=kota]').on('change', (e) => {
+                let regencyId = $(e.target).val()
+                if (regencyId) {
+                    $.ajax({
+                        url: `/province/${provinceId}/regencies/${regencyId}/districts`,
+                        type: 'GET',
+                        dataType: 'json',
+                        success:function(res){
+                            $('select[name="kecamatan"]').empty().append('<option disabled selected="selected">Pilih Kecamatan/Desa</option>');
+                            $.each(res.data, function(key, value){
+                                $('select[name="kecamatan"]').append(`<option value="${value.id}">${value.name}</option>`);
+                            });
+                        }
+                    });
+                }
+            })
+        }
+    })
+}
+getDistricts()

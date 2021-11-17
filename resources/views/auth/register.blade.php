@@ -105,11 +105,9 @@
                                         </label>
                                         <select name="provinsi" class="select select-bordered select-primary w-full max-w-xs">
                                             <option disabled selected="selected">Pilih Provinsi</option>
-                                            <option>Bali</option>
-                                            <option>Jakarta</option>
-                                            <option>Kalimantan</option>
-                                            <option>Sulawesi</option>
-                                            <option>Sumatera</option>
+                                            @foreach ($provinces as $province)
+                                                <option value={{ $province->id }}>{{ $province->name }}</option>
+                                            @endforeach
                                         </select>
                                         <label class="label error">
                                             <span class="label-text-alt text-red-600"></span>
@@ -123,9 +121,6 @@
                                         </label>
                                         <select name="kota" class="select select-bordered select-primary w-full max-w-xs">
                                             <option disabled selected="selected">Pilih Kabupaten/Kota</option>
-                                            <option>Badung</option>
-                                            <option>Klungkung</option>
-                                            <option>Kota Denpasar</option>
                                         </select>
                                         <label class="label error">
                                             <span class="label-text-alt text-red-600"></span>
@@ -140,8 +135,6 @@
                                         </label>
                                         <select name="kecamatan" class="select select-bordered select-primary w-full">
                                             <option disabled selected="selected">Pilih Kecamatan/Desa</option>
-                                            <option>Denpasar Selatan</option>
-                                            <option>Denpasar Barat</option>
                                         </select>
                                         <label class="label error">
                                             <span class="label-text-alt text-red-600"></span>
