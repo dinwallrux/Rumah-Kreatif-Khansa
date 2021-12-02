@@ -1,13 +1,13 @@
 import Datepicker from '@themesberg/tailwind-datepicker/Datepicker';
 import Validator from 'validatorjs';
-import _ from 'lodash';
+import _, { lastIndexOf } from 'lodash';
 
 // Set validator language
 Validator.useLang('id')
 
 // Register datepicker
 let registerDatePicker = (targetElement) => {
-    const datepickerEl1 = targetElement.find('#tanggal_lahir')[0];
+    const datepickerEl1 = targetElement.find('.tanggal-lahir')[0];
     new Datepicker(datepickerEl1, {});
 }
 registerDatePicker($('#studentForm1'))
@@ -49,16 +49,16 @@ let backStepAction = () => {
 backStepAction()
 
 // Multiple form of student
-let cloneStudentForm = (cb) => {
-    $('select[name=total_student]').on('change', () => {
+let cloneStudentForm = () => {
+    $("select[name='total_student']").on('change', () => {
         // Remove student form except the first one
         $(".student-form").not(":eq(0)").remove()
 
-        let totalStudent = $('select[name=total_student]').val()
+        let totalStudent = $("select[name='total_student']").val()
         for(var i = 1; i < totalStudent; i++) {
-            $('.student-form').first().clone().appendTo('.wrapper-form').attr('id', 'studentForm' + (i+1));
-            let studentForm = $(`#studentForm${i+1}`);
-            let fields = studentForm.find('input, select');
+            $('.student-form').first().clone().appendTo('.wrap-student').attr('id', 'studentForm' + (i+1)).find('.title-student').text(`Anak ${i+1}`)
+            let studentForm = $(`#studentForm${i+1}`)
+            let fields = studentForm.find('input, select')
 
             // Register datepicker to tanggal lahir in form 2 & 3
             registerDatePicker(studentForm);
@@ -70,12 +70,9 @@ let cloneStudentForm = (cb) => {
 
                 // Rename attr name of the field after clonning form
                 let nameAttr = $(fields[a]).attr('name')
-                $(fields[a]).attr('name', nameAttr + (i+1))
+                $(fields[a]).attr('name', nameAttr)
             }
         }
-
-        // re-run function validation typing while jumlah anak is change
-        cb()
     })
 }
 
@@ -90,27 +87,22 @@ let typingValidation = (targetElement, rulesParam, errorMessage) => {
         let fieldName = $(field).attr('name')
 
         // set field name as a key in data variable
-        data[fieldName] = '';
+        data[fieldName] = ''
 
-        $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).keyup(_.debounce((e) => {
+        $(`input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).keyup(_.debounce((e) => {
             let fieldValue = $(e.target).val()
             let fieldName = $(field).attr('name')
 
+            // Copy value of no whatsapp orang tua
             if(fieldName === 'no_whatsapp_orang_tua') {
-                $('input[name=no_whatsapp_anak]').val(fieldValue)
+                $("input[name='no_whatsapp_anak[]']").val(fieldValue)
             }
 
             // store field value to data variable
             data[fieldName] = fieldValue;
 
             if (!_.isEmpty(rulesParam)) {
-                let filterRules = []
-                let listFields = $(`${targetElement} .wrap-form`).find('input, textarea, select')
-                for(let i = 0; i < listFields.length; i++) {
-                    let nameField = $(listFields[i]).attr('name')
-                    filterRules.push(nameField)
-                }
-                rules = _.pick(rulesParam, filterRules)
+                rules = rulesParam
             }
 
             if (!_.isEmpty(errorMessage)) {
@@ -121,9 +113,9 @@ let typingValidation = (targetElement, rulesParam, errorMessage) => {
             validation.passes(); // true
             validation.fails(); // false
 
-            $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).closest('.form-control').find('.error .label-text-alt').text('')
+            $(`input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).closest('.form-control').find('.error .label-text-alt').text('')
             if (validation.errors.first(fieldName)) {
-                $(`input[name=${fieldName}], select[name=${fieldName}], textarea[name=${fieldName}]`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name))
+                $(`input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name))
             }
         }, 700))
     });
@@ -156,105 +148,6 @@ typingValidation('#address', {
     "required.kecamatan": "Kecamatan/desa wajib dipilih"
 });
 
-typingValidation('#student', {
-    nama_lengkap_anak: 'required',
-    nama_panggilan_anak: 'required',
-    tanggal_lahir: 'required',
-    jenis_kelamin: 'required',
-    no_whatsapp_anak: 'required:numeric',
-    instagram: 'required',
-    facebook: 'required',
-    nama_lengkap_anak2: 'required',
-    nama_panggilan_anak2: 'required',
-    tanggal_lahir2: 'required',
-    jenis_kelamin2: 'required',
-    no_whatsapp_anak2: 'required:numeric',
-    instagram2: 'required',
-    facebook2: 'required',
-    nama_lengkap_anak3: 'required',
-    nama_panggilan_anak3: 'required',
-    tanggal_lahir3: 'required',
-    jenis_kelamin3: 'required',
-    no_whatsapp_anak3: 'required:numeric',
-    instagram3: 'required',
-    facebook3: 'required'
-}, {
-    "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
-    "required.instagram": "Instagram wajib diisi",
-    "required.facebook": "Facebook wajib diisi",
-    "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
-    "required.instagram2": "Instagram wajib diisi",
-    "required.facebook2": "Facebook wajib diisi",
-    "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
-    "required.instagram3": "Instagram wajib diisi",
-    "required.facebook3": "Facebook wajib diisi"
-})
-cloneStudentForm(() => {
-    typingValidation('#student', {
-        nama_lengkap_anak: 'required',
-        nama_panggilan_anak: 'required',
-        tanggal_lahir: 'required',
-        jenis_kelamin: 'required',
-        no_whatsapp_anak: 'required:numeric',
-        instagram: 'required',
-        facebook: 'required',
-        nama_lengkap_anak2: 'required',
-        nama_panggilan_anak2: 'required',
-        tanggal_lahir2: 'required',
-        jenis_kelamin2: 'required',
-        no_whatsapp_anak2: 'required:numeric',
-        instagram2: 'required',
-        facebook2: 'required',
-        nama_lengkap_anak3: 'required',
-        nama_panggilan_anak3: 'required',
-        tanggal_lahir3: 'required',
-        jenis_kelamin3: 'required',
-        no_whatsapp_anak3: 'required:numeric',
-        instagram3: 'required',
-        facebook3: 'required'
-    }, {
-        "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
-        "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
-        "required.tanggal_lahir": "Tanggal lahir wajib diisi",
-        "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
-        "required.no_whatsapp_anak": "No whatsapp wajib diisi",
-        "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
-        "required.instagram": "Instagram wajib diisi",
-        "required.facebook": "Facebook wajib diisi",
-        "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
-        "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
-        "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
-        "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
-        "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
-        "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
-        "required.instagram2": "Instagram wajib diisi",
-        "required.facebook2": "Facebook wajib diisi",
-        "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
-        "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
-        "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
-        "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
-        "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
-        "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
-        "required.instagram3": "Instagram wajib diisi",
-        "required.facebook3": "Facebook wajib diisi"
-    })
-})
-
 typingValidation('#survey', {
     motivasi: 'required',
     sumber_info: 'required',
@@ -279,6 +172,86 @@ typingValidation('#payment', {
     "required.nominal": "Nominal wajib dipilih"
 });
 
+let typingValidationDynamicForm = (targetElement, rulesParam, errorMessage, totalStudent = 1) => {
+    let formData = $(`${targetElement} .wrap-form`).find('input, select, textarea')
+    let error_message = {}
+    let rules = {}
+    let data = {students: [{}]}
+
+    formData.map((i, field) => {
+        let fieldName = $(field).attr('name')
+
+        // set field name as a key in data variable
+        data.students[0][fieldName] = ''
+        
+        $(`input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).keyup(_.debounce((e) => {
+            let fieldValue = $(e.target).val()
+            let fieldName = $(field).attr('name')
+            let getIndexElement = $(`input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}`).index(e.target);
+
+            // store field value to data variable
+            data.students[getIndexElement][fieldName] = fieldValue
+
+            if (!_.isEmpty(rulesParam)) rules = rulesParam
+
+            if (!_.isEmpty(errorMessage)) error_message = errorMessage
+
+            let validation = new Validator(data, rules, error_message);
+            validation.passes(); // true
+            validation.fails(); // false
+
+            $(`input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).eq(getIndexElement).closest('.form-control').find('.error .label-text-alt').text('')
+            if (validation.errors.first(`students.${getIndexElement}.${fieldName}`)) {
+                $(`input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).eq(getIndexElement).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(`students.${getIndexElement}.${fieldName}`))
+            }
+        }, 300))
+    })
+
+    setTimeout(() => {
+        for (let i = 0; i < totalStudent; i++) {
+            if (data.students.length < totalStudent) {
+                // Create new object and push it to data variable
+                let cloneStudent = _.clone(data.students[0])
+                for (let student in cloneStudent) cloneStudent[student] = ''
+                data.students.push(cloneStudent)
+            }
+            if (data.students.length > totalStudent) {
+                let deleteCount = data.students.length - totalStudent
+                data.students.splice(totalStudent, deleteCount)
+            }
+        }
+    }, 500);
+}
+
+let studentRules = {
+    'students.*.nama_lengkap_anak[]': 'required',
+    'students.*.nama_panggilan_anak[]': 'required',
+    'students.*.tanggal_lahir[]': 'required',
+    'students.*.jenis_kelamin[]': 'required',
+    'students.*.no_whatsapp_anak[]': 'required:numeric',
+    'students.*.instagram[]': 'required',
+    'students.*.facebook[]': 'required'
+}
+let studentErrorMessage = {
+    "required.students.*.nama_lengkap_anak[]": "Nama lengkap wajib diisi",
+    "required.students.*.nama_panggilan_anak[]": "Nama panggilan wajib diisi",
+    "required.students.*.tanggal_lahir[]": "Tanggal lahir wajib diisi",
+    "required.students.*.jenis_kelamin[]": "Jenis kelamin wajib dipilih",
+    "required.students.*.no_whatsapp_anak[]": "No whatsapp wajib diisi",
+    "numeric.students.*.no_whatsapp_anak[]": "No whatsapp harus berupa angka",
+    "required.students.*.instagram[]": "Instagram wajib diisi",
+    "required.students.*.facebook[]": "Facebook wajib diisi"
+}
+
+cloneStudentForm()
+typingValidationDynamicForm('#student', studentRules, studentErrorMessage)
+
+$("select[name='total_student']").on('change', (e) => {
+    let totalStudent = $(e.target).val()
+
+    typingValidationDynamicForm('#student', studentRules, studentErrorMessage, totalStudent)
+})
+
 // Submit validation
 let submitValidation = (targetElement, rulesParam, errorMessage) => {
     let error_message = {}
@@ -296,7 +269,7 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
         });
 
         // add payment slip to variable data in manually
-        let paymentSlip = $('input[name=bukti_pembayaran]')
+        let paymentSlip = $("input[name='bukti_pembayaran']")
         let paymentSlipValue = paymentSlip.val();
         if (paymentSlip.length) {
             data['bukti_pembayaran'] = paymentSlipValue
@@ -321,12 +294,12 @@ let submitValidation = (targetElement, rulesParam, errorMessage) => {
 
         // remove error text
         for (let key in validation.input) {
-            $(`input[name=${key}], select[name=${key}], textarea[name=${key}]`).closest('.form-control').find('.error .label-text-alt').text('')
+            $(`input[name='${key}'], select[name='${key}'], textarea[name='${key}']`).closest('.form-control').find('.error .label-text-alt').text('')
         }
         if (validation.fails()) {
             e.preventDefault()
             for (let key in validation.errors.errors) {
-                $(`input[name=${key}], select[name=${key}], textarea[name=${key}]`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(key))
+                $(`input[name='${key}'], select[name='${key}'], textarea[name='${key}']`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(key))
             }
         }
 
@@ -366,55 +339,6 @@ submitValidation('#address', {
     "required.kecamatan": "Kecamatan/desa wajib dipilih"
 });
 
-submitValidation('#student', {
-    nama_lengkap_anak: 'required',
-    nama_panggilan_anak: 'required',
-    tanggal_lahir: 'required',
-    jenis_kelamin: 'required',
-    no_whatsapp_anak: 'required:numeric',
-    instagram: 'required',
-    facebook: 'required',
-    nama_lengkap_anak2: 'required',
-    nama_panggilan_anak2: 'required',
-    tanggal_lahir2: 'required',
-    jenis_kelamin2: 'required',
-    no_whatsapp_anak2: 'required:numeric',
-    instagram2: 'required',
-    facebook2: 'required',
-    nama_lengkap_anak3: 'required',
-    nama_panggilan_anak3: 'required',
-    tanggal_lahir3: 'required',
-    jenis_kelamin3: 'required',
-    no_whatsapp_anak3: 'required:numeric',
-    instagram3: 'required',
-    facebook3: 'required'
-}, {
-    "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
-    "required.instagram": "Instagram wajib diisi",
-    "required.facebook": "Facebook wajib diisi",
-    "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
-    "required.instagram2": "Instagram wajib diisi",
-    "required.facebook2": "Facebook wajib diisi",
-    "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
-    "required.instagram3": "Instagram wajib diisi",
-    "required.facebook3": "Facebook wajib diisi"
-});
-
 submitValidation('#survey', {
     motivasi: 'required',
     sumber_info: 'required',
@@ -439,9 +363,87 @@ submitValidation('#payment', {
     "required.nominal": "Nominal wajib diisi"
 });
 
+let submitValidationDynamicForm = (targetElement, rulesParam, errorMessage, totalStudent = 1) => {
+    let error_message = {}
+    let rules = {}
+    let data = {students: [{}]}
+
+    $(`${targetElement} .btn.btn-primary`).on('click', (e) => {
+        for (let oo = 0; oo < totalStudent; oo++) {
+            let formData = $(`${targetElement} #studentForm${oo+1} .wrap-form`).find('input, select, textarea')
+
+            formData.map((i, field) => {    
+                let fieldValue = field.value
+                let fieldName = $(field).attr('name')
+
+                // set field name as a key in data variable
+                data.students[0][fieldName] = ''
+
+                if (data.students.length < totalStudent) {
+                    // Create new object and push it to data variable
+                    let cloneStudent = _.clone(data.students[0])
+                    for (let student in cloneStudent) cloneStudent[student] = ''
+                    data.students.push(cloneStudent)
+                }
+                if (data.students.length > totalStudent) {
+                    let deleteCount = data.students.length - totalStudent
+                    data.students.splice(totalStudent, deleteCount)
+                }
+
+                setTimeout(() => {
+                    // store field value to data variable
+                    data.students[oo][fieldName] = fieldValue
+
+                    if (!_.isEmpty(rulesParam)) rules = rulesParam
+
+                    if (!_.isEmpty(errorMessage)) error_message = errorMessage
+
+                    let validation = new Validator(data, rules, error_message);
+                    validation.passes(); // true
+                    validation.fails(); // false
+
+                    $(`#studentForm${oo+1} input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).closest('.form-control').find('.error .label-text-alt').text('')
+                    if (validation.fails()) {
+                        if (validation.errors.first(`students.${oo}.${fieldName}`)) {
+                            $(`#studentForm${oo+1} input[name='${fieldName}'], select[name='${fieldName}'], textarea[name='${fieldName}']`).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(`students.${oo}.${fieldName}`))
+                        }
+                    }
+                    
+                    if(validation.passes())  {
+                        if (data.students.length == totalStudent) {
+                            if (current === 4) {
+                                return
+                            }
+                            current = 3;
+                            $(card[current]).addClass('show');
+                            $(card[current-1]).removeClass('show');
+
+                            // Activate steps
+                            $(step[current]).addClass('step-primary');
+
+                            // Add icon check in the last step
+                            $(step[current-1]).attr('data-content', '✓');
+                        }
+                    }
+                }, 500);
+            })
+        } // end for loop
+    })
+}
+
+submitValidationDynamicForm('#student', studentRules, studentErrorMessage)
+
+// Check total student
+$("select[name='total_student']").on('change', (e) => {
+    let totalStudent = $(e.target).val()
+
+    submitValidationDynamicForm('#student', studentRules, studentErrorMessage, totalStudent)
+})
+
 let getRegencies = () => {
-    $('select[name=provinsi]').on('change', (e) => {
-        let provinceId = $(e.target).val()
+    $("select[name='provinsi']").on('change', (e) => {
+        let selected = $(e.target).find('option:selected')
+        let provinceId = selected.data('id')
         if (provinceId) {
             $.ajax({
                 url: `/province/${provinceId}/regencies/`,
@@ -450,7 +452,7 @@ let getRegencies = () => {
                 success:function(res){
                     $('select[name="kota"]').empty().append('<option disabled selected="selected">Pilih Kabupaten/Kota</option>');
                     $.each(res.data, function(key, value){
-                        $('select[name="kota"]').append(`<option value="${value.id}">${value.name}</option>`);
+                        $('select[name="kota"]').append(`<option data-id="${value.id}" value="${value.name}">${value.name}</option>`);
                     });
                 }
             });
@@ -460,11 +462,13 @@ let getRegencies = () => {
 getRegencies()
 
 let getDistricts = () => {
-    $('select[name=provinsi]').on('change', (e) => {
-        let provinceId = $(e.target).val()
+    $("select[name='provinsi']").on('change', (e) => {
+        let selected = $(e.target).find('option:selected')
+        let provinceId = selected.data('id')
         if (provinceId) {
-            $('select[name=kota]').on('change', (e) => {
-                let regencyId = $(e.target).val()
+            $("select[name='kota']").on('change', (e) => {
+                let selected = $(e.target).find('option:selected')
+                let regencyId = selected.data('id')
                 if (regencyId) {
                     $.ajax({
                         url: `/province/${provinceId}/regencies/${regencyId}/districts`,
@@ -473,7 +477,7 @@ let getDistricts = () => {
                         success:function(res){
                             $('select[name="kecamatan"]').empty().append('<option disabled selected="selected">Pilih Kecamatan/Desa</option>');
                             $.each(res.data, function(key, value){
-                                $('select[name="kecamatan"]').append(`<option value="${value.id}">${value.name}</option>`);
+                                $('select[name="kecamatan"]').append(`<option data-id="${value.id}" value="${value.name}">${value.name}</option>`);
                             });
                         }
                     });

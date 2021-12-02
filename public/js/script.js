@@ -26662,7 +26662,7 @@ __webpack_require__.r(__webpack_exports__);
 validatorjs__WEBPACK_IMPORTED_MODULE_1___default().useLang('id'); // Register datepicker
 
 var registerDatePicker = function registerDatePicker(targetElement) {
-  var datepickerEl1 = targetElement.find('#tanggal_lahir')[0];
+  var datepickerEl1 = targetElement.find('.tanggal-lahir')[0];
   new _themesberg_tailwind_datepicker_Datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](datepickerEl1, {});
 };
 
@@ -26700,14 +26700,14 @@ var backStepAction = function backStepAction() {
 
 backStepAction(); // Multiple form of student
 
-var cloneStudentForm = function cloneStudentForm(cb) {
-  $('select[name=total_student]').on('change', function () {
+var cloneStudentForm = function cloneStudentForm() {
+  $("select[name='total_student']").on('change', function () {
     // Remove student form except the first one
     $(".student-form").not(":eq(0)").remove();
-    var totalStudent = $('select[name=total_student]').val();
+    var totalStudent = $("select[name='total_student']").val();
 
     for (var i = 1; i < totalStudent; i++) {
-      $('.student-form').first().clone().appendTo('.wrapper-form').attr('id', 'studentForm' + (i + 1));
+      $('.student-form').first().clone().appendTo('.wrap-student').attr('id', 'studentForm' + (i + 1)).find('.title-student').text("Anak ".concat(i + 1));
       var studentForm = $("#studentForm".concat(i + 1));
       var fields = studentForm.find('input, select'); // Register datepicker to tanggal lahir in form 2 & 3
 
@@ -26720,12 +26720,9 @@ var cloneStudentForm = function cloneStudentForm(cb) {
         studentForm.find('.error .label-text-alt').text(''); // Rename attr name of the field after clonning form
 
         var nameAttr = $(fields[a]).attr('name');
-        $(fields[a]).attr('name', nameAttr + (i + 1));
+        $(fields[a]).attr('name', nameAttr);
       }
-    } // re-run function validation typing while jumlah anak is change
-
-
-    cb();
+    }
   });
 }; // Typing validation
 
@@ -26739,27 +26736,19 @@ var typingValidation = function typingValidation(targetElement, rulesParam, erro
     var fieldName = $(field).attr('name'); // set field name as a key in data variable
 
     data[fieldName] = '';
-    $("input[name=".concat(fieldName, "], select[name=").concat(fieldName, "], textarea[name=").concat(fieldName, "]")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default().debounce(function (e) {
+    $("input[name='".concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default().debounce(function (e) {
       var fieldValue = $(e.target).val();
-      var fieldName = $(field).attr('name');
+      var fieldName = $(field).attr('name'); // Copy value of no whatsapp orang tua
 
       if (fieldName === 'no_whatsapp_orang_tua') {
-        $('input[name=no_whatsapp_anak]').val(fieldValue);
+        $("input[name='no_whatsapp_anak[]']").val(fieldValue);
       } // store field value to data variable
 
 
       data[fieldName] = fieldValue;
 
       if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(rulesParam)) {
-        var filterRules = [];
-        var listFields = $("".concat(targetElement, " .wrap-form")).find('input, textarea, select');
-
-        for (var _i = 0; _i < listFields.length; _i++) {
-          var nameField = $(listFields[_i]).attr('name');
-          filterRules.push(nameField);
-        }
-
-        rules = lodash__WEBPACK_IMPORTED_MODULE_2___default().pick(rulesParam, filterRules);
+        rules = rulesParam;
       }
 
       if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(errorMessage)) {
@@ -26771,10 +26760,10 @@ var typingValidation = function typingValidation(targetElement, rulesParam, erro
 
       validation.fails(); // false
 
-      $("input[name=".concat(fieldName, "], select[name=").concat(fieldName, "], textarea[name=").concat(fieldName, "]")).closest('.form-control').find('.error .label-text-alt').text('');
+      $("input[name='".concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).closest('.form-control').find('.error .label-text-alt').text('');
 
       if (validation.errors.first(fieldName)) {
-        $("input[name=".concat(fieldName, "], select[name=").concat(fieldName, "], textarea[name=").concat(fieldName, "]")).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name));
+        $("input[name='".concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(field.name));
       }
     }, 700));
   });
@@ -26805,104 +26794,6 @@ typingValidation('#address', {
   "required.kota": "Kabupaten/kota wajib dipilih",
   "required.kecamatan": "Kecamatan/desa wajib dipilih"
 });
-typingValidation('#student', {
-  nama_lengkap_anak: 'required',
-  nama_panggilan_anak: 'required',
-  tanggal_lahir: 'required',
-  jenis_kelamin: 'required',
-  no_whatsapp_anak: 'required:numeric',
-  instagram: 'required',
-  facebook: 'required',
-  nama_lengkap_anak2: 'required',
-  nama_panggilan_anak2: 'required',
-  tanggal_lahir2: 'required',
-  jenis_kelamin2: 'required',
-  no_whatsapp_anak2: 'required:numeric',
-  instagram2: 'required',
-  facebook2: 'required',
-  nama_lengkap_anak3: 'required',
-  nama_panggilan_anak3: 'required',
-  tanggal_lahir3: 'required',
-  jenis_kelamin3: 'required',
-  no_whatsapp_anak3: 'required:numeric',
-  instagram3: 'required',
-  facebook3: 'required'
-}, {
-  "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
-  "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
-  "required.tanggal_lahir": "Tanggal lahir wajib diisi",
-  "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
-  "required.no_whatsapp_anak": "No whatsapp wajib diisi",
-  "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
-  "required.instagram": "Instagram wajib diisi",
-  "required.facebook": "Facebook wajib diisi",
-  "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
-  "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
-  "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
-  "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
-  "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
-  "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
-  "required.instagram2": "Instagram wajib diisi",
-  "required.facebook2": "Facebook wajib diisi",
-  "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
-  "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
-  "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
-  "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
-  "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
-  "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
-  "required.instagram3": "Instagram wajib diisi",
-  "required.facebook3": "Facebook wajib diisi"
-});
-cloneStudentForm(function () {
-  typingValidation('#student', {
-    nama_lengkap_anak: 'required',
-    nama_panggilan_anak: 'required',
-    tanggal_lahir: 'required',
-    jenis_kelamin: 'required',
-    no_whatsapp_anak: 'required:numeric',
-    instagram: 'required',
-    facebook: 'required',
-    nama_lengkap_anak2: 'required',
-    nama_panggilan_anak2: 'required',
-    tanggal_lahir2: 'required',
-    jenis_kelamin2: 'required',
-    no_whatsapp_anak2: 'required:numeric',
-    instagram2: 'required',
-    facebook2: 'required',
-    nama_lengkap_anak3: 'required',
-    nama_panggilan_anak3: 'required',
-    tanggal_lahir3: 'required',
-    jenis_kelamin3: 'required',
-    no_whatsapp_anak3: 'required:numeric',
-    instagram3: 'required',
-    facebook3: 'required'
-  }, {
-    "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
-    "required.instagram": "Instagram wajib diisi",
-    "required.facebook": "Facebook wajib diisi",
-    "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
-    "required.instagram2": "Instagram wajib diisi",
-    "required.facebook2": "Facebook wajib diisi",
-    "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
-    "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
-    "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
-    "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
-    "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
-    "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
-    "required.instagram3": "Instagram wajib diisi",
-    "required.facebook3": "Facebook wajib diisi"
-  });
-});
 typingValidation('#survey', {
   motivasi: 'required',
   sumber_info: 'required',
@@ -26924,6 +26815,85 @@ typingValidation('#payment', {
   "required.catatan": "Catatan wajib dipilih",
   "required.nama_bank": "Nama bank wajib dipilih",
   "required.nominal": "Nominal wajib dipilih"
+});
+
+var typingValidationDynamicForm = function typingValidationDynamicForm(targetElement, rulesParam, errorMessage) {
+  var totalStudent = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+  var formData = $("".concat(targetElement, " .wrap-form")).find('input, select, textarea');
+  var error_message = {};
+  var rules = {};
+  var data = {
+    students: [{}]
+  };
+  formData.map(function (i, field) {
+    var fieldName = $(field).attr('name'); // set field name as a key in data variable
+
+    data.students[0][fieldName] = '';
+    $("input[name='".concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).keyup(lodash__WEBPACK_IMPORTED_MODULE_2___default().debounce(function (e) {
+      var fieldValue = $(e.target).val();
+      var fieldName = $(field).attr('name');
+      var getIndexElement = $("input[name='".concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName)).index(e.target); // store field value to data variable
+
+      data.students[getIndexElement][fieldName] = fieldValue;
+      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(rulesParam)) rules = rulesParam;
+      if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(errorMessage)) error_message = errorMessage;
+      var validation = new (validatorjs__WEBPACK_IMPORTED_MODULE_1___default())(data, rules, error_message);
+      validation.passes(); // true
+
+      validation.fails(); // false
+
+      $("input[name='".concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).eq(getIndexElement).closest('.form-control').find('.error .label-text-alt').text('');
+
+      if (validation.errors.first("students.".concat(getIndexElement, ".").concat(fieldName))) {
+        $("input[name='".concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).eq(getIndexElement).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first("students.".concat(getIndexElement, ".").concat(fieldName)));
+      }
+    }, 300));
+  });
+  setTimeout(function () {
+    for (var i = 0; i < totalStudent; i++) {
+      if (data.students.length < totalStudent) {
+        // Create new object and push it to data variable
+        var cloneStudent = lodash__WEBPACK_IMPORTED_MODULE_2___default().clone(data.students[0]);
+
+        for (var student in cloneStudent) {
+          cloneStudent[student] = '';
+        }
+
+        data.students.push(cloneStudent);
+      }
+
+      if (data.students.length > totalStudent) {
+        var deleteCount = data.students.length - totalStudent;
+        data.students.splice(totalStudent, deleteCount);
+      }
+    }
+  }, 500);
+};
+
+var studentRules = {
+  'students.*.nama_lengkap_anak[]': 'required',
+  'students.*.nama_panggilan_anak[]': 'required',
+  'students.*.tanggal_lahir[]': 'required',
+  'students.*.jenis_kelamin[]': 'required',
+  'students.*.no_whatsapp_anak[]': 'required:numeric',
+  'students.*.instagram[]': 'required',
+  'students.*.facebook[]': 'required'
+};
+var studentErrorMessage = {
+  "required.students.*.nama_lengkap_anak[]": "Nama lengkap wajib diisi",
+  "required.students.*.nama_panggilan_anak[]": "Nama panggilan wajib diisi",
+  "required.students.*.tanggal_lahir[]": "Tanggal lahir wajib diisi",
+  "required.students.*.jenis_kelamin[]": "Jenis kelamin wajib dipilih",
+  "required.students.*.no_whatsapp_anak[]": "No whatsapp wajib diisi",
+  "numeric.students.*.no_whatsapp_anak[]": "No whatsapp harus berupa angka",
+  "required.students.*.instagram[]": "Instagram wajib diisi",
+  "required.students.*.facebook[]": "Facebook wajib diisi"
+};
+cloneStudentForm();
+typingValidationDynamicForm('#student', studentRules, studentErrorMessage);
+$("select[name='total_student']").on('change', function (e) {
+  var totalStudent = $(e.target).val();
+  typingValidationDynamicForm('#student', studentRules, studentErrorMessage, totalStudent);
 }); // Submit validation
 
 var submitValidation = function submitValidation(targetElement, rulesParam, errorMessage) {
@@ -26938,7 +26908,7 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
       data[fieldName] = fieldValue;
     }); // add payment slip to variable data in manually
 
-    var paymentSlip = $('input[name=bukti_pembayaran]');
+    var paymentSlip = $("input[name='bukti_pembayaran']");
     var paymentSlipValue = paymentSlip.val();
 
     if (paymentSlip.length) {
@@ -26965,14 +26935,14 @@ var submitValidation = function submitValidation(targetElement, rulesParam, erro
     validation.checkAsync(); // remove error text
 
     for (var key in validation.input) {
-      $("input[name=".concat(key, "], select[name=").concat(key, "], textarea[name=").concat(key, "]")).closest('.form-control').find('.error .label-text-alt').text('');
+      $("input[name='".concat(key, "'], select[name='").concat(key, "'], textarea[name='").concat(key, "']")).closest('.form-control').find('.error .label-text-alt').text('');
     }
 
     if (validation.fails()) {
       e.preventDefault();
 
       for (var _key in validation.errors.errors) {
-        $("input[name=".concat(_key, "], select[name=").concat(_key, "], textarea[name=").concat(_key, "]")).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(_key));
+        $("input[name='".concat(_key, "'], select[name='").concat(_key, "'], textarea[name='").concat(_key, "']")).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first(_key));
       }
     }
 
@@ -27011,54 +26981,6 @@ submitValidation('#address', {
   "required.kota": "Kabupaten/kota wajib dipilih",
   "required.kecamatan": "Kecamatan/desa wajib dipilih"
 });
-submitValidation('#student', {
-  nama_lengkap_anak: 'required',
-  nama_panggilan_anak: 'required',
-  tanggal_lahir: 'required',
-  jenis_kelamin: 'required',
-  no_whatsapp_anak: 'required:numeric',
-  instagram: 'required',
-  facebook: 'required',
-  nama_lengkap_anak2: 'required',
-  nama_panggilan_anak2: 'required',
-  tanggal_lahir2: 'required',
-  jenis_kelamin2: 'required',
-  no_whatsapp_anak2: 'required:numeric',
-  instagram2: 'required',
-  facebook2: 'required',
-  nama_lengkap_anak3: 'required',
-  nama_panggilan_anak3: 'required',
-  tanggal_lahir3: 'required',
-  jenis_kelamin3: 'required',
-  no_whatsapp_anak3: 'required:numeric',
-  instagram3: 'required',
-  facebook3: 'required'
-}, {
-  "required.nama_lengkap_anak": "Nama lengkap wajib diisi",
-  "required.nama_panggilan_anak": "Nama panggilan wajib diisi",
-  "required.tanggal_lahir": "Tanggal lahir wajib diisi",
-  "required.jenis_kelamin": "Jenis kelamin wajib dipilih",
-  "required.no_whatsapp_anak": "No whatsapp wajib diisi",
-  "numeric.no_whatsapp_anak": "No whatsapp harus berupa angka",
-  "required.instagram": "Instagram wajib diisi",
-  "required.facebook": "Facebook wajib diisi",
-  "required.nama_lengkap_anak2": "Nama lengkap wajib diisi",
-  "required.nama_panggilan_anak2": "Nama panggilan wajib diisi",
-  "required.tanggal_lahir2": "Tanggal lahir wajib diisi",
-  "required.jenis_kelamin2": "Jenis kelamin wajib dipilih",
-  "required.no_whatsapp_anak2": "No whatsapp wajib diisi",
-  "numeric.no_whatsapp_anak2": "No whatsapp harus berupa angka",
-  "required.instagram2": "Instagram wajib diisi",
-  "required.facebook2": "Facebook wajib diisi",
-  "required.nama_lengkap_anak3": "Nama lengkap wajib diisi",
-  "required.nama_panggilan_anak3": "Nama panggilan wajib diisi",
-  "required.tanggal_lahir3": "Tanggal lahir wajib diisi",
-  "required.jenis_kelamin3": "Jenis kelamin wajib dipilih",
-  "required.no_whatsapp_anak3": "No whatsapp wajib diisi",
-  "numeric.no_whatsapp_anak3": "No whatsapp harus berupa angka",
-  "required.instagram3": "Instagram wajib diisi",
-  "required.facebook3": "Facebook wajib diisi"
-});
 submitValidation('#survey', {
   motivasi: 'required',
   sumber_info: 'required',
@@ -27082,9 +27004,93 @@ submitValidation('#payment', {
   "required.nominal": "Nominal wajib diisi"
 });
 
+var submitValidationDynamicForm = function submitValidationDynamicForm(targetElement, rulesParam, errorMessage) {
+  var totalStudent = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+  var error_message = {};
+  var rules = {};
+  var data = {
+    students: [{}]
+  };
+  $("".concat(targetElement, " .btn.btn-primary")).on('click', function (e) {
+    var _loop = function _loop(oo) {
+      var formData = $("".concat(targetElement, " #studentForm").concat(oo + 1, " .wrap-form")).find('input, select, textarea');
+      formData.map(function (i, field) {
+        var fieldValue = field.value;
+        var fieldName = $(field).attr('name'); // set field name as a key in data variable
+
+        data.students[0][fieldName] = '';
+
+        if (data.students.length < totalStudent) {
+          // Create new object and push it to data variable
+          var cloneStudent = lodash__WEBPACK_IMPORTED_MODULE_2___default().clone(data.students[0]);
+
+          for (var student in cloneStudent) {
+            cloneStudent[student] = '';
+          }
+
+          data.students.push(cloneStudent);
+        }
+
+        if (data.students.length > totalStudent) {
+          var deleteCount = data.students.length - totalStudent;
+          data.students.splice(totalStudent, deleteCount);
+        }
+
+        setTimeout(function () {
+          // store field value to data variable
+          data.students[oo][fieldName] = fieldValue;
+          if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(rulesParam)) rules = rulesParam;
+          if (!lodash__WEBPACK_IMPORTED_MODULE_2___default().isEmpty(errorMessage)) error_message = errorMessage;
+          var validation = new (validatorjs__WEBPACK_IMPORTED_MODULE_1___default())(data, rules, error_message);
+          validation.passes(); // true
+
+          validation.fails(); // false
+
+          $("#studentForm".concat(oo + 1, " input[name='").concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).closest('.form-control').find('.error .label-text-alt').text('');
+
+          if (validation.fails()) {
+            if (validation.errors.first("students.".concat(oo, ".").concat(fieldName))) {
+              $("#studentForm".concat(oo + 1, " input[name='").concat(fieldName, "'], select[name='").concat(fieldName, "'], textarea[name='").concat(fieldName, "']")).closest('.form-control').find('.error .label-text-alt').text(validation.errors.first("students.".concat(oo, ".").concat(fieldName)));
+            }
+          }
+
+          if (validation.passes()) {
+            if (data.students.length == totalStudent) {
+              if (current === 4) {
+                return;
+              }
+
+              current = 3;
+              $(card[current]).addClass('show');
+              $(card[current - 1]).removeClass('show'); // Activate steps
+
+              $(step[current]).addClass('step-primary'); // Add icon check in the last step
+
+              $(step[current - 1]).attr('data-content', '✓');
+            }
+          }
+        }, 500);
+      });
+    };
+
+    for (var oo = 0; oo < totalStudent; oo++) {
+      _loop(oo);
+    } // end for loop
+
+  });
+};
+
+submitValidationDynamicForm('#student', studentRules, studentErrorMessage); // Check total student
+
+$("select[name='total_student']").on('change', function (e) {
+  var totalStudent = $(e.target).val();
+  submitValidationDynamicForm('#student', studentRules, studentErrorMessage, totalStudent);
+});
+
 var getRegencies = function getRegencies() {
-  $('select[name=provinsi]').on('change', function (e) {
-    var provinceId = $(e.target).val();
+  $("select[name='provinsi']").on('change', function (e) {
+    var selected = $(e.target).find('option:selected');
+    var provinceId = selected.data('id');
 
     if (provinceId) {
       $.ajax({
@@ -27094,7 +27100,7 @@ var getRegencies = function getRegencies() {
         success: function success(res) {
           $('select[name="kota"]').empty().append('<option disabled selected="selected">Pilih Kabupaten/Kota</option>');
           $.each(res.data, function (key, value) {
-            $('select[name="kota"]').append("<option value=\"".concat(value.id, "\">").concat(value.name, "</option>"));
+            $('select[name="kota"]').append("<option data-id=\"".concat(value.id, "\" value=\"").concat(value.name, "\">").concat(value.name, "</option>"));
           });
         }
       });
@@ -27105,12 +27111,14 @@ var getRegencies = function getRegencies() {
 getRegencies();
 
 var getDistricts = function getDistricts() {
-  $('select[name=provinsi]').on('change', function (e) {
-    var provinceId = $(e.target).val();
+  $("select[name='provinsi']").on('change', function (e) {
+    var selected = $(e.target).find('option:selected');
+    var provinceId = selected.data('id');
 
     if (provinceId) {
-      $('select[name=kota]').on('change', function (e) {
-        var regencyId = $(e.target).val();
+      $("select[name='kota']").on('change', function (e) {
+        var selected = $(e.target).find('option:selected');
+        var regencyId = selected.data('id');
 
         if (regencyId) {
           $.ajax({
@@ -27120,7 +27128,7 @@ var getDistricts = function getDistricts() {
             success: function success(res) {
               $('select[name="kecamatan"]').empty().append('<option disabled selected="selected">Pilih Kecamatan/Desa</option>');
               $.each(res.data, function (key, value) {
-                $('select[name="kecamatan"]').append("<option value=\"".concat(value.id, "\">").concat(value.name, "</option>"));
+                $('select[name="kecamatan"]').append("<option data-id=\"".concat(value.id, "\" value=\"").concat(value.name, "\">").concat(value.name, "</option>"));
               });
             }
           });

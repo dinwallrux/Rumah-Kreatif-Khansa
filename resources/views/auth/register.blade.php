@@ -3,7 +3,8 @@
 @section('content')
 <div id="register" class="py-4 mt-10 sm:mt-0 flex items-center flex-col">
 	<div class="prose lg:prose text-center mb-5">
-		<h1>Rumah Kreatif Khansa</h1>
+		<h1 class="mb-2">Rumah Kreatif Khansa Online Class</h1>
+        <h2 class="mt-1">Pendaftaran bulan Desember 2021</h2>
 	</div>
 
     <div class="md:grid md:grid-cols-1 md:gap-6 mb-4">
@@ -24,8 +25,9 @@
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="wrap-form">
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <div class="grid grid-cols-6 gap-6">
-                                <div class="col-span-6 sm:col-span-3">
+                            <div class="grid grid-cols-6 gap-7">
+
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Nama Orang tua/Wali</span>
@@ -36,7 +38,8 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-span-6 sm:col-span-3">
+
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Email</span>
@@ -48,7 +51,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-6">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">No Whatsapp</span>
@@ -60,7 +63,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-3">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Kata sandi</span>
@@ -71,7 +74,8 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-span-6 sm:col-span-3">
+
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Konfirmasi kata sandi</span>
@@ -82,6 +86,7 @@
                                         </label>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -97,16 +102,17 @@
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="wrap-form">
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <div class="grid grid-cols-6 gap-6">
-                                <div class="col-span-6 sm:col-span-3">
+                            <div class="grid grid-cols-1 gap-8">
+
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Provinsi</span>
                                         </label>
-                                        <select name="provinsi" class="select select-bordered select-primary w-full max-w-xs">
+                                        <select name="provinsi" class="select select-bordered select-primary">
                                             <option disabled selected="selected">Pilih Provinsi</option>
                                             @foreach ($provinces as $province)
-                                                <option value={{ $province->id }}>{{ $province->name }}</option>
+                                                <option data-id="{{ $province->id }}" value={{ $province->name }}>{{ $province->name }}</option>
                                             @endforeach
                                         </select>
                                         <label class="label error">
@@ -114,12 +120,13 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-span-6 sm:col-span-3">
+
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Kabupaten/Kota</span>
                                         </label>
-                                        <select name="kota" class="select select-bordered select-primary w-full max-w-xs">
+                                        <select name="kota" class="select select-bordered select-primary">
                                             <option disabled selected="selected">Pilih Kabupaten/Kota</option>
                                         </select>
                                         <label class="label error">
@@ -128,12 +135,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-6">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Kecamatan/Desa</span>
                                         </label>
-                                        <select name="kecamatan" class="select select-bordered select-primary w-full">
+                                        <select name="kecamatan" class="select select-bordered select-primary">
                                             <option disabled selected="selected">Pilih Kecamatan/Desa</option>
                                         </select>
                                         <label class="label error">
@@ -159,7 +166,7 @@
                     <div class="wrap-form">
                         <div class="wrapper-form px-4 py-5 bg-white sm:p-6">
 
-                            <div class="grid grid-cols-6 gap-3">
+                            <div class="grid grid-cols-6 gap-8">
 
                                 <div class="col-span-6">
                                     <div class="form-control">
@@ -174,119 +181,131 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-6">
-                                    <div class="divider"></div>
-                                </div>
-
                             </div>
-
-                            <div id="studentForm1" class="student-form grid grid-cols-6 gap-6">
-
-                                <div class="col-span-6 sm:col-span-3">
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="block text-sm font-medium text-gray-700">Nama Lengkap Anak</span>
-                                        </label>
-                                        <input name="nama_lengkap_anak" type="text" class="input input-primary input-bordered">
-                                        <label class="label error">
-                                            <span class="label-text-alt text-red-600"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="block text-sm font-medium text-gray-700">Nama Panggilan Anak</span>
-                                        </label>
-                                        <input name="nama_panggilan_anak" type="text" class="input input-primary input-bordered">
-                                        <label class="label error">
-                                            <span class="label-text-alt text-red-600"></span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                {{-- datepicker --}}
-                                <div class="col-span-6">
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="block text-sm font-medium text-gray-700">Tanggal lahir</span>
-                                        </label>
-                                        <div class="relative">
-                                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                                <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                                            </div>
-                                            <input name="tanggal_lahir" id="tanggal_lahir" autocomplete="off" datepicker type="text" class="input input-primary input-bordered pl-10 p-2.5 w-full" placeholder="01/01/2003">
-                                        </div>
-                                        <label class="label error">
-                                            <span class="label-text-alt text-red-600"></span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-span-6 sm:col-span-3">
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="block text-sm font-medium text-gray-700">Jenis kelamin</span>
-                                        </label>
-                                        <select name="jenis_kelamin" class="select select-bordered select-primary w-full">
-                                            <option selected="selected" value="laki-laki">Laki - laki</option>
-                                            <option value="perempuan">Perempuan</option>
-                                        </select>
-                                        <label class="label error">
-                                            <span class="label-text-alt text-red-600"></span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-span-6 sm:col-span-3">
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="block text-sm font-medium text-gray-700">No Whatsapp</span>
-                                        </label>
-                                        <input name="no_whatsapp_anak" type="text" class="input input-primary input-bordered">
-                                        <label class="label error">
-                                            <span class="label-text-alt text-red-600"></span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-span-6 sm:col-span-3">
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="block text-sm font-medium text-gray-700">Instagram</span>
-                                        </label>
-                                        <input name="instagram" type="text" class="input input-primary input-bordered">
-                                        <label class="label error">
-                                            <span class="label-text-alt text-red-600"></span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-span-6 sm:col-span-3">
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="block text-sm font-medium text-gray-700">Facebook</span>
-                                        </label>
-                                        <input name="facebook" type="text" class="input input-primary input-bordered">
-                                        <label class="label error">
-                                            <span class="label-text-alt text-red-600"></span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-span-6">
-                                    <div class="divider"></div>
-                                </div>
-
-                            </div>
-
                         </div>
                     </div>
-                    <div class="px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
-                        <button type="button" class="back btn btn-outline btn-accent">Kembali</button>
-                        <button type="button" class="next btn btn-primary">Lanjut</button>
+                </div>
+
+                <div class="wrap-student">
+                    <div id="studentForm1" class="student-form shadow overflow-hidden sm:rounded-md mt-9">
+                        <div class="wrap-form">
+                            <div class="wrapper-form px-4 py-5 bg-white sm:p-6">
+    
+                                <div class="grid grid-cols-1 gap-1 prose lg:prose mb-5">
+                                    <h2 style="margin-bottom: 10px;" class="title-student">Anak 1</h2>
+                                    <div class="divider"></div>
+                                </div>
+    
+                                <div class="grid grid-cols-6 gap-8">
+    
+                                    <div class="col-span-12">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="block text-sm font-medium text-gray-700">Nama Lengkap Anak</span>
+                                            </label>
+                                            <input name="nama_lengkap_anak[]" type="text" class="input input-primary input-bordered">
+                                            <label class="label error">
+                                                <span class="label-text-alt text-red-600"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-span-12">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="block text-sm font-medium text-gray-700">Nama Panggilan Anak</span>
+                                            </label>
+                                            <input name="nama_panggilan_anak[]" type="text" class="input input-primary input-bordered">
+                                            <label class="label error">
+                                                <span class="label-text-alt text-red-600"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    {{-- datepicker --}}
+                                    <div class="col-span-12">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="block text-sm font-medium text-gray-700">Tanggal lahir</span>
+                                            </label>
+                                            <div class="relative">
+                                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                                <input name="tanggal_lahir[]" autocomplete="off" datepicker type="text" class="tanggal-lahir input input-primary input-bordered pl-10 p-2.5 w-full" placeholder="01/01/2003">
+                                            </div>
+                                            <label class="label error">
+                                                <span class="label-text-alt text-red-600"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-span-12">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="block text-sm font-medium text-gray-700">Jenis kelamin</span>
+                                            </label>
+                                            <select name="jenis_kelamin[]" class="select select-bordered select-primary w-full">
+                                                <option selected="selected" value="laki-laki">Laki - laki</option>
+                                                <option value="perempuan">Perempuan</option>
+                                            </select>
+                                            <label class="label error">
+                                                <span class="label-text-alt text-red-600"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-span-12">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="block text-sm font-medium text-gray-700">No Whatsapp</span>
+                                            </label>
+                                            <label class="label pt-0">
+                                                <span class="label-text-alt">*) Isi jika berbeda dengan nomor WA orang tua</span>
+                                            </label>
+                                            <input name="no_whatsapp_anak[]" type="text" class="input input-primary input-bordered">
+                                            <label class="label error">
+                                                <span class="label-text-alt text-red-600"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-span-12">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="block text-sm font-medium text-gray-700">Instagram</span>
+                                            </label>
+                                            <input name="instagram[]" type="text" class="input input-primary input-bordered">
+                                            <label class="label error">
+                                                <span class="label-text-alt text-red-600"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-span-12">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="block text-sm font-medium text-gray-700">Facebook</span>
+                                            </label>
+                                            <input name="facebook[]" type="text" class="input input-primary input-bordered">
+                                            <label class="label error">
+                                                <span class="label-text-alt text-red-600"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+    
                     </div>
                 </div>
+
+                <div class="my-4 px-4 py-3 bg-gray-50 sm:px-6 flex justify-between">
+                    <button type="button" class="back btn btn-outline btn-accent">Kembali</button>
+                    <button type="button" class="next btn btn-primary">Lanjut</button>
+                </div>
+
             </div>
         </div>
 
@@ -317,15 +336,15 @@
                                             <span class="label-text">Instagram</span>
                                         </label>
                                         <label class="cursor-pointer label justify-start">
-                                            <input type="radio" name="source_info" class="radio radio-primary mr-3" value="facebook">
+                                            <input type="radio" name="sumber_info" class="radio radio-primary mr-3" value="facebook">
                                             <span class="label-text">Facebook</span>
                                         </label>
                                         <label class="cursor-pointer label justify-start">
-                                            <input type="radio" name="source_info" class="radio radio-primary mr-3" value="whatsapp">
+                                            <input type="radio" name="sumber_info" class="radio radio-primary mr-3" value="whatsapp">
                                             <span class="label-text">Whatsapp</span>
                                         </label>
                                         <label class="cursor-pointer label justify-start">
-                                            <input type="radio" name="source_info" class="radio radio-primary mr-3" value="lainnya">
+                                            <input type="radio" name="sumber_info" class="radio radio-primary mr-3" value="lainnya">
                                             <span class="label-text mr-3">Lainnya: </span>
                                             <input type="text" name="lainnya" class="input input-primary input-bordered w-full">
                                         </label>
@@ -365,9 +384,9 @@
                     <div class="wrap-form">
                         <div class="px-4 py-5 bg-white sm:p-6">
 
-                            <div class="grid grid-cols-6 gap-3">
+                            <div class="grid grid-cols-6 gap-8">
 
-                                <div class="col-span-6">
+                                <div class="col-span-12">
                                     <h2 class="font-medium mb-1" style="width: 600px;">
                                         Lampiran Bukti Transfer
                                     </h2>
@@ -381,7 +400,7 @@
                                     <img src="{{asset('img/no-rekening.jpg')}}" alt="" style="width: 350px; margin: auto;">
                                 </div>
 
-                                <div class="col-span-6">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Bukti tranfer</span>
@@ -395,7 +414,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-6">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Jangka pendaftaran</span>
@@ -412,7 +431,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-6">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Catatan</span>
@@ -420,14 +439,14 @@
                                         <label class="label pt-0">
                                             <span class="label-text-alt">*) Contoh Pengisian : Transfer untuk 2 bulan (Desember 2021 s/d Januari 2022) untuk 2 anak (Anna dan Anni)</span>
                                         </label>
-                                        <textarea name="catatan" class="textarea h-24 textarea-bordered textarea-primary"></textarea>
+                                        <textarea name="catatan" class="textarea h-24 textarea-bordered textarea-primary" placeholder="Transfer untuk 2 bulan (Desember 2021 s/d Januari 2022) untuk 2 anak (Anna dan Anni)"></textarea>
                                         <label class="label error">
                                             <span class="label-text-alt text-red-600"></span>
                                         </label>
                                     </div>
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-3">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Nama Bank</span>
@@ -439,7 +458,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-3">
+                                <div class="col-span-12">
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="block text-sm font-medium text-gray-700">Nominal</span>
