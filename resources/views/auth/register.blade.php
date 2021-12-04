@@ -112,7 +112,7 @@
                                         <select name="provinsi" class="select select-bordered select-primary">
                                             <option disabled selected="selected">Pilih Provinsi</option>
                                             @foreach ($provinces as $province)
-                                                <option data-id="{{ $province->id }}" value={{ $province->name }}>{{ $province->name }}</option>
+                                                <option data-id="{{ $province->id }}" value="{{ $province->name }}">{{ $province->name }}</option>
                                             @endforeach
                                         </select>
                                         <label class="label error">
