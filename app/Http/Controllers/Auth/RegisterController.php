@@ -40,6 +40,7 @@ class RegisterController extends Controller
             'provinsi' => 'required',
             'kota' => 'required',
             'kecamatan' => 'required',
+            'alamat' => 'required',
             'nama_lengkap_anak[].*' => 'required',
             'nama_panggilan_anak[].*' => 'required',
             'tanggal_lahir[].*' => 'required',
@@ -71,6 +72,8 @@ class RegisterController extends Controller
                 'provinsi' => $request['provinsi'],
                 'kota' => $request['kota'],
                 'kecamatan' => $request['kecamatan'],
+                'alamat' => $request['alamat'],
+                'kode_pos' => $request['kode_pos']
             ]);
     
             for ($i=0; $i < count($request['nama_lengkap_anak']); $i++) { 

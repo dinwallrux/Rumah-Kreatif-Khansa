@@ -149,6 +149,30 @@
                                     </div>
                                 </div>
 
+                                <div class="col-span-12">
+                                    <div class="form-control">
+                                        <label class="label">
+                                            <span class="block text-sm font-medium text-gray-700">Alamat</span>
+                                        </label>
+                                        <textarea name="alamat" class="textarea h-24 textarea-bordered textarea-primary"></textarea>
+                                        <label class="label error">
+                                            <span class="label-text-alt text-red-600"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-span-12">
+                                    <div class="form-control">
+                                        <label class="label">
+                                            <span class="block text-sm font-medium text-gray-700">Kode pos</span>
+                                        </label>
+                                        <input type="text" name="kode_pos" autocomplete="kode_pos" class="input input-primary input-bordered">
+                                        <label class="label error">
+                                            <span class="label-text-alt text-red-600"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

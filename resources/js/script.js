@@ -138,15 +138,21 @@ typingValidation('#account-info', {
     "same.konfirmasi_kata_sandi": "Konfirmasi kata sandi tidak sama"
 });
 
-typingValidation('#address', {
+let addressRules = {
     provinsi: 'required',
     kota: 'required',
-    kecamatan: 'required'
-}, {
+    kecamatan: 'required',
+    alamat: 'required'
+}
+
+let addressErrorMessage = {
     "required.provinsi": "Provinsi wajib dipilih",
     "required.kota": "Kabupaten/kota wajib dipilih",
-    "required.kecamatan": "Kecamatan/desa wajib dipilih"
-});
+    "required.kecamatan": "Kecamatan/desa wajib dipilih",
+    "required.alamat": "Alamat wajib diisi"
+}
+
+typingValidation('#address', addressRules, addressErrorMessage);
 
 typingValidation('#survey', {
     motivasi: 'required',

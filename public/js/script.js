@@ -26785,15 +26785,19 @@ typingValidation('#account-info', {
   "required.konfirmasi_kata_sandi": "Konfirmasi kata sandi wajib diisi",
   "same.konfirmasi_kata_sandi": "Konfirmasi kata sandi tidak sama"
 });
-typingValidation('#address', {
+var addressRules = {
   provinsi: 'required',
   kota: 'required',
-  kecamatan: 'required'
-}, {
+  kecamatan: 'required',
+  alamat: 'required'
+};
+var addressErrorMessage = {
   "required.provinsi": "Provinsi wajib dipilih",
   "required.kota": "Kabupaten/kota wajib dipilih",
-  "required.kecamatan": "Kecamatan/desa wajib dipilih"
-});
+  "required.kecamatan": "Kecamatan/desa wajib dipilih",
+  "required.alamat": "Alamat wajib diisi"
+};
+typingValidation('#address', addressRules, addressErrorMessage);
 typingValidation('#survey', {
   motivasi: 'required',
   sumber_info: 'required',

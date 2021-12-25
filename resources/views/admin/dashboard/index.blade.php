@@ -818,7 +818,9 @@
                                                 <th class="bg-white dark:bg-darker">Nama panggilan anak</th>
                                                 <th class="bg-white dark:bg-darker">Usia</th>
                                                 <th class="bg-white dark:bg-darker">Jenis kelamin</th>
+                                                <th class="bg-white dark:bg-darker">Alamat</th>
                                                 <th class="bg-white dark:bg-darker">Asal daerah</th>
+                                                <th class="bg-white dark:bg-darker">Kode pos</th>
                                                 <th class="bg-white dark:bg-darker">Nama orang tua</th>
                                                 <th class="bg-white dark:bg-darker">No WA</th>
                                                 <th class="bg-white dark:bg-darker"></th>
@@ -836,7 +838,9 @@
                                                 <td class="bg-white dark:bg-darker">{{ $student->nama_panggilan }}</td>
                                                 <td class="bg-white dark:bg-darker">{{ (date('Y') - date('Y', strtotime($student->tanggal_lahir))) }}</td>
                                                 <td class="bg-white dark:bg-darker">{{ $student->jenis_kelamin }}</td>
+                                                <td class="bg-white dark:bg-darker">{{ $student->orangTua->alamat }}</td>
                                                 <td class="bg-white dark:bg-darker">{{ $student->orangTua->provinsi }}, {{ $student->orangTua->kota }}, {{ $student->orangTua->kecamatan }}</td>
+                                                <td class="bg-white dark:bg-darker">{{ $student->orangTua->kode_pos }}</td>
                                                 <td class="bg-white dark:bg-darker">{{ $student->orangTua->nama_lengkap }}</td>
                                                 <td class="bg-white dark:bg-darker">{{ $student->no_wa }}</td>
                                                 <th class="bg-white dark:bg-darker">
@@ -852,7 +856,9 @@
                                                 <th class="bg-white dark:bg-darker">Nama panggilan anak</th>
                                                 <th class="bg-white dark:bg-darker">Usia</th>
                                                 <th class="bg-white dark:bg-darker">Jenis kelamin</th>
+                                                <th class="bg-white dark:bg-darker">Alamat</th>
                                                 <th class="bg-white dark:bg-darker">Asal daerah</th>
+                                                <th class="bg-white dark:bg-darker">Kode pos</th>
                                                 <th class="bg-white dark:bg-darker">Nama orang tua</th>
                                                 <th class="bg-white dark:bg-darker">No WA</th>
                                                 <th class="bg-white dark:bg-darker"></th>
