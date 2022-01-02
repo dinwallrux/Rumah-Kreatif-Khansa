@@ -14,7 +14,8 @@ class OrangTuaController extends Controller
      */
     public function index()
     {
-        //
+        $parents = OrangTua::all();
+        return view('admin.orangTua.index', compact('parents'));
     }
 
     /**

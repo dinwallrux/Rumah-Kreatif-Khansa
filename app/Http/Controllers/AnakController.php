@@ -14,7 +14,8 @@ class AnakController extends Controller
      */
     public function index()
     {
-        //
+        $students = Anak::all();
+        return view('admin.anak.index', compact('students'));
     }
 
     /**

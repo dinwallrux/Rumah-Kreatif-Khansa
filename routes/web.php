@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrangTuaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +36,6 @@ Route::get('province/{id}/regencies/{regencyId}/districts', 'AddressController@g
 // admin route
 Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('/', 'DashboardController@index')->name('dashboard');
+    Route::get('/anak', 'AnakController@index')->name('anak');
+    Route::get('orang-tua', 'OrangTuaController@index')->name('orangTua');
 });

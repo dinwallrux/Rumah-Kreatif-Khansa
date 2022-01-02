@@ -10,7 +10,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $students = Anak::all();
-        return view('admin.dashboard.index', compact('students'));
+        return redirect()->route('anak');
     }
 }
